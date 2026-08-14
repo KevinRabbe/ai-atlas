@@ -12,111 +12,134 @@ First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit
 
 ## Phase 9 — Clean-sheet architecture
 
-First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No architecture family selected.** A/B/C/D remain competing organizational hypotheses.
+First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/B/C/D remain useful reference organizations, but Phase-10 evidence increasingly treats them as conditional modes rather than mutually exclusive final systems.
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-three reversible implementation-neutral principles have survived their current promotion gates.** The strategy has moved from isolated mechanisms to composition, guarded self-improvement, integrated runtime allocation, and now matched organization-level discrimination.
+**Active. Twenty-three reversible implementation-neutral principles survive their current promotion gates.** The current validation history contains **217 added test cases**.
 
-The current validation history contains **201 Phase-10 added test cases**.
+The experimental strategy has progressed through:
 
-## Composition generations
+1. isolated mechanism discrimination;
+2. integrated epistemic/resource composition;
+3. guarded self-improvement;
+4. learned metacognition under imperfect feedback;
+5. runtime interaction-aware allocation;
+6. fixed architecture-family comparison;
+7. adaptive organizational modes;
+8. scoped simultaneous organization;
+9. dynamic topology inference.
 
-### I01–I04
+## Current composition spine
 
-I01–I03 showed that memory, uncertainty, active evidence, discovery, metacognition and assurance interact rather than compose trivially. I04 then replaced several separate controllers with one typed transition/resource allocator.
+```text
+source/world evidence
+      ↓
+typed state + transition proposals
+      ↓
+learned interaction-aware value/resource allocation
+      ↓
+dynamic coupling scopes + conditional organizational modes
+      ↓
+failure-layer assurance + current authority boundary
+      ↓
+execute at scoped timing/fidelity/state breadth
+      ↓
+observe → causal credit → staged appropriately-scoped update
+```
 
-A common allocator can adapt resource use, but its ordinary scalar/value estimate cannot manufacture epistemic or external authority.
+The scalar allocator still cannot manufacture epistemic or external authority; authority remains a typed independent boundary.
 
-### I05 / I05B — learned and imperfect metacognition
+## I06 — interaction-aware runtime allocation
 
-Operation quality, family-specific coordination value and verifier safety become revisable learned state. I05B then makes feedback about evaluator quality delayed, censored and noisy. Selective higher-quality audit evidence recovers much of the exact-feedback performance while paying audit cost only where metacognitive uncertainty/consequence warrants it.
+I06 jointly allocates high fidelity, source rematerialization/broad hot state, synchronization and active intervention under one finite capacity budget.
 
-### I06 — integrated runtime allocation
+Learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` factorized independent control and ~`1.410` uniform-safe. Material complement/substitution effects therefore survive composition: local operation values are not always additive.
 
-I06 stops treating timing, fidelity, state breadth/rematerialization and active observation as independent hand-written policies.
+## AF01 — fixed organizations produce a Pareto frontier
 
-The shared allocator chooses typed runtime bundles under one capacity budget. Across 30 seeds, learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for independently learned operation controllers and ~`1.410` for a uniform safe bundle.
+Canonical A/B/C/D embodiments share the same I06 runtime substrate.
 
-Factorized control produces more discarded-state, consistency, intervention and sensitivity failures even while consuming more capacity. The result adds a new composition-level rule without a new principle number:
+No family wins universally. Hierarchy, locality/distribution, integrated sharing and preserved variants each earn themselves under different coupling/sharedness/recurrence/overhead regimes.
 
-> **when operations materially complement or substitute for one another, their value must be represented jointly enough to prevent locally rational but globally wasteful choices.**
+This blocks premature fixed-family selection.
 
-## Guarded self-improvement checkpoint
+## AF02 — adaptive organizational mode
 
-- **PS-017:** categorical capability authority remains independent/current/revocable;
-- **PS-018:** self-change evidence stays independent and refreshes coverage/timescale;
-- **PS-019:** lineage diversity is retained only while future option/stepping-stone value pays for it;
-- **PS-020:** repair scope expands only with evidence that the causal root is broader;
-- **PS-021:** indirect/developmental structural rules earn themselves only where reusable regularity justifies shared mutation and local overrides remain available.
+The selector never sees the hidden regime label. It observes noisy coupling/conflict/transfer/recurrence proxies and its own reward history.
 
-## Execution/fidelity/predictive-state checkpoint
+Default 30-seed utility:
 
-- **PS-022:** event-scoped work beats global ticking under locality, while shared consistency introduces scoped barriers; eager sync can win again when common snapshots are continuously demanded.
-- **PS-023:** fidelity is allocated by sensitivity, uncertainty propagation, consequence and recoverability.
-- **E24 / JEPA:** passive predictive sufficiency is not intervention sufficiency; predictive target breadth and recoverable source evidence belong inside the lifetime objective. No JEPA-specific principle is selected.
+- best fixed mode: ~`1.509`;
+- adaptive: ~`1.563`;
+- oracle: ~`1.576`.
 
-## AF01 — first matched architecture-family comparison
+Adaptive organization loses when regimes last only ~20 steps, establishing a real timescale boundary: organizational plasticity must amortize identification, switch and carrying cost.
 
-AF01 holds the I06 runtime substrate constant and changes only organizational bias.
+## AF03 — organizational scope
 
-Canonical embodiments:
+Four domains can require different organizations simultaneously.
 
-- A — conditional/local estimates + global hierarchical arbitration;
-- B — local best-bundle bids + resource-local auction;
-- C — pooled shared-core experience + global joint allocation;
-- D — preserved conditional models + online selector/archive cost.
+- heterogeneous + weakly coupled: scoped adaptive ~`1.554` versus global adaptive ~`1.495`;
+- homogeneous + strongly coupled: global adaptive ~`1.571` versus scoped ~`1.554`.
 
-AF01 produces a **Pareto frontier rather than a universal winner**.
+The scoped advantage decays continuously as cross-domain coupling rises.
 
-- sparse work exposes error vs coordination/message-cost trade-offs among A/B/C/D;
-- D is strongest in the tightly switching/coupled regime;
-- C is strongest in the recurring mixed regime;
-- sparse ranking changes as organization overhead prices change.
+This is architecture-scale evidence for **scope follows coupling** rather than universal modularity or global integration.
 
-This is a substantive result: the Phase-9 families increasingly look like **organizational modes** that could coexist inside one adaptive system.
+## I07 — dynamic scope formation
+
+Predefined subsystem boundaries are removed. Twelve components move among recurrent hidden dependency partitions. The learner observes noisy interaction events, infers a coupling graph, and pays migration cost to split/merge scopes.
+
+At 120 steps/partition:
+
+- global static: `1.027` utility;
+- adaptive topology: ~`1.058`;
+- oracle: ~`1.075`.
+
+At 20 steps/partition, adaptive drops below global static. Topology plasticity therefore has the same persistence-vs-migration economics as organizational mode plasticity.
+
+## JEPA / E24
+
+JEPA remains a candidate mechanism, not a commitment. E24 shows that latent prediction can be efficient while passive predictive sufficiency still fails under future objectives/interventions. Recoverable source evidence substantially improves the compression/optionality frontier.
+
+No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-023** are active reversible constraints, not product components or a chosen architecture family. See `clean-sheet/DESIGN_LEDGER.md` for complete evidence/falsifiers.
+**PS-001 through PS-023** are active reversible constraints. AF01–AF03/I07 currently strengthen/combine those principles rather than adding new ones.
 
-## Next milestone — AF02 adaptive organization
+## Next milestone — executable dynamic-scope architecture skeleton
 
-AF02 should directly test the mode hypothesis rather than repeat AF01.
+The next experiment should move from abstract scope labels to real typed state migration.
 
-The adaptive system must not see a hidden label saying which organization is best. It should infer useful organization from observable evidence such as:
+A scope split/merge must preserve or deliberately transfer:
 
-1. contention / capacity pressure;
-2. local-vs-cross-domain dependency errors;
-3. transfer/interference between task families;
-4. recurrence of previous workload regimes;
-5. control-message and archive-carrying costs;
-6. prediction loss of current versus preserved organizational models.
+1. exact identity/provenance;
+2. source evidence and derived current beliefs;
+3. predictive/hot state and rematerialization links;
+4. resource ownership and pending allocations;
+5. current/revocable capability authority versions;
+6. in-flight event work and synchronization versions;
+7. causal-credit eligibility;
+8. regression/assurance evidence for structural change.
 
-Compare:
+The candidate architecture should fail if reorganization loses one of those invariants.
 
-- fixed A;
-- fixed B;
-- fixed C;
-- fixed D;
-- **adaptive organizational mode selector**;
-- oracle mode scheduler as upper bound.
+### Main discriminator
 
-AF02 must price mode switching and retained organizational state. Sweep regime duration and switching price to expose mode thrashing or slow detection.
+Does dynamic topology still produce lifetime value after **real state migration, event draining, authority transfer and validation costs** are included?
 
-### Key discriminator
+If not, I07's abstract topology advantage is too optimistic.
 
-If the adaptive selector robustly beats every fixed family after switching/carrying overhead, then **selecting A/B/C/D as the final architecture is probably the wrong abstraction**.
-
-The emerging answer would instead be a typed common substrate that instantiates local, hierarchical, integrated or variant-preserving organization where their evidence-conditioned future value earns the cost.
-
-If switching overhead/misclassification makes a fixed family better, then the Pareto frontier remains genuinely architectural rather than merely modal.
+If yes, the Atlas will have moved from architecture-family selection to an evidence-derived executable topology.
 
 ## Later targeted work
 
-- **I05C:** correlated/adversarial audit sources and partially unresolved outcomes;
-- neural E24C only if actual predictive/reconstructive objective geometry remains architecture-discriminating after AF02;
-- hardware co-design after timing/fidelity/state/organization laws are stable enough to make hardware assumptions informative.
+- stale/adversarial dependency evidence for scope formation;
+- I05C correlated/adversarial audit sources and partially unresolved outcomes;
+- neural E24C only if predictive-objective geometry remains architecture-discriminating;
+- hardware co-design only after topology/timing/fidelity/state laws are stable enough to make substrate assumptions informative.
 
 ## Phase-10 substantial-completion condition
 
@@ -124,12 +147,12 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 
 - selected principles retain lifetime value under composition;
 - learned metacontrol overhead does not consume the gains;
-- authority/provenance remain stable under shared learned control;
+- authority/provenance remain stable under shared learned control and topology changes;
 - world/tool/evaluator/self uncertainty remain distinguishable;
 - self-change uses independent refreshing evidence and scoped rollback/change;
 - failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- architecture-family evidence either empirically dominates a family or explains a persistent Pareto/mode frontier under matched end-to-end tests.
+- dynamic organization/topology either dominates fixed organizations in its justified regimes or clearly exposes where its switching/migration costs make static structure preferable.
 
 ## Open targeted gap closure
 
