@@ -2,7 +2,7 @@
 
 ## Phases 0–7
 
-Taxonomy/evidence discipline, computational substrate, learning/adaptation, inference-time intelligence, persistent intelligence, verification/control, self-improvement and first cross-domain synthesis all completed first passes on 2026-08-14. Targeted gap closure remains open.
+Taxonomy/evidence discipline, computational substrate, learning/adaptation, inference-time intelligence, persistent intelligence, verification/control, self-improvement and first cross-domain synthesis completed first passes on 2026-08-14. Targeted gap closure remains open.
 
 A focused synthesis later added **discovery & epistemic growth**: human knowledge is bootstrap evidence/methodology rather than a permanent epistemic ceiling; F26 captures the requirement to turn uncertainty into testable hypotheses and verified new knowledge.
 
@@ -16,7 +16,7 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No a
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Ten provisional implementation-neutral principles have now survived their current promotion gates.**
+**Active. Eleven provisional implementation-neutral principles have survived their current promotion gates.**
 
 ### Current provisional selections
 
@@ -29,60 +29,68 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No a
 7. PS-007 — value-driven active evidence acquisition;
 8. PS-008 — verified epistemic frontier expansion;
 9. PS-009 — conditional sharing with isolation fallback;
-10. PS-010 — joint adaptive resource substitution under shared scarcity.
+10. PS-010 — joint adaptive resource substitution under shared scarcity;
+11. PS-011 — retrieval by expected applicability/downstream value.
 
-These are reversible principles for the current experimental generation, not concrete modules and not a chosen Phase-9 architecture.
+These remain reversible constraints, not concrete modules and not a selected Phase-9 architecture family.
 
-## Latest closed architecture-boundary questions
+## Latest boundary evidence
 
-### DL-002 / PS-009 — conditional sharing
+### E08 — predictive-state breadth
 
-E02 and E02B established the transfer/interference frontier but left realized compute as a confound. E02C removes it: the routed shared/private learner and specialist baseline both store 45 learned parameters, while the routed learner activates only one shared or private path per example and uses less arithmetic than specialists.
+The first family prices hot-state retention, cold/source retention and rematerialization separately while the future objective changes.
 
-Across 20 seeds and 240/480/1,200-example regimes, routed sharing consistently beats specialists at sharedness 0.98, while specialists win at 0.75 and 0.15. Sharing is therefore promoted only as a **conditional** response to reusable structure, with an isolation path retained when transfer becomes interference.
+It finds three regimes:
 
-### DL-022 / PS-010 — joint adaptive resource substitution
+- fixed objective -> narrow current-decision state wins;
+- occasional objective change -> source-recoverable hybrid wins;
+- rapid alternation -> broad hot state wins because reconstruction becomes the dominant cost.
 
-E22 showed substitution under price changes. E22B adds shared capacity and drifting resource competence.
+This supports the inference that decision sufficiency is relative to future objective distribution, but **DL-008 remains unresolved** pending a second learned/dynamic predictive family.
 
-Across 30 seeds, post-shift reference regret is approximately:
+### E11 / PS-011 — retrieval objective
 
-- adaptive joint: 0.086;
-- frozen joint: 0.206;
-- frozen independent: 0.387;
-- adaptive independent: 0.468.
+Two families now show that similarity is useful only while it predicts applicability cheaply. Exact semantic matches become harmful under stale premises or surface/causal conflict; temporal, causal, outcome and verification semantics then justify their additional checking cost.
 
-The adaptive-independent failure is particularly informative: better local estimates can worsen global allocation when many tasks converge on the same scarce resource. This promotes a joint/coupling-aware substitution principle, not a permanent centralized scheduler.
+The selected principle is downstream applicability/value as the retrieval objective, not any one hand-coded scorer.
+
+### E09C — noise versus true change
+
+Single-channel adaptive persistence can confuse sensor unreliability with world volatility. A second independent sensor almost eliminates false durable updates in a stable/noisy world, but always-on corroboration is unnecessarily expensive when observations are clean.
+
+Adaptive corroboration samples the second channel sparsely and escalates only when disagreement suggests the primary stream is unreliable. This closes the earlier PS-002 falsifier and links persistence estimation to PS-006 ambiguity management and PS-007 evidence acquisition.
 
 ## Discovery / epistemic-growth lifecycle
 
-The current implementation-neutral target remains:
+The implementation-neutral target remains:
 
 `inherited knowledge -> competing hypothesis -> selected search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`.
 
-Rejected/unresolved hypotheses retain distinct state when their negative information has future value.
-
 > **Novelty is not knowledge.**
 
-Search power should co-scale with verifier independence and epistemic staging.
+## Next milestone — composition rather than accumulation
 
-## Highest-value unresolved decisions
+The project now has enough isolated mechanism evidence that continuing to add one toy mechanism at a time has decreasing information value.
 
-- **DL-008 predictive-state breadth:** broad reconstruction versus decision-sufficient state versus source-recoverable hybrid;
-- **DL-011 memory retrieval objective:** representational similarity versus temporal/causal/downstream-value retrieval;
-- **E09B noise-versus-volatility:** independently vary sensor reliability and true environmental change to test whether adaptive persistence can distinguish them;
-- later verification/control, credit assignment and self-improvement decisions remain intentionally open until the core persistent/action organism is better constrained.
+Near-term order:
 
-## Near-term order
+1. complete E08 with a second learned/dynamic predictive-state family;
+2. construct a **next-generation integrated research organism** constrained by PS-001 through PS-011;
+3. avoid one-module-per-principle design: combine functions where integration earns its cost and preserve boundaries where interference, authority, provenance or timescale require them;
+4. run matched end-to-end tasks that require belief maintenance, retrieval, active observation, compute allocation, resource substitution, staging and verified discovery in one lifecycle;
+5. ablate each selected principle and record interaction regressions;
+6. only after composition evidence, return to deeper verification/credit/self-improvement/hardware decisions.
 
-1. E08 predictive-state breadth with an objective switch that makes previously irrelevant variables valuable;
-2. E11 retrieval objective using memories where semantic similarity conflicts with causal/action value;
-3. E09B sensor-noise versus true-volatility disentanglement;
-4. integrate PS-001 through PS-010 into a next-generation research organism;
-5. run interaction/ablation tests to determine whether individually useful principles interfere when combined;
-6. only then resume deeper verification/self-improvement and physical-co-design tiers.
+## Integration exit condition
 
-Phase 10 is **not complete**. The project has crossed from isolated mechanism tests into a constrained system-design regime, but the next milestone is evidence that the selected principles compose rather than merely work independently.
+Before treating Phase 10 as substantially complete, the combined organism should demonstrate that:
+
+- individually selected principles still improve lifetime utility when composed;
+- metacontrol overhead does not consume the gains;
+- state/provenance interfaces remain stable under interaction;
+- no principle silently reintroduces a discarded assumption from current AI stacks;
+- failure cases remain attributable enough to revise individual mechanisms;
+- the system can leave questions unresolved rather than forcing unsupported state transitions.
 
 ## Open targeted gap closure
 
