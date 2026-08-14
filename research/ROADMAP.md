@@ -8,6 +8,8 @@ Define taxonomy, evidence schema, claim IDs, contradiction handling, source stan
 
 Research foundations, architectures, scaling laws, sparsity/conditional computation, recurrence/state-space approaches, memory hierarchy, hardware constraints and systems efficiency.
 
+**Progress:** Foundations first evidence pass completed on 2026-08-14; not yet saturated. It established provisional constraints around inductive bias, information/relevance, computability/resource bounds, optimization/search, uncertainty, causality/control, credit assignment, representation and joint resource scaling. Next work should deepen Foundations gaps while beginning the architecture/systems evidence map.
+
 Exit condition: we can state which capabilities require which computational properties without assuming Transformer-style attention.
 
 ## Phase 2 — Learning and adaptation
