@@ -14,7 +14,7 @@ Named model blocks, natural-language reasoning, databases, agents, harnesses, bi
 
 Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **229 added test cases**, integrated experiments through **I09**, and architecture-level comparisons **AF01–AF03**. **Twenty-three provisional implementation-neutral principles** survive their current promotion gates.
+Phase 10 now contains **260 added test cases**, integrated experiments through **I12**, architecture-family comparisons **AF01–AF03**, and the first persistent reusable architecture substrate. **Twenty-three provisional implementation-neutral principles** survive their current promotion gates.
 
 No fixed A/B/C/D architecture family is selected as a universal whole-system architecture. Their useful mechanisms increasingly behave like organizational modes that can be activated at different scopes and timescales.
 
@@ -36,86 +36,93 @@ The current evidence increasingly supports a smaller set of recurring laws:
 - self-improvement diversity is retained only while future option value pays for it;
 - repair blast radius expands only when evidence says the causal root is equally broad;
 - metacognitive estimates are revisable state and can themselves justify active evidence acquisition;
-- organizational mode, organizational scope and scope membership may themselves be adaptive state;
-- **semantic identities whose validity must survive reorganization cannot be defined only by the organization being changed**;
-- **reconfiguration is itself a consequential transition and therefore needs priced evidence and assurance.**
+- organizational mode, scope and membership may themselves be adaptive state;
+- semantics that must survive reorganization cannot be defined only by the organization being changed;
+- reconfiguration itself is a consequential transition and must earn evidence/assurance;
+- **ownership, coordination, directional dependence, authority, provenance and resource identity are different typed relationships rather than one generic module graph.**
 
 ## Current executable architecture hypothesis
 
 ```text
-stable typed semantic plane
-  identities / provenance / source refs
+stable typed semantic identities
+  subjects / evidence / provenance / sources
   authority versions / resource leases
-        ↓ referenced by
-revisable organizational plane
-  learned dependency graph
-  dynamic scopes + local organizational modes
-  resource allocation / routing / cache placement
+        |
+        +--> directional dependencies
+        |
+        +--> disjoint ownership topology
+        |       + dynamic split / merge
+        |
+        +--> overlapping non-owning coordination scopes
+                temporary or persistent
         ↓
-interaction-aware transition/resource allocator
+typed transition proposals
+        ↓
+interaction-aware value/resource allocator
         ↓
 consequence-sensitive independent assurance
-  for durable / external / topology-changing transitions
         ↓
-versioned transition protocol
-  execute / split / merge / forward / rollback
+versioned execution + structural protocol
+  execute / forward / stage / commit / rollback
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
 This is **not** yet a frozen final architecture.
 
-## I06 — runtime choices interact
+## I06–I09 — from allocation to safe dynamic topology
 
-I06 combines fidelity, source rematerialization vs broad hot state, synchronization and active intervention inside one finite runtime budget.
+I06 combines fidelity, source rematerialization/hot state, synchronization and intervention in one runtime budget. Learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for factorized independent controllers.
 
-Across 30 seeds, learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for independent operation controllers and ~`1.410` for a uniform safe bundle.
+AF01–AF03 then show that A/B/C/D behave as regime-dependent organizational modes. AF02 learns mode selection; AF03 shows multiple modes can coexist at different scopes; I07 learns scope membership itself from changing dependency evidence.
 
-The result is not “use a grouped knapsack.” The result is:
+I08 is the first real typed-state migration runtime. Across 30 seeds the typed-epoch variant reaches ~`1.0744` utility/step versus ~`0.9957` static typed topology while preserving zero tested failures in event routing, current authority, provenance, predictive rematerialization and resource uniqueness.
 
-> **good local operation values are insufficient when operations materially complement or substitute for one another.**
+I09 then attacks the topology evidence with a correlated spoof source. Selective independent assurance raises attacked scope accuracy to ~`0.933` with zero harmful accepted migrations in the matched family. Simply raising confidence threshold on the same evidence source does not solve the correlated failure.
 
-## AF01–AF03 / I07 — architecture becomes mode, scope and topology
+## I10 — persistent organism runtime API
 
-AF01 gives the same runtime substrate to canonical A/B/C/D organizations and finds a Pareto frontier rather than one universal winner.
+I10 turns those results into a reusable `TypedScopeRuntime` rather than another standalone benchmark.
 
-AF02 lets a selector infer organization from noisy observable structure. It reaches ~`1.563` utility/step versus ~`1.509` for the best fixed mode and ~`1.576` oracle, but loses when regimes change too quickly to amortize reorganization.
+It exposes:
 
-AF03 makes multiple domains coexist simultaneously. Scoped organization wins when domains differ and coupling is low; global organization wins again when domains are homogeneous and tightly coupled.
+- exact evidence/source and predictive-rematerialization records;
+- current versioned capability authority;
+- singular versioned resource leases;
+- typed transition proposals;
+- interaction-aware bundle allocation;
+- proposal-specific assurance tokens;
+- staged/committed/rolled-back topology changes;
+- topology epochs and exactly-once forwarding of in-flight work.
 
-I07 removes predefined subsystem boundaries. A learner sees a noisy changing dependency graph over 12 components and must split/merge coordination scopes while paying migration cost. With 120-step structural regimes it reaches ~`1.058` utility/step versus `1.027` for static global and ~`1.075` oracle; at 20-step regimes adaptive topology loses.
+Eight semantic API tests plus five integration-scenario tests exercise these invariants. In the 900-step integration scenario, topology and authority change while work is queued; source state is rematerialized; structural proposals can be rejected; and every queued event is eventually processed without bypassing the architecture API.
 
-The combined interpretation is:
+## I11 — coordination can overlap ownership
 
-> **organization should be chosen at the scope and timescale where its expected future value exceeds identification, switching, carrying, boundary and migration costs.**
+A disjoint ownership partition is not sufficient to represent every useful relationship.
 
-## I08 — topology now moves real typed state
+With sparse cross-cutting work (~18% active), a temporary non-owning coordination overlay wins (~`1.1303`) over base-only (~`1.1259`), forced disjoint repartition (~`1.0898`) and persistent overlap (~`1.0635`).
 
-I08 is the first executable dynamic-scope runtime rather than another group-label benchmark.
+When cross-cutting work is active ~90% of the time, persistent overlap becomes worth carrying (~`1.1012` vs ~`1.0756` temporary). When coupling becomes effectively global and continuous, one global scope wins (~`1.5130`).
 
-The organism carries exact evidence IDs/provenance references, predictive source references, independent versioned authority, exact resource leases and delayed events across split/merge operations.
+So the runtime now has a separate `CoordinationScopeRegistry`: memberships may overlap, but scopes do not own or duplicate evidence, authority or resource leases.
 
-Across 30 seeds the `typed_epoch` runtime reaches ~`1.0744` utility/step versus ~`0.9957` for static typed topology. It forwards ~`46.9` in-flight events/run across old topology epochs while producing **zero event misroutes, authority violations, provenance failures, rematerialization failures or duplicate resource ownership** in the matched family.
+## I12 — dependency is directional until reciprocity earns sharing
 
-A typed-state ablation with stale scope routes preserves the semantic invariants but misroutes ~45 delayed events/run. A cheaper scope-snapshot migration falls to ~`0.777` utility and breaks provenance, source recoverability, authority freshness and resource uniqueness.
+A one-way dependency does not imply reverse information flow or shared state.
 
-The resulting boundary is:
+In sparse directional structure, symmetric links create ~`11.94` unsupported reverse relationships/step while directed/adaptive representations are effectively zero. In reciprocal clusters, shared coordination becomes cheaper than individually dispatched one-way links. In mixed regimes the adaptive organization uses both simultaneously.
 
-```text
-stable semantic identity != current organizational scope
-```
+Default 30-seed lifetime utility:
 
-A scope can split, merge or disappear without making the evidence, authority or resource it referenced disappear with it.
+- global scope: ~`0.7116`;
+- directed links: ~`0.7034`;
+- symmetric links: ~`0.6689`;
+- **reciprocity-adaptive: ~`0.7394`**.
 
-## I09 — topology proposal is not topology authority
+At 20-step regimes, static global organization wins again because dependency inference cannot amortize its lag.
 
-I09 attacks topology learning with a sustained correlated false-interaction source.
-
-Raw topology accuracy falls from ~`0.906` on honest evidence to ~`0.823` under attack. A higher threshold helps but still accepts ~15 harmful migrations/run, because more confidence from the same correlated source does not provide independence.
-
-Selective independent assurance reaches ~`0.933` attacked pairwise accuracy and accepts zero harmful migrations in the matched family while using ~`5.9` audit samples/step versus `33` for uniform independent checking.
-
-Heavy checking wins when independent evidence is cheap; selective checking overtakes it when assurance becomes expensive. This reproduces the existing assurance-allocation laws at the architecture-reconfiguration layer.
+The runtime now also has a typed `DependencyRegistry`; reciprocity can be detected as evidence for shared coordination but does not automatically create reverse flow, authority, ownership or a scope.
 
 ## JEPA / E24
 
@@ -139,26 +146,26 @@ The goal is not merely an AI that reproduces humanity's knowledge, but one that 
 
 **PS-001 through PS-023** are active reversible constraints. See `clean-sheet/DESIGN_LEDGER.md` for the complete evidence trail and falsifiers.
 
-## Next milestone
+## Next milestone — I13 partial structural commit
 
-The next step is a persistent **typed-scope organism API** so later experiments stop rebuilding the architecture as separate synthetic policies.
+The current runtime still assumes a structural topology commit is atomic.
 
-The shared protocol should expose at least:
+I13 should inject failures after only part of a migration has completed and compare naive in-place mutation, stop-the-world replacement, staged transaction + rollback, and possibly incremental dual-version handoff.
 
-- transition proposal and interaction-aware bundle allocation;
-- evidence/source attachment and rematerialization;
-- current authority lookup;
-- scope split/merge staging;
-- independent assurance requests for consequential structural changes;
-- topology-epoch forwarding of in-flight work;
-- structural commit/rollback;
-- exact resource lease ownership.
+The test must measure whether the transition path preserves:
 
-Once those operations exist behind one interface, future experiments can stress overlapping/nested scopes, asymmetric dependencies, adversarial topology evidence and self-change through the same executable substrate.
+- evidence/source reachability;
+- singular resource leases;
+- current authority semantics;
+- exactly-once in-flight events;
+- topology epoch consistency;
+- rollback/recovery cost and downtime.
+
+A target topology being correct is not enough if the path used to reach it can corrupt the system.
 
 ## Organizing hypothesis
 
-Practical intelligence may be adaptive selection of typed state transitions **and organizational topology**, with computation, information, interaction, durable change, assurance and exploration allocated under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
+Practical intelligence may be adaptive selection of typed state transitions **and typed organizational relationships**, with computation, information, interaction, durable change, assurance and exploration allocated under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
 
 This remains falsifiable.
 
