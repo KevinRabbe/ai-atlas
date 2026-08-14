@@ -1,83 +1,40 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: first model-free organism baseline implemented on 2026-08-14.**
+**Checkpoint: Tier-1 experiment shapes implemented on 2026-08-14.**
 
-## Implemented
+## Implemented probes
 
-### E03 — direct-address history vs compressed state
+E01 hierarchical vs distributed allocation; E02 integrated vs heterogeneous learned computation; E03 direct-address vs compressed state; E04 representation/interface; E05 fixed vs adaptive compute; E09 immediate vs staged consolidation.
 
-Variants:
+## Validation in this pass
 
-- direct-address retained history;
-- compressed current state;
-- hybrid current state + indexed source history.
+The new E01/E02/E04 code was executed locally with Python 3.11+ stdlib only.
 
-Measured:
+**10 additional unit tests pass** for the three new probes. The pre-existing E03/E05/E09 source files were not modified by this implementation pass.
 
-- current/historical/exact accuracy;
-- reads/writes/comparisons;
-- logical active/archive/index state size.
+A reproducible **12-seed aggregate sweep** was completed for E01/E02/E04. The complete aggregate can be regenerated with `python -m ai_atlas_lab.tier1_sweep --seeds 12`, and the load-bearing means are recorded in `PRELIMINARY_TIER1_RESULTS.md`.
 
-### E05 — fixed vs adaptive computation
+## Preliminary replicated patterns
 
-Variants:
+- E01: sparse dependency graphs favor cheap local coordination; deeper/dense dependencies expose bounded local coordination unless extra message rounds are spent.
+- E02: at equal parameter count, strong shared task structure can favor integrated transfer, while divergent tasks favor specialists and shared updates create measurable cross-task interference.
+- E04: no tested representation dominates every requirement; approximate float state is compact and accurate for approximate values, while exact identifiers, protocol evolution, integrity and audit impose different interface requirements.
 
-- several fixed evidence budgets;
-- confidence-threshold adaptive stopping with a hard maximum.
+These are **not architecture selections**.
 
-Measured:
+## Why no design-ledger decision moved yet
 
-- accuracy;
-- average evidence/computation samples;
-- allocation by hidden task difficulty/evidence signal;
-- total logical operations/samples.
+The minimum promotion rule requires replication across a structurally different task family and a resource-regime change in addition to the current synthetic sweeps.
 
-### E09 — immediate durable updates vs staged consolidation
+## Next targets
 
-Variants:
-
-- immediate durable overwrite;
-- N-confirmation tentative staging;
-- decaying evidence-threshold staging.
-
-Measured:
-
-- current-state accuracy;
-- true regime switches;
-- durable update count;
-- false durable updates;
-- adaptation delay after real change;
-- logical reads/writes/operations.
-
-## Validation
-
-The current implementation was executed locally with Python 3.11+ stdlib only.
-
-**10 unit tests pass** across the three probes.
-
-The tests validate benchmark semantics such as:
-
-- compressed state intentionally loses history/exact payload while preserving current-state lookup;
-- direct/hybrid state preserves the required query types in controlled fixtures;
-- adaptive compute respects its maximum budget and allocates fewer samples to easier evidence regimes than harder ones;
-- staged consolidation reduces durable churn from noisy observations but introduces delay after genuine state changes.
-
-These are benchmark/instrumentation checks, **not architecture conclusions**.
-
-## Current research status
-
-No Phase-9 architecture family has been selected.
-
-The organism exists to generate evidence for the unresolved design ledger. A result is promoted only after matched multi-seed/task/resource sweeps and a mechanism-specific failure/ablation test.
-
-## Next implementation targets
-
-1. **E01** — hierarchical versus distributed operation allocation;
-2. **E02** — integrated versus heterogeneous computation;
-3. **E04** — internal representation/interface format;
-4. extend E09 so the consolidation threshold is learned/adapted to hidden environment volatility rather than hand-fixed;
-5. add multi-seed sweep/result aggregation without adding runtime dependencies.
+1. second E01 environment with independent communication latency/price;
+2. nonlinear/compositional E02 family and partially shared alternatives;
+3. E04 bandwidth/fidelity sweep plus learned continuous state with exact side channel;
+4. adaptive E09 consolidation threshold conditioned on hidden volatility;
+5. multi-seed aggregation for E03/E05/E09;
+6. then E06 multiple belief hypotheses and E07 active information acquisition.
 
 ## Guardrail
 
-Do not add a language model merely to make the organism look more like a modern AI system. Add learned models only when the active experiment requires a capability that cannot be meaningfully represented by controlled synthetic mechanisms.
+During Phase 10 the measuring instrument must remain simpler than the hypotheses it measures.
