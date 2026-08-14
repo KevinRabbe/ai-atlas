@@ -2,7 +2,7 @@
 
 **Status:** reproducible synthetic evidence, not architecture selection.
 
-This checkpoint aggregates the first Tier-1 sweeps and their initial promotion-quality follow-ups. Full E01/E02/E04 aggregates are reproducible with `python -m ai_atlas_lab.tier1_sweep --seeds 12`.
+This checkpoint aggregates the first Tier-1 sweeps and their promotion-quality follow-ups. Full E01/E02/E04 aggregates are reproducible with `python -m ai_atlas_lab.tier1_sweep --seeds 12`.
 
 ## E01 — dependency coordination
 
@@ -45,7 +45,39 @@ A task-0 rule-shift repair changes unrelated-task accuracy in the integrated sys
 
 This strengthens the interpretation that sharing is valuable when structure is truly reusable and data are scarce, but is not free: interference and approximation constraints can dominate as task diversity increases.
 
-DL-002 still needs a structurally different nonlinear/compositional family.
+## E02B — nonlinear/compositional integration
+
+The second E02 family maps six raw binary variables into 15 pairwise interaction features, then learns task-specific compositional rules. The parameter-matched comparison is 45 parameters of `shared + isolated residual` against 45 parameters of independent specialists; a 15-parameter shared-only learner is retained as a lower-capacity transfer reference.
+
+12-seed mean accuracy:
+
+### 240 training examples
+
+| sharedness | shared only | shared + residual | specialists |
+|---:|---:|---:|---:|
+| 0.95 | 0.968 | 0.932 | 0.837 |
+| 0.65 | 0.849 | 0.857 | 0.841 |
+| 0.25 | 0.703 | 0.747 | 0.868 |
+
+### 480 training examples
+
+| sharedness | shared only | shared + residual | specialists |
+|---:|---:|---:|---:|
+| 0.95 | 0.983 | 0.957 | 0.914 |
+| 0.65 | 0.857 | 0.894 | 0.911 |
+| 0.25 | 0.709 | 0.793 | 0.917 |
+
+### 1,200 training examples
+
+| sharedness | shared only | shared + residual | specialists |
+|---:|---:|---:|---:|
+| 0.95 | 0.986 | 0.970 | 0.965 |
+| 0.65 | 0.856 | 0.922 | 0.969 |
+| 0.25 | 0.708 | 0.850 | 0.961 |
+
+This second family reproduces the same broad transfer/interference continuum: stronger sharing becomes more valuable as reusable structure rises and task-specific data fall; isolation becomes more valuable as task rules diverge. The partially shared candidate can occupy the intermediate low-data regime rather than forcing a binary integrated-vs-specialist choice.
+
+However, the partial learner currently spends about **140 logical operations per training example** versus **75** for shared-only and specialists. Therefore DL-002 still remains unresolved: parameter matching is not enough; the next comparison must match realized computation/latency or make the partial path conditional so it earns the extra work.
 
 ## E04 — representation/interface
 
@@ -67,12 +99,14 @@ This is evidence for typed/interface-sensitive representation, not evidence agai
 
 ## Why the design ledger is still conservative
 
-The project is intentionally not converting replicated toy results into a finished architecture. DL-001 now has two task families but still awaits E22; DL-002 and DL-004 have resource-regime evidence but not yet second task families. That asymmetry is useful: it tells us exactly which new experiments have the highest information value.
+The project is intentionally not converting replicated toy results into a finished architecture. DL-001 now has two task families but still awaits E22. DL-002 now also has two task families, but its most interesting partially shared mechanism has an unmatched arithmetic cost. DL-004 has a resource-regime sweep but not yet a second task family.
+
+That is useful: the remaining uncertainty is increasingly about **where the crossover lies under matched physical cost**, not about whether the trade-offs exist at all.
 
 ## Next evidence needed
 
-1. nonlinear/compositional E02 family + partially shared alternatives;
-2. E04 backtracking/constraint messages + learned latent channel with exact side state;
+1. compute-matched/conditional E02B partial sharing;
+2. E04 backtracking/constraint messages + continuous latent channel with exact side state;
 3. adaptive E09 consolidation under hidden volatility;
 4. E22 cross-resource metacontrol;
 5. then Tier-2 E06/E07 without freezing unresolved boundaries.
