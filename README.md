@@ -2,32 +2,19 @@
 
 A research atlas for reconstructing artificial intelligence from first principles.
 
-The repository does **not** assemble today's AI stack by habit. It extracts mechanisms, evidence, constraints, failures and open questions; deliberately forgets implementation assumptions; derives competing clean-sheet organizations; and then tests them experimentally.
+The repository does **not** assemble today's AI stack by habit. It extracts mechanisms, evidence, constraints, failures and open questions; deliberately forgets implementation assumptions; derives competing clean-sheet organizations; and tests them experimentally.
 
 ## Core rule
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-Named model blocks, natural-language reasoning, databases, agents, recursive systems, harnesses, biological mechanisms, particular learning algorithms, world-model products, verifier products, self-improvement frameworks and current hardware are candidates or evidence—not axioms.
+Named model blocks, natural-language reasoning, databases, agents, recursive systems, harnesses, biological mechanisms, learning algorithms, verifier products and current hardware are evidence/candidates—not axioms.
 
 ## Current state
 
 Evidence through self-improvement is mapped to first-pass depth. Cross-domain synthesis is complete to first-pass depth. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no architecture family selected**. Phase 10 experimental reconstruction: **active**.
 
-The experimental organism now covers coordination, learned sharing, persistent evidence/current belief, representation, adaptive compute, competing hypotheses, active observation, predictive-state breadth, persistence timescales, retrieval policy, cross-resource allocation and verified beyond-teacher discovery mechanics.
-
-The dominant result is **conditional structure rather than universal winners**:
-
-- coordination follows the scope of coupling;
-- sharing is useful where structure is reusable and harmful where it creates interference;
-- current belief should remain revisable from evidence;
-- multiple hypotheses are worth carrying when ambiguity and consequence justify their cost;
-- observation and inference are resource-priced operations;
-- exact identity/provenance and approximate learned state have different representation requirements;
-- persistence timescale must distinguish actual world change from unreliable evidence when possible;
-- retrieval should optimize applicability/downstream value rather than resemblance alone;
-- cross-resource allocation must account for substitution and shared scarcity;
-- human/bootstrap knowledge may be exceeded, but novelty becomes knowledge only through sufficiently independent evidence.
+Phase 10 has now moved from isolated mechanism tests into **composition testing**. The current experimental history contains 104 added passing unit tests and three integrated generations (`I01`–`I03`) alongside the individual discriminator families.
 
 ## Current provisional clean-sheet selections
 
@@ -41,43 +28,75 @@ The dominant result is **conditional structure rather than universal winners**:
 8. **PS-008 — verified epistemic frontier expansion**;
 9. **PS-009 — conditional sharing with isolation fallback**;
 10. **PS-010 — joint adaptive resource substitution under shared scarcity**;
-11. **PS-011 — retrieval by expected applicability/downstream value**.
+11. **PS-011 — retrieval by expected applicability/downstream value**;
+12. **PS-012 — adaptive predictive-state breadth / recoverable optionality**;
+13. **PS-013 — failure-mode-independent assurance**;
+14. **PS-014 — consequence/uncertainty/resource-sensitive assurance allocation**;
+15. **PS-015 — causal/eligibility-scoped delayed credit**.
 
 These are not product components and do not select architecture A/B/C/D. Their concrete mechanisms remain open and falsifiable.
 
-## One important question still open
+## What composition is revealing
 
-E08's first predictive-state-breadth family shows that no fixed state width dominates:
+The fifteen entries are beginning to collapse into fewer candidate architectural laws:
 
-- fixed future objective -> narrow decision-sufficient state is cheapest;
-- occasional objective change -> narrow hot state + recoverable source evidence wins;
-- rapid objective switching -> broad hot state wins because repeated reconstruction becomes expensive.
+- **scope follows coupling/responsibility:** coordination and credit remain local until real dependencies require broader propagation;
+- **state follows future value:** hot breadth, persistence, retrieval and source retention depend on future usefulness and recoverability;
+- **work follows marginal value:** inference, observation, search and assurance are allocatable resources rather than fixed rituals;
+- **sharing follows reusable structure:** common learned state is valuable until interference exceeds transfer;
+- **authority follows evidence:** novelty, confidence and correlated evaluator votes do not create epistemic authority;
+- **durability raises the evidence requirement:** reusable/persistent state changes deserve stronger assurance than temporary hypotheses.
 
-DL-008 remains unresolved until this survives a second learned/dynamic predictive family.
+These recurring laws—not the current list of experiment mechanisms—are becoming the candidate skeleton of the eventual architecture.
+
+## Integrated checkpoints
+
+### I01 — epistemic composition
+
+Memory conflict, ambiguous action, active evidence, discovery staging and shared resource allocation run in one lifecycle. The full composition beats each single-principle ablation; immediate consolidation demonstrates how evaluator errors become persistent downstream errors.
+
+### I02 — learned metacognition
+
+The organism no longer assumes operation quality or verifier safety is known. It learns changing resource competence and family-specific verifier failure rates. Conditional shared/private estimates outperform all-shared, all-private and frozen alternatives over the changing lifetime.
+
+### I03 — assurance composition
+
+Final-result correctness, process validity and evaluator independence are separated. Correlated evaluators remain exploitable as optimizer/search pressure rises. Uniform heavy assurance wins while verification is cheap; explicit adaptive assurance becomes preferable as verification prices rise.
+
+## Credit assignment
+
+Two structurally different families now support PS-015:
+
+- a nine-stage serial task where sparse final reward diffusely blames correct stages;
+- parallel speculative branches where only one branch actually causes the outcome.
+
+The common result is that a global outcome does **not** require global identical credit. Local causal scope and eligibility can preserve attribution while drastically reducing delayed trajectory state.
 
 ## Discovery target
 
-Human knowledge is treated as the bootstrap state, not the final epistemic ceiling.
+Human knowledge is treated as the bootstrap state, not the final epistemic ceiling:
 
 `inherited knowledge -> competing hypothesis -> search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`
 
-The current E23/E23B experiments demonstrate controlled **beyond-teacher mechanics**, not new human knowledge.
+The current E23/E23B experiments demonstrate controlled beyond-teacher mechanics, not new human knowledge.
 
-## Next milestone
+## Next milestone — I04
 
-The next major step is **composition rather than accumulation**:
+The next step is to reduce hand-written controller boundaries further:
 
-1. finish E08's second family;
-2. construct a next-generation integrated organism constrained by PS-001 through PS-011;
-3. test whether the principles still improve lifetime utility when they interact;
-4. measure metacontrol/state/provenance overhead and ablate each principle;
-5. only then move deeper into verification, credit assignment, self-improvement and physical co-design.
+1. one typed proposal/state-transition interface for compute, retrieval, sensing, verification, persistence and credit eligibility;
+2. learned estimates of future value, coupling, resource quality and evaluator independence;
+3. adaptive state breadth inside the same lifetime;
+4. pairwise/multi-principle interaction ablations;
+5. explicit checks that shared metacontrol cannot turn an ordinary cognitive score into authority for durable or privileged transitions.
+
+Then the next unresolved high-value decisions are verification granularity (DL-012), externally enforced capability boundaries (DL-014), hidden/rotating self-change regression evidence (DL-020), and later self-improvement lineage/mutation scope.
 
 See `clean-sheet/DESIGN_LEDGER.md`, `experiments/STATUS.md` and `research/ROADMAP.md` for the detailed checkpoint.
 
 ## Organizing hypothesis
 
-Practical intelligence may involve adaptive selection of state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources. Current experiments support multiple pieces independently, but this remains falsifiable and does not determine a final architecture.
+Practical intelligence may involve adaptive selection of typed state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources. Current experiments increasingly support this as a common organizing lens, but it remains falsifiable and does not determine a final architecture.
 
 ## End goal
 
