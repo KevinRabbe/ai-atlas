@@ -1,18 +1,20 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-three provisional design principles selected; composition has progressed through I07 and architecture-level tests AF01–AF03. No fixed Phase-9 A/B/C/D family is selected.**
+**Checkpoint: twenty-three provisional design principles selected; composition has progressed through I09 and architecture-level tests AF01–AF03. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
 
 ## Validation
 
-Phase 10 now contains **217 added test cases**.
+Phase 10 now contains **229 added test cases**.
 
-Recent additions:
+Recent architecture/composition additions:
 
-- I06 integrated runtime allocation: 6 tests;
+- I06 interaction-aware runtime allocation: 6 tests;
 - AF01 matched fixed-family Pareto benchmark: 5 tests;
 - AF02 adaptive organizational mode selection: 6 tests;
 - AF03 simultaneous scoped organization: 5 tests;
-- I07 dynamic scope formation: 5 tests.
+- I07 dynamic scope formation: 5 tests;
+- I08 typed dynamic-scope runtime: 6 tests;
+- I09 topology assurance under correlated/spoofed evidence: 6 tests.
 
 The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
@@ -20,7 +22,7 @@ The shell environment cannot clone GitHub because DNS resolution is unavailable 
 
 Core/promotion experiments cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and E24 predictive representation / JEPA mechanism discrimination.
 
-Integrated composition generations now run through **I07**, with I05B as the imperfect-feedback metacognition branch.
+Integrated composition generations now run through **I09**, with I05B as the imperfect-feedback metacognition branch.
 
 JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 supports latent predictive efficiency but rejects overly coarse/passive-only predictive sufficiency.
 
@@ -32,69 +34,81 @@ JEPA remains an explicit candidate mechanism family, **not a selected architectu
 
 I06 puts high fidelity, source rematerialization vs broad hot state, synchronization and active intervention into one shared runtime budget.
 
-30-seed learned-joint utility is ~`1.5640`/task versus ~`1.3549` for factorized independent controllers, ~`1.4096` uniform-safe and ~`0.4769` uniform-cheap. The learned allocator suffers a real hidden-shift drop and later recovers.
+30-seed learned-joint utility is ~`1.5640`/task versus ~`1.3549` for factorized independent controllers, ~`1.4096` uniform-safe and ~`0.4769` uniform-cheap.
 
 **Result:** operation values cannot always be summed independently. Material complements/substitutes require interaction-aware allocation.
 
 ## AF01 — fixed architecture families form a Pareto frontier
 
-Eight-seed utility means:
+No A/B/C/D embodiment wins all matched regimes. Sparse/local, tightly coupled, shared-transfer and recurrent/variant conditions reward different organizations.
 
-| scenario | A | B | C | D |
-|---|---:|---:|---:|---:|
-| sparse stationary | 1.6033 | 1.5991 | 1.5614 | **1.6098** |
-| coupled switching | 1.3683 | 1.3704 | 1.3896 | **1.4435** |
-| recurring mixed | 1.3953 | 1.3806 | **1.4797** | 1.4367 |
+**Result:** the Phase-9 families are better interpreted as candidate organizational modes than universal architectures.
 
-Different regimes reward different organization. Sparse rankings also change as explicit organization costs change. AF01 therefore does not justify selecting or eliminating a fixed family.
+## AF02 — organizational mode can be adaptive
 
-## AF02 — organization itself can be adaptive
+Default 30-seed adaptive utility is ~`1.5625`/step versus ~`1.5087` best fixed and ~`1.5762` oracle. The selector receives noisy observable structure, not hidden regime labels.
 
-AF02 removes the hidden regime label. The selector sees noisy observed coupling/conflict/transfer/recurrence cues plus its own realized reward history.
+At ~20 steps/regime the adaptive mode loses to fixed organization.
 
-30-seed default:
-
-| policy | utility/step | best-mode fraction |
-|---|---:|---:|
-| fixed A | 1.4834 | ~0.25 |
-| fixed B | 1.4518 | ~0.25 |
-| fixed C | 1.4394 | ~0.25 |
-| fixed D | **1.5087** | ~0.25 |
-| **adaptive** | **1.5625** | **0.9065** |
-| oracle | **1.5762** | 1.0000 |
-
-The learned selector uses B ~87% in local regimes, A ~91% under high coupling, C ~92% under high sharedness and D ~92% under recurrence.
-
-**Falsifier:** at only 20 steps/regime, adaptive organization loses to the best fixed mode. Organizational plasticity earns itself only when expected regime persistence exceeds identification/switch/carrying cost.
+**Result:** organizational plasticity must amortize identification, switching and carrying cost.
 
 ## AF03 — organization should also be scoped
-
-Four domains operate simultaneously.
 
 - heterogeneous domains + cross-domain coupling `0.12`: scoped adaptive ~`1.5543`, global adaptive ~`1.4947`;
 - homogeneous domains + coupling `0.80`: global adaptive ~`1.5711`, scoped adaptive ~`1.5537`.
 
-In heterogeneous domains the scoped advantage decays continuously as cross-domain coupling rises and is essentially gone at coupling `1.0`.
+The scoped advantage decays continuously as cross-domain coupling rises.
 
 **Result:** neither global organization nor maximal modularity is universal. Organizational scope expands with coupling.
 
 ## I07 — dynamic scope formation from noisy dependencies
 
-I07 removes predefined domain boundaries. Twelve nodes move among three recurring hidden dependency partitions. The learner sees noisy pairwise interaction events and periodically splits/merges scopes, paying migration cost.
+Twelve nodes move among recurring hidden dependency partitions. The learner sees noisy pairwise interaction events and periodically splits/merges scopes while paying migration cost.
 
-20-seed default:
+Default 20-seed adaptive utility is ~`1.0583`/step with ~`0.9045` pairwise scope accuracy versus `1.0270` static global and ~`1.0748` oracle. At 20-step regimes adaptive falls below static global.
 
-| topology | utility/step | pairwise scope accuracy |
-|---|---:|---:|
-| global | 1.0270 | 0.2727 |
-| local | 0.8950 | 0.7273 |
-| fixed initial | 0.9760 | 0.7273 |
-| **adaptive** | **1.0583** | **0.9045** |
-| oracle | **1.0748** | 1.0000 |
+**Result:** topology membership itself can be revisable state, but topology plasticity must amortize inference/migration cost.
 
-With 120-step regimes adaptive scope formation beats every static topology after migration cost. At 20 steps/regime it falls to ~`0.9842`, below static global `1.0270`.
+## I08 — first executable typed-scope runtime
 
-**Result:** topology membership itself can be revisable state, but topology plasticity only earns itself on timescales that amortize evidence/migration cost.
+I08 puts real typed state behind I07's changing topology:
+
+- exact evidence IDs + provenance/source references;
+- predictive records + rematerialization source refs;
+- independent versioned authority state;
+- exact resource leases;
+- delayed/in-flight events with topology epochs.
+
+30-seed means:
+
+| runtime | utility/step | event misroutes | authority violations | provenance failures | rematerialization failures | duplicate resource exposure/step |
+|---|---:|---:|---:|---:|---:|---:|
+| static typed | 0.9957 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000 |
+| scope snapshot | 0.7770 | ~45.0 | ~4.53 | ~108.3 | ~97.0 | ~8.218 |
+| typed stale-route | 1.0636 | ~45.0 | 0.0 | 0.0 | 0.0 | 0.000 |
+| **typed epoch** | **1.0744** | **0.0** | **0.0** | **0.0** | **0.0** | **0.000** |
+
+The typed-epoch runtime forwards ~`46.9` delayed events/run across topology changes instead of losing their route.
+
+**Result:** dynamic organization can change ownership/routing, but exact semantic identity, provenance, authority and resource identity must remain valid independently of the topology being changed.
+
+## I09 — topology changes need independent assurance when evidence is correlated
+
+A correlated spoof source injects sustained false interactions between truly separate groups.
+
+Raw topology accuracy falls from ~`0.9061` on honest evidence to ~`0.8227` under attack. Raising the threshold improves accuracy but still accepts ~`15.2` harmful migrations/run.
+
+Selective independent assurance under attack reaches ~`0.9325` pairwise accuracy with **zero harmful accepted migrations** in the matched family and uses ~`5.9` audit samples/step versus `33.0` for uniform independent checking.
+
+Audit-price crossover under attack:
+
+| audit price/sample | uniform independent | selective independent |
+|---:|---:|---:|
+| 0.00025 | **1.0480** | 1.0406 |
+| 0.00045 | **1.0414** | 1.0394 |
+| 0.00080 | 1.0298 | **1.0373** |
+
+**Result:** topology proposal evidence is not automatically topology-promotion evidence. Failure-mode independence and consequence/resource-sensitive assurance apply to reconfiguration itself.
 
 ---
 
@@ -124,46 +138,47 @@ With 120-step regimes adaptive scope formation beats every static topology after
 22. PS-022 — event-scoped execution with consistency-triggered synchronization;
 23. PS-023 — value/sensitivity-scaled fidelity allocation.
 
-No additional principle is created from AF01–AF03/I07 yet; they are composition-level evidence for how the existing laws organize a whole system.
+No additional principle is created from AF01–AF03/I07–I09. These are architecture-level composition evidence showing how the existing laws organize a whole system.
 
 ---
 
-# Current architecture compression hypothesis
+# Current executable architecture hypothesis
 
 ```text
-source/world evidence
-      ↓
-typed state + transition proposals
-      ↓
-learned interaction-aware value/resource allocation
-      ↓
-dynamic coupling scopes
-      ├─ local/distributed organization where locality pays
-      ├─ hierarchical arbitration where scarcity/coupling pays
-      ├─ integrated/shared computation where transfer pays
-      └─ variant preservation where recurrence/option value pays
-      ↓
-failure-layer assurance + current authority boundary
-      ↓
-execute at scoped timing / fidelity / state breadth
-      ↓
+stable typed semantic plane
+  identities / provenance / source refs
+  authority versions / resource leases
+        ↓ referenced by
+revisable organizational plane
+  learned dependency graph
+  dynamic scopes + local organizational modes
+  resource allocation / routing / cache placement
+        ↓
+interaction-aware transition/resource allocator
+        ↓
+consequence-sensitive independent assurance
+  for durable / external / topology-changing transitions
+        ↓
+versioned transition protocol
+  execute / split / merge / forward / rollback
+        ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
-The strongest new architecture inference is:
+The strongest current inference is:
 
-> **mode, scope and scope membership are all potentially adaptive state, but each form of plasticity must earn its identification, switching, carrying and migration costs.**
+> **mode, scope and scope membership can be adaptive state, but semantics that must survive reorganization cannot be defined only by the organization being changed. Reconfiguration itself is a consequential transition and must earn its evidence, assurance and migration cost.**
 
-This remains a hypothesis, not a final selected architecture.
+This remains a falsifiable architecture hypothesis, not a frozen final architecture.
 
 ## Next high-value work
 
-1. build the first **executable candidate architecture skeleton** around dynamic typed scopes rather than another abstract family benchmark;
-2. make split/merge operations move real evidence references, predictive state, resource ownership, authority versions and in-flight events while preserving invariants;
-3. then stress topology changes with stale/adversarial coupling evidence;
+1. build a persistent **typed-scope organism API** so future experiments run through one executable protocol rather than separate synthetic policies;
+2. expose operations for transition proposal/allocation, scope split/merge, epoch forwarding, authority lookup, evidence/source linkage, rematerialization, assurance request and structural commit/rollback;
+3. stress that API with overlapping/nested scopes, asymmetric dependencies and state migration under in-flight work;
 4. I05C remains queued for correlated/adversarial audit sources and partially unresolved outcomes;
 5. neural E24C remains conditional on representation geometry still being architecture-discriminating.
 
 ## Guardrail
 
-Self-improvement remains inside the staged change protocol: independent/current capability authority, rotating independent regression evidence, scoped causal attribution, explicit rollback/reversibility where possible, and no proposal path may treat its own score as promotion authority.
+Self-improvement and topology change remain inside the staged change protocol: independent/current capability authority, sufficiently independent regression/assurance evidence, scoped causal attribution, explicit rollback/reversibility where possible, and no proposal path may treat its own score as promotion authority.
