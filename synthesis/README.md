@@ -4,7 +4,7 @@ Synthesis is where findings across atlas domains are combined. It is intentional
 
 A synthesis document must:
 
-1. cite the atlas claims/evidence it depends on;
+1. cite/trace the atlas claims/evidence it depends on;
 2. distinguish observation from inference;
 3. include evidence against its conclusion;
 4. state the range of conditions where it is expected to hold;
@@ -19,12 +19,47 @@ Not:
 
 `paper result -> add that component to our AI`.
 
-## Initial synthesis questions
+## Phase-7 synthesis state
 
-- Which information belongs in weights, active state, persistent memory, executable skills, external knowledge, or environment state?
-- When is additional model capacity better than conditional computation or external computation?
-- What is the optimal unit of inference-time search: token, latent state, program, plan, model call, agent, or full harness?
-- How should a system estimate expected value of more computation before spending it?
-- Which functions require a learned neural substrate and which are better served by deterministic computation?
-- What forms of verification are trustworthy enough to drive autonomous improvement?
-- How should short-term adaptation become durable knowledge without catastrophic accumulation of errors?
+**First cross-domain synthesis completed on 2026-08-14.**
+
+Current synthesis artifacts:
+
+- [`CROSS_DOMAIN_SYNTHESIS.md`](CROSS_DOMAIN_SYNTHESIS.md) — recurring principles and falsifiable meta-hypothesis.
+- [`REQUIRED_FUNCTIONS.md`](REQUIRED_FUNCTIONS.md) — 25 implementation-neutral functions the eventual system must address; explicitly not a module list.
+- [`DESIGN_DIMENSIONS.md`](DESIGN_DIMENSIONS.md) — unresolved axes to test rather than choose philosophically.
+- [`ANTI_ASSUMPTIONS.md`](ANTI_ASSUMPTIONS.md) — contemporary implementation habits that must not become axioms.
+- [`HIGH_VALUE_OPEN_QUESTIONS.md`](HIGH_VALUE_OPEN_QUESTIONS.md) — uncertainty-removal priorities.
+
+Two high-value gaps identified by the synthesis received focused evidence passes before clean-sheet restatement:
+
+- machine-native representation & communication;
+- objective uncertainty & metareasoning/resource-rational control.
+
+## Current organizing hypothesis
+
+Evidence is consistent with a system that adaptively selects state transitions and allocates:
+
+- computation;
+- information;
+- durable change;
+- assurance;
+- exploration/design effort;
+
+under uncertain world state, uncertain objectives, finite physical resources and consequence-dependent risk.
+
+This remains a falsifiable organizing hypothesis, **not** the definition of intelligence and not an architecture decision.
+
+## Remaining synthesis questions
+
+- Should allocation/control be centralized, distributed, hierarchical or mostly implicit?
+- Which required functions benefit from shared mechanisms and which need isolation?
+- How should uncertainty compose across heterogeneous modules?
+- How should decision-sufficient representations preserve optionality for unknown future goals?
+- What system-level resource/capacity metric should replace parameter count?
+- How should a trusted assurance system itself migrate/improve without circular approval?
+- Can value-of-computation/change/assurance be estimated cheaply enough to outperform fixed heuristics?
+
+## Gate to architecture design
+
+Before architecture candidates are selected, Phase 8 must restate the requirements **without implementation vocabulary**. Only then should competing designs be derived.
