@@ -6,31 +6,27 @@ Define taxonomy, evidence schema, claim IDs, contradiction handling, source stan
 
 ## Phase 1 — Establish the computational substrate
 
-Research foundations, architectures, scaling laws, sparsity/conditional computation, recurrence/state-space approaches, memory hierarchy, hardware constraints, systems efficiency, and biologically evolved computational/developmental mechanisms.
-
-**Progress:** Foundations, coupled architecture/systems, and biological-intelligence/evolution first passes completed on 2026-08-14; all remain open for targeted gap closure.
-
-**Phase-1 synthesis state:** first-pass exit condition substantially met. Remaining gaps include memory-capacity/interference theory, graph/local computation, communication lower bounds, alternative hardware, biological fault tolerance and matched cross-hardware experiments.
+Foundations, coupled architecture/systems, and biological-intelligence/evolution first passes completed on 2026-08-14. Open for targeted gap closure.
 
 ## Phase 2 — Learning and adaptation
 
-Map self-supervised learning, supervised learning, RL/RLVR, preference learning, imitation, distillation, curriculum, continual learning, meta-learning, test-time learning and synthetic data. Include learning substrates/timescales: weights, fast state, episodic memory, skills, routing policies, local eligibility, consolidation and architecture/regulatory state.
-
-**Progress:** first evidence pass completed on 2026-08-14; not saturated. Current synthesis treats learning as change allocation across signal source, update mechanism, substrate and timescale. It maps continual interference/replay, meta/test-time adaptation, parameter-efficient deltas, distillation, self-play/curriculum and provisional substrate migration rules.
-
-**Remaining gaps before Phase-2 saturation:** active learning/value-of-information data selection; large-scale task-free continual learning; unlearning/knowledge editing; synthetic-data feedback/collapse; multi-objective learning; learned optimizers/update rules; autonomous skill creation/retirement; direct equal-budget comparisons across context, memory, adapters and shared weights.
-
-Exit condition: clear evidence-based separation of what belongs in weights versus external state/skills/memory and when information should migrate between stores. **First-pass framework established; quantitative migration policy unresolved.**
+First evidence pass completed on 2026-08-14. Current synthesis treats learning as change allocation across signal source, update mechanism, substrate and timescale. Quantitative migration policy remains unresolved.
 
 ## Phase 3 — Inference-time intelligence
 
 Map reasoning traces, search, planning, test-time compute, decomposition, recursion/RLM, tool use, agents, harnesses, multi-agent systems and recursive harnesses.
 
-Exit condition: a compute-allocation model that explains when to solve, search, retrieve, execute, delegate, recurse or verify.
+**Progress:** first evidence pass completed on 2026-08-14; not saturated. Current synthesis treats inference as adaptive operation selection under budgets: internal compute, branching, retrieval, tools, execution, delegation, recursion, verification and stopping. Harness/runtime policy and evaluator reliability are first-class variables.
+
+**Remaining gaps:** formal value-of-computation/metareasoning; latent/executable reasoning; process verification; trajectory/event-state recovery; tool reliability/latency routing; multi-agent communication topology; adversarial evaluator pressure; learned operation-selection and stopping policies.
+
+Exit condition: a compute-allocation model that explains when to solve, search, retrieve, execute, delegate, recurse or verify. **Qualitative first-pass framework established; quantitative controller unresolved.**
 
 ## Phase 4 — Persistent intelligence
 
 Map memory, knowledge, world models, simulation, multimodal perception/action, temporal state, uncertainty and continual adaptation.
+
+**Next active area.**
 
 ## Phase 5 — Verification, reliability and control
 

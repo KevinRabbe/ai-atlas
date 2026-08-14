@@ -2,25 +2,36 @@
 
 ## Required function
 
-Transform a problem state into a high-quality decision or solution while allocating finite compute intelligently.
+Allocate computation to transform an initial problem state into a reliable solution/action when direct amortized prediction is insufficient.
 
-## Mechanism families to map
+## Status
 
-Direct amortized prediction; explicit intermediate reasoning; sampling and aggregation; tree/graph search; planning; program synthesis/execution; verifier-guided search; test-time compute scaling; decomposition; recursive model calls; recursive harnesses; theorem proving; hybrid neural-symbolic search.
+**First evidence pass completed on 2026-08-14; not saturated.**
 
-## Early evidence anchors
+Detailed notes now live under [`inference-time-intelligence/`](inference-time-intelligence/INDEX.md). This pass maps deliberation, branching/search, compute allocation/stopping, tools/execution, external context/RLM recursion, delegation/multi-agent computation, harness policy and evaluator-guided evolutionary loops.
 
-Chain-of-thought shows that externalized intermediate steps can improve some complex reasoning tasks; self-consistency shows gains from sampling diverse paths; Tree of Thoughts demonstrates explicit search/backtracking; ReAct interleaves inference and environmental actions; RLM externalizes large context and recursively operates over relevant pieces; Recursive Agent Harnesses move the recursive unit from a model call to a tool-capable harness.
+## First-pass findings
 
-These results establish that **inference procedure is itself an architectural variable**. They do not establish that textual chains, trees, recursion, or any particular agent loop are universally optimal.
+1. **Intermediate state matters, but its representation is open.** Textual chain-of-thought proves utility of revisable intermediate computation, not language as a necessary internal format.
+2. **Inference compute has diminishing/conditional returns.** Problem difficulty and verification determine which scaling strategy pays off.
+3. **Verification changes search economics.** Reliable evaluators turn generation into directed optimization; weak evaluators cap safe optimization pressure.
+4. **Tools are specialist compute.** The controller should route arithmetic, retrieval, execution or proof to external mechanisms when cheaper/more reliable.
+5. **Interfaces are capability.** Agent-computer/harness design can change performance with fixed weights.
+6. **Large contexts can be environments.** Selective programmatic access and recursion can replace repeated full-context ingestion.
+7. **Recursion/delegation are conditional.** Their decomposition/parallelism benefit must exceed setup, communication and aggregation cost.
+8. **Harness policy is optimizable state.** Context, scheduling and tool policies can be evolved/edited independently and regression-tested.
+9. **Stopping is an operation.** More tokens/agents are not intrinsically better; the target is marginal expected utility.
 
 ## Clean-sheet questions
 
-- What should count as a reasoning state?
-- Can useful deliberation occur in compact learned/structured state rather than natural language?
-- How should expected value of another computation be estimated?
-- What decomposition structures minimize coordination overhead?
-- Which tasks benefit from recursion versus iterative/local computation?
-- Can stopping and branching policies be learned independently of the task solver?
+- What representation should intermediate computation use when humans do not need to inspect it?
+- How should a controller estimate the expected value of another reasoning/search/tool step?
+- When should uncertainty trigger retrieval, action, branching, delegation, recursion or a question to the user/environment?
+- How independent must candidate paths/workers be before consensus adds evidence?
+- How should verifier reliability limit search/optimization pressure?
+- When should a successful expensive trajectory be distilled into a reusable skill/weight update?
+- How can inference state be replayed/recovered without forcing every event back through the model?
 
-See seed sources: Wei 2022; Wang 2022; Yao 2022/2023; Zhang 2025; Lumer 2026.
+## Anti-assumptions
+
+Do not assume reasoning equals text generation, planning equals a natural-language plan, recursion is inherently superior, multi-agent means diversity, or more test-time compute monotonically improves performance. Treat every inference operation as a resource allocation with measurable marginal value.

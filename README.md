@@ -8,7 +8,7 @@ The purpose of this repository is **not** to document today's implementations an
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Transformers, natural-language chains of thought, vector databases, agents, RLMs, harnesses, biological neurons, genomes, particular learning algorithms, and current hardware are candidates or evidence—not axioms.
+After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Named model blocks, natural-language reasoning, vector databases, agents, recursive systems, harnesses, biological mechanisms, particular learning algorithms, and current hardware are candidates or evidence—not axioms.
 
 ## Repository layers
 
@@ -24,10 +24,16 @@ After a research area has been mapped, synthesis should restate the problem in i
 - Architecture + systems/hardware: first coupled evidence pass complete; not saturated.
 - Biological intelligence, development & evolution: first evidence pass complete; not saturated.
 - Learning & adaptation: first evidence pass complete; not saturated.
-- Phase 3 inference-time intelligence: next active area.
+- Inference-time intelligence: first evidence pass complete; not saturated.
+- Phase 4 persistent intelligence: next active area.
 - Clean-sheet architecture selection: deliberately **not started**.
 
-A recurring theme now spans all four completed passes: an intelligent system may need to allocate not only compute but also **change**—choosing what state changes, how durable that change should be, and when repeated expensive computation is worth consolidating into reusable competence.
+Two recurring allocation problems now span the Atlas:
+
+1. **compute allocation** — what operation should run next, where and for how long;
+2. **change allocation** — what state should change, how durable it should be and when it should consolidate or be forgotten.
+
+These are provisional cross-domain patterns, not yet a final theory of intelligence.
 
 ## Evidence discipline
 
