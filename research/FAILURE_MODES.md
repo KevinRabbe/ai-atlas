@@ -10,6 +10,10 @@ Distribution-blind algorithm ranking; capacity-equals-competence fallacy; compre
 
 Confabulation; brittle generalization; calibration failure; reward hacking; mode collapse; catastrophic forgetting; spurious correlations; representation bottlenecks.
 
+## Learning and adaptation
+
+Catastrophic interference; stability-plasticity deadlock; replay-induced forgetting; self-generated-data feedback collapse; curriculum lock-in; premature consolidation; permanent memorization of transient noise; test-time drift; adapter/skill proliferation; conflicting local adaptations; reward/evaluator exploitation; loss of rare capabilities during distillation; synthetic-data mode loss; stale knowledge preserved after regime change; learning the wrong substrate/timescale; opaque unprovenanced parameter mutation.
+
 ## Context and memory
 
 Retrieval misses; irrelevant-context interference; stale state; false memory consolidation; contradiction accumulation; unbounded context growth; provenance loss.

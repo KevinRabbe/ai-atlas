@@ -8,17 +8,19 @@ Define taxonomy, evidence schema, claim IDs, contradiction handling, source stan
 
 Research foundations, architectures, scaling laws, sparsity/conditional computation, recurrence/state-space approaches, memory hierarchy, hardware constraints, systems efficiency, and biologically evolved computational/developmental mechanisms.
 
-**Progress:** Foundations, coupled architecture/systems, and the first biological-intelligence/evolution evidence passes completed on 2026-08-14; none is considered saturated. The biological pass adds local/context-dependent plasticity, dendritic computation, eligibility/modulatory credit, homeostasis, replay/consolidation, energy constraints, indirect developmental encoding and regulatory evolution.
+**Progress:** Foundations, coupled architecture/systems, and biological-intelligence/evolution first passes completed on 2026-08-14; all remain open for targeted gap closure.
 
-**Phase-1 synthesis state:** sufficient to enter Phase 2 while continuing targeted gap closure. Remaining substrate gaps include memory-capacity/interference theory, graph/local computation, communication lower bounds, alternative hardware, biological fault tolerance and matched cross-hardware experiments.
-
-Exit condition: we can state which capabilities require which computational properties without assuming Transformer-style attention or biological point-neuron abstractions. **First-pass exit condition substantially met; keep open for revisions.**
+**Phase-1 synthesis state:** first-pass exit condition substantially met. Remaining gaps include memory-capacity/interference theory, graph/local computation, communication lower bounds, alternative hardware, biological fault tolerance and matched cross-hardware experiments.
 
 ## Phase 2 — Learning and adaptation
 
 Map self-supervised learning, supervised learning, RL/RLVR, preference learning, imitation, distillation, curriculum, continual learning, meta-learning, test-time learning and synthetic data. Include learning substrates/timescales: weights, fast state, episodic memory, skills, routing policies, local eligibility, consolidation and architecture/regulatory state.
 
-Exit condition: clear evidence-based separation of what belongs in weights versus external state/skills/memory and when information should migrate between stores.
+**Progress:** first evidence pass completed on 2026-08-14; not saturated. Current synthesis treats learning as change allocation across signal source, update mechanism, substrate and timescale. It maps continual interference/replay, meta/test-time adaptation, parameter-efficient deltas, distillation, self-play/curriculum and provisional substrate migration rules.
+
+**Remaining gaps before Phase-2 saturation:** active learning/value-of-information data selection; large-scale task-free continual learning; unlearning/knowledge editing; synthetic-data feedback/collapse; multi-objective learning; learned optimizers/update rules; autonomous skill creation/retirement; direct equal-budget comparisons across context, memory, adapters and shared weights.
+
+Exit condition: clear evidence-based separation of what belongs in weights versus external state/skills/memory and when information should migrate between stores. **First-pass framework established; quantitative migration policy unresolved.**
 
 ## Phase 3 — Inference-time intelligence
 
@@ -44,7 +46,7 @@ Extract implementation-neutral laws, trade-offs, recurring patterns and contradi
 
 ## Phase 8 — Forget implementations
 
-For every required function, restate the problem without names such as Transformer, RAG, CoT, RLM, agent, vector DB, biological neuron, DNA, or current product/framework names.
+For every required function, restate the problem without names such as Transformer, RAG, CoT, RLM, agent, vector DB, biological neuron, DNA, LoRA, RLHF, or current product/framework names.
 
 ## Phase 9 — Clean-sheet architecture
 
