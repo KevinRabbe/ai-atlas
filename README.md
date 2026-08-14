@@ -18,6 +18,14 @@ After a research area has been mapped, synthesis should restate the problem in i
 - `synthesis/` — cross-domain deductions that are supported by the atlas.
 - `clean-sheet/` — architecture design after implementation assumptions are deliberately removed.
 
+## Current research state
+
+- Foundations: first evidence pass complete; not saturated.
+- Architecture + systems/hardware: first coupled evidence pass complete; not saturated.
+- Clean-sheet architecture selection: deliberately **not started**.
+
+The architecture/systems work is intentionally coupled because information access, persistent state, routing, precision, memory movement, communication and hardware execution form one design surface rather than independent layers.
+
 ## Evidence discipline
 
 Every important claim should distinguish:
