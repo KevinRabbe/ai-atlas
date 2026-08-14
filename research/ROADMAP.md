@@ -4,7 +4,7 @@
 
 Taxonomy/evidence discipline, computational substrate, learning/adaptation, inference-time intelligence, persistent intelligence, verification/control, self-improvement and first cross-domain synthesis all completed first passes on 2026-08-14. All remain open for targeted gap closure.
 
-A later focused synthesis pass added **discovery & epistemic growth**: human knowledge is treated as bootstrap evidence/methodology rather than a permanent epistemic ceiling; F26 now captures the requirement to turn uncertainty into testable hypotheses and verified new knowledge.
+A later focused synthesis pass added **discovery & epistemic growth**: human knowledge is treated as bootstrap evidence/methodology rather than a permanent epistemic ceiling; F26 captures the requirement to turn uncertainty into testable hypotheses and verified new knowledge.
 
 ## Phase 8 — Forget implementations
 
@@ -16,84 +16,82 @@ First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Five provisional design-principle selections reached on 2026-08-14.**
+**Active. Tier-1 is complete to promotion depth and the first Tier-2 epistemic/action block is implemented. Eight provisional design principles have now been selected for the current experimental generation.**
 
-All Tier-1 discriminator shapes are implemented, with promotion follow-ups E01B/E02B/E03B/E04B/E05B/E09B plus E22 cross-resource metacontrol. The first discovery experiment E23 is also implemented and tested.
+### Current provisional selections
 
-## Current provisional selections
+1. **PS-001 / DL-004 — typed hybrid boundary state.**
+2. **PS-002 / DL-009 — staged adaptive persistence.**
+3. **PS-003 / DL-001 — coupling-scoped coordination.**
+4. **PS-004 / DL-003 — derived current belief with evidence linkage.**
+5. **PS-005 / DL-005 — value-of-computation stopping.**
+6. **PS-006 / DL-006 — consequence-sensitive hypothesis plurality.**
+7. **PS-007 / DL-007 — value-driven active evidence acquisition.**
+8. **PS-008 / DL-023 — verified epistemic frontier expansion.**
 
-These are reversible **principles for the current experimental generation**, not concrete modules and not a selected Phase-9 architecture family.
+These are reversible implementation-neutral constraints, not concrete modules and not a selected Phase-9 architecture family.
 
-1. **PS-001 / DL-004 — typed hybrid boundary state.** Exact identity/control/provenance stays exact; tolerant numerical state may use compact approximate/learned channels; version/integrity remains explicit.
-2. **PS-002 / DL-009 — staged adaptive persistence.** New evidence normally enters reversible/tentative state before globally durable mutation, with lifetime/threshold adapting to estimated stability.
-3. **PS-003 / DL-001 — coupling-scoped coordination.** Local decisions stay local while coupling is local; arbitration expands only to the scope of shared dependency/scarcity.
-4. **PS-004 / DL-003 — derived current belief with evidence linkage.** Current belief is maintained cheaply for repeated use while source evidence remains separately linked where future correction/provenance has value.
-5. **PS-005 / DL-005 — value-of-computation stopping.** Additional inference work is spent only while expected marginal downstream value exceeds current resource/latency/risk cost.
+## Tier-2 epistemic/action checkpoint
 
-## Discovery / epistemic-growth extension
+### E06 — multiple hypotheses
 
-The focused synthesis `synthesis/DISCOVERY_AND_EPISTEMIC_GROWTH.md` adds a long-horizon target:
+A noisy four-world family shows that forcing one maximum-posterior world is costly under ambiguous evidence and high wrong-commitment cost. Preserving several plausible worlds plus a safe action strongly improves utility in that regime; the advantage narrows as observations become decisive.
 
-> the system should be able to expand the verified knowledge frontier rather than merely answer from a frozen human/bootstrap corpus.
+A structurally different causal ablation gives both systems the same intervention. Forced single-theory commitment is preferable when a false theory is cheap, while preserving an unresolved theory set becomes preferable as false-claim consequence rises. The selected principle is therefore adaptive plurality, not permanent multi-hypothesis expansion.
 
-The required epistemic lifecycle is provisionally:
+### E07 — active evidence acquisition
 
-`inherited knowledge -> hypothesis -> candidate discovery -> scoped verification -> independent/hidden checking or replication -> consolidated knowledge`.
+A noisy-probe family compares passive sensing, a fixed query schedule, one-step value-of-information and bounded two-step value-of-information.
 
-Novelty alone is never treated as truth. Failed hypotheses/negative results may themselves be valuable retained information.
+The first implementation exposed a useful failure: one-step VOI can reject an observation whose standalone value is small even when it enables a highly valuable second observation. The final experiment therefore keeps the myopic controller as an explicit ablation.
 
-This adds:
+Across probe-cost shifts, bounded lookahead transitions from full acquisition to selective acquisition to zero acquisition. This supports treating observation/experiment as a resource-priced operation rather than free context.
 
-- **F26 — epistemic frontier expansion / discovery** to the implementation-neutral required functions;
-- `sources/DISCOVERY_EPISTEMIC_GROWTH.md` as the primary-source registry;
-- **E23 — weak-teacher / independent-evaluator discovery loop** as an implemented Phase-10 experiment.
+### E23B — causal empirical discovery
 
-### E23 first-family result
+Three candidate causal theories are indistinguishable under inherited/passive evidence. Active interventions provide new information unavailable from the teacher corpus.
 
-The first model-free E23 landscape deliberately gives the teacher a deceptive local optimum with score 10 while better constructions exist outside the demonstrations.
+At low/moderate experiment cost the active hypothesis system identifies the hidden theory exactly and exceeds the passive teacher frontier. At high experiment cost it performs no intervention and leaves the theory unresolved rather than inventing an answer.
 
-Across 30 seeds with an exact visible evaluator:
+Together with E23's constructive search family, this provides two structurally different demonstrations of the mechanics behind PS-008:
 
-- greedy visible search remains at the teacher frontier on **30/30** runs;
-- a diverse stepping-stone archive reaches beyond-teacher hidden score on **30/30** runs, with mean selected score ~12.17.
+- constructive search can find verified results beyond demonstrated solutions;
+- empirical interaction can acquire genuinely missing evidence beyond the bootstrap corpus.
 
-When the visible evaluator is given a controlled exploitable defect:
+This remains synthetic evidence. It is not a claim that the organism has produced new human knowledge.
 
-- the diverse archive selects a false discovery on **29/30** runs and its mean hidden score falls to ~8.43 despite high visible score;
-- adding independent hidden verification before consolidation reaches beyond-teacher hidden score on **30/30** runs, mean ~12.27, with **0 false promoted discoveries**.
+## Discovery / epistemic-growth lifecycle
 
-Retaining rejected hypotheses also removes repeated failed verification and reduces average verification calls from ~27.5 to ~21.3 in the defective-evaluator regime.
+The current implementation-neutral target is:
 
-This is evidence for the mechanics of crossing a teacher frontier safely, **not** a claim of new human knowledge.
+`inherited knowledge -> competing hypothesis -> selected search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`.
 
-## Evidence behind PS-004 and PS-005
+Rejected/unresolved hypotheses retain distinct state when the negative result has future value.
 
-### PS-004
+The central discipline remains:
 
-Original E03 established the direct-address/current-state trade-off. E03B then added exact source retractions and provenance queries. Compressed-only state remains perfect when there are no corrections, but its current accuracy falls to roughly 0.88 / 0.79 / 0.68 as source-retraction probability rises to 5% / 15% / 30%. Raw evidence replay remains exact but costs roughly 600 reads per query. Evidence-linked current state remains exact at approximately 1–2 reads/query while retaining source provenance.
+> **novelty is not knowledge.**
 
-### PS-005
-
-Original E05 showed confidence-conditioned evidence sampling. E05B uses a different problem: costly exact evaluation of heuristic-ranked candidate solutions. Across exact-evaluation costs 0.02 / 0.08 / 0.25 / 0.60, the adaptive policy uses about 1.68 / 1.62 / 1.48 / 1.31 evaluations and matches or exceeds the best tested fixed-budget net utility. It also allocates more work to ambiguous and higher-value tasks.
+Search power should co-scale with verifier independence and epistemic staging.
 
 ## Highest-value unresolved decisions
 
-- **DL-002 cognitive integration:** two task families favor adaptive degree of sharing, but partial sharing still has unmatched realized compute; compute-matched conditional sharing is required.
-- **DL-006 belief ambiguity:** one state versus multiple hypotheses under partial observability remains open and is now also a prerequisite for robust discovery.
-- **DL-007 active information acquisition:** when to act specifically to gain information remains open and becomes central for empirical discovery.
-- **DL-022 cross-resource metacontrol:** E22 strongly favors adaptive substitution but requires a second family with shared capacity/quality drift before selection.
-- **F26 discovery:** first constructive/synthetic family works; a structurally different second family is required before any provisional discovery principle is promoted.
+- **DL-002 cognitive integration:** two families favor adaptive degree of sharing, but partial sharing still has unmatched realized compute; compute-matched conditional sharing is required.
+- **DL-008 predictive-state breadth:** broad reconstruction versus decision-sufficient predictive state remains open.
+- **DL-011 memory retrieval objective:** similarity versus temporal/causal/downstream-value retrieval remains open experimentally.
+- **DL-022 cross-resource metacontrol:** E22 strongly favors adaptive substitution but requires a second family with shared capacity and resource-quality drift.
+- **E09B noise-versus-volatility:** the current adaptive persistence policy still needs a test that independently varies sensor noise and true environmental change.
 
 ## Near-term order
 
 1. compute-matched/conditional E02B sharing;
 2. E22B with simultaneous capacity contention + resource-quality drift;
-3. Tier-2 E06/E07, because multi-hypothesis state and active evidence acquisition are prerequisites for empirical discovery;
-4. E23 second family: causal toy science where the system must choose experiments to distinguish hidden world hypotheses;
+3. E08 predictive-state breadth and objective-switch robustness;
+4. E11 retrieval by downstream decision value;
 5. E09B observation-noise versus true-volatility disentanglement;
-6. then construct a next-generation research organism constrained by PS-001 through PS-005 plus whatever survives E06/E07/E23, rather than by any named existing AI architecture.
+6. then construct a next-generation integrated research organism constrained by PS-001 through PS-008 and test interaction regressions under matched lifetime resources.
 
-Phase 10 is **not complete**. The current goal is to resolve the remaining architecture-boundary questions and experimentally reconstruct the machinery required for both intelligent action and verified epistemic growth.
+Phase 10 is **not complete**. The project now has enough experimentally supported state/control/epistemic constraints to begin asking whether they compose cleanly, but several architecture-boundary and system-level allocation questions remain unresolved.
 
 ## Open targeted gap closure
 
