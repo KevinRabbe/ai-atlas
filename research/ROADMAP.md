@@ -18,7 +18,7 @@ First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit
 
 **Active. Five provisional design-principle selections reached on 2026-08-14.**
 
-All Tier-1 discriminator shapes are implemented, with promotion follow-ups E01B/E02B/E03B/E04B/E05B/E09B plus E22 cross-resource metacontrol.
+All Tier-1 discriminator shapes are implemented, with promotion follow-ups E01B/E02B/E03B/E04B/E05B/E09B plus E22 cross-resource metacontrol. The first discovery experiment E23 is also implemented and tested.
 
 ## Current provisional selections
 
@@ -32,7 +32,7 @@ These are reversible **principles for the current experimental generation**, not
 
 ## Discovery / epistemic-growth extension
 
-The focused synthesis `synthesis/DISCOVERY_AND_EPISTEMIC_GROWTH.md` adds a new long-horizon target:
+The focused synthesis `synthesis/DISCOVERY_AND_EPISTEMIC_GROWTH.md` adds a long-horizon target:
 
 > the system should be able to expand the verified knowledge frontier rather than merely answer from a frozen human/bootstrap corpus.
 
@@ -46,11 +46,27 @@ This adds:
 
 - **F26 — epistemic frontier expansion / discovery** to the implementation-neutral required functions;
 - `sources/DISCOVERY_EPISTEMIC_GROWTH.md` as the primary-source registry;
-- **E23 — weak-teacher / independent-evaluator discovery loop** as a specified Phase-10 experiment, not yet implemented.
+- **E23 — weak-teacher / independent-evaluator discovery loop** as an implemented Phase-10 experiment.
 
-E23 first tests the mechanics of exceeding a deliberately suboptimal teacher frontier in a controlled world. A later real-discovery claim would require an externally verified result that was not already known to the relevant human field.
+### E23 first-family result
 
-## Evidence behind the latest two selections
+The first model-free E23 landscape deliberately gives the teacher a deceptive local optimum with score 10 while better constructions exist outside the demonstrations.
+
+Across 30 seeds with an exact visible evaluator:
+
+- greedy visible search remains at the teacher frontier on **30/30** runs;
+- a diverse stepping-stone archive reaches beyond-teacher hidden score on **30/30** runs, with mean selected score ~12.17.
+
+When the visible evaluator is given a controlled exploitable defect:
+
+- the diverse archive selects a false discovery on **29/30** runs and its mean hidden score falls to ~8.43 despite high visible score;
+- adding independent hidden verification before consolidation reaches beyond-teacher hidden score on **30/30** runs, mean ~12.27, with **0 false promoted discoveries**.
+
+Retaining rejected hypotheses also removes repeated failed verification and reduces average verification calls from ~27.5 to ~21.3 in the defective-evaluator regime.
+
+This is evidence for the mechanics of crossing a teacher frontier safely, **not** a claim of new human knowledge.
+
+## Evidence behind PS-004 and PS-005
 
 ### PS-004
 
@@ -66,14 +82,14 @@ Original E05 showed confidence-conditioned evidence sampling. E05B uses a differ
 - **DL-006 belief ambiguity:** one state versus multiple hypotheses under partial observability remains open and is now also a prerequisite for robust discovery.
 - **DL-007 active information acquisition:** when to act specifically to gain information remains open and becomes central for empirical discovery.
 - **DL-022 cross-resource metacontrol:** E22 strongly favors adaptive substitution but requires a second family with shared capacity/quality drift before selection.
-- **F26 discovery:** beyond-teacher search, hidden evaluation, negative-result retention and knowledge promotion are specified but not yet experimentally reconstructed.
+- **F26 discovery:** first constructive/synthetic family works; a structurally different second family is required before any provisional discovery principle is promoted.
 
 ## Near-term order
 
 1. compute-matched/conditional E02B sharing;
 2. E22B with simultaneous capacity contention + resource-quality drift;
 3. Tier-2 E06/E07, because multi-hypothesis state and active evidence acquisition are prerequisites for empirical discovery;
-4. implement E23 first synthetic discovery loop and test teacher ceiling / evaluator exploitation / archive / knowledge-promotion ablations;
+4. E23 second family: causal toy science where the system must choose experiments to distinguish hidden world hypotheses;
 5. E09B observation-noise versus true-volatility disentanglement;
 6. then construct a next-generation research organism constrained by PS-001 through PS-005 plus whatever survives E06/E07/E23, rather than by any named existing AI architecture.
 
