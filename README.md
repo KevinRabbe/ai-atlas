@@ -14,7 +14,7 @@ Named model blocks, natural-language reasoning, databases, agents, harnesses, bi
 
 Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no A/B/C/D family selected**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **190 added test cases**, five integrated generations (`I01`–`I05`) plus **I05B imperfect-feedback metacognition**, guarded self-improvement experiments, and implemented E24 predictive-representation discrimination. **Twenty-three provisional implementation-neutral principles** currently survive their promotion gates.
+Phase 10 now contains **201 added test cases**, integrated generations through **I06** plus I05B imperfect-feedback metacognition, guarded self-improvement experiments, implemented E24 predictive-representation discrimination, and **AF01**, the first matched A/B/C/D architecture-family benchmark. **Twenty-three provisional implementation-neutral principles** currently survive their promotion gates.
 
 ## What the experiments are converging toward
 
@@ -23,6 +23,7 @@ The principle list is increasingly collapsing into fewer candidate laws:
 - **scope follows coupling, responsibility and causal extent**;
 - **state follows expected future value and recoverability**;
 - **optional work follows marginal value under shared scarcity**;
+- **material complements/substitutes must be allocated jointly when their interaction changes value**;
 - **sharing and structural indirectness follow reusable regularity**;
 - **execution follows state change until consistency coupling justifies synchronization**;
 - **fidelity follows decision sensitivity, uncertainty propagation and consequence**;
@@ -32,45 +33,55 @@ The principle list is increasingly collapsing into fewer candidate laws:
 - **durable change requires stronger and refreshing evidence**;
 - **self-improvement diversity is retained only while future option value pays for it**;
 - **repair blast radius expands only when evidence says the causal root is equally broad**;
-- **metacognitive estimates are revisable state and can themselves justify active evidence acquisition**.
+- **metacognitive estimates are revisable state and can themselves justify active evidence acquisition**;
+- **organization may itself be an adaptive choice rather than one permanent global architecture.**
 
 The current architecture-compression hypothesis is:
 
-`typed state/transition proposals -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity -> observe -> causal credit -> staged/appropriately-scoped update`
+`typed state/transition proposals -> learned shared value/resource allocator with material interaction models -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity/state breadth -> observe -> causal credit -> staged/appropriately-scoped update`
 
 This is **not** yet a selected architecture.
 
-## Latest composition checkpoint
+## I06 — composition of runtime choices
 
-### I05 — learned transition metacognition
+I06 puts high fidelity, source rematerialization versus broad hot state, synchronization and active intervention into one shared finite runtime budget.
 
-Operation reliability, family-specific coordination benefit and evaluator/verifier quality are learned online rather than supplied as fixed constants. After a hidden quality swap, the conditional learner takes a real performance hit and then recovers; globally pooled or frozen estimates do not recover as well. Categorical authority remains exact and external.
+Across 30 seeds, the learned joint allocator reaches ~`1.564` utility/task versus ~`1.355` for independently learned operation controllers, ~`1.410` for a uniform safe bundle and ~`0.477` for always-cheap execution. It takes a real hit after the hidden regime swap and later recovers, so the result is adaptive rather than oracle-driven.
 
-### I05B — imperfect feedback about the evaluator
+The main result is architectural rather than numerical:
 
-Audit evidence about verifier correctness becomes delayed, censored and noisy. With no audit feedback the system accumulates ~493 false durable writes/run. Sparse passive feedback adapts slowly. A selective higher-quality audit policy spends audit effort on ~37.6% of tasks, reaches ~1.760 utility/task versus ~1.571 passive / ~1.294 no-feedback, and reduces false durable writes to ~47.
+> **good local operation values are insufficient when operations are complements or substitutes.**
 
-The implication is recursive but not magical: uncertainty about a tool/evaluator becomes ordinary belief state; evidence about that belief is another priced information-acquisition operation.
+The allocator must model the interactions that materially change downstream value.
 
-## Structural/timing/fidelity checkpoint
+## AF01 — architecture families form a Pareto frontier
 
-- **PS-021:** indirect/developmental structural rules earn themselves when repeated regularity makes one coordinated mutation reusable; local overrides remain necessary for exceptions/irregularity.
-- **PS-022:** event-scoped execution beats global ticking under sparse locality, while scoped synchronization barriers become necessary for shared-version consistency; eager sync can win again when global consistency is continuously demanded.
-- **PS-023:** approximate fidelity is useful while its propagated error cannot change enough downstream value; exact/higher fidelity is purchased when decision sensitivity, horizon or consequence makes approximation material.
+AF01 fixes the I06 task/runtime substrate and varies only organizational bias:
 
-These are rules, not commitments to developmental programs, event loops or any numeric format.
+- **A:** hierarchical/global arbitration over conditional estimates;
+- **B:** local bidding + resource-local auction;
+- **C:** pooled shared-core experience + joint allocation;
+- **D:** preserved conditional variants + online selector/archive cost.
+
+No family wins universally. D is strongest in the tightly switching/coupled stress family; C is strongest in the recurring mixed family; A/B expose different error-versus-coordination-cost trade-offs in sparse work. Sparse rankings change when organization overhead prices are swept.
+
+The important implication is:
+
+> **A/B/C/D increasingly look like organizational modes that are useful under different conditions, not necessarily mutually exclusive final architectures.**
+
+AF02 will test whether one system can infer those conditions and change organization dynamically while paying explicit switching/carrying cost.
 
 ## JEPA / E24 status
 
 JEPA remains explicitly inside the Atlas as a **candidate predictive-representation mechanism family**, not a selected component.
 
-E24 is now implemented. In the objective-shift family a four-feature coarse predictive latent is excellent on the original task but falls to chance when the later task needs a lower-ranked factor; denser latent state or compact latent + recoverable source evidence retain/recover it. In the intervention family all policies look equally strong passively, but the coarse latent falls to chance when a lower-predictability action-discriminating cue becomes necessary.
+E24 is implemented. A coarse predictive latent is efficient on the original objective but can fall to chance after a future objective or intervention requires a discarded distinction. Dense latent state and compact latent + recoverable source evidence retain/recover it.
 
-The resulting refinement is implementation-neutral:
+Current refinement:
 
 > **Predictive compression should optimize lifetime decision/intervention utility, not passive prediction accuracy alone. Target breadth and recoverable evidence are part of the predictive objective.**
 
-This is already largely covered by PS-012/PS-023, so no separate "JEPA principle" was created.
+No separate "JEPA principle" was created because this evidence is already captured by PS-012/PS-023.
 
 ## Discovery target
 
@@ -86,14 +97,14 @@ E23/E23B demonstrate controlled beyond-teacher mechanics; they are not claimed a
 
 ## Next milestone
 
-1. **I06:** compose timing, fidelity and predictive-state/rematerialization decisions inside the shared allocator rather than leaving E18/E19/E24 as separate policies;
-2. harden I05B further with correlated/adversarial audit failures and partially unresolved outcomes;
-3. begin matched end-to-end A/B/C/D architecture-family elimination only after I06 shows which organization boundaries remain necessary;
-4. build a neural E24C only if actual learned predictive-objective geometry remains architecture-discriminating after composition.
+1. **AF02:** test an evidence-driven organizational mode selector against fixed A/B/C/D and an oracle mode scheduler;
+2. vary hidden coupling/sharedness/recurrence, regime duration and switching cost so the adaptive system can fail through misclassification or thrashing;
+3. I05C afterward for correlated/adversarial audit evidence and unresolved outcomes;
+4. neural E24C only if predictive-objective geometry remains architecture-discriminating after the organizational comparison.
 
 ## Organizing hypothesis
 
-Practical intelligence may be adaptive selection of typed state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
+Practical intelligence may be adaptive selection of typed state transitions **and organizational modes**, with allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
 
 This remains falsifiable.
 
