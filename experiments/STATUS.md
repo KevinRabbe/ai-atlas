@@ -1,6 +1,6 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: eleven provisional design principles selected; predictive-state breadth remains open after one family.**
+**Checkpoint: twelve provisional design principles selected; first integrated composition organism implemented.**
 
 ## Implemented experimental blocks
 
@@ -11,56 +11,69 @@
 - E05/E05B — adaptive compute and value-of-search;
 - E06 — hypothesis plurality;
 - E07 — active evidence acquisition;
-- E08 — predictive-state breadth / future-objective optionality;
+- E08/E08B — predictive-state breadth, optionality and online breadth adaptation;
 - E09/E09B/E09C — staged persistence, volatility adaptation and noise-vs-change identification;
 - E11 — retrieval similarity vs temporal/causal/downstream applicability;
 - E22/E22B — cross-resource substitution, capacity contention and quality drift;
-- E23/E23B — constructive and empirical beyond-teacher discovery mechanics.
+- E23/E23B — constructive and empirical beyond-teacher discovery mechanics;
+- **I01 — first integrated epistemic organism**, combining multiple selected principles in one state-transition/resource loop.
 
 ## Validation
 
-E08, E11 and E09C each add **4 passing local semantic tests**. Including earlier Phase-10 groups, the experimental reconstruction history now contains **74 newly added passing unit tests**. Runtime code remains Python 3.11+ stdlib-only.
+E08B adds **4 passing local semantic tests** and I01 adds **5 passing local composition tests**. Including earlier Phase-10 groups, the experimental reconstruction history now contains **83 newly added passing unit tests**. Runtime code remains Python 3.11+ stdlib-only.
 
-## Latest findings
+## E08B — adaptive state breadth
 
-### E08 — state breadth is future-objective dependent
+E08A established a static frontier: narrow state wins with fixed goals, source-recoverable state wins with occasional objective switches, and broad hot state wins when switching/rematerialization becomes frequent.
 
-A 12-bit world is queried under objectives A/B. The benchmark prices hot-state rent, cold/source retention and rematerialization separately.
+E08B hides and changes the objective-switch rate. The controller estimates recent switching and expands/contracts hot state around the measured break-even between extra active-state rent and reacquisition cost.
 
-20-seed net-utility means:
+30-seed means over low-switch → high-switch → low-switch segments:
 
-| goal-switch probability | broad hot | narrow current-objective | source-recoverable hybrid |
-|---:|---:|---:|---:|
-| 0.00 | 0.976 | **0.994** | 0.990 |
-| 0.02 | 0.976 | 0.820 | **0.989** |
-| 0.10 | 0.976 | 0.759 | **0.983** |
-| 0.20 | ~**0.976** | 0.751 | ~**0.976** |
-| 0.50 | **0.976** | 0.746 | 0.953 |
-| 0.80 | **0.976** | 0.744 | 0.931 |
+| policy | net utility | cost/step | broad fraction | reacquisitions/run |
+|---|---:|---:|---:|---:|
+| always broad | 0.988000 | 0.012000 | 1.000 | 0.0 |
+| always narrow | 0.979654 | 0.020346 | 0.000 | 765.1 |
+| **adaptive breadth** | **0.990918** | **0.009082** | 0.353 | 51.4 |
 
-No selection is promoted yet. The first family shows that decision sufficiency is relative to the expected future objective distribution: narrow state wins when goals are fixed, recoverable-source state wins under occasional changes, and broad hot state wins when reconstruction becomes constant.
+Adaptive broad fraction by segment is approximately `0.0006 → 0.9903 → 0.0678` without access to the hidden regime labels.
 
-### E11 — retrieval objective
+This promotes **PS-012 — adaptive predictive-state breadth / recoverable optionality**.
 
-Two families now separate semantic resemblance from applicability.
+## I01 — first composition checkpoint
 
-- In a stable corpus, similarity is cheapest because deeper checks do not change the correct answer.
-- As exact-topic memories become stale, similarity accuracy falls from 1.0 to ~0 while temporal/applicability retrieval remains 1.0.
-- In a separate surface-vs-causal family, similarity falls with surface/causal conflict while decision-value retrieval remains 1.0 by checking mechanism, outcome and verification.
+I01 changes the research strategy from isolated mechanisms to interaction testing. One common epistemic state model contains exact identity/provenance, tentative/durable knowledge, rejected hypotheses, operation proposals, evidence links and shared resource capacities.
 
-This promotes **PS-011 — retrieval by expected applicability/downstream value**, while retaining similarity as a cheap candidate signal when it is a good proxy.
+The mixed stream interleaves:
 
-### E09C — noise vs true volatility
+- stale/surface-conflicting memory decisions;
+- ambiguous high-consequence actions;
+- scarce exact observations;
+- frontier/research candidates with a fallible visible evaluator;
+- scarce independent verification;
+- later reuse of durable learned knowledge.
 
-30-seed means:
+### 30-seed means
 
-| regime | single sensor | always corroborate | adaptive corroboration |
-|---|---|---|---|
-| stable + noisy | 0.901 acc / 198.5 false updates / 0.901 net | 0.993 / 0.33 / 0.987 | **0.988 / 9.53 / 0.983** |
-| volatile + clean | **0.909 / 8.77 / 0.909** | 0.902 / 0.20 / 0.896 | **0.908 / 7.57 / 0.908**, second sensor ~10.6% |
-| stable + clean | **0.997 / 0.00 / 0.997** | 0.997 / 0.00 / 0.991 | **0.997 / 0.00 / 0.996**, second sensor 10% |
+| variant | net utility/task | safe rate | retrieval error | false durable writes/run |
+|---|---:|---:|---:|---:|
+| **integrated full** | **2.3589** | 0.0334 | 0.0124 | **0.0** |
+| no plurality | 2.3418 | 0.0000 | 0.0252 | 0.0 |
+| no active information | 2.0879 | 0.1713 | 0.0437 | 0.0 |
+| similarity retrieval | 1.9437 | 0.0020 | 0.1079 | 0.0 |
+| immediate consolidation | 1.8541 | 0.0332 | 0.0123 | **54.6** |
+| independent allocation | 2.2756 | 0.0450 | 0.0086 | 0.0 |
 
-A single observation channel can confound `world changed` with `sensor failed`. Independent corroboration resolves the ambiguity, but reading it constantly is wasteful. This closes the earlier PS-002 noise/volatility falsifier and couples persistence control to PS-006/PS-007.
+The full organism averages about `0.248` deep retrievals/task, `0.196` probes/task and `0.072` independent verifications/task. Roughly `0.434` of later application decisions are served from durable learned knowledge after acquisition.
+
+### Interaction findings
+
+1. **Discovery governance becomes a memory problem.** False research conclusions are reused later; staged independent verification prevents that persistent contamination in this exact-verifier environment.
+2. **Retrieval and observation substitute.** Removing applicability-aware retrieval pushes more decisions toward expensive probing.
+3. **Plurality and evidence acquisition are complementary.** Plurality provides a safe fallback when uncertainty cannot economically be resolved; active information resolves it when the probe is worth its price.
+4. **Task-local intelligence is insufficient under shared scarcity.** First-come allocation uses the same local expected gains but wastes scarce slots on lower-value tasks compared with joint ranking.
+
+I01 is a **composition experiment, not a thirteenth principle and not an architecture-family selection**.
 
 ## Current provisional selections
 
@@ -74,21 +87,25 @@ A single observation channel can confound `world changed` with `sensor failed`. 
 8. PS-008 — verified epistemic frontier expansion;
 9. PS-009 — conditional sharing with isolation fallback;
 10. PS-010 — joint adaptive resource substitution under shared scarcity;
-11. PS-011 — retrieval by expected applicability/downstream value.
+11. PS-011 — retrieval by expected applicability/downstream value;
+12. **PS-012 — adaptive predictive-state breadth / recoverable optionality.**
 
 No Phase-9 architecture family is selected.
 
-## Next milestone
+## Next milestone — I02
 
-The project has enough individually supported principles to justify a shift in experimental strategy.
+The next integrated generation should stop assuming perfect hand-specified value estimates and an exact verifier.
 
-Next:
+Highest-value additions:
 
-1. finish E08 with a second learned/dynamic predictive family;
-2. build a **next-generation integrated organism** constrained by PS-001 through PS-011;
-3. test interaction regressions and ablate each principle under matched lifetime resources;
-4. only then continue into deeper verification, credit-assignment, self-improvement and physical-co-design decisions.
+1. merge E08B adaptive breadth into the integrated lifetime;
+2. learn operation quality/value online rather than reading benchmark reliabilities;
+3. add conditional shared/private estimators from PS-009;
+4. make verification fallible/correlated so assurance allocation and evaluator independence become active decisions;
+5. introduce within-lifetime resource-price and environment shifts;
+6. run pairwise interaction ablations, not only one-principle removals;
+7. then proceed to E10/E12/E13/E21 using the integrated organism rather than isolated toy loops where possible.
 
 ## Guardrail
 
-The next integrated organism must not simply bolt eleven named modules together. It should discover the smallest mechanism boundaries that satisfy the selected functions, while every principle remains replaceable and falsifiable.
+Composition is now the primary research target. The organism must remain simpler than the hypotheses it measures, every principle remains replaceable, and apparent gains from one subsystem must be checked for downstream regressions elsewhere.
