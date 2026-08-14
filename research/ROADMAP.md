@@ -12,11 +12,11 @@ First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit
 
 ## Phase 9 — Clean-sheet architecture
 
-First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/B/C/D remain useful reference organizations, but Phase-10 evidence now treats their useful mechanisms primarily as conditional organizational modes rather than mutually exclusive final systems.
+First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/B/C/D remain useful reference organizations, but current Phase-10 evidence treats their mechanisms as conditional modes/scopes rather than mutually exclusive final systems.
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-three reversible implementation-neutral principles survive their current promotion gates.** The current validation history contains **229 added test cases**.
+**Active. Twenty-three reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **260 added test cases**.
 
 The experimental strategy has progressed through:
 
@@ -27,138 +27,137 @@ The experimental strategy has progressed through:
 5. interaction-aware runtime allocation;
 6. fixed architecture-family comparison;
 7. adaptive organizational modes;
-8. scoped simultaneous organization;
-9. dynamic topology inference;
-10. executable typed-state migration;
-11. assurance for topology reconfiguration under correlated/spoofed evidence.
+8. simultaneous scoped organization;
+9. learned dynamic topology;
+10. typed-state migration across topology epochs;
+11. independent assurance for structural reconfiguration;
+12. a persistent reusable typed-scope runtime API;
+13. overlapping/non-owning coordination scopes;
+14. directional dependency semantics and reciprocity-triggered sharing.
 
 ## Current architecture spine
 
 ```text
-stable typed semantic plane
-  identities / provenance / source refs
+stable typed semantic identities
+  subjects / evidence / provenance / sources
   authority versions / resource leases
-        ↓ referenced by
-revisable organizational plane
-  learned dependency graph
-  dynamic scopes + conditional local organizational modes
+        |
+        +--> directional dependencies
+        |
+        +--> disjoint ownership topology
+        |       + dynamic split / merge
+        |
+        +--> overlapping non-owning coordination scopes
+                temporary or persistent
         ↓
-interaction-aware transition/resource allocator
+typed transition proposals
+        ↓
+interaction-aware value/resource allocation
         ↓
 consequence-sensitive independent assurance
         ↓
 versioned transition protocol
-  execute / split / merge / forward / rollback
+  execute / forward / stage / commit / rollback
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
-The scalar allocator cannot manufacture epistemic, capability or topology authority. Those remain typed boundaries with evidence requirements appropriate to consequence.
+The scalar/value allocator cannot manufacture epistemic, capability or topology authority.
 
-## I06 — interaction-aware runtime allocation
+## I06–I09 — architecture-scale composition
 
-I06 jointly allocates high fidelity, source rematerialization/broad hot state, synchronization and active intervention under one finite capacity budget.
+I06 shows that fidelity, rematerialization/hot state, synchronization and intervention interact enough that independent operation pricing loses to joint allocation (~`1.564` vs ~`1.355` utility/task).
 
-Learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` factorized independent control and ~`1.410` uniform-safe. Material complement/substitution effects therefore survive composition: local operation values are not always additive.
+AF01–AF03 and I07 then show that organizational mode, organizational scope and scope membership can all be adaptive state, but each form of structural plasticity has a persistence-vs-transition-cost timescale.
 
-## AF01–AF03 — organizations become modes and scopes
+I08 gives dynamic scopes real typed state. Stable evidence/provenance, authority, resource leases and in-flight work survive split/merge when semantics are addressed independently from topology and events carry topology epochs.
 
-AF01 finds a Pareto frontier among canonical A/B/C/D embodiments rather than a universal fixed winner.
+I09 adds the promotion boundary: under correlated/spoofed coupling evidence, a higher threshold on the same source is insufficient; sufficiently independent assurance may be worth buying before moving real state.
 
-AF02 learns organizational mode from noisy observable structure, reaching ~`1.563` utility/step versus ~`1.509` best fixed and ~`1.576` oracle. It loses when regimes are too short to amortize switching/identification.
+## I10 — reusable typed-scope organism runtime
 
-AF03 shows that multiple modes can be useful simultaneously. Heterogeneous weakly coupled domains favor scoped organization; homogeneous tightly coupled domains favor global organization. The scoped advantage continuously disappears as cross-domain coupling rises.
+`TypedScopeRuntime` is now the common architecture substrate for later experiments.
 
-Current interpretation:
+It provides:
 
-> organizational mode and organizational scope are both resource-priced adaptive state.
-
-## I07 — dynamic scope formation
-
-Predefined subsystem boundaries are removed. Twelve components move among recurrent hidden dependency partitions. The learner observes noisy interaction events, infers a coupling graph, and pays migration cost to split/merge scopes.
-
-At 120 steps/partition:
-
-- global static: `1.027` utility;
-- adaptive topology: ~`1.058`;
-- oracle: ~`1.075`.
-
-At 20 steps/partition, adaptive drops below global static. Topology plasticity therefore has the same persistence-vs-migration economics as organizational mode plasticity.
-
-## I08 — executable typed-scope migration
-
-I08 replaces abstract group labels with actual runtime state.
-
-The dynamic organism carries exact:
-
-- node/evidence/resource identities;
-- provenance and source references;
-- predictive source links for rematerialization;
+- evidence/source and predictive-rematerialization records;
 - current versioned authority;
-- resource leases;
-- delayed in-flight events with topology epochs.
+- singular resource leases;
+- typed transition proposals;
+- interaction-aware bundle allocation;
+- independent proposal-specific assurance;
+- staged scope changes + rollback;
+- topology epochs and exactly-once event forwarding.
 
-The `typed_epoch` runtime reaches ~`1.0744` utility/step versus ~`0.9957` static typed topology while preserving all tested semantic invariants. It forwards ~`46.9` delayed events/run through topology changes rather than dropping them.
+Eight semantic tests and five end-to-end scenario tests exercise these boundaries. The scenario repeatedly changes topology and authority while work is in flight without bypassing the runtime API.
 
-A scope-snapshot ablation is cheaper to migrate but loses provenance/source recoverability, can use stale authorization and duplicates resource ownership after scope splits.
+## I11 — cross-cutting coordination without forced ownership migration
 
-**Architecture boundary:** stable semantic identity must survive organizational change. Ownership/cache/routing may move; identity, provenance, authority and exact resource semantics cannot silently become relative to a disappearing scope.
+A component may need to coordinate with more than one group while its semantic ownership remains stable.
 
-## I09 — assurance before topology promotion
+Sparse cross-cutting work favors temporary non-owning overlays. Frequent recurring cross-cutting work can justify persistent overlap. Dense continuous coupling eventually makes one merged/global scope cheaper again.
 
-I09 attacks the coupling evidence with sustained correlated false interactions.
+The runtime therefore gains a separate `CoordinationScopeRegistry`. Membership may overlap, but coordination scopes do not own evidence, leases or authority.
 
-Raw topology accuracy drops from ~`0.906` to ~`0.823`; raising the threshold still permits ~`15.2` harmful migrations/run. Selective independent checking reaches ~`0.933` attacked pairwise accuracy and accepts zero harmful migrations in the matched family while using ~`5.9` audit samples/step versus `33` for uniform checking.
+## I12 — directional dependency semantics
 
-Uniform assurance wins when independent evidence is cheap. Selective assurance wins as assurance becomes expensive.
+One-way dependency does not imply reverse flow.
 
-**Architecture boundary:** the evidence stream proposing a structural change is not automatically sufficient promotion authority for that change.
+Sparse directional work favors directional links over symmetric relationships. Reciprocal clusters justify shared coordination. Mixed regimes require both simultaneously. The adaptive representation reaches ~`0.7394` lifetime utility versus ~`0.7116` global, ~`0.7034` directed-only and ~`0.6689` symmetric-only at the default 180-step regime duration.
+
+At 20-step regimes static global wins, again showing that richer structure must amortize inference lag.
+
+The runtime now includes a typed `DependencyRegistry`; reciprocity is detectable evidence for sharing but does not automatically create a scope, authority or ownership transfer.
 
 ## JEPA / E24
 
-JEPA remains a candidate mechanism, not a commitment. E24 shows that latent prediction can be efficient while passive predictive sufficiency still fails under future objectives/interventions. Recoverable source evidence substantially improves the compression/optionality frontier.
+JEPA remains a candidate mechanism, not a commitment. E24 shows latent prediction can be efficient while passive predictive sufficiency still fails under future objectives/interventions. Recoverable source evidence substantially improves the compression/optionality frontier.
 
 No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-023** are active reversible constraints. AF01–AF03 and I07–I09 strengthen/combine those principles rather than adding new principle labels.
+**PS-001 through PS-023** are active reversible constraints. I08–I12 refine/compose those rules rather than creating additional principle labels.
 
-## Next milestone — persistent typed-scope organism API
+## Next milestone — I13 partial structural commit
 
-The next build should stop expressing each new architecture stress as a fresh synthetic controller.
+The reusable runtime still assumes structural commit is atomic.
 
-Create one reusable executable protocol with operations for:
+I13 should deliberately fail migration at different points and compare:
 
-1. exact evidence/source attachment and current-belief references;
-2. typed transition proposal with value, uncertainty, consequence, reversibility and authority class;
-3. interaction-aware operation-bundle allocation;
-4. current authority/version lookup;
-5. resource lease ownership;
-6. scope split/merge staging;
-7. independent assurance requests when structural blast radius warrants them;
-8. structural commit/rollback;
-9. topology-epoch event forwarding and exactly-once processing;
-10. predictive-state rematerialization from retained sources.
+1. naive in-place migration;
+2. stop-the-world copy/replace;
+3. staged transactional migration with version fence + rollback;
+4. incremental/dual-version handoff if needed as a separate alternative.
 
-### Main discriminator
+Measure:
 
-Can future experiments reuse this protocol while preserving the I08 invariants and I09 assurance boundary without hardcoding the answer to each experiment?
+- semantic corruption after failure;
+- evidence/source reachability;
+- resource-lease uniqueness;
+- current authority correctness;
+- exactly-once in-flight event behavior;
+- topology epoch consistency;
+- downtime/blocked work;
+- copied state / migration operations;
+- rollback/recovery work.
 
-If yes, the Atlas has an actual candidate architecture substrate rather than a growing set of independent mechanism simulators.
+### Discriminator
 
-## After the API
+A structural-update protocol earns selection only if it preserves invariants under partial failure without paying more downtime/copy cost than the avoided corruption is worth.
 
-Stress the common runtime with:
+Do not assume “transactions” by name; compare the mechanisms.
 
-- overlapping/nested scopes;
-- asymmetric/directional dependencies;
-- partial failures during migration;
-- simultaneous in-flight work and authority revocation;
-- adversarial or strategically correlated topology evidence;
+## After I13
+
+High-value stresses remain:
+
+- nested/overlapping **ownership** only if non-owning overlays prove insufficient;
+- partial migration of bounded caches and delayed credit traces;
+- simultaneous structural change + authority revocation;
 - I05C correlated/adversarial evaluator audits and partially unresolved outcomes;
 - neural E24C only if predictive-objective geometry remains architecture-discriminating;
-- hardware co-design only after topology/timing/fidelity/state laws are stable enough to make substrate assumptions informative.
+- hardware co-design only after the transition/topology/fidelity laws are stable enough for substrate assumptions to be informative.
 
 ## Phase-10 substantial-completion condition
 
@@ -166,13 +165,13 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 
 - selected principles retain lifetime value under composition;
 - learned metacontrol overhead does not consume the gains;
-- authority/provenance remain stable under shared learned control and topology changes;
+- authority/provenance remain stable under learned control and topology changes;
 - world/tool/evaluator/self uncertainty remain distinguishable;
 - self-change uses independent refreshing evidence and scoped rollback/change;
 - failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- the common executable runtime can reproduce the important experimental boundaries without experiment-specific privileged semantics;
-- dynamic organization/topology either dominates fixed organizations in justified regimes or clearly exposes where switching/migration costs make static structure preferable.
+- the common executable runtime reproduces important experimental boundaries without experiment-specific privileged semantics;
+- structural updates remain safe enough under partial failure or the evidence identifies where static organization is preferable.
 
 ## Open targeted gap closure
 
