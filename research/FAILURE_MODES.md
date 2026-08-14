@@ -30,6 +30,22 @@ Last-observation-as-truth; partial-observability blindness; hidden-state alterna
 
 Cross-modal false binding; modality dominance; disagreement collapsed before uncertainty is resolved; language bottleneck discarding sensor/action precision; stale object identity across views/sessions; semantic transfer without correct physical affordances; action tokenization reducing control fidelity; perception treated as passive when an information-gathering action is available.
 
+## Verification and assurance
+
+Verifier overconfidence; evaluator blind spots; generator/judge correlated errors; majority agreement mistaken for independence; outcome checks accepting lucky answers; process supervision rewarding a preferred representation instead of the true property; incomplete formal specification; proof/test result overgeneralized beyond assumptions; calibration failure under distribution shift; confidence used cosmetically rather than to change action; excessive abstention; escalation loops; Goodhart/reward-model overoptimization; hidden objective degradation; reward/evaluator tampering; weak supervisor bottleneck; verifier gaming under search pressure.
+
+## Interpretability and monitoring
+
+Feature naming illusion; incomplete sparse decomposition; probe correlation mistaken for causation; monitor distribution shift; monitor evasion; false-positive overload; internal predictor accurate but intervention harmful; post-hoc explanation mistaken for mechanism; same component generates behavior and provides the only safety explanation.
+
+## Agent security / capability control
+
+Prompt injection; instruction/data authority confusion; confused-deputy behavior; overprivileged tools; untrusted content promoted to policy; persistent memory poisoning; unsafe retries; side effects before validation; privilege persistence beyond task scope; sandbox escape; monitor/model collusion; approval spoofing; audit-log mutation; capability treated as authority; irreversible execution without staged authorization.
+
+## Regression / self-change containment
+
+Public-test overfitting; hidden capability regression; candidate change modifying its own evaluator; rollback path modified by candidate; correlated defense layers; no atomic activation; no recovery artifact; gradual drift below thresholds; delayed adversarial behavior after acceptance; regression suite narrowed to optimized metrics; irreversible persistent change before independent validation.
+
 ## Context and memory
 
 Retrieval misses; irrelevant-context interference; stale state; false memory consolidation; contradiction accumulation; unbounded context growth; provenance loss.
