@@ -8,50 +8,103 @@ The purpose of this repository is **not** to document today's implementations an
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Named model blocks, natural-language reasoning, vector databases, agents, recursive systems, harnesses, biological mechanisms, particular learning algorithms, world-model products, verifier products, self-improvement frameworks, and current hardware are candidates or evidence—not axioms.
+After a research area has been mapped, synthesis restates the problem in implementation-neutral terms and asks what computational function is actually required. Named model blocks, reasoning methods, memory products, agent frameworks, biological mechanisms, learning algorithms, verifier products, self-improvement frameworks and current hardware are evidence/candidates—not axioms.
 
 ## Repository layers
 
-- `atlas/` — mechanism-centric notes covering the knowledge base.
-- `sources/` — source registry and evidence trail.
-- `research/` — research roadmap, claims ledger, contradictions, and open questions.
-- `synthesis/` — cross-domain deductions that are supported by the atlas.
-- `clean-sheet/` — architecture design after implementation assumptions are deliberately removed.
+- `atlas/` — mechanism-centric evidence and domain syntheses.
+- `sources/` — primary/original source registries.
+- `research/` — roadmap, claims, contradictions and failure modes.
+- `synthesis/` — cross-domain deductions and required functions.
+- `clean-sheet/` — implementation-free specification and competing architecture candidates.
+- `experiments/` — model-free experimental organism for discriminating architecture choices.
 
 ## Current research state
 
-- Foundations: first evidence pass complete; not saturated.
-- Architecture + systems/hardware: first coupled evidence pass complete; not saturated.
-- Biological intelligence, development & evolution: first evidence pass complete; not saturated.
-- Learning & adaptation: first evidence pass complete; not saturated.
-- Inference-time intelligence: first evidence pass complete; not saturated.
-- Persistent intelligence: first evidence pass complete; not saturated.
-- Verification, reliability & control: first evidence pass complete; not saturated.
-- Self-improvement: first evidence pass complete; not saturated.
-- Phase 7 cross-domain synthesis: next active area.
-- Clean-sheet architecture selection: deliberately **not started**.
+First-pass evidence/synthesis is complete for:
 
-Four recurring allocation problems currently span the Atlas:
+- Foundations.
+- Architecture + systems/hardware.
+- Biological intelligence, development & evolution.
+- Learning & adaptation.
+- Inference-time intelligence.
+- Persistent intelligence.
+- Verification, reliability & control.
+- Self-improvement.
+- Machine-native representation & communication gap closure.
+- Objective uncertainty & metareasoning gap closure.
+
+Then the project deliberately crossed the clean-sheet boundary:
+
+- **Phase 7 cross-domain synthesis:** complete to first-pass depth.
+- **Phase 8 forget implementations:** complete; exit gate passed.
+- **Phase 9 competing architecture families:** complete to first-pass depth; no architecture selected.
+- **Phase 10 experimental reconstruction:** active.
+
+## What the synthesis currently says
+
+Five allocation problems recur across otherwise different areas:
 
 1. **compute allocation** — what operation should run next, where and for how long;
-2. **change allocation** — what state should change, how durable it should be and when it should consolidate or be forgotten;
-3. **information allocation** — what evidence/state remains active, what is abstracted or archived, and what can safely be discarded;
-4. **assurance allocation** — how much independent evidence, restriction or authorization a proposed transition needs before it may propagate.
+2. **information allocation** — what remains active/addressable, what is abstracted and what can be forgotten;
+3. **change allocation** — what state should change, at what scope and for how long;
+4. **assurance allocation** — how much independent evidence/restriction a proposed transition needs;
+5. **exploration/design allocation** — how much resource goes to the current best path versus alternatives and system variants.
 
-Self-improvement adds a meta-level: the system may search over its own future implementations, but candidate mutations must remain subject to causal diagnosis, independent assurance, lineage/versioning and lifetime-cost comparison.
+The organizing hypothesis is that practical intelligence may be understood as adaptive selection of state transitions under uncertain world state and uncertain objectives, with finite physical resources and consequence-dependent assurance. This remains a falsifiable hypothesis, not a definition of intelligence.
 
-These are provisional cross-domain patterns, not yet a final theory of intelligence.
+## Clean-sheet reconstruction
+
+Phase 8 produced a specification independent of current AI implementation names:
+
+- semantic state classes;
+- functional contracts;
+- evidence/belief/provenance/authority semantics;
+- lifetime physical resource model;
+- system invariants;
+- consequence-sensitive assurance/change protocol;
+- unresolved experimental design choices;
+- evidence traceability and falsifiers.
+
+Phase 9 then derived four deliberately competing organizations from the same specification:
+
+1. **Hierarchical Adaptive System** — explicit hierarchical allocation around specialized processes.
+2. **Distributed Event-Driven Ecology** — locally adaptive processes with sparse coordination.
+3. **Integrated Predictive Core + External Evidence** — tight cognitive integration with explicit evidence/authority boundaries.
+4. **Developmental Variant System** — computational organization itself can grow/reorganize through versioned variant search.
+
+None is currently preferred. `clean-sheet/EXPERIMENT_MATRIX.md` defines matched experiments intended to decide which architectural boundaries actually earn their cost.
+
+## Experimental reconstruction
+
+Phase 10 starts model-free so architecture results are not confounded by pretrained model behavior.
+
+The first implemented probes are:
+
+- **E03:** direct-address history versus compressed current state versus a hybrid state policy;
+- **E05:** fixed versus adaptive computation on tasks with hidden difficulty/evidence quality.
+
+The experiment package is Python 3.11+, has no runtime dependencies, emits machine-readable results and instruments logical operation/read/write/sample cost.
+
+```bash
+cd experiments
+python -m pip install -e .
+python -m unittest discover -s tests -v
+
+ai-atlas-lab memory --seed 7
+ai-atlas-lab adaptive-compute --seed 7
+```
 
 ## Evidence discipline
 
-Every important claim should distinguish:
+Every important claim distinguishes:
 
 1. **Observation** — directly measured or reported.
 2. **Inference** — conclusion supported by observations.
-3. **Hypothesis** — plausible but not established.
-4. **Design choice** — a deliberate engineering decision, not a scientific fact.
+3. **Hypothesis** — plausible proposition requiring testing.
+4. **Design choice** — an engineering decision, not a scientific fact.
 
-Negative results, replications, contradictory evidence, scaling limits, and failure cases are first-class knowledge. A mechanism is not considered understood merely because a benchmark improved or evolution happened to use it.
+Negative results, replications, contradictory evidence, scaling limits and failure cases are first-class knowledge. Architecture decisions remain versioned and falsifiable.
 
 ## End goal
 
@@ -59,4 +112,4 @@ Produce a defensible answer to:
 
 > If we had to build an intelligent computational system from scratch, using everything humanity has learned but none of the accidental constraints of existing implementations, what would we build—and why?
 
-The eventual architecture should be traceable back to evidence in the atlas and should make its assumptions explicit enough to be falsified experimentally.
+The eventual architecture must be traceable back to evidence and survive matched experiments against credible alternatives.
