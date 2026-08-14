@@ -6,17 +6,19 @@ Define taxonomy, evidence schema, claim IDs, contradiction handling, source stan
 
 ## Phase 1 — Establish the computational substrate
 
-Research foundations, architectures, scaling laws, sparsity/conditional computation, recurrence/state-space approaches, memory hierarchy, hardware constraints and systems efficiency.
+Research foundations, architectures, scaling laws, sparsity/conditional computation, recurrence/state-space approaches, memory hierarchy, hardware constraints, systems efficiency, and biologically evolved computational/developmental mechanisms.
 
-**Progress:** Foundations and the first coupled architecture/systems evidence passes completed on 2026-08-14; neither is saturated. Architecture/systems now maps direct addressability vs bounded state, sparse routing, adaptive computation/writable memory, hybrid operators, IO/locality, distributed communication, precision, inference execution and hardware co-design. The next Phase-1 pass should close gaps in memory-capacity theory, graph/local computation, alternative hardware, communication lower bounds and cross-hardware matched experiments before substrate synthesis is treated as mature.
+**Progress:** Foundations, coupled architecture/systems, and the first biological-intelligence/evolution evidence passes completed on 2026-08-14; none is considered saturated. The biological pass adds local/context-dependent plasticity, dendritic computation, eligibility/modulatory credit, homeostasis, replay/consolidation, energy constraints, indirect developmental encoding and regulatory evolution.
 
-Exit condition: we can state which capabilities require which computational properties without assuming Transformer-style attention.
+**Phase-1 synthesis state:** sufficient to enter Phase 2 while continuing targeted gap closure. Remaining substrate gaps include memory-capacity/interference theory, graph/local computation, communication lower bounds, alternative hardware, biological fault tolerance and matched cross-hardware experiments.
+
+Exit condition: we can state which capabilities require which computational properties without assuming Transformer-style attention or biological point-neuron abstractions. **First-pass exit condition substantially met; keep open for revisions.**
 
 ## Phase 2 — Learning and adaptation
 
-Map self-supervised learning, supervised learning, RL/RLVR, preference learning, imitation, distillation, curriculum, continual learning, meta-learning, test-time learning and synthetic data.
+Map self-supervised learning, supervised learning, RL/RLVR, preference learning, imitation, distillation, curriculum, continual learning, meta-learning, test-time learning and synthetic data. Include learning substrates/timescales: weights, fast state, episodic memory, skills, routing policies, local eligibility, consolidation and architecture/regulatory state.
 
-Exit condition: clear separation of what belongs in weights versus external state/skills/memory.
+Exit condition: clear evidence-based separation of what belongs in weights versus external state/skills/memory and when information should migrate between stores.
 
 ## Phase 3 — Inference-time intelligence
 
@@ -42,7 +44,7 @@ Extract implementation-neutral laws, trade-offs, recurring patterns and contradi
 
 ## Phase 8 — Forget implementations
 
-For every required function, restate the problem without names such as Transformer, RAG, CoT, RLM, agent, vector DB, or current product/framework names.
+For every required function, restate the problem without names such as Transformer, RAG, CoT, RLM, agent, vector DB, biological neuron, DNA, or current product/framework names.
 
 ## Phase 9 — Clean-sheet architecture
 

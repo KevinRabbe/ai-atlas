@@ -1,6 +1,6 @@
 # Atlas Index
 
-The taxonomy is organized around computational functions rather than current products.
+The taxonomy is organized around computational functions rather than current products. Biology is included as a cross-cutting evidence source, not as a privileged implementation.
 
 | ID | Domain | Central question |
 |---|---|---|
@@ -17,5 +17,6 @@ The taxonomy is organized around computational functions rather than current pro
 | 10 | Systems, efficiency & hardware | How do memory hierarchy, bandwidth, parallelism and hardware shape viable intelligence? |
 | 11 | Multimodality & embodiment | How should heterogeneous sensory/action spaces be integrated? |
 | 12 | Safety, control & reliability | How do we constrain behavior and maintain corrigibility under capability growth? |
+| 13 | Biological intelligence, development & evolution | Which mechanisms discovered by nervous systems/evolution expose useful computational constraints or alternatives? |
 
 Cross-cutting dimensions for every domain: capability, efficiency, generalization, uncertainty, adaptivity, interpretability, robustness, scaling, failure modes, and interactions with other mechanisms.

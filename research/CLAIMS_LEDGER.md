@@ -32,5 +32,13 @@ This file tracks cross-domain claims that may affect architecture. Detailed evid
 | C-026 | Numerical sensitivity is non-uniform; precision can often be reduced selectively without proportional capability loss. | O | E4 | active | recurrent/persistent-state and safety-critical precision studies |
 | C-027 | Functional heterogeneity can outperform homogeneous computation in some matched regimes, but its advantage is workload and systems dependent. | I | E3 | active | fixed-budget ablations across hardware/task regimes |
 | C-028 | Architecture and hardware are coupled through locality, dataflow and communication, while specific accelerator details remain transient constraints. | I | E5 | active | alternative-hardware comparisons using equivalent functional workloads |
+| C-029 | Biological synaptic plasticity is local but strongly context dependent; timing, cell type, state and location can alter update direction/magnitude. | O | E4 | active | systematic cross-circuit mapping; artificial matched-rule tests |
+| C-030 | Temporary local eligibility state can bridge delayed outcome feedback and later durable updates. | O | E3 | active | artificial scaling studies vs full backprop/trajectory retention |
+| C-031 | Learning-related plasticity and homeostatic stability regulation can be separate coupled processes. | O | E4 | active | continual-learning ablations with independent stabilizers |
+| C-032 | Biological memory uses multiple plasticity/consolidation timescales rather than one permanent update timescale. | O | E4 | active | map when artificial multi-timescale stores improve retention/adaptation |
+| C-033 | Dendritic compartments can perform nonlinear local computation before global neuronal output. | O | E4 | active | matched artificial locality/communication experiments |
+| C-034 | Neural signaling has substantial energy cost, making activity level, locality and communication relevant computational constraints. | O | E4 | active | compare event-driven/dense artificial regimes on matched hardware |
+| C-035 | Complex neural structure can be produced by developmental regulatory programs and local interactions rather than explicit connection-by-connection genomic specification. | I | E5 | active | quantify indirect encoding/evolvability benefits in artificial systems |
+| C-036 | Human/mammalian brain evolution includes substantial regulatory/developmental changes that reuse conserved machinery rather than only introducing new primitives. | O | E4 | active | stronger causal links from regulatory changes to circuit/computation phenotypes |
 
 Rules: every claim must remain falsifiable; confidence changes only when evidence changes; contradictions are linked rather than hidden.

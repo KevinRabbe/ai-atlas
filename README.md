@@ -8,7 +8,7 @@ The purpose of this repository is **not** to document today's implementations an
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Transformers, natural-language chains of thought, vector databases, agents, RLMs, harnesses, particular training algorithms, and current hardware are candidates—not axioms.
+After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Transformers, natural-language chains of thought, vector databases, agents, RLMs, harnesses, biological neurons, genomes, particular training algorithms, and current hardware are candidates or evidence—not axioms.
 
 ## Repository layers
 
@@ -22,9 +22,11 @@ After a research area has been mapped, synthesis should restate the problem in i
 
 - Foundations: first evidence pass complete; not saturated.
 - Architecture + systems/hardware: first coupled evidence pass complete; not saturated.
+- Biological intelligence, development & evolution: first evidence pass complete; not saturated.
+- Phase 2 learning/adaptation: next active area.
 - Clean-sheet architecture selection: deliberately **not started**.
 
-The architecture/systems work is intentionally coupled because information access, persistent state, routing, precision, memory movement, communication and hardware execution form one design surface rather than independent layers.
+Biology is included because evolved nervous systems expose mechanisms under extreme locality, energy, developmental and continual-learning constraints. Biological plausibility itself has no privileged status; every mechanism must survive implementation-neutral restatement and artificial comparison.
 
 ## Evidence discipline
 
@@ -35,7 +37,7 @@ Every important claim should distinguish:
 3. **Hypothesis** — plausible but not established.
 4. **Design choice** — a deliberate engineering decision, not a scientific fact.
 
-Negative results, replications, contradictory evidence, scaling limits, and failure cases are first-class knowledge. A mechanism is not considered understood merely because a benchmark improved.
+Negative results, replications, contradictory evidence, scaling limits, and failure cases are first-class knowledge. A mechanism is not considered understood merely because a benchmark improved or evolution happened to use it.
 
 ## End goal
 
