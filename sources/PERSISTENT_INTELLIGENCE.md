@@ -36,12 +36,15 @@ Primary/original sources used in the first persistent-intelligence evidence pass
 - **P-S021** — Chua, K. et al. (2018), *Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models (PETS)*. https://arxiv.org/abs/1805.12114
 - **P-S022** — Assran, M. et al. (2025), *V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning*. https://arxiv.org/abs/2506.09985
 - **P-S023** — Zhang, X. et al. (2026), *Self-Evolving World Models for LLM Agent Planning*. https://arxiv.org/abs/2606.30639
+- **P-S030** — Assran, M. et al. (2023), *Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture (I-JEPA)*. https://arxiv.org/abs/2301.08243
+- **P-S031** — Bardes, A. et al. (2024), *Revisiting Feature Prediction for Learning Visual Representations from Video (V-JEPA)*. https://arxiv.org/abs/2404.08471
+- **P-S032** — Mur-Labadia, L. et al. (2026), *V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning*. https://arxiv.org/abs/2603.14482
 
 ## Multimodal grounding and action
 
 - **P-S024** — Radford, A. et al. (2021), *Learning Transferable Visual Models From Natural Language Supervision (CLIP)*. https://arxiv.org/abs/2103.00020
 - **P-S025** — Jaegle, A. et al. (2021), *Perceiver IO: A General Architecture for Structured Inputs & Outputs*. https://arxiv.org/abs/2107.14795
-- **P-S026** — Alayrac, J.-B. et al. (2022), *Flamingo: a Visual Language Model for Few-Shot Learning*. https://arxiv.org/abs/2204.14198
+- **P-S026** — Alayrac, J.-B. et al. (2022), *Flamingo: a Visual Language Model for Few-Shot Learning*. https://arxiv.org/abs/2204.03442
 - **P-S027** — Girdhar, R. et al. (2023), *ImageBind: One Embedding Space To Bind Them All*. https://arxiv.org/abs/2305.05665
 - **P-S028** — Driess, D. et al. (2023), *PaLM-E: An Embodied Multimodal Language Model*. https://arxiv.org/abs/2303.03378
 - **P-S029** — Brohan, A. et al. (2023), *RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control*. https://arxiv.org/abs/2307.15818
@@ -59,4 +62,5 @@ Before Phase 4 is treated as saturated, expand evidence for:
 - long-horizon model uncertainty and safe exploration;
 - hierarchical/multi-timescale world models;
 - transfer when a decision-sufficient latent model faces a new objective;
-- explicit benchmark comparisons of memory retrieval quality versus downstream action quality.
+- explicit benchmark comparisons of memory retrieval quality versus downstream action quality;
+- controlled comparisons of latent-target prediction, raw reconstruction and task-specific prediction under objective shift, hidden-variable demand and equal compute.
