@@ -4,7 +4,7 @@ No architectural choice is accepted without a traceable reason. This ledger reco
 
 ## Status
 
-**Phase 10 has produced twenty-one provisional principle-level selections. No whole Phase-9 architecture family is selected.**
+**Phase 10 has produced twenty-three provisional principle-level selections. No whole Phase-9 architecture family is selected.**
 
 The detailed measurements live in the experiment notes; this ledger keeps the current decision, evidence trail and falsifier compact enough to remain auditable.
 
@@ -13,11 +13,11 @@ The detailed measurements live in the experiment notes; this ledger keeps the cu
 | DL-001 | control organization | **provisional — coupling-scoped coordination** | E01/E01B + E22/E22B + I01/I04/I05 | fixed universal-central or fully local control wins under equal quality/latency/communication across changing hidden coupling |
 | DL-002 | cognitive integration | **provisional — conditional sharing with isolation fallback** | E02/E02B/E02C + I02/I05 | all-shared or all-isolated computation consistently dominates adaptive sharing under equal stored capacity, active compute and communication |
 | DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B + I01 | archive/link maintenance costs more lifetime utility than revision/provenance value across changing environments |
-| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B + I01/I04/I05 | one homogeneous representation matches exact semantics, bandwidth, protocol evolution and failure detection without recreating typed channels implicitly |
-| DL-005 | inference budget | **provisional — value-of-computation stopping** | E05/E05B + I01/I04/I05 | adaptive overhead/miscalibration makes fixed compute better across changing task difficulty/value/resource prices |
+| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B + I01/I04/I05 + E19 | one homogeneous representation matches exact semantics, bandwidth, protocol evolution and failure detection without recreating typed channels implicitly |
+| DL-005 | inference budget | **provisional — value-of-computation stopping** | E05/E05B + I01/I04/I05 + E19 | adaptive overhead/miscalibration makes fixed compute better across changing task difficulty/value/resource prices |
 | DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06 + E23B + I01 | single-belief state matches lifetime utility under ambiguity/consequence shifts after equal state/coordination cost |
 | DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07 + E23B + I01 | passive/fixed acquisition matches adaptive lifetime utility under changing informativeness, option value, cost and risk |
-| DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08 + E08B | one fixed breadth dominates after estimator/control overhead, or future-relevance estimation costs more than optionality saves |
+| DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08 + E08B + E19 trajectory replay | one fixed breadth dominates after estimator/control overhead, or future-relevance estimation costs more than optionality saves |
 | DL-009 | learning persistence | **provisional — staged adaptive persistence with change-source uncertainty** | E09/E09B/E09C + I01/I02 | correlated/adversarial evidence failures or expensive corroboration erase lifetime benefit, or fixed timescale dominates |
 | DL-010 | credit architecture | **provisional — causal/eligibility-scoped delayed credit** | E10 + E10B | full-history/global propagation matches learning, attribution, delayed state and communication across causal sparsity/trajectory depth |
 | DL-011 | retrieval policy | **provisional — retrieve for expected applicability/downstream value; similarity is a proxy** | E11 + I01 | similarity-only retrieval matches lifetime utility under staleness/causal conflicts and equal retrieval cost |
@@ -26,9 +26,9 @@ The detailed measurements live in the experiment notes; this ledger keeps the cu
 | DL-014 | capability constraints | **provisional — independent current/revocable categorical authority + adaptive contextual control** | E14 + E14B + I04/I05 | alternatives match categorical integrity and contextual utility once delegation/propagation/boundary costs are fully priced |
 | DL-015 | self-improvement lineage | **provisional — resource-priced lineage diversity / variant optionality** | E15 + E15B | one reversible incumbent matches switching recovery/deceptive search after equal rollback/search cost, or archive cost dominates option value |
 | DL-016 | repair scope | **provisional — evidence-scaled repair scope / minimal sufficient blast radius** | E16 isolated + recurring-component + systemic causal-scope regimes | one fixed change scope matches lifetime utility/regression cost across causal scales, or scope inference errors erase adaptive benefit |
-| DL-017 | mature structure | **provisional — regularity-scaled structural encoding with local override/isolation path** | E17 repeated/irregular structural state + E17B dependency-workflow topology | direct structure matches coherent coordinated adaptation after equal search/storage/runtime cost, or indirect rules become net harmful under changing regularity/exception burden |
-| DL-018 | execution timing | unresolved | systems locality/event evidence | E18 synchronous vs asynchronous/event-driven execution under sparse and barrier-coupled workloads |
-| DL-019 | fidelity allocation | unresolved | precision + representation evidence | E19 uniform vs adaptive fidelity/precision |
+| DL-017 | mature structure | **provisional — regularity-scaled structural encoding with local override/isolation path** | E17 structural state + E17B dependency topology | direct structure matches coherent coordinated adaptation after equal search/storage/runtime cost, or indirect rules become net harmful under changing regularity/exception burden |
+| DL-018 | execution timing | **provisional — event-scoped execution with consistency-triggered synchronization** | E18 sparse event graph + version-coupled snapshot family | global eager synchronization dominates sparse/event workloads after real dispatch costs, or scoped barriers fail to preserve consistency/ordering under realistic dependency uncertainty |
+| DL-019 | fidelity allocation | **provisional — value/sensitivity-scaled fidelity allocation** | E19 threshold decisions + accumulated trajectory constraints | uniform high or low fidelity dominates after switching/replay/hardware cost, or approximation uncertainty cannot be bounded well enough to trigger escalation safely |
 | DL-020 | self-change test exposure | **provisional — rotating independent regression evidence across coverage and timescale** | E20 + E20B | rotating suites become predictable/stale enough for exploitation, or refresh/adversarial costs exceed prevented regressions |
 | DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance allocation** | I02 + I03/E21 + E12B + I05 | implicit self-check or uniform-heavy verification dominates across changing consequence, uncertainty and assurance prices |
 | DL-022 | cross-resource metacontrol | **provisional — joint adaptive resource substitution under shared scarcity** | E22/E22B + I01/I02/I04/I05 | independent resource policies match lifetime utility after equal coordination cost |
@@ -89,29 +89,33 @@ Verification targets the layer that can still invalidate the transition/result. 
 ## PS-017 — Independent current/revocable capability authority
 Categorical authority for consequential capability is enforced independently from the behavior proposing the effect. Authority remains current/revocable through explicit identity/version semantics; contextual risk remains adaptive inside the authorized envelope.
 
-E14 separates permission from contextual danger. E14B changes grants/revocations: a static boundary suffers ~1679.6 stale-authority violations/run, while live and versioned boundaries stay at zero; versioned refreshes on only ~1.14% of tasks.
-
 ## PS-018 — Rotating independent self-change regression evidence
 Evidence authorizing durable self-change remains sufficiently independent from the proposal/optimization path and refreshes coverage across changing state-space, failure modes and timescales. Adversarial pressure is allocated by consequence rather than universally maximized.
-
-E20's fixed hidden suite falls to ~0.078 post-shift true capability versus ~0.997 rotating hidden. E20B's fixed short-horizon suite falls to ~0.095 versus ~0.942 with rotating horizons.
 
 ## PS-019 — Resource-priced lineage diversity / variant optionality
 Retain multiple self-improvement lineages only while estimated future reuse, uncertainty reduction or stepping-stone value exceeds storage/evaluation/coordination cost; collapse toward one incumbent when those option values disappear.
 
-E15's stationary control favors greedy (~0.9928 vs ~0.9880 archive), while switching demand favors the archive (~0.9804 vs ~0.9562; post-switch first-10 ~0.955 vs ~0.799). E15B traps greedy at score 10 on 30/30 seeds while the bounded archive reaches global score 15 on 30/30 under equal candidate-evaluation budget.
-
 ## PS-020 — Evidence-scaled repair scope / minimal sufficient blast radius
-Prefer the smallest reversible change whose causal scope plausibly covers the defect; escalate to isolated durable or structural change only when recurrence/coupling evidence makes the wider scope's expected future benefit exceed regression, assurance and rollback cost.
-
-E16 pins three regimes. Sparse isolated faults favor local repair (~-0.067 utility/step; structural ~-0.115). A recurring single-component root makes component-level repair worthwhile (~-0.063 versus ~-0.500 local), while adaptive reaches ~-0.059. A shared systemic root requires structural scope (~-0.097 versus ~-0.612 local), but adaptive reaches ~-0.060 while making only ~5.3 structural changes/run instead of ~120.3.
+Prefer the smallest reversible change whose causal scope plausibly covers the defect; escalate only when recurrence/coupling evidence makes wider scope worth its regression, assurance and rollback cost.
 
 ## PS-021 — Regularity-scaled structural encoding / local override fallback
-Represent and mutate structure indirectly when a compact generative rule captures reusable organization and coordinated change; preserve direct/local override or isolation paths where exceptions, irregularity or local causal structure make shared mutation harmful. The degree of indirectness itself is resource-priced by reuse, exception burden, blast radius, search cost and development/runtime overhead.
+Represent and mutate structure indirectly when a compact generative rule captures reusable organization and coordinated change; preserve direct/local override or isolation paths where exceptions, irregularity or local causal structure make shared mutation harmful.
 
-E17A shows the frontier in structural state: repeated regular structure gives adaptive indirect ~0.9951 net versus ~0.8754 direct, while irregular local changes make always-generative worse and adaptive indirect fall back to local behavior. E17B reproduces the boundary in dependency workflows: repeated topology gives adaptive indirect ~0.9958 versus ~0.9814 direct and reduces dependency-violation rate ~0.0123 -> ~0.00051; irregular workflow gives direct/adaptive ~0.968 while always-generative falls to ~0.9608.
+E17A gives adaptive indirect ~0.9951 versus ~0.8754 direct on repeated structural state. E17B reproduces the mechanism in workflows: repeated topology gives ~0.9958 versus ~0.9814 direct and reduces dependency violations ~0.0123 -> ~0.00051, while irregular workflows make always-generative worse and adaptive indirect fall back to local behavior.
 
-The selected object is the **regularity-to-structural-encoding rule**, not developmental programs, graph grammars, evolutionary algorithms or Phase-9 family D.
+## PS-022 — Event-scoped execution with consistency-triggered synchronization
+Execute computation when relevant state/dependency events occur while the consistency scope remains local. Introduce synchronization/barriers only across the dependency/version scope and at the time where a common view is actually required. If shared-consistency demand becomes continuous, eager synchronization may again be rational.
+
+E18 sparse graph: scoped event execution is exact at ~8.7 operations/step and ~0.9815 utility versus 80 operations/step and ~0.856 for global ticking. E18 version-coupled workload: naive async produces ~0.999 inconsistent-query rate; a version-scoped barrier stays exact and slightly beats eager synchronization at 30% query demand, while eager sync wins again around 90% query demand.
+
+The selected object is the **timing/synchronization rule**, not actors, threads, event loops, locks or Phase-9 family B.
+
+## PS-023 — Value/sensitivity-scaled fidelity allocation
+Treat numerical/computational fidelity as a resource dimension. Approximation is acceptable while its plausible propagated error cannot change enough downstream value; escalate, recompute or rematerialize higher fidelity when decision sensitivity, uncertainty accumulation, consequence or irrecoverability makes that condition fail.
+
+E19 threshold family: adaptive fidelity is exact while using high fidelity on ~20.8% of tasks and reaches ~2.3057 utility versus ~2.2523 uniform high. E19 trajectory family: adaptive exact replay on ~48.1% of episodes cuts approximate error ~0.1072 -> ~0.0050 and reaches ~0.8434 utility versus ~0.7902 uniform high. Higher-consequence cases receive more high-fidelity computation in both families.
+
+The selected object is the **fidelity-allocation rule**, not a numeric format, quantizer or mixed-precision implementation. Exact categorical authority/provenance remains outside this approximation rule.
 
 ---
 
@@ -121,7 +125,7 @@ I01 integrates memory conflict, ambiguity, active observation, discovery staging
 
 ## I05 — learned transition metacognition
 
-I05 removes oracle access for deployed variants to operation reliability, family-specific coordination benefit and evaluator/verifier quality. The conditional learner falls after a hidden regime shift (~0.517 utility/task in the first 60 post-shift batches) and recovers to ~0.740 in the last 100, versus ~0.485 frozen and ~0.622 globally pooled. It also reverses work allocation across the two coupled families from experience while categorical authority remains exact and external.
+I05 removes oracle access for deployed variants to operation reliability, family-specific coordination benefit and evaluator/verifier quality. The conditional learner falls after a hidden regime shift (~0.517 utility/task in the first 60 post-shift batches) and recovers to ~0.740 in the last 100, versus ~0.485 frozen and ~0.622 globally pooled. It also reverses work allocation across coupled families from experience while categorical authority remains exact and external.
 
 I05 is composition evidence, not a new principle. Its main limitation is a clean delayed audit signal for research outcomes; later work must test partial/noisy/censored feedback.
 
@@ -131,12 +135,14 @@ I04 remains the leading compression result: typed shared reaches ~0.9758 utility
 
 ## Current architecture implications
 
-The twenty-one selections increasingly collapse into a smaller set of recurring laws:
+The twenty-three selections increasingly collapse into a smaller set of recurring laws:
 
 - **scope follows coupling/responsibility/causal extent**;
 - **state follows future value/recoverability**;
 - **work follows marginal value under shared scarcity**;
 - **sharing and structural indirectness follow reusable regularity**;
+- **execution follows state change until consistency coupling justifies synchronization**;
+- **fidelity follows decision sensitivity, uncertainty propagation and consequence**;
 - **authority follows evidence and current typed invariants, not confidence alone**;
 - **verification follows residual failure layer**;
 - **durability raises the evidence requirement**;
@@ -147,7 +153,7 @@ The twenty-one selections increasingly collapse into a smaller set of recurring 
 
 Leading compression hypothesis:
 
-`typed state/transition proposals -> learned shared value/resource allocator -> layer-specific assurance/authority gate -> execute -> observe -> scoped credit/update`
+`typed state/transition proposals -> learned shared value/resource allocator -> layer-specific assurance/authority gate -> execute at scoped timing/fidelity -> observe -> scoped credit/update`
 
 This is not yet a selected architecture. JEPA remains a candidate predictive-representation family only; E24 is specified to test it against reconstructive/task-sufficient/recoverable-source alternatives.
 
@@ -156,11 +162,11 @@ This is not yet a selected architecture. JEPA remains a candidate predictive-rep
 | Candidate | Status | What it still tests |
 |---|---|---|
 | A — Hierarchical Adaptive System | retain | explicit hierarchical allocation and typed specialization |
-| B — Distributed Event-Driven Ecology | retain | locality, asynchronous local control and sparse coordination |
+| B — Distributed Event-Driven Ecology | retain | whether event locality survives richer uncertain/asynchronous dependencies beyond E18 |
 | C — Integrated Predictive Core + External Evidence | retain | how far integration can go before interference/authority/provenance boundaries dominate |
-| D — Developmental Variant System | retain | whether indirect organization remains valuable once runtime/development costs and exceptions are richer than E17A/B |
+| D — Developmental Variant System | retain | whether indirect organization remains valuable with richer development/runtime costs and exceptions beyond E17 |
 
-No family is selected because PS-001 through PS-021 remain implementable by multiple families.
+No family is selected because PS-001 through PS-023 remain implementable by multiple families.
 
 ## Selection rule
 
