@@ -23,35 +23,39 @@ Named model blocks, natural-language reasoning, databases, agents, recursive sys
 
 Evidence passes through self-improvement are complete to first-pass depth. Cross-domain synthesis is complete to first-pass depth. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no architecture family selected**. Phase 10 experimental reconstruction: **active**.
 
-All six Tier-1 experiment shapes are implemented. Promotion/system follow-ups now include second task families for control, integration and representation, adaptive hidden-volatility persistence, and E22 cross-resource metacontrol.
+All Tier-1 experiment shapes are implemented, with second-family/promotion tests for control, integration, memory state, representation, inference compute and persistence plus cross-resource metacontrol.
 
 The experiments increasingly show **conditional structure rather than universal winners**:
 
 - coordination scope should grow only when dependencies/contention cross local boundaries;
 - learned sharing trades reusable transfer against cross-task interference;
+- current belief and source evidence solve different persistence problems;
 - exact state, approximate numerical state, protocol metadata and auditability have different representation requirements;
-- persistence timescale should respond to environmental stability rather than being one global constant;
-- compute, memory, observation and verification should be treated as substitutable resources whose relative value can change with task and price.
+- useful inference depth changes with uncertainty, consequence and operation price;
+- persistence timescale should respond to environmental stability;
+- compute, memory, observation and verification can substitute for one another as task/resource economics change.
 
 ## Provisional clean-sheet selections
 
-Phase 10 has produced three reversible principle-level selections for the current experimental generation:
+Phase 10 has produced five reversible principle-level selections for the current experimental generation:
 
-1. **PS-001 — typed hybrid boundary state.** Exact identity/control/provenance stays exact; tolerant numerical state may use compact approximate/learned channels; version/integrity is explicit; human-readable audit need not be the hot-path representation.
-2. **PS-002 — staged adaptive persistence.** New evidence normally enters reversible state before globally durable mutation, with consolidation timescale/threshold allowed to adapt to estimated environmental stability.
+1. **PS-001 — typed hybrid boundary state.** Exact identity/control/provenance stays exact; tolerant numerical state may use compact approximate/learned channels; version/integrity is explicit; human-readable audit need not be the hot path.
+2. **PS-002 — staged adaptive persistence.** Evidence normally enters reversible state before globally durable mutation, with consolidation timescale/threshold allowed to adapt to estimated environmental stability.
 3. **PS-003 — coupling-scoped coordination.** Keep execution/local decisions local while coupling is local; introduce resource/domain/global arbitration only where dependencies or shared scarcity actually couple decisions.
+4. **PS-004 — derived current belief with evidence linkage.** Keep a cheap current-state representation for repeated action/reasoning while retaining source linkage when correction, contradiction handling or provenance has future value.
+5. **PS-005 — value-of-computation stopping.** Spend additional inference effort only while estimated marginal downstream value exceeds current computation/latency/risk cost; maximum budgets are ceilings, not consumption targets.
 
-These are not product components and do not select architecture A/B/C/D. Their implementations remain open and falsifiable.
+These are not product components and do not select architecture A/B/C/D. Their concrete implementations remain open and falsifiable.
 
 See `clean-sheet/DESIGN_LEDGER.md`, `experiments/STATUS.md` and `research/ROADMAP.md` for the current checkpoint.
 
 ## Organizing hypothesis
 
-The synthesis currently treats practical intelligence as potentially involving adaptive selection of state transitions and allocation of compute, durable change, information, assurance and exploration/design effort under uncertainty and finite resources. E22 provides the first explicit system-level test of substitution among several of those resources, but the hypothesis remains falsifiable and does not determine architecture.
+The synthesis treats practical intelligence as potentially involving adaptive selection of state transitions and allocation of compute, durable change, information, assurance and exploration/design effort under uncertainty and finite resources. Phase-10 experiments now support several pieces of that hypothesis independently, but it remains falsifiable and does not determine a final architecture.
 
 ## Next decisive targets
 
-The highest-value open questions are now compute-matched conditional sharing (DL-002), promotion-quality evidence/current-state and adaptive-compute tests (DL-003/DL-005), and a second E22 family with simultaneous resource capacity contention plus quality drift before cross-resource metacontrol itself is selected.
+The highest-value open questions are compute-matched conditional sharing (DL-002), multiple competing belief hypotheses under partial observability (DL-006), active value-driven information acquisition (DL-007), and a second cross-resource metacontrol family with simultaneous capacity contention and quality drift (DL-022).
 
 ## End goal
 
