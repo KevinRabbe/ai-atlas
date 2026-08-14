@@ -4,34 +4,34 @@ No architectural choice is accepted without a traceable reason. This ledger reco
 
 ## Status
 
-**Phase 10 has twenty-three provisional principle-level selections. No fixed Phase-9 A/B/C/D family is selected. AF01–AF03 and I07 instead support conditional organizational modes and coupling-scoped topology.**
+**Phase 10 has twenty-three provisional principle-level selections. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture. AF01–AF03 and I07–I09 instead support conditional organizational modes, coupling-scoped topology, a stable typed semantic layer and independently assured reconfiguration.**
 
 Detailed measurements live in the experiment notes; this ledger keeps the current decision, evidence trail and active falsifier compact enough to remain auditable.
 
 | Decision | Question | Current status | Evidence | Falsifier / next discriminator |
 |---|---|---|---|---|
-| DL-001 | control organization | **provisional — coupling-scoped coordination** | E01/E01B, E22/E22B, I04–I07, AF01–AF03 | static global/local organization dominates after real scope inference, migration, communication and switching costs |
+| DL-001 | control organization | **provisional — coupling-scoped coordination** | E01/E01B, E22/E22B, I04–I09, AF01–AF03 | static global/local organization dominates after real scope inference, assurance, migration, communication and switching costs |
 | DL-002 | cognitive integration | **provisional — conditional sharing with isolation fallback** | E02/E02B/E02C, I02/I05, AF01–AF03 | all-shared or all-isolated computation dominates conditional sharing after equal capacity and changing sharedness |
-| DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B, I01, E24/I06 | archive/source linkage costs more lifetime value than revision/provenance/rematerialization benefit |
-| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B, I01/I04/I05, E19/E24/I06 | one homogeneous representation matches exact semantics, compact learned state, evolution and failure detection |
+| DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B, I01, E24/I06, I08 | archive/source linkage and migration-safe stable references cost more lifetime value than revision/provenance/rematerialization benefit |
+| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B, I01/I04/I05, E19/E24/I06, I08 | one homogeneous representation matches exact identity/provenance/authority semantics, compact learned state, evolution and failure detection through reorganization |
 | DL-005 | inference budget | **provisional — value-of-computation stopping** | E05/E05B, I01/I04/I05, E19/I06 | adaptive estimation overhead makes fixed compute better across changing task value/difficulty/prices |
 | DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06, E23B, I01 | single-belief state matches lifetime utility under ambiguity/consequence shifts after equal state cost |
-| DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07, E23B, I01, I05B, I06 | passive/fixed acquisition matches adaptive value under changing informativeness/cost/risk |
-| DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08/E08B, E19, E24, I06 | one fixed breadth dominates after source-retention/rematerialization latency and estimator overhead |
+| DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07, E23B, I01, I05B, I06, I09 | passive/fixed acquisition matches adaptive value under changing informativeness/cost/risk including topology evidence |
+| DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08/E08B, E19, E24, I06, I08 | one fixed breadth dominates after source-retention/rematerialization and migration-safe-reference overhead |
 | DL-009 | learning persistence | **provisional — staged adaptive persistence with change-source uncertainty** | E09/E09B/E09C, I01/I02 | correlated/adversarial evidence or corroboration cost erases staged-persistence benefit |
 | DL-010 | credit architecture | **provisional — causal/eligibility-scoped delayed credit** | E10/E10B | global/full-history propagation matches learning and attribution under causal sparsity/depth |
 | DL-011 | retrieval policy | **provisional — expected applicability/downstream value; similarity is proxy** | E11, I01 | similarity-only retrieval matches lifetime utility under staleness/causal conflict at equal cost |
-| DL-012 | verification granularity | **provisional — failure-layer-targeted verification** | I03/E12, E12B | one generic verification layer matches process/outcome/authority coverage at equal assurance cost |
-| DL-013 | evaluator redundancy | **provisional — assurance value follows failure-mode independence** | E23, I02, I03/E13, I05/I05B | correlated evaluator/audit ensembles match genuinely independent evidence under search pressure |
-| DL-014 | capability constraints | **provisional — independent current/revocable authority + adaptive contextual control** | E14/E14B, I04/I05 | alternatives match categorical integrity and contextual utility after delegation/boundary costs |
+| DL-012 | verification granularity | **provisional — failure-layer-targeted verification** | I03/E12, E12B, I09 topology layer | one generic verification layer matches process/outcome/authority/topology-change coverage at equal assurance cost |
+| DL-013 | evaluator redundancy | **provisional — assurance value follows failure-mode independence** | E23, I02, I03/E13, I05/I05B, I09 | correlated evaluator/audit ensembles match genuinely independent evidence under search/reconfiguration pressure |
+| DL-014 | capability constraints | **provisional — independent current/revocable authority + adaptive contextual control** | E14/E14B, I04/I05, I08 | topology-owned/cached authority matches current independent authority under live split/merge/revocation at lower total cost |
 | DL-015 | self-improvement lineage | **provisional — resource-priced lineage diversity / variant optionality** | E15/E15B, AF01/AF02 | one incumbent matches recurrence/stepping-stone recovery after equal carrying/search/switch cost |
-| DL-016 | repair scope | **provisional — minimal sufficient causal blast radius** | E16 isolated/component/systemic regimes | one fixed change scope matches adaptive lifetime utility across causal scales |
-| DL-017 | mature structure | **provisional — regularity-scaled structural encoding + local override** | E17/E17B, AF01–AF03, I07 | direct/static structure matches coordinated adaptation after real migration/runtime/state-transfer costs |
-| DL-018 | execution timing | **provisional — event-scoped execution + consistency-triggered synchronization** | E18, I06, AF01–AF03 | eager global synchronization dominates after realistic async/dispatch/state-migration overhead |
+| DL-016 | repair scope | **provisional — minimal sufficient causal blast radius** | E16 isolated/component/systemic regimes, I09 structural promotion | one fixed change scope matches adaptive lifetime utility across causal/topology scales |
+| DL-017 | mature structure | **provisional — regularity-scaled structural encoding + local override** | E17/E17B, AF01–AF03, I07–I09 | direct/static structure matches coordinated adaptation after real migration/runtime/state-transfer/assurance costs |
+| DL-018 | execution timing | **provisional — event-scoped execution + consistency-triggered synchronization** | E18, I06, AF01–AF03, I08 | eager global synchronization dominates after realistic async forwarding, topology epoch and migration overhead |
 | DL-019 | fidelity allocation | **provisional — value/sensitivity-scaled fidelity** | E19, E24, I06 | uniform high/low fidelity dominates after switching/replay/hardware costs |
-| DL-020 | self-change test exposure | **provisional — rotating independent regression evidence across coverage/timescale** | E20/E20B | refreshing evidence becomes predictable/stale or costs more than prevented regression |
-| DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance** | I02, I03/E21, E12B, I05/I05B | uniform-heavy or implicit self-check dominates across changing consequence/assurance prices |
-| DL-022 | cross-resource metacontrol | **provisional — joint adaptive substitution under shared scarcity** | E22/E22B, I01–I06, AF01 | factorized policies match interaction-aware allocation after equal learning/search overhead |
+| DL-020 | self-change test exposure | **provisional — rotating independent regression evidence across coverage/timescale** | E20/E20B, I09 reconfiguration analogy | refreshing/independent evidence becomes predictable/stale or costs more than prevented regression/reconfiguration failures |
+| DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance** | I02, I03/E21, E12B, I05/I05B, I09 | uniform-heavy or implicit self-check dominates across changing consequence/assurance prices including topology changes |
+| DL-022 | cross-resource metacontrol | **provisional — joint adaptive substitution under shared scarcity** | E22/E22B, I01–I06, AF01, I08 | factorized policies match interaction-aware allocation after equal learning/search/migration overhead |
 | DL-023 | epistemic frontier policy | **provisional — verified frontier expansion** | E23/E23B, I01/I02/I04/I05 | independent staging adds no reliability or beyond-teacher results require answer leakage |
 
 ---
@@ -41,16 +41,20 @@ Detailed measurements live in the experiment notes; this ledger keeps the curren
 ## PS-001 — Typed hybrid boundary state
 Exact identity, control and provenance remain exact. Tolerant numerical/learned state may use compact approximate representations; version/integrity stay explicit.
 
+I08 extends the boundary through live reorganization: exact evidence/resource/node identity and authority versions are not allowed to become mere scope-relative snapshots.
+
 ## PS-002 — Staged adaptive persistence
 New evidence normally enters reversible/tentative state before globally durable mutation. Consolidation timescale responds to stability/confidence and can buy independent corroboration when change-source uncertainty matters.
 
 ## PS-003 — Coupling-scoped coordination
 Keep decisions/local organization local while dependencies/scarcity are local; expand coordination only to the scope where choices become coupled.
 
-AF03/I07 now extend this from operation control to **architecture topology**: global organization is useful when domains are genuinely coupled; local scopes win when heterogeneous domains are weakly coupled; learned scope formation only pays when structural persistence amortizes inference/migration cost.
+AF03/I07 extend this from operation control to **architecture topology**: global organization is useful when domains are genuinely coupled; local scopes win when heterogeneous domains are weakly coupled; learned scope formation only pays when structural persistence amortizes inference/migration cost. I08 shows that scope membership can change safely only if stable semantics survive the move. I09 adds that the evidence proposing a scope change may itself require independent assurance.
 
 ## PS-004 — Derived current belief with evidence linkage
 Maintain cheap current belief while retaining source linkage whenever correction, contradiction, provenance, audit or future rematerialization has meaningful expected value.
+
+I08 makes source linkage topology-independent so a split/merge does not silently destroy later correction or rematerialization paths.
 
 ## PS-005 — Value-of-computation stopping
 Continue optional inference only while estimated marginal downstream value exceeds compute, latency, risk and opportunity cost.
@@ -59,7 +63,7 @@ Continue optional inference only while estimated marginal downstream value excee
 Preserve multiple plausible states while ambiguity × consequence justifies their cost; prune as evidence resolves ambiguity or stakes fall.
 
 ## PS-007 — Value-driven active evidence acquisition
-Acquire observations/interventions when expected downstream or epistemic value exceeds interaction cost/risk, including multi-step option value and evidence about metacognitive/tool quality.
+Acquire observations/interventions when expected downstream or epistemic value exceeds interaction cost/risk, including multi-step option value, evidence about metacognitive/tool quality and independent evidence about proposed topology changes.
 
 ## PS-008 — Verified epistemic frontier expansion
 Bootstrap knowledge is a starting prior/method library, not a permanent epistemic ceiling. Novel candidates remain tentative until sufficiently independent evidence supports promotion.
@@ -74,25 +78,33 @@ When operations/resources materially substitute, complement or contend, allocati
 Persistent evidence is ultimately selected for expected usefulness to the current decision/belief/action. Similarity remains a cheap candidate signal when it predicts applicability.
 
 ## PS-012 — Adaptive predictive-state breadth / recoverable optionality
-Keep information hot in proportion to expected future value versus active/rematerialization cost; preserve recoverability for distinctions with meaningful option value. E24 shows passive predictive sufficiency can fail after objective/intervention shifts.
+Keep information hot in proportion to expected future value versus active/rematerialization cost; preserve recoverability for distinctions with meaningful option value. E24 shows passive predictive sufficiency can fail after objective/intervention shifts. I08 shows recoverability references themselves must survive topology migration.
 
 ## PS-013 — Failure-mode-independent assurance
 Additional evaluators/audits matter only to the extent that they add evidence with sufficiently different relevant failure modes.
 
+I09 reproduces this at topology scale: a higher threshold on the same correlated spoof source still accepts harmful migrations; a genuinely independent audit channel can block them.
+
 ## PS-014 — Consequence/uncertainty/resource-sensitive assurance allocation
 Verification/audit effort scales with expected harm reduction, uncertainty, optimizer pressure and assurance cost. Heavy checking can win when cheap; selective checking when costly/scarce.
+
+I09 reproduces the cost crossover for architecture reconfiguration: uniform independent checking wins at cheap audit prices, selective change-targeted assurance overtakes it as audit cost rises.
 
 ## PS-015 — Causal/eligibility-scoped delayed credit
 Delayed outcomes update transitions that remain plausible contributors, not automatically the entire retained history.
 
 ## PS-016 — Failure-layer-targeted verification
-Verification targets the layer that can still invalidate the transition/result. Process, final outcome, provenance and authority evidence are not assumed substitutable.
+Verification targets the layer that can still invalidate the transition/result. Process, final outcome, provenance, authority and structural-promotion evidence are not assumed substitutable.
 
 ## PS-017 — Independent current/revocable capability authority
 Categorical authority for consequential capability is enforced independently from the behavior proposing the effect. Authority remains current/revocable through explicit identity/version semantics; contextual risk remains adaptive inside the authorized envelope.
 
+I08 exercises this across topology epochs. Migrating/caching authorization as ordinary scope state produces stale-authority failures; resolving the current independent authority record at execution preserves the invariant.
+
 ## PS-018 — Rotating independent self-change regression evidence
 Evidence authorizing durable self-change stays sufficiently independent from the proposal/optimization path and refreshes coverage across changing state-space, failure modes and timescales.
+
+I09 shows the same separation is necessary for topology change: proposal evidence is not automatically promotion evidence.
 
 ## PS-019 — Resource-priced lineage diversity / variant optionality
 Retain multiple self-improvement lineages only while estimated future reuse, uncertainty reduction or stepping-stone value exceeds storage/evaluation/coordination cost; collapse toward one incumbent when option value disappears.
@@ -102,11 +114,15 @@ AF01/AF02 show the same rule at organization scale: a variant-preserving mode ea
 ## PS-020 — Evidence-scaled repair scope / minimal sufficient blast radius
 Prefer the smallest reversible change whose inferred causal scope covers the defect; escalate only when recurrence/coupling evidence makes wider scope worth regression, assurance and rollback cost.
 
+I09 extends the blast-radius logic to topology: a split/merge that moves more semantic state can justify stronger independent evidence than a local routing adjustment.
+
 ## PS-021 — Regularity-scaled structural encoding / local override fallback
 Represent/mutate structure indirectly when a compact rule captures reusable organization; preserve direct/local override or isolation where exceptions and local causal structure make shared mutation harmful.
 
 ## PS-022 — Event-scoped execution with consistency-triggered synchronization
 Execute computation when relevant state/dependency events occur while consistency scope remains local. Synchronize only across the dependency/version scope and at the time a common view is required; eager synchronization may win again under continuous shared-consistency demand.
+
+I08 extends this to topology epochs: an event created under an old scope is forwarded by stable identity rather than being silently dropped or executed against a stale scope snapshot.
 
 ## PS-023 — Value/sensitivity-scaled fidelity allocation
 Treat numerical/computational fidelity as a resource dimension. Approximation is acceptable while plausible propagated error cannot change enough downstream value; escalate/recompute/rematerialize when sensitivity, accumulation, consequence or irrecoverability makes it material.
@@ -129,6 +145,8 @@ Coarse predictive latent state is cheap but can discard future/action-relevant d
 
 Canonical A/B/C/D embodiments share the I06 substrate. No fixed family wins every regime; organization costs and workload structure change the ranking.
 
+The useful mechanisms are therefore retained, but the interpretation “choose one permanent whole-system family” is increasingly disfavored by the matched evidence.
+
 ## AF02 — global organizational mode can be learned
 
 Without hidden regime labels, an adaptive selector reaches ~1.563 utility/step versus ~1.509 best fixed and ~1.576 oracle. It loses when regimes are too short to amortize switching/identification cost.
@@ -143,37 +161,61 @@ Heterogeneous weakly coupled domains favor simultaneous scoped organization (~1.
 
 ## I07 — scope membership itself can be learned
 
-Twelve nodes move among recurring hidden dependency partitions. Adaptive graph-derived scopes reach ~1.058 utility/step and ~0.905 pairwise scope accuracy versus 1.027 best static and ~1.075 oracle at 120-step regimes. At 20-step regimes adaptive falls below static global.
+Twelve nodes move among recurring hidden dependency partitions. Adaptive graph-derived scopes reach ~1.058 utility/step and ~0.905 pairwise scope accuracy versus 1.027 static-global and ~1.075 oracle at 120-step regimes. At 20-step regimes adaptive falls below static global.
 
 **Architecture inference:** topology membership can be revisable state, but only when structural persistence exceeds inference/migration cost.
 
+## I08 — typed semantic state survives dynamic topology
+
+I08 is the first executable dynamic-scope skeleton.
+
+The `typed_epoch` runtime reaches ~1.0744 utility/step versus ~0.9957 static typed topology while forwarding ~46.9 old-epoch events/run and preserving zero tested failures in authority, provenance, source rematerialization, event routing and resource uniqueness.
+
+A typed-state/stale-route ablation reaches ~1.0636 but misroutes ~45 delayed events/run. A cheaper scope-snapshot migration falls to ~0.777 and breaks multiple invariants.
+
+**Architecture inference:** stable semantic identity and current organizational scope are different state dimensions. The former can reference the latter; it must not be defined only by it.
+
+## I09 — reconfiguration has its own assurance gate
+
+Under a correlated spoofed interaction source, raw topology pairwise accuracy falls to ~0.823 and accepts ~29 harmful migrations/run. A larger threshold on the same source still accepts ~15.
+
+Selective independent assurance reaches ~0.933 attacked accuracy and accepts zero harmful migrations in the matched family while using ~5.9 audit samples/step versus 33 for uniform checking.
+
+The uniform/selective utility ordering crosses as audit price rises.
+
+**Architecture inference:** topology proposal and topology promotion are separate transitions. Independent assurance is bought in proportion to consequence, uncertainty and cost.
+
 ---
 
-# Current architecture hypothesis
+# Current executable architecture hypothesis
 
 ```text
-source/world evidence
-      ↓
-typed state + transition proposals
-      ↓
-learned interaction-aware value/resource allocation
-      ↓
-dynamic coupling graph / scopes
-      ├─ local/distributed organization where locality pays
-      ├─ hierarchical arbitration where coupling/scarcity pays
-      ├─ integrated/shared computation where transfer pays
-      └─ variant preservation where recurrence/option value pays
-      ↓
-failure-layer assurance + current authority boundary
-      ↓
-execute at scoped timing/fidelity/state breadth
-      ↓
+stable typed semantic plane
+  identities
+  provenance + source references
+  authority versions
+  resource leases
+        ↓ referenced by
+revisable organizational plane
+  learned dependency graph
+  dynamic scopes
+  local organizational modes
+  routing/cache/resource placement
+        ↓
+interaction-aware transition/resource allocator
+        ↓
+assurance + authority gate
+  consequence / uncertainty / failure independence
+        ↓
+versioned transition protocol
+  execute / split / merge / forward / rollback
+        ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
-The Phase-9 family labels are now better treated as **candidate organizational modes**, not final mutually exclusive architectures.
+The Phase-9 family labels are now best treated as **candidate organizational modes** rather than four mutually exclusive universal architectures. Static versions remain legitimate competitors where reorganization is too fast, uncertain or expensive.
 
-The next discriminator is not another abstract mode benchmark. It is an executable dynamic-scope skeleton where a split/merge must migrate real typed evidence, predictive state, resource ownership, authority versions and in-flight events while preserving invariants.
+The next step is not another abstract mode benchmark. It is a persistent reusable typed-scope organism API so future experiments exercise this same protocol instead of implementing architecture semantics separately.
 
 ## Selection rule
 
