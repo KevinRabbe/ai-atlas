@@ -1,10 +1,10 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-three provisional design principles selected; composition has progressed through I12 plus the reusable typed-scope runtime. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
+**Checkpoint: twenty-four provisional design principles selected; composition has progressed through I13C plus the reusable typed-scope runtime. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
 
 ## Validation
 
-Phase 10 now contains **260 added test cases**.
+Phase 10 now contains **278 added test cases**.
 
 Architecture/composition additions since the 190-test metacognitive/JEPA checkpoint:
 
@@ -20,7 +20,10 @@ Architecture/composition additions since the 190-test metacognitive/JEPA checkpo
 - I11 overlapping/cross-cutting scopes: 6;
 - non-owning coordination-scope registry: 3;
 - I12 directional dependencies: 6;
-- typed directional-dependency registry: 3.
+- typed directional-dependency registry: 3;
+- I13 partial topology/structural commit: 6;
+- I13B singular resource/service ownership handoff: 6;
+- I13C publication-fence runtime semantics: 6.
 
 The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
@@ -28,127 +31,86 @@ The shell environment cannot clone GitHub because DNS resolution is unavailable 
 
 # Current architecture checkpoint
 
-## I06 — interaction-aware runtime allocation
+## I06–I12 — from common allocation to typed dynamic organization
 
-I06 puts high fidelity, source rematerialization vs broad hot state, synchronization and active intervention into one shared runtime budget.
+I06 shows that runtime operations such as fidelity, rematerialization, synchronization and intervention interact enough that a joint allocator (~`1.564` utility/task) beats independent operation controllers (~`1.355`).
 
-30-seed learned-joint utility is ~`1.5640`/task versus ~`1.3549` factorized independent, ~`1.4096` uniform-safe and ~`0.4769` uniform-cheap.
+AF01–AF03 and I07 then show that organizational mode, organizational scope and scope membership can all be revisable state, but plasticity only pays when dependency structure persists long enough to amortize inference/switch/migration cost.
 
-**Result:** operation values cannot always be summed independently. Material complements/substitutes require interaction-aware allocation.
+I08 puts exact evidence/provenance, predictive source references, versioned authority, singular resource leases and in-flight events behind real topology epochs. The typed-epoch runtime reaches ~`1.0744` utility/step versus ~`0.9957` static typed topology while preserving zero tested failures across event routing, authority, provenance, rematerialization and resource uniqueness.
 
-## AF01–AF03 / I07 — fixed architecture becomes adaptive organization
+I09 shows topology proposal evidence is not automatically topology-promotion evidence: under correlated spoofing, selective independent checking raises attacked pairwise topology accuracy to ~`0.933` with zero harmful accepted migrations in the matched family.
 
-AF01 finds a Pareto frontier among canonical A/B/C/D embodiments rather than a universal fixed winner.
+I10 converts those boundaries into the reusable `TypedScopeRuntime`, with exact semantic records, typed proposals, interaction-aware allocation, independent assurance, staged scope change/rollback and topology-epoch event forwarding.
 
-AF02 learns organizational mode from noisy observable structure: ~`1.5625` utility/step versus ~`1.5087` best fixed and ~`1.5762` oracle. It loses when regimes are too short to amortize identification/switching.
+I11 separates semantic ownership from coordination membership. Sparse cross-cutting work favors temporary non-owning overlays; frequent recurrence can justify persistent overlap; dense continuous coupling justifies one merged/global scope. `CoordinationScopeRegistry` therefore supports overlapping non-owning memberships without transferring evidence, leases or authority.
 
-AF03 shows organizational mode must also be scoped: heterogeneous weakly coupled domains favor simultaneous local modes, while homogeneous tightly coupled domains favor global organization.
+I12 separates one-way dependence from reciprocity. Sparse directional work should not create reverse flow; reciprocal clusters can earn shared scopes; mixed regimes use both. `DependencyRegistry` stores explicit one-way relationships over stable subject identities.
 
-I07 removes predefined subsystem boundaries. Adaptive graph-derived scopes reach ~`1.0583` utility/step and ~`0.9045` pairwise scope accuracy versus `1.0270` static global and ~`1.0748` oracle at 120-step regimes. At 20-step regimes adaptive topology loses.
+## I13 — partial topology/structural publication failure
 
-**Result:** organizational mode, scope and membership can all be revisable state, but plasticity has an economic timescale.
+I13 fails migration after a random subset of 12 subject moves.
 
-## I08 — typed state survives live topology changes
+Default 30-seed result, 20% failure probability and event rate 8:
 
-I08 puts exact evidence IDs/provenance, predictive source references, independent versioned authority, exact resource leases and delayed events behind dynamic split/merge operations.
+| mechanism | net utility/migration | corrupt rate | lost events | duplicate events | downtime |
+|---|---:|---:|---:|---:|---:|
+| naive in-place | 2.860 | ~0.202 | ~3.96 | ~0.51 | 0.000 |
+| stop-world replace | 3.241 | **0.000** | **0.000** | **0.000** | ~1.299 |
+| **staged transaction** | **3.310** | **0.000** | **0.000** | **0.000** | ~0.402 |
+| dual-version handoff | 3.291 | **0.000** | **0.000** | **0.000** | **0.000** |
 
-30-seed means:
+The mechanisms cross over with failure risk and live traffic:
 
-| runtime | utility/step | event misroutes | authority violations | provenance failures | rematerialization failures | duplicate resource exposure/step |
-|---|---:|---:|---:|---:|---:|---:|
-| static typed | 0.9957 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000 |
-| scope snapshot | 0.7770 | ~45.0 | ~4.53 | ~108.3 | ~97.0 | ~8.218 |
-| typed stale-route | 1.0636 | ~45.0 | 0.0 | 0.0 | 0.0 | 0.000 |
-| **typed epoch** | **1.0744** | **0.0** | **0.0** | **0.0** | **0.0** | **0.000** |
+- essentially zero failure + very low traffic: direct live change is cheapest;
+- high failure + low traffic: blocking replacement can be rational;
+- high live traffic: dual-version handoff can earn its extra temporary state.
 
-The typed-epoch runtime forwards ~`46.9` delayed events/run across topology changes rather than losing their route.
+## I13B — singular ownership handoff reproduces the boundary
 
-**Result:** stable semantic identity is not the same state dimension as current organizational scope.
+This second family changes one exact resource/service writer rather than topology.
 
-## I09 — topology changes need assurance under correlated evidence
+Naive make-before-break can leave two writers; break-before-make can leave zero writer.
 
-A sustained false interaction source drops raw pairwise topology accuracy from ~`0.9061` to ~`0.8227`; simply raising the threshold still accepts ~`15.2` harmful migrations/run.
+Default 30-seed result, 20% failure and request rate 10:
 
-Selective independent checking reaches ~`0.9325` attacked accuracy with zero harmful accepted migrations in the matched family and uses ~`5.9` audit samples/step versus `33` for uniform checking.
+| mechanism | utility/handoff | ownership violation | duplicate writes | lost requests | downtime |
+|---|---:|---:|---:|---:|---:|
+| make-before-break | 0.5621 | ~0.065 | ~0.780 | 0.000 | 0.000 |
+| break-before-make | 0.3846 | ~0.064 | 0.000 | ~5.142 | 0.000 |
+| stop-world transfer | 0.6841 | **0.000** | **0.000** | **0.000** | ~1.080 |
+| staged lease fence | 0.7704 | **0.000** | **0.000** | **0.000** | ~0.120 |
+| **dual-read / single-write** | **0.7743** | **0.000** | **0.000** | **0.000** | **0.000** |
 
-Uniform assurance wins when independent evidence is cheap; selective assurance wins as audit cost rises.
+High-failure/high-live-traffic conditions favor dual-read/single-write; zero-failure/low-traffic can make direct handoff cheapest.
 
-**Result:** topology proposal evidence is not automatically topology-promotion evidence.
+## PS-024 — failure-isolated consequential transition publication
 
-## I10 — persistent typed-scope organism API
+I13 + I13B meet the second-family promotion gate.
 
-I10 converts the architecture checkpoint into a reusable runtime protocol instead of another experiment-specific controller.
+> **Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants; publish authority/ownership/topology only across a coherence boundary after required validation. Choose direct, blocking, staged or dual-version publication according to partial-failure risk, blast radius, live-work pressure and isolation cost.**
 
-`TypedScopeRuntime` now exposes:
+The selected object is the failure-isolation boundary between **preparation** and **authoritative publication**, not transactions, locks, consensus, blue/green deployment or another named implementation.
 
-- exact evidence/source records and predictive rematerialization links;
-- current versioned capability authority;
-- singular versioned resource leases;
-- typed transition proposals;
-- interaction-aware bundle allocation;
-- independent proposal-specific assurance tokens;
-- staged/committed/rolled-back topology changes;
-- topology epochs and exactly-once old-epoch event forwarding.
+## I13C — publication protocol is now explicit in the runtime
 
-Eight semantic tests passed before publication.
+`PublicationProtocol` hardens the reusable runtime with version fences:
 
-A separate 900-step I10 integration scenario repeatedly changes topology and authority while work is in flight, rematerializes source-backed state and allocates complementary operation bundles. Across the local 20-seed validation it averages ~`6.1` topology epochs, ~`2.45` independently rejected structural proposals, ~`6.75` old-epoch forwards and ~`7.0` external effects blocked by current revocation. Every queued event is eventually processed and all tested semantic invariants remain true.
+- preparation does not change live topology/resource ownership;
+- a topology candidate records the epoch it was prepared against;
+- a resource handoff records the lease version it was prepared against;
+- publication rejects stale topology/lease plans;
+- current authority is re-read at publication, so revocation after preparation blocks the handoff;
+- consequential publication still requires independent assurance;
+- discard leaves the live state unchanged.
 
-**Result:** later architecture experiments can now target one common executable protocol rather than silently redefining identity/authority/migration semantics.
-
-## I11 — ownership and coordination scope are different dimensions
-
-Twelve components retain stable base ownership groups while cross-cutting work appears at different recurrence rates.
-
-Sparse (~18% active):
-
-- base partition: ~`1.1259` utility/step;
-- forced disjoint repartition: ~`1.0898`;
-- persistent overlap: ~`1.0635`;
-- **temporary non-owning overlay: ~`1.1303`**.
-
-Frequent (~90% active):
-
-- base: ~`1.0540`;
-- temporary overlay: ~`1.0756`;
-- **persistent overlap: ~`1.1012`**.
-
-Dense continuous coupling:
-
-- **global scope: ~`1.5130`**;
-- persistent overlap: ~`1.4980`;
-- temporary overlay: ~`1.3800`.
-
-**Result:** cross-cutting coordination may overlap semantic ownership without moving it; temporary vs persistent overlap is itself a recurrence/value allocation decision; dense enough coupling justifies merging scopes.
-
-The runtime now has a separate **non-owning `CoordinationScopeRegistry`**. A subject may join multiple scopes; closing one cannot delete evidence/predictive state, transfer a lease or grant capability authority.
-
-## I12 — dependencies are directional until reciprocity earns sharing
-
-The learner observes noisy ordered interaction events through sparse one-way, reciprocal-cluster and mixed regimes.
-
-30-seed default lifetime utility:
-
-| policy | utility/step |
-|---|---:|
-| global scope | 0.7116 |
-| directed links | 0.7034 |
-| symmetric links | 0.6689 |
-| **reciprocity adaptive** | **0.7394** |
-
-In stationary sparse one-way structure, symmetric links represent ~`11.94` unsupported reverse relationships/step while directed/adaptive representations are effectively zero. In reciprocal structure, the adaptive representation collapses mutual links into shared scopes; in mixed structure it keeps reciprocal clusters shared while preserving one-way cross-cluster links.
-
-At 20-step regimes the learned hybrid falls to ~`0.6369` while static global remains ~`0.7138`, again exposing the structural-identification timescale.
-
-**Result:** one-way dependence does not justify reverse information flow or shared state. Reciprocity/coupling must earn the shared scope.
-
-The runtime now also has a typed **`DependencyRegistry`** whose edges are explicitly directed and topology-independent. Reciprocity can be detected as evidence for coordination, but does not automatically create a shared scope, authority or ownership transfer.
+A specific concurrency bug is now prevented: two topology changes staged at epoch N cannot both publish. Once one advances the topology epoch, the other is stale.
 
 ---
 
 # Current provisional selections
 
-PS-001 through PS-023 remain active reversible constraints. I08–I12 do not add new principle numbers; they refine and compose the existing laws at architecture/runtime scale.
+PS-001 through PS-024 are active reversible constraints:
 
 1. typed hybrid boundary state;
 2. staged adaptive persistence;
@@ -172,7 +134,8 @@ PS-001 through PS-023 remain active reversible constraints. I08–I12 do not add
 20. evidence-scaled repair scope / minimal sufficient blast radius;
 21. regularity-scaled structural encoding / local override fallback;
 22. event-scoped execution with consistency-triggered synchronization;
-23. value/sensitivity-scaled fidelity allocation.
+23. value/sensitivity-scaled fidelity allocation;
+24. **failure-isolated consequential transition publication**.
 
 ---
 
@@ -183,54 +146,45 @@ stable typed semantic identities
   subjects / evidence / provenance / sources
   authority versions / resource leases
         |
-        +--> directional dependency registry
+        +--> directional dependencies
         |
         +--> disjoint ownership topology
-        |       + dynamic split/merge
+        |       dynamic split / merge
         |
         +--> overlapping non-owning coordination scopes
                 temporary or persistent
         ↓
 typed transition proposals
         ↓
-interaction-aware resource allocator
+interaction-aware value/resource allocator
         ↓
 consequence-sensitive independent assurance
         ↓
-versioned execution / structural protocol
-  execute / forward / stage / commit / rollback
+PREPARE non-authoritative candidate state
+        ↓
+version + current-authority publication fence
+        ↓
+PUBLISH coherent topology / ownership / durable version
+        ↓
+retire old version / forward in-flight work
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
 The strongest current inference is:
 
-> **organization is not one graph with one meaning. Ownership, coordination, directional dependence, authority, provenance and resource identity are distinct typed relationships that may share stable identities but obey different update/assurance rules.**
+> **organization is not one graph with one meaning, and consequential change is not one mutation with one moment. Typed relationships evolve through prepared, validated and coherently published versions while stable identity/authority/provenance survive the reorganization.**
 
-This remains a falsifiable candidate architecture, not a final implementation selection.
+This remains a falsifiable candidate architecture, not a final product implementation.
 
-## Next high-value work — I13 partial structural commit
+## Next high-value work
 
-I10 currently assumes a topology commit is atomic.
-
-The next experiment should inject failures after only some migration steps have occurred and compare:
-
-- naive in-place migration;
-- stop-the-world copy/replace;
-- staged transactional migration with version fence + rollback;
-- possibly incremental dual-version handoff.
-
-The experiment must preserve or measure:
-
-- evidence/source reachability;
-- resource lease uniqueness;
-- current authority semantics;
-- exactly-once in-flight events;
-- topology epoch consistency;
-- rollback/recovery cost and downtime.
-
-A broad structural change is not safe merely because its final target topology is correct; the **transition path itself** must preserve invariants or provide recoverable staging.
+1. run simultaneous **authority revocation during staged/dual topology and service handoff** with in-flight work, now through `PublicationProtocol`;
+2. inject crash/restart between prepare and publish to test recovery of prepared-but-unpublished candidates;
+3. persist publication intent/log state only if crash recovery proves it is required rather than assuming a database/WAL;
+4. then return to I05C correlated/adversarial evaluator audits and partially unresolved outcomes;
+5. neural E24C remains conditional on representation geometry still being architecture-discriminating.
 
 ## Guardrail
 
-Self-improvement and topology change remain inside the staged change protocol: independent/current capability authority, sufficiently independent regression/assurance evidence, scoped causal attribution, explicit rollback/reversibility where possible, and no proposal path may treat its own score as promotion authority.
+Self-improvement, topology change and resource ownership change remain inside the staged publication protocol: current capability authority, sufficiently independent assurance, version fences, rollback/discard where possible, and no proposal path may treat its own score or stale prepared state as publication authority.
