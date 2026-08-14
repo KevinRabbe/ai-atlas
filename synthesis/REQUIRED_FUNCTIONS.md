@@ -1,6 +1,6 @@
 # Implementation-Neutral Required Functions
 
-**Status: Phase-7 synthesis candidate set, not a component diagram.**
+**Status: Phase-7 synthesis candidate set, extended by focused discovery synthesis; not a component diagram.**
 
 A required function is a capability/problem the eventual system must address. Several functions may be implemented by one mechanism; one function may require several cooperating mechanisms. The list deliberately avoids contemporary implementation names.
 
@@ -158,10 +158,21 @@ Translate between human conventions and internal machine representations without
 
 Required properties: faithful intent extraction; uncertainty/clarification; inspectable summaries; machine-native internal bandwidth; authority separation between messages and external data.
 
+## F26 — Epistemic frontier expansion / discovery
+
+Generate and manage hypotheses whose answers are not supplied by the bootstrap knowledge corpus, identify tests that discriminate among them, acquire or generate new evidence, and promote only sufficiently supported results into durable knowledge.
+
+Required properties: explicit hypothesis state; novelty/rediscovery checking; competing alternatives; discriminating experiment/test design; value-of-information/value-of-computation allocation; independent/scoped verification; negative-result retention; replication/review; provenance; separation between candidate discovery and established knowledge; translation of machine-native discoveries into independently checkable external claims.
+
+This function covers both:
+
+- **deductive/constructive discovery**, where new knowledge can be produced by deriving previously unknown consequences or constructions from existing formal information; and
+- **empirical discovery**, where new observations/interventions are required because the answer is not determined by the current evidence.
+
 ---
 
 ## Important note
 
-This is **not** a proposal for 25 modules.
+This is **not** a proposal for 26 modules.
 
 The clean-sheet problem is to discover the smallest set of mechanisms that jointly implement these functions with good capability, learning dynamics and physical efficiency. Combining functions can reduce overhead; separating functions can reduce interference and improve verification. Which boundaries are real is an experimental question.
