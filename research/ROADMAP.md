@@ -30,42 +30,45 @@ First evidence pass completed on 2026-08-14. Current synthesis treats self-impro
 
 ## Phase 7 — Cross-domain synthesis
 
-**First cross-domain synthesis completed on 2026-08-14.**
+First cross-domain synthesis completed on 2026-08-14.
 
-Produced:
-
-- cross-domain organizing hypothesis;
-- 25 implementation-neutral required functions;
-- 30 unresolved design dimensions;
-- anti-assumption register;
-- prioritized open questions.
-
-The synthesis identified two load-bearing gaps—machine-native representation/communication and objective uncertainty/metareasoning—which received focused evidence passes before proceeding.
-
-Current organizing hypothesis: practical intelligence may be understood as adaptive selection of state transitions and allocation of computation, information, durable change, assurance and exploration/design effort under uncertain world state/objectives, finite physical resources and consequence-dependent risk. This remains falsifiable and does not determine architecture.
+Produced cross-domain principles, implementation-neutral required functions, unresolved design dimensions, an anti-assumption register and prioritized open questions. Focused gap closures were completed for machine-native representation/communication and objective uncertainty/metareasoning.
 
 ## Phase 8 — Forget implementations
 
-**Active.**
+**First-pass clean-sheet functional reconstruction completed on 2026-08-14. Exit gate: PASS.**
 
-For every required function, restate the problem without names such as Transformer, attention, RAG, CoT, RLM, agent, vector database, biological neuron, DNA, LoRA, RLHF, world-model product names, verifier products, self-improvement frameworks or current hardware APIs.
+Phase-8 outputs:
 
-Outputs should specify:
+- `clean-sheet/PROBLEM_MODEL.md` — environment/state-transition problem and semantic state classes;
+- `clean-sheet/FUNCTIONAL_SPECIFICATION.md` — capability contracts with consumed/produced state, invariants and failure signals;
+- `clean-sheet/STATE_AND_INFORMATION_MODEL.md` — evidence, belief, time, authority, provenance, uncertainty and persistence semantics;
+- `clean-sheet/RESOURCE_MODEL.md` — lifetime compute/memory/movement/communication/energy/interaction/assurance cost model;
+- `clean-sheet/INVARIANTS.md` — 35 cross-system invariants;
+- `clean-sheet/ASSURANCE_AND_CHANGE_PROTOCOL.md` — consequence-sensitive transition and recovery protocol;
+- `clean-sheet/UNRESOLVED_CHOICES.md` — implementation-free architecture dimensions;
+- `clean-sheet/TRACEABILITY.md` — evidence path and falsifiers;
+- `clean-sheet/PHASE8_EXIT_CHECK.md` — explicit gate audit.
 
-- observable/latent state required;
-- allowable operations;
-- information flows;
-- persistence/reversibility;
-- uncertainty and authority semantics;
-- resource/physical constraints;
-- invariants that candidate architectures must satisfy;
-- unresolved design dimensions rather than selected implementations.
-
-Exit condition: a clean functional specification that a researcher unfamiliar with today's AI brands/architectures could use to derive multiple candidate systems.
+The specification no longer requires contemporary architecture/model/product names and admits multiple fundamentally different organization strategies.
 
 ## Phase 9 — Clean-sheet architecture
 
+**Active.**
+
 Derive multiple competing systems from the Phase-8 specification. Maintain alternatives wherever evidence is insufficient; do not prematurely collapse the design dimensions.
+
+Phase-9 requirements:
+
+1. construct multiple coherent architecture families from the same functional specification;
+2. map every proposed mechanism to Phase-8 functions/invariants/resources;
+3. state which unresolved choices each candidate embodies;
+4. identify strengths, failure modes and expected bottlenecks;
+5. define discriminating experiments under matched resource/assurance budgets;
+6. preserve hybrid/alternative candidates where evidence is insufficient;
+7. record no final selection until experimental reconstruction can actually distinguish them.
+
+Exit condition: candidate architectures and an experiment matrix precise enough to build the smallest instrumented research organism in Phase 10.
 
 ## Phase 10 — Experimental reconstruction
 
@@ -73,4 +76,4 @@ Build the smallest instrumented research organism capable of discriminating arch
 
 ## Open targeted gap closure
 
-All completed first passes remain open. Gap closure should be prioritized when Phase-8/9 design depends materially on an unresolved claim, not simply to maximize paper count.
+All completed first passes remain open. Gap closure should be prioritized when Phase-9 candidate comparison depends materially on an unresolved claim, not simply to maximize paper count.
