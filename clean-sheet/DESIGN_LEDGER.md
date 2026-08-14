@@ -4,35 +4,35 @@ No architectural choice is accepted without a traceable reason. This ledger reco
 
 ## Status
 
-**Phase 10 has produced fifteen provisional principle-level selections. No whole Phase-9 architecture family is selected.**
+**Phase 10 has produced sixteen provisional principle-level selections. No whole Phase-9 architecture family is selected.**
 
 The detailed measurements live in the experiment notes; this ledger keeps the current decision, evidence trail and falsifier compact enough to remain auditable.
 
 | Decision | Question | Current status | Evidence | Falsifier / next discriminator |
 |---|---|---|---|---|
-| DL-001 | control organization | **provisional — coupling-scoped coordination** | E01/E01B + E22/E22B + I01 | fixed universal-central or fully local control wins under equal quality/latency/communication across changing hidden coupling |
-| DL-002 | cognitive integration | **provisional — conditional sharing with isolation fallback** | E02/E02B/E02C + I02 online quality learning | all-shared or all-isolated computation consistently dominates adaptive sharing under equal stored capacity, active compute and communication |
-| DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B + I01 durable evidence linkage | archive/link maintenance costs more lifetime utility than revision/provenance value across changing environments |
-| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B + integrated exact identity/provenance | one homogeneous representation matches utility, bandwidth, exact semantics, protocol evolution and failure detection without recreating typed channels implicitly |
-| DL-005 | inference budget | **provisional — value-of-computation stopping** | E05/E05B + integrated operation proposals | adaptive control overhead/miscalibration makes fixed compute better across changing task difficulty, value and resource prices |
+| DL-001 | control organization | **provisional — coupling-scoped coordination** | E01/E01B + E22/E22B + I01/I04 | fixed universal-central or fully local control wins under equal quality/latency/communication across changing hidden coupling |
+| DL-002 | cognitive integration | **provisional — conditional sharing with isolation fallback** | E02/E02B/E02C + I02 | all-shared or all-isolated computation consistently dominates adaptive sharing under equal stored capacity, active compute and communication |
+| DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B + I01 | archive/link maintenance costs more lifetime utility than revision/provenance value across changing environments |
+| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B + I01/I04 | one homogeneous representation matches utility, bandwidth, exact semantics, protocol evolution and failure detection without recreating typed channels implicitly |
+| DL-005 | inference budget | **provisional — value-of-computation stopping** | E05/E05B + I01/I04 | adaptive control overhead/miscalibration makes fixed compute better across changing task difficulty, value and resource prices |
 | DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06 + E23B + I01 | single-belief state matches lifetime utility under ambiguity/consequence shifts after equal state/coordination cost |
 | DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07 + E23B + I01 | passive/fixed acquisition matches adaptive lifetime utility under changing informativeness, option value, cost and risk |
 | DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08 + E08B | one fixed breadth consistently dominates after estimator/control overhead, or future-relevance estimation costs more than optionality saves |
-| DL-009 | learning persistence | **provisional — staged adaptive persistence with change-source uncertainty** | E09/E09B/E09C + I01/I02 durable discovery | correlated/adversarial observation failures or expensive corroboration erase lifetime benefit, or fixed timescale dominates after full evidence-acquisition cost |
-| DL-010 | credit architecture | **provisional — causal/eligibility-scoped delayed credit** | E10 serial sparse reward + E10B speculative branching | full-history/global propagation matches learning, attribution accuracy, delayed state and communication across increasing causal sparsity/trajectory depth |
+| DL-009 | learning persistence | **provisional — staged adaptive persistence with change-source uncertainty** | E09/E09B/E09C + I01/I02 | correlated/adversarial observation failures or expensive corroboration erase lifetime benefit, or fixed timescale dominates after full evidence-acquisition cost |
+| DL-010 | credit architecture | **provisional — causal/eligibility-scoped delayed credit** | E10 serial sparse reward + E10B branching | full-history/global propagation matches learning, attribution accuracy, delayed state and communication across increasing causal sparsity/trajectory depth |
 | DL-011 | memory retrieval policy | **provisional — retrieve for expected applicability/downstream value; similarity is a proxy** | E11 two families + I01 | similarity-only retrieval matches lifetime utility under staleness/causal conflicts and equal retrieval cost, or applicability checks cost more than avoided errors |
-| DL-012 | verification granularity | unresolved; first integrated family shows outcome/process checks cover different failure classes | I03/E12 | second structurally different family must reproduce conditional granularity benefit before promotion |
-| DL-013 | evaluator redundancy | **provisional — assurance value depends on failure-mode independence, not evaluator count** | Phase-5/Goodhart evidence + E23 exploit + I02 + I03/E13 pressure sweep | correlated evaluator ensembles match genuinely independent evidence under increasing optimizer/search pressure and equal cost |
-| DL-014 | capability constraints | external hard boundary retained for consequential effects; implementation open | security/control evidence | E14 behavior-only vs external boundaries vs hybrid |
+| DL-012 | verification granularity | **provisional — failure-layer-targeted verification** | I03/E12 + E12B workflow family | one generic verification layer matches process/outcome/authority failure coverage at equal assurance cost across structurally different tasks |
+| DL-013 | evaluator redundancy | **provisional — assurance value depends on failure-mode independence, not evaluator count** | Goodhart evidence + E23 + I02 + I03/E13 | correlated evaluator ensembles match genuinely independent evidence under increasing search pressure and equal cost |
+| DL-014 | capability constraints | **strong first-family evidence for narrow hard invariant boundary + adaptive contextual control; mechanism open** | security/control evidence + I04 + E14 | dynamic delegation/revocation or boundary-maintenance failures erase hybrid benefit; E14B required before promotion |
 | DL-015 | self-improvement lineage | unresolved | self-improvement/evolution evidence | E15 greedy incumbent vs bounded archive/population |
 | DL-016 | repair scope | unresolved | mutation attribution + lifetime economics | E16 local patch vs isolated durable update vs structural change |
 | DL-017 | mature structure | unresolved | biological development + architecture search | E17 fixed vs direct structural mutation vs generative development |
 | DL-018 | execution timing | unresolved | systems locality/event evidence | E18 synchronous vs asynchronous/event-driven execution |
 | DL-019 | fidelity allocation | unresolved | precision + representation evidence | E19 uniform vs adaptive fidelity/precision |
 | DL-020 | self-change test exposure | principle favors independent hidden/rotating evidence; mechanism open | verification/self-improvement evidence | E20 visible vs mixed-hidden vs rotating-adversarial regression suites |
-| DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance allocation** | I02 learned durable-claim assurance + I03/E21 mixed final/process assurance and price sweep | one implicit self-check rule or uniform-heavy verification dominates across changing consequence, verifier uncertainty and assurance prices after equal accounting |
-| DL-022 | cross-resource metacontrol | **provisional — joint adaptive resource substitution under shared scarcity** | E22/E22B + I01/I02 | independent resource policies match lifetime utility after equal coordination cost, or joint allocator overhead exceeds substitution/anti-contention benefit |
-| DL-023 | epistemic frontier policy | **provisional — verified frontier expansion** | E23/E23B + I01/I02 durable frontier knowledge | independent staging adds no reliability, or beyond-teacher results require hidden answer leakage rather than search/new evidence |
+| DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance allocation** | I02 + I03/E21 + E12B | implicit self-check or uniform-heavy verification dominates across changing consequence, uncertainty and assurance prices after equal accounting |
+| DL-022 | cross-resource metacontrol | **provisional — joint adaptive resource substitution under shared scarcity** | E22/E22B + I01/I02/I04 | independent resource policies match lifetime utility after equal coordination cost, or joint allocator overhead exceeds substitution/anti-contention benefit |
+| DL-023 | epistemic frontier policy | **provisional — verified frontier expansion** | E23/E23B + I01/I02/I04 | independent staging adds no reliability, or beyond-teacher results require hidden answer leakage rather than search/new evidence |
 
 ---
 
@@ -63,70 +63,82 @@ Acquire observations/interventions when expected downstream or epistemic value e
 Human/bootstrap knowledge is a starting prior and method library, not a permanent epistemic ceiling. Novel candidates remain tentative until domain-appropriate evidence sufficiently independent from the proposal path supports durable promotion.
 
 ## PS-009 — Conditional sharing with isolation fallback
-Share learned computation when reusable structure creates transfer benefit after active-compute/communication cost. Preserve private paths when task structure diverges or shared updates create interference. E02C and I02 both reproduce this frontier under different workloads.
+Share learned computation when reusable structure creates transfer benefit after active-compute/communication cost. Preserve private paths when task structure diverges or shared updates create interference.
 
 ## PS-010 — Joint adaptive resource substitution under shared scarcity
-When compute, memory, observation, verification or other operations substitute and share limited capacity, allocation must account jointly for current value, price/quality and scarcity coupling. Better local choices can worsen system utility if uncoordinated processes stampede toward the same resource.
+When compute, memory, observation, verification or other operations substitute and share limited capacity, allocation must account jointly for current value, price/quality and scarcity coupling.
 
 ## PS-011 — Retrieval by expected applicability / downstream value
 Persistent evidence should ultimately be selected for expected usefulness to the current decision, belief update or action—not semantic resemblance by itself. Similarity remains a valuable cheap candidate signal when it predicts applicability well.
 
 ## PS-012 — Adaptive predictive-state breadth / recoverable optionality
-Keep information hot in proportion to expected future decision value relative to active-state and rematerialization cost. Distinctions not worth current hot-state rent should remain recoverable when their future relevance has material option value. E08B adapts breadth online across hidden objective-switch regimes.
+Keep information hot in proportion to expected future decision value relative to active-state and rematerialization cost. Distinctions not worth current hot-state rent should remain recoverable when their future relevance has material option value.
 
 ## PS-013 — Failure-mode-independent assurance
 Additional evaluators are valuable to the extent that they add evidence with sufficiently different relevant failure modes. Different instances, prompts or votes do not create meaningful redundancy if optimizer pressure can exploit the same blind spot.
 
-I03/E13 makes this explicit: at search pressure 16, correlated double evaluation accepts the shared exploit at ~0.430/task versus ~0.0176 for independent double checking. This extends the E23 evaluator-exploit result into a different candidate/search environment.
-
-The selected object is **failure-mode independence**, not evaluator count or model diversity by name.
-
 ## PS-014 — Consequence/uncertainty/resource-sensitive assurance allocation
-Verification effort should scale with expected harm reduction, uncertainty about the relevant verifier/state transition, optimizer pressure and assurance cost.
-
-Uniform heavy verification is rational when checking is cheap relative to error consequence. Selective assurance becomes preferable as checking becomes expensive/scarce. I02 provides a durable-knowledge family; I03/E21 provides a distinct final/process candidate family and verification-price crossover.
-
-This is distinct from PS-005 only in scope: PS-005 prices optional computation generally; PS-014 requires that **assurance evidence retain its own independence, authority and failure semantics** rather than being treated as ordinary cognition.
+Verification effort should scale with expected harm reduction, uncertainty about the relevant verifier/state transition, optimizer pressure and assurance cost. Uniform heavy verification is rational when cheap; selective assurance becomes preferable when checking is expensive or scarce.
 
 ## PS-015 — Causal/eligibility-scoped delayed credit
-A delayed/global outcome need not propagate identical credit through the entire retained history. Credit should flow through transitions that remain causally or evidentially plausible contributors to that outcome, expanding to broader history only when responsibility is genuinely unresolved and worth the state/communication cost.
+A delayed/global outcome need not propagate identical credit through the entire retained history. Credit should flow through transitions that remain causally or evidentially plausible contributors to that outcome, expanding only when responsibility is genuinely unresolved and worth the state/communication cost.
 
-E10A shows local eligibility protecting correct stages under sparse serial final reward; E10B shows branch-scoped credit eliminating updates to causally inactive speculative computation. In E10B the eligibility variant retains ~1.12 delayed items versus 10 for global history and cuts false blame from ~1.38 to ~0.147/episode while raising tail success from ~0.533 to ~0.812.
+## PS-016 — Failure-layer-targeted verification
+Verification should target the layer or failure mode that can still invalidate the proposed transition/result. Process validity, final outcome correctness, provenance, authority and other assurance evidence are not assumed substitutable merely because they can all increase confidence.
 
-The selected object is the **credit-scope rule**, not a specific biological trace, gradient estimator or RL algorithm.
+I03's candidate/search family and E12B's multi-step workflow family both show complementary process/outcome failures. In E12B, outcome-only checking leaves ~0.1337 process-harm rate while process-only leaves ~0.1113 outcome-harm rate. Uniform checking covers both but uses 2 checks/task; adaptive granularity reaches the best default utility (~1.9877) with ~1.068 checks/task by targeting the currently valuable layers.
+
+The selected object is the **granularity/coverage rule**, not a fixed verifier stack.
 
 ---
 
 # Composition checkpoints
 
-## I01 — first integrated epistemic organism
+## I01 — integrated epistemic organism
 
-Several selected principles coexist in one epistemic state-transition/resource loop. Across 30 seeds the full system reaches ~2.359 utility/task and beats each one-principle ablation. Immediate visible-evaluator consolidation produces ~54.6 false durable writes/run; staged independent verification prevents that contamination in the exact-verifier setting.
+Memory conflict, ambiguity, active observation, discovery staging and shared scarcity coexist. The full system beats each one-principle ablation; immediate visible-evaluator consolidation creates persistent contamination.
 
 ## I02 — learned metacognition and fallible assurance
 
-Operation quality and verifier safety become revisable learned state. Conditional shared/private estimation reaches ~1.351 utility/task versus ~1.266 all-shared, ~1.332 all-private and ~1.339 frozen-initial. Adaptive assurance averages ~0.43 false durable writes/run versus ~12.1 primary-only, while using fewer secondary checks than uniform double verification.
+Operation quality and verifier safety become revisable learned state. Conditional shared/private estimation survives drift; adaptive assurance approaches uniform-double reliability with lower verification spend.
 
 ## I03 — assurance composition
 
-Outcome correctness, process validity and evidence independence are separated. Correlated evaluators remain exploitable under search pressure; explicit adaptive assurance beats confidence-triggered self-checking and crosses over with uniform-heavy verification as assurance prices rise. DL-012 granularity remains open after this first family.
+Outcome correctness, process validity and evidence independence are separated. Correlated evaluators remain exploitable under search pressure; assurance allocation crosses from uniform-heavy to adaptive as checking price rises.
 
-These integrated checkpoints are **not additional principles and not architecture-family selections**. Their purpose is to discover interaction regressions and determine which apparent functions collapse into common mechanisms.
+## I04 — typed transition/resource kernel
+
+One shared allocator ranks cognition/observation/verification work under a shifting workload while authority semantics remain typed.
+
+30-seed means:
+
+| variant | net utility/task | false durable writes | unsafe external effects | authority violations |
+|---|---:|---:|---:|---:|
+| **typed shared** | **0.9758** | 5.13 | **5.03** | **0** |
+| typed fixed silos | 0.7846 | **2.67** | 6.57 | **0** |
+| flat scalar | -0.3494 | **194.13** | **68.43** | **1144.7** |
+
+The shared allocator reallocates verification from ~0.100/task before the workload shift to ~0.155 afterward. I04 therefore supports **common allocation + typed authority**, not one-controller-per-function and not one scalar that grants execution permission.
+
+These checkpoints are composition evidence, not additional architecture-family selections.
 
 ---
 
 ## Current architecture implications
 
-The fifteen selections increasingly suggest a small number of recurring laws rather than fifteen permanent modules:
+The sixteen selections increasingly collapse into a smaller set of recurring laws:
 
-- **scope follows coupling:** coordination and credit expand only with actual dependency/responsibility;
-- **state follows future value:** hot breadth, persistence and retrieval depend on expected future usefulness and recoverability;
-- **work follows marginal value:** compute, observation and assurance are purchased when expected gain/harm reduction justifies cost;
-- **sharing follows reusable structure:** learned state is shared where transfer exceeds interference;
-- **epistemic authority follows evidence:** novelty, confidence and evaluator votes do not bypass provenance/independent verification;
-- **durable change is staged:** persistent knowledge and system changes require stronger evidence than temporary reasoning state.
+- **scope follows coupling/responsibility** — control and credit widen only when dependencies do;
+- **state follows future value** — breadth, persistence and retrieval depend on expected future use and recoverability;
+- **work follows marginal value** — compute, sensing and assurance are allocatable rather than fixed budgets;
+- **sharing follows reusable structure** — transfer is useful until interference outweighs it;
+- **authority follows evidence and typed invariants** — confidence, novelty and local value do not manufacture epistemic or external authority;
+- **verification follows residual failure layer** — the check must cover what can still invalidate the transition;
+- **durability demands stronger evidence** — persistent changes have higher downstream consequence than temporary computation.
 
-This convergence is now a primary target for the next integrated organism: test whether several PS rules can be implemented by one general typed state-transition/resource allocator without losing their distinct authority and failure semantics.
+I04 suggests these rules may be implementable by a common transition/resource substrate with explicit typed authority/evidence boundaries. E14 strengthens the case that categorical capability invariants should not depend on the same fallible behavioral estimate that proposes the action, while also showing that over-broad hard boundaries can destroy useful capability.
+
+JEPA remains a candidate predictive-representation family only; E24 is specified to test it against reconstruction, task-sufficient prediction and recoverable-source alternatives.
 
 ## Architecture-family status
 
@@ -137,7 +149,7 @@ This convergence is now a primary target for the next integrated organism: test 
 | C — Integrated Predictive Core + External Evidence | retain | how far integration can go before interference/authority/provenance boundaries dominate |
 | D — Developmental Variant System | retain | structural adaptation, indirect organization and variant populations |
 
-No family is selected because PS-001 through PS-015 remain implementable by multiple families.
+No family is selected because PS-001 through PS-016 remain implementable by multiple families.
 
 ## Selection rule
 
