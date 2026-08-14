@@ -13,7 +13,8 @@ Persistent intelligence is the problem of maintaining a useful, revisable model 
 5. [`05-model-uncertainty-and-reality-checks.md`](05-model-uncertainty-and-reality-checks.md) — uncertainty accumulation, model error and when to query reality.
 6. [`06-multimodal-grounding-and-action.md`](06-multimodal-grounding-and-action.md) — cross-modal state, embodiment and action representations.
 7. [`07-long-horizon-stateful-agents.md`](07-long-horizon-stateful-agents.md) — persistent memory used in real decisions across sessions.
-8. [`PROVISIONAL_SYNTHESIS.md`](PROVISIONAL_SYNTHESIS.md) — implementation-neutral deductions only.
+8. [`08-jepa-latent-predictive-learning.md`](08-jepa-latent-predictive-learning.md) — JEPA/I-JEPA/V-JEPA as an explicit candidate mechanism for predictive latent targets versus reconstruction.
+9. [`PROVISIONAL_SYNTHESIS.md`](PROVISIONAL_SYNTHESIS.md) — implementation-neutral deductions only.
 
 ## Shared evaluation axes
 
@@ -31,8 +32,12 @@ Every persistent-state mechanism should be measured by:
 - ability to detect model mismatch and query reality;
 - multimodal grounding and cross-modal transfer;
 - cost of storage, retrieval, simulation and state updates;
-- rollback/auditability of persistent changes.
+- rollback/auditability of persistent changes;
+- predictive-representation transfer when the future objective changes;
+- whether latent abstraction removes nuisance detail without destroying rare future-useful variables.
 
 ## Anti-assumption
 
 Do not equate memory with a vector database, knowledge with model weights, state with a text transcript, or a world model with photorealistic video generation. The required functions are persistence, revision, state estimation, prediction and useful future action; representation is open.
+
+JEPA is therefore treated as evidence that prediction can happen in learned representation space, **not** as an assumption that the final system should use a JEPA implementation.
