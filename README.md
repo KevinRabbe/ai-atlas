@@ -2,104 +2,87 @@
 
 A research atlas for reconstructing artificial intelligence from first principles.
 
-The repository does **not** assemble today's AI stack by habit. It extracts mechanisms, evidence, constraints, failures and open questions; deliberately forgets implementation assumptions; derives competing clean-sheet organizations; and tests them experimentally.
+The repository does **not** assemble today's AI stack by habit. It extracts mechanisms, evidence, constraints and failures; deliberately forgets implementation assumptions; derives competing clean-sheet organizations; and tests them experimentally.
 
 ## Core rule
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-Named model blocks, natural-language reasoning, databases, agents, recursive systems, harnesses, biological mechanisms, learning algorithms, verifier products and current hardware are evidence/candidates—not axioms.
+Named model blocks, natural-language reasoning, databases, agents, harnesses, biological mechanisms, learning algorithms, verifier products, JEPA, world-model implementations and current hardware are evidence/candidates—not axioms.
 
 ## Current state
 
-Evidence through self-improvement is mapped to first-pass depth. Cross-domain synthesis is complete to first-pass depth. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no architecture family selected**. Phase 10 experimental reconstruction: **active**.
+Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no A/B/C/D family selected**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 has now moved from isolated mechanism tests into **composition testing**. The current experimental history contains 104 added passing unit tests and three integrated generations (`I01`–`I03`) alongside the individual discriminator families.
+Phase 10 now contains **150 added passing tests**, four integrated composition generations (`I01`–`I04`) and guarded self-improvement experiments. **Twenty provisional implementation-neutral principles** currently survive their promotion gates.
 
-## Current provisional clean-sheet selections
+## What the experiments are converging toward
 
-1. **PS-001 — typed hybrid boundary state**;
-2. **PS-002 — staged adaptive persistence**;
-3. **PS-003 — coupling-scoped coordination**;
-4. **PS-004 — derived current belief with evidence linkage**;
-5. **PS-005 — value-of-computation stopping**;
-6. **PS-006 — consequence-sensitive hypothesis plurality**;
-7. **PS-007 — value-driven active evidence acquisition**;
-8. **PS-008 — verified epistemic frontier expansion**;
-9. **PS-009 — conditional sharing with isolation fallback**;
-10. **PS-010 — joint adaptive resource substitution under shared scarcity**;
-11. **PS-011 — retrieval by expected applicability/downstream value**;
-12. **PS-012 — adaptive predictive-state breadth / recoverable optionality**;
-13. **PS-013 — failure-mode-independent assurance**;
-14. **PS-014 — consequence/uncertainty/resource-sensitive assurance allocation**;
-15. **PS-015 — causal/eligibility-scoped delayed credit**.
+The principle list is increasingly collapsing into fewer candidate laws:
 
-These are not product components and do not select architecture A/B/C/D. Their concrete mechanisms remain open and falsifiable.
+- **scope follows coupling, responsibility and causal extent**;
+- **state follows expected future value and recoverability**;
+- **optional work follows marginal value under shared scarcity**;
+- **sharing follows reusable structure until interference dominates**;
+- **authority follows independent current evidence/invariants, not confidence alone**;
+- **verification follows the failure layer that can still invalidate the transition**;
+- **durable change requires stronger and refreshing evidence**;
+- **self-improvement diversity is retained only while future option value pays for it**;
+- **repair blast radius expands only when evidence says the causal root is equally broad**.
 
-## What composition is revealing
+The current architecture-compression hypothesis is:
 
-The fifteen entries are beginning to collapse into fewer candidate architectural laws:
+`typed state/transition proposals -> shared value/resource allocator -> layer-specific assurance + current authority boundary -> execute -> observe -> causal credit -> staged/appropriately-scoped update`
 
-- **scope follows coupling/responsibility:** coordination and credit remain local until real dependencies require broader propagation;
-- **state follows future value:** hot breadth, persistence, retrieval and source retention depend on future usefulness and recoverability;
-- **work follows marginal value:** inference, observation, search and assurance are allocatable resources rather than fixed rituals;
-- **sharing follows reusable structure:** common learned state is valuable until interference exceeds transfer;
-- **authority follows evidence:** novelty, confidence and correlated evaluator votes do not create epistemic authority;
-- **durability raises the evidence requirement:** reusable/persistent state changes deserve stronger assurance than temporary hypotheses.
+This is **not** yet a selected architecture.
 
-These recurring laws—not the current list of experiment mechanisms—are becoming the candidate skeleton of the eventual architecture.
+## Latest self-improvement constraints
 
-## Integrated checkpoints
+The Atlas did not begin deeper self-change search until it had experimentally stronger promotion controls.
 
-### I01 — epistemic composition
+- **PS-017:** consequential categorical authority must be independent, current and revocable; contextual risk remains adaptive inside the authorized envelope.
+- **PS-018:** self-change regression evidence must remain independent from the proposal path and refresh across changing coverage/timescale.
+- **PS-019:** alternative lineages are priced option value; one incumbent wins when the objective is stable, an archive wins when reuse/stepping stones justify its cost.
+- **PS-020:** choose the smallest repair scope that covers the inferred cause; escalate blast radius only when recurrence/coupling evidence earns it.
 
-Memory conflict, ambiguous action, active evidence, discovery staging and shared resource allocation run in one lifecycle. The full composition beats each single-principle ablation; immediate consolidation demonstrates how evaluator errors become persistent downstream errors.
+These extend the earlier state, metacontrol, evidence, assurance and credit principles rather than replacing them. See `clean-sheet/DESIGN_LEDGER.md` for PS-001 through PS-020 and their falsifiers.
 
-### I02 — learned metacognition
+## JEPA status
 
-The organism no longer assumes operation quality or verifier safety is known. It learns changing resource competence and family-specific verifier failure rates. Conditional shared/private estimates outperform all-shared, all-private and frozen alternatives over the changing lifetime.
+JEPA is explicitly inside the Atlas as a **candidate predictive-representation mechanism family**, not a selected component.
 
-### I03 — assurance composition
+The extracted neutral question is:
 
-Final-result correctness, process validity and evaluator independence are separated. Correlated evaluators remain exploitable as optimizer/search pressure rises. Uniform heavy assurance wins while verification is cheap; explicit adaptive assurance becomes preferable as verification prices rise.
+> What should a predictive representation be required to preserve, and what information can it safely treat as nuisance?
 
-## Credit assignment
-
-Two structurally different families now support PS-015:
-
-- a nine-stage serial task where sparse final reward diffusely blames correct stages;
-- parallel speculative branches where only one branch actually causes the outcome.
-
-The common result is that a global outcome does **not** require global identical credit. Local causal scope and eligibility can preserve attribution while drastically reducing delayed trajectory state.
+`E24_JEPA_PREDICTIVE_REPRESENTATION.md` is specified to compare raw reconstruction, task-sufficient prediction, coarse/dense latent targets and latent prediction plus recoverable source evidence. Objective shifts and intervention tests are intentionally included so JEPA can fail.
 
 ## Discovery target
 
-Human knowledge is treated as the bootstrap state, not the final epistemic ceiling:
+Human knowledge is treated as bootstrap state rather than the final epistemic ceiling:
 
 `inherited knowledge -> competing hypothesis -> search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`
 
-The current E23/E23B experiments demonstrate controlled beyond-teacher mechanics, not new human knowledge.
+E23/E23B demonstrate controlled beyond-teacher mechanics; they are not claimed as new human knowledge.
 
-## Next milestone — I04
+## Next milestone
 
-The next step is to reduce hand-written controller boundaries further:
-
-1. one typed proposal/state-transition interface for compute, retrieval, sensing, verification, persistence and credit eligibility;
-2. learned estimates of future value, coupling, resource quality and evaluator independence;
-3. adaptive state breadth inside the same lifetime;
-4. pairwise/multi-principle interaction ablations;
-5. explicit checks that shared metacontrol cannot turn an ordinary cognitive score into authority for durable or privileged transitions.
-
-Then the next unresolved high-value decisions are verification granularity (DL-012), externally enforced capability boundaries (DL-014), hidden/rotating self-change regression evidence (DL-020), and later self-improvement lineage/mutation scope.
-
-See `clean-sheet/DESIGN_LEDGER.md`, `experiments/STATUS.md` and `research/ROADMAP.md` for the detailed checkpoint.
+1. **I05:** learn more of I04's transition metadata instead of supplying calibrated value/coupling/authority/verifier estimates;
+2. **E17:** test fixed mature structure vs direct structural mutation vs developmental/generative organization under the trusted self-change protocol;
+3. run E18/E19 only if timing/fidelity materially discriminate the emerging organization;
+4. elevate **E24 JEPA** if predictive representation becomes the bottleneck;
+5. only then compare the remaining Phase-9 architecture families on matched integrated tasks.
 
 ## Organizing hypothesis
 
-Practical intelligence may involve adaptive selection of typed state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources. Current experiments increasingly support this as a common organizing lens, but it remains falsifiable and does not determine a final architecture.
+Practical intelligence may be adaptive selection of typed state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
+
+This remains falsifiable.
 
 ## End goal
 
-Produce a defensible answer to: **If we had to build an intelligent computational system from scratch, using everything humanity has learned but none of the accidental constraints of existing implementations, what would we build—and why?**
+Produce a defensible answer to:
+
+**If we had to build an intelligent computational system from scratch, using everything humanity has learned but none of the accidental constraints of existing implementations, what would we build—and why?**
 
 The eventual architecture must remain evidence-traceable and experimentally falsifiable.
