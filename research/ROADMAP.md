@@ -16,67 +16,96 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No a
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty reversible implementation-neutral principles have survived their current promotion gates.** The experimental strategy has moved from isolated mechanisms to composition and now to guarded self-improvement.
+**Active. Twenty-three reversible implementation-neutral principles have survived their current promotion gates.** The strategy has moved from isolated mechanisms to composition, guarded self-improvement, and now representation/timing/fidelity integration.
 
-The current validation history contains **150 Phase-10 added passing tests**.
+The current validation history contains **190 Phase-10 added test cases**.
 
-## Composition checkpoint
+## Composition generations
 
-I01–I03 showed that memory, uncertainty, active evidence, discovery, metacognition and assurance interact rather than compose trivially.
+### I01–I04
 
-**I04** is the current architecture-compression experiment. It replaces several separate controllers with one typed transition/resource allocator. A common allocator adapts resource use as workload changes, but a flattened scalar controller catastrophically mistakes local value for authority. Current synthesis:
+I01–I03 showed that memory, uncertainty, active evidence, discovery, metacognition and assurance interact rather than compose trivially. I04 then replaced several separate controllers with one typed transition/resource allocator.
 
-`typed state/transition proposal -> shared marginal-value/resource allocator -> failure-layer assurance + current authority gate -> execute -> observe -> scoped credit -> staged/appropriately-scoped update`
+Current compression hypothesis:
 
-This is a hypothesis, not a selected architecture.
+`typed state/transition proposal -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority gate -> execute at scoped timing/fidelity -> observe -> scoped credit -> staged/appropriately-scoped update`
+
+A common allocator can adapt resource use, but its scalar/value estimate cannot itself manufacture epistemic or external authority.
+
+### I05 — learned metacognition
+
+Operation quality, family-specific coordination value and verifier safety become revisable learned state. A hidden regime shift makes old estimates wrong; the conditional learner drops and then recovers, while frozen/global estimates remain worse. This removes another oracle assumption from I04.
+
+### I05B — imperfect feedback
+
+Truth about evaluator quality is delayed, censored and noisy. Selective higher-quality audit evidence recovers much of the exact-feedback performance while paying audit cost only where metacognitive uncertainty/consequence warrants it.
+
+This strengthens the view that **metacognition itself participates in information/resource allocation** rather than requiring a separate magical supervisor.
 
 ## Guarded self-improvement checkpoint
 
-Self-change experiments were delayed until the acceptance machinery had independent/current authority and regression evidence.
+- **PS-017:** categorical capability authority remains independent/current/revocable;
+- **PS-018:** self-change evidence stays independent and refreshes coverage/timescale;
+- **PS-019:** lineage diversity is retained only while future option/stepping-stone value pays for it;
+- **PS-020:** repair scope expands only with evidence that the causal root is broader;
+- **PS-021:** indirect/developmental structural rules earn themselves only where reusable regularity justifies shared mutation and local overrides remain available.
 
-### E14/E14B — capability authority
+## Execution/fidelity checkpoint
 
-Categorical capability authority and contextual risk solve different problems. Authority must be independent from the proposing behavior and remain current/revocable; a versioned boundary keeps zero categorical violations under changing grants/revocations while avoiding an always-live lookup on ~98.9% of tasks.
+### E18 / PS-022
 
-### E20/E20B — self-change regression evidence
+Sparse local state change favors event-scoped work over global ticks. Shared-version tasks require scoped synchronization barriers; eager synchronization becomes rational again when common snapshots are demanded continuously.
 
-Visible tests are optimization signals, not sufficient promotion evidence. Fixed hidden evidence can become stale in either state-space coverage or timescale. Rotating independent evidence preserves capability under both synthetic shifts; maximal adversarial testing is safer but more conservative and expensive.
+### E19 / PS-023
 
-### E15/E15B — lineage diversity
+Uniform-low precision loses on boundary-sensitive/accumulated error; uniform-high precision wastes resources on insensitive cases. Fidelity is allocated by sensitivity, uncertainty propagation, consequence and recoverability.
 
-A bounded archive loses to one incumbent when the objective is stationary, but wins when old variants regain value or temporarily inferior stepping stones are necessary. Diversity is therefore priced future optionality, not a universal population requirement.
+## JEPA / E24 predictive representation
 
-### E16 — repair scope
+JEPA remains a candidate mechanism family, not a commitment. E24 is now implemented with two model-free discriminators.
 
-Local, component and structural repair each win in a different causal regime. The selected rule is **minimal sufficient blast radius**: start with the smallest reversible scope that plausibly covers the cause and escalate only when recurrence/coupling evidence earns the wider risk/cost.
+### Objective shift
+
+A coarse predictive latent is cheapest and excellent on the original objective but loses a lower-ranked factor required later. Dense predictive state and latent + recoverable source retain/recover that factor and outperform raw reconstruction on priced lifetime utility.
+
+### Passive vs intervention
+
+All representations appear strong on passive prediction. The coarse passive latent then falls to chance when intervention consequence depends on a lower-predictability cue. Dense/source-backed representations retain it.
+
+Current conclusion:
+
+> **passive predictive sufficiency is not intervention sufficiency; predictive target breadth and recoverability belong inside the lifetime objective.**
+
+This refines PS-012/PS-023 rather than creating a JEPA-specific principle.
 
 ## Current provisional selection count
 
-**PS-001 through PS-020** are active. They remain reversible constraints, not product components.
+**PS-001 through PS-023** are active reversible constraints, not product components or a chosen A/B/C/D architecture. See `clean-sheet/DESIGN_LEDGER.md` for complete evidence/falsifiers.
 
-The newest selections are:
+## Next milestone — I06
 
-- PS-016 — failure-layer-targeted verification;
-- PS-017 — independent current/revocable capability authority;
-- PS-018 — rotating independent self-change regression evidence;
-- PS-019 — resource-priced lineage diversity / variant optionality;
-- PS-020 — evidence-scaled repair scope / minimal sufficient blast radius.
+I06 should stop treating timing, fidelity and predictive-state breadth/rematerialization as separate hand-written policies.
 
-See `clean-sheet/DESIGN_LEDGER.md` for the complete list and falsifiers.
+It should:
 
-## JEPA / predictive representation
+1. place event execution, synchronization, fidelity escalation, hot-state expansion and source rematerialization into the shared transition/resource proposal interface;
+2. let those operations compete under one resource/latency budget;
+3. learn enough of their marginal value online that hidden workload/objective shifts create real adaptation costs;
+4. preserve typed authority/provenance and failure-layer assurance outside the ordinary allocation score;
+5. test interaction regressions—for example whether low fidelity corrupts the metacognitive estimate that decides whether to buy higher fidelity, or whether delayed event execution makes source state stale before rematerialization;
+6. ablate whole law combinations rather than adding another isolated toy mechanism.
 
-JEPA is explicitly retained as a candidate mechanism family, not a commitment. **E24** is specified to compare latent-target prediction against raw reconstruction, current-task-sufficient prediction, denser latent targets and latent state backed by recoverable source evidence. It is intentionally designed so JEPA can lose after objective shifts or intervention tests.
+## Architecture-family elimination gate
 
-## Next milestone
+After I06, begin matched A/B/C/D end-to-end comparisons only if the common boundaries are stable enough that the comparison is not just four differently hand-tuned systems.
 
-Near-term order:
+At least one family should become empirically dominated, or the experiments should identify a genuine Pareto frontier explaining why multiple organizations remain useful.
 
-1. **I05 — learned transition metadata:** remove more oracle/calibrated fields from I04; learn value, coupling, authority risk and verifier independence online;
-2. **E17 — mature structure:** fixed structure vs direct structural mutation vs developmental/generative organization, now governed by PS-018/PS-020;
-3. **E18/E19** only where execution timing or fidelity actually discriminates the emerging organization;
-4. **E24 JEPA** rises in priority if predictive representation/state becomes the integration bottleneck;
-5. compare A/B/C/D end-to-end only after the common-kernel boundaries stabilize enough for matched implementations.
+## Later targeted work
+
+- I05C: correlated/adversarial audit sources and unresolved outcomes;
+- neural E24C: actual predictive/reconstructive learning objectives at matched capacity/compute, only if the distinction remains architecture-relevant;
+- hardware co-design after timing/fidelity/state-allocation laws have enough stability to make hardware assumptions informative rather than premature.
 
 ## Phase-10 substantial-completion condition
 
