@@ -4,80 +4,69 @@
 
 ## Implemented blocks
 
-Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, **E18 execution timing**, **E19 fidelity allocation**, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, and E23/E23B beyond-teacher discovery.
+Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and **E24 predictive representation / JEPA mechanism discrimination**.
 
 Integrated composition generations are **I01–I05**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned and revisable rather than supplied by oracle metadata.
 
-JEPA is explicitly registered as a candidate predictive-representation family. **E24 is specified but not implemented** and may lose against reconstruction/task-sufficient/recoverable-source alternatives.
+JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 is now implemented and gives evidence both for latent predictive efficiency and against overly coarse/passive-only predictive sufficiency.
 
 ## Validation
 
-Phase 10 now contains **178 added test cases**. The 166-test I05/E17 checkpoint was extended with:
+Phase 10 now contains **184 added test cases**. The previous 178-test checkpoint was extended by E24 predictive representation: 6 tests.
 
-- E18 execution timing: 6 tests;
-- E19 fidelity allocation: 6 tests.
-
-The shell environment could not clone GitHub because DNS resolution is unavailable there. The E17B/E18/E19 semantic assertions were executed independently in the local Python reasoning environment and passed; connector writes were verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
+The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent E17B/E18/E19/E24 numerical discriminators were first exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
 ---
 
 # Latest findings
 
-## E18 / PS-022 — event-scoped execution + consistency-triggered synchronization
+## E24 — predictive latent efficiency vs future/interventional sufficiency
 
-### Sparse event graph
+E24 does not implement JEPA itself. It uses empirical predictive-feature objectives as a model-free proxy so the first discriminator isolates **what the representation objective preserves** rather than neural architecture details.
 
-| variant | utility/step | stale reads | operations/step | messages/step |
+### Objective shift
+
+| policy | initial balanced acc. | future balanced acc. | lifetime net | future hot width |
 |---|---:|---:|---:|---:|
-| sync global | 0.8560 | **0.0000** | 80.000 | 0.000 |
-| async naive | 0.6671 | 0.2681 | **6.217** | 0.000 |
-| **scoped event** | **0.9815** | **0.0000** | **8.699** | 5.699 |
+| raw reconstruction | 0.9601 | **0.8504** | 0.8332 | 24 |
+| task sufficient | 0.9601 | 0.6280 | 0.7820 | 4 |
+| **coarse latent target** | 0.9601 | **0.5000** | 0.7180 | **4** |
+| dense latent target | 0.9601 | **0.8504** | 0.8752 | 10 |
+| **latent + recoverable source** | 0.9601 | **0.8504** | **0.8797** | **5** |
 
-Event-driven execution preserves exact dependency state while avoiding global idle work. Naive async misses dependent invalidations.
+The coarse latent is cheapest/best on the original objective but permanently omitted the lower-ranked factor required later. Dense latent keeps the factor; source-backed latent rematerializes it with less hot-state width.
 
-### Version-coupled snapshot
+### Passive prediction vs intervention
 
-At 55% update / 30% snapshot-query demand:
-
-| variant | utility/step | inconsistent queries | operations/step |
-|---|---:|---:|---:|
-| sync global | 0.2513 | **0.0000** | 26.492 |
-| async naive | -0.3675 | 0.9991 | **4.417** |
-| **scoped event + barrier** | **0.2624** | **0.0000** | **11.565** |
-
-The scoped barrier coalesces several logical versions before materializing a common snapshot. But at ~90% snapshot demand eager sync becomes better (~0.8508 versus ~0.8202), establishing the synchronization-frequency crossover.
-
-This promotes **PS-022 — event-scoped execution with consistency-triggered synchronization**.
-
-## E19 / PS-023 — fidelity is a priced resource
-
-### One-shot threshold decisions
-
-| variant | utility/task | error rate | high-fidelity rate | fidelity cost |
+| policy | passive balanced acc. | intervention balanced acc. | lifetime net | intervention hot width |
 |---|---:|---:|---:|---:|
-| low | 1.6869 | 0.0626 | 0.0000 | **0.0100** |
-| high | 2.2523 | **0.0000** | 1.0000 | 0.0800 |
-| **adaptive** | **2.3057** | **0.0000** | **0.2082** | **0.0267** |
+| raw reconstruction | 0.9498 | **0.8989** | 0.8763 | 16 |
+| task sufficient | 0.9498 | 0.5884 | 0.7571 | 4 |
+| **coarse latent target** | 0.9498 | **0.4899** | 0.7078 | **4** |
+| dense latent target | 0.9498 | **0.8989** | 0.8943 | 10 |
+| **latent + recoverable source** | 0.9498 | **0.8989** | **0.9028** | **5** |
 
-High-fidelity use rises from ~0.126 at consequence 1 to ~0.374 at consequence 6.
+All policies look equally strong on passive prediction; coarse latent fails once an action-discriminating lower-predictability cue becomes relevant. Thus:
 
-### Accumulated trajectory constraint
+`passive predictive sufficiency != intervention/counterfactual sufficiency`.
 
-| variant | utility/episode | error rate | false-safe rate | exact replay rate |
-|---|---:|---:|---:|---:|
-| low | 0.4173 | 0.1072 | 0.0477 | 0.0000 |
-| high | 0.7902 | **0.0000** | **0.0000** | 1.0000 |
-| **adaptive** | **0.8434** | **0.0050** | **0.0020** | **0.4813** |
+No new JEPA principle is promoted. E24 mainly refines PS-012/PS-023: **predictive compression must optimize lifetime decision/intervention utility, with target breadth and recoverability treated as part of the objective.**
 
-Exact replay rises with consequence (~0.380 at consequence 4 to ~0.572 at consequence 12). This promotes **PS-023 — value/sensitivity-scaled fidelity allocation**.
+## E18 / PS-022 — event-scoped execution
+
+Sparse dependency work favors event propagation over global ticking; version-coupled work requires scoped barriers. Eager synchronization wins again when consistent snapshots are nearly continuous.
+
+## E19 / PS-023 — adaptive fidelity
+
+Approximate state is efficient until its uncertainty can change consequential decisions. Adaptive precision/replay beats both uniform-low and uniform-high policies in threshold and accumulated-trajectory families.
 
 ## I05 — learned transition metacognition
 
-A hidden regime shift changes operation benefit, family-specific coordination value, visible-evaluator failure and secondary-verifier reliability. The conditional learner drops to ~0.517 immediately post-shift and recovers to ~0.740 in the final 100 batches, versus ~0.485 frozen and ~0.622 globally pooled. Categorical authority remains exact and external.
+The conditional learner takes a real hit after hidden operation/evaluator economics change, then recovers from ~0.517 immediately post-shift to ~0.740 in the final 100 batches. Frozen/global estimates do not recover as well. Categorical authority remains exact and external.
 
 ## E17/E17B / PS-021 — structural indirectness follows regularity
 
-Repeated structural state and repeated dependency topology both reward a compact shared generative rule; irregular/local structure punishes always-global mutation. Adaptive indirect encoding retains local override/isolation and therefore keeps the repeated-structure advantage without paying the global-mutation penalty on irregular tasks.
+Repeated structural state and dependency topology reward compact generative rules; irregular/local organization requires direct/local override paths.
 
 ---
 
@@ -104,8 +93,8 @@ Repeated structural state and repeated dependency topology both reward a compact
 19. PS-019 — resource-priced lineage diversity / variant optionality;
 20. PS-020 — evidence-scaled repair scope / minimal sufficient blast radius;
 21. PS-021 — regularity-scaled structural encoding / local override fallback;
-22. **PS-022 — event-scoped execution with consistency-triggered synchronization**;
-23. **PS-023 — value/sensitivity-scaled fidelity allocation.**
+22. PS-022 — event-scoped execution with consistency-triggered synchronization;
+23. PS-023 — value/sensitivity-scaled fidelity allocation.
 
 ---
 
@@ -121,6 +110,7 @@ Recurring laws:
 - sharing and structural indirectness follow reusable regularity;
 - execution follows events until consistency coupling justifies synchronization;
 - fidelity follows decision sensitivity, uncertainty propagation and consequence;
+- predictive compression is valid only relative to future/action-relevant distinctions and recoverability;
 - authority follows independent current evidence/invariants;
 - verification follows residual failure layer;
 - durable change requires stronger and refreshing evidence;
@@ -132,10 +122,10 @@ This remains a hypothesis, not a selected architecture.
 
 ## Next high-value work
 
-1. **E24 JEPA predictive representation:** now the largest explicitly specified representation discriminator; compare latent target prediction against reconstruction, task-sufficient prediction and recoverable-source alternatives under objective shift/intervention;
-2. **I05B:** degrade metacognitive feedback from exact delayed audit to noisy/partial/censored outcomes;
-3. integrate E18/E19 into a future I06 kernel to test whether timing/fidelity decisions can share the common allocator without unstable feedback loops;
-4. architecture-family elimination only after those composition tests provide end-to-end evidence.
+1. **I05B — imperfect metacognitive feedback:** replace exact delayed research/tool audit outcomes with noisy, delayed, censored or partially missing evidence;
+2. **I06 — composition of timing/fidelity/representation:** let E18/E19/E24 decisions compete inside the common allocator rather than remain separate controllers;
+3. only then use end-to-end evidence to begin eliminating Phase-9 architecture families;
+4. later neural E24C only if actual learned predictive-objective geometry remains architecture-discriminating after I06.
 
 ## Guardrail
 
