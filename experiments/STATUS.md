@@ -4,25 +4,44 @@
 
 ## Implemented blocks
 
-Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and **E24 predictive representation / JEPA mechanism discrimination**.
+Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and E24 predictive representation / JEPA mechanism discrimination.
 
-Integrated composition generations are **I01–I05**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned and revisable rather than supplied by oracle metadata.
+Integrated composition generations are **I01–I05 plus I05B**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned/revisable; **I05B makes the evidence used to learn evaluator quality delayed, censored and noisy.**
 
-JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 is now implemented and gives evidence both for latent predictive efficiency and against overly coarse/passive-only predictive sufficiency.
+JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 gives evidence both for latent predictive efficiency and against overly coarse/passive-only predictive sufficiency.
 
 ## Validation
 
-Phase 10 now contains **184 added test cases**. The previous 178-test checkpoint was extended by E24 predictive representation: 6 tests.
+Phase 10 now contains **190 added test cases**. The prior 184-test checkpoint was extended by I05B imperfect metacognitive feedback: 6 tests.
 
-The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent E17B/E18/E19/E24 numerical discriminators were first exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
+The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were first exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
 ---
 
 # Latest findings
 
+## I05B — metacognitive learning under delayed/noisy/censored evidence
+
+Two evaluator families swap quality halfway through the lifetime. A visible approval may receive no later audit, a delayed noisy passive audit, or a selectively purchased faster/higher-quality audit.
+
+30-seed means:
+
+| feedback mode | utility/task | false durable writes/run | correct durable writes/run | verifications/task | active audits/task |
+|---|---:|---:|---:|---:|---:|
+| exact delayed audit | **1.7782** | 61.87 | **2592.3** | 0.4587 | 0.0000 |
+| passive noisy/censored | 1.5711 | 47.10 | 2243.4 | 0.3954 | 0.0000 |
+| **selective active audit** | **1.7595** | **46.80** | 2542.9 | 0.4460 | **0.3759** |
+| no feedback | 1.2939 | **493.37** | 3734.7 | 0.7893 | 0.0000 |
+
+Sparse passive feedback reacts too slowly to the hidden quality swap: first-500 post-shift utility is ~`-0.0769`. Selective audit stays at ~`1.0557` early post-shift and reaches ~`1.8504` late, close to the exact-feedback baseline.
+
+Audit demand falls as metacognitive uncertainty shrinks (~`0.461` pre-shift active-audit rate to ~`0.268` late post-shift).
+
+**Interpretation:** uncertainty about tool/evaluator reliability is ordinary epistemic state. Learning about that state is itself an active evidence operation whose value competes with its cost. No new principle is promoted; I05B recursively exercises PS-007/013/014/010 while PS-017 keeps authority independent.
+
 ## E24 — predictive latent efficiency vs future/interventional sufficiency
 
-E24 does not implement JEPA itself. It uses empirical predictive-feature objectives as a model-free proxy so the first discriminator isolates **what the representation objective preserves** rather than neural architecture details.
+E24 uses empirical predictive-feature objectives as a model-free proxy, not a JEPA neural implementation.
 
 ### Objective shift
 
@@ -34,8 +53,6 @@ E24 does not implement JEPA itself. It uses empirical predictive-feature objecti
 | dense latent target | 0.9601 | **0.8504** | 0.8752 | 10 |
 | **latent + recoverable source** | 0.9601 | **0.8504** | **0.8797** | **5** |
 
-The coarse latent is cheapest/best on the original objective but permanently omitted the lower-ranked factor required later. Dense latent keeps the factor; source-backed latent rematerializes it with less hot-state width.
-
 ### Passive prediction vs intervention
 
 | policy | passive balanced acc. | intervention balanced acc. | lifetime net | intervention hot width |
@@ -46,11 +63,7 @@ The coarse latent is cheapest/best on the original objective but permanently omi
 | dense latent target | 0.9498 | **0.8989** | 0.8943 | 10 |
 | **latent + recoverable source** | 0.9498 | **0.8989** | **0.9028** | **5** |
 
-All policies look equally strong on passive prediction; coarse latent fails once an action-discriminating lower-predictability cue becomes relevant. Thus:
-
-`passive predictive sufficiency != intervention/counterfactual sufficiency`.
-
-No new JEPA principle is promoted. E24 mainly refines PS-012/PS-023: **predictive compression must optimize lifetime decision/intervention utility, with target breadth and recoverability treated as part of the objective.**
+No JEPA-specific principle is promoted. E24 refines PS-012/PS-023: predictive compression must optimize lifetime decision/intervention utility, and target breadth/recoverable evidence are part of that objective.
 
 ## E18 / PS-022 — event-scoped execution
 
@@ -58,11 +71,7 @@ Sparse dependency work favors event propagation over global ticking; version-cou
 
 ## E19 / PS-023 — adaptive fidelity
 
-Approximate state is efficient until its uncertainty can change consequential decisions. Adaptive precision/replay beats both uniform-low and uniform-high policies in threshold and accumulated-trajectory families.
-
-## I05 — learned transition metacognition
-
-The conditional learner takes a real hit after hidden operation/evaluator economics change, then recovers from ~0.517 immediately post-shift to ~0.740 in the final 100 batches. Frozen/global estimates do not recover as well. Categorical authority remains exact and external.
+Approximate state is efficient until its uncertainty can change consequential decisions. Adaptive precision/replay beats uniform-low and uniform-high policies in threshold and accumulated-trajectory families.
 
 ## E17/E17B / PS-021 — structural indirectness follows regularity
 
@@ -116,16 +125,16 @@ Recurring laws:
 - durable change requires stronger and refreshing evidence;
 - self-improvement diversity is retained only while future option value pays for itself;
 - repair blast radius expands only when evidence says the root cause is equally broad;
-- metacognitive estimates are themselves revisable state.
+- metacognitive estimates are themselves revisable state, and evidence about those estimates is resource-priced too.
 
 This remains a hypothesis, not a selected architecture.
 
 ## Next high-value work
 
-1. **I05B — imperfect metacognitive feedback:** replace exact delayed research/tool audit outcomes with noisy, delayed, censored or partially missing evidence;
-2. **I06 — composition of timing/fidelity/representation:** let E18/E19/E24 decisions compete inside the common allocator rather than remain separate controllers;
-3. only then use end-to-end evidence to begin eliminating Phase-9 architecture families;
-4. later neural E24C only if actual learned predictive-objective geometry remains architecture-discriminating after I06.
+1. **I06:** compose timing, fidelity and predictive-state/rematerialization operations inside the common allocator rather than leaving E18/E19/E24 separate;
+2. **I05C:** correlated/adversarial audit sources and partially unresolved outcomes;
+3. only then begin matched A/B/C/D architecture-family elimination;
+4. neural E24C only if actual predictive-objective geometry remains architecture-discriminating after composition.
 
 ## Guardrail
 
