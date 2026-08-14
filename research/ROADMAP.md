@@ -16,41 +16,35 @@ First evidence pass completed on 2026-08-14. Current synthesis treats learning a
 
 First evidence pass completed on 2026-08-14; not saturated. Current synthesis treats inference as adaptive operation selection under budgets: internal compute, branching, retrieval, tools, execution, delegation, recursion, verification and stopping. Harness/runtime policy and evaluator reliability are first-class variables.
 
-Remaining gaps: formal value-of-computation/metareasoning; latent/executable reasoning; process verification; trajectory/event-state recovery; tool reliability/latency routing; multi-agent communication topology; adversarial evaluator pressure; learned operation-selection and stopping policies.
-
 ## Phase 4 — Persistent intelligence
 
-First evidence pass completed on 2026-08-14; not saturated. The coupled pass maps governed memory lifecycle, experience abstraction, temporal belief state, world models/simulation, model uncertainty/reality checks, multimodal grounding/action and long-horizon stateful agents.
-
-Current synthesis separates event history from current belief, treats memory as evolving governed state rather than passive storage, treats world models as decision-relevant predictive state rather than necessarily full reconstruction, and requires memory/world-model quality to be evaluated through future actions rather than recall/prediction metrics alone.
-
-Remaining gaps: memory poisoning/persistent false beliefs; temporal/causal knowledge graphs; entity resolution; active perception/value-of-observation; spatial/3D/tactile memory; multi-agent shared world state; hierarchical/multi-timescale world models; transfer when objectives change; secure memory revision; uncertainty-aware safe exploration.
+First evidence pass completed on 2026-08-14; not saturated. Current synthesis separates event history from current belief, treats memory as evolving governed state rather than passive storage, treats world models as decision-relevant predictive state rather than necessarily full reconstruction, and evaluates persistence through future action.
 
 ## Phase 5 — Verification, reliability and control
 
-**First evidence pass completed on 2026-08-14; not saturated.**
-
-The coupled pass maps verifier/evaluator quality, process vs outcome checks, formal verification, calibration/selective prediction, Goodhart/reward hacking, interpretability/monitoring, agent security/capability boundaries, control protocols and transactional regression gates.
-
-Current synthesis treats verification as scoped evidence and introduces **assurance allocation**: the amount and independence of evidence/control required before a transition should scale with consequence, uncertainty, scope, persistence, privilege, irreversibility and optimization pressure.
-
-Remaining gaps: formal verification outside theorem proving; robust/OOD risk control; scalable oversight beyond current weak-to-strong analogues; stronger adaptive/colluding adversaries; secure provenance/capability systems; adversarial mechanistic monitoring; post-deployment incident recovery; property/fuzz testing for agents; quantitative assurance budgets; sustained self-modification with hidden rotating tests.
+First evidence pass completed on 2026-08-14; not saturated. Current synthesis treats verification as scoped evidence and introduces assurance allocation: evidence/control requirements scale with consequence, uncertainty, scope, persistence, privilege, irreversibility and optimization pressure.
 
 ## Phase 6 — Self-improvement
 
-Map improvement of prompts, context policies, skills, harness code, routing, tools, memory, training data, weights and architecture. Separate timescales and require regression gates.
+**First evidence pass completed on 2026-08-14; not saturated.**
 
-**Next active area.**
+The pass maps mutation surfaces and causal attribution; candidate search/population diversity; runtime/harness/skill improvement; weight-data-harness co-evolution; architecture/algorithm discovery; trusted-root/rollback mechanics; and lifetime improvement economics.
 
-Exit condition: define what may self-modify, how candidate improvements are generated/evaluated, how credit is assigned to the changed layer, how regressions/Goodhart are contained, and which recovery/control components remain outside the self-modifying boundary.
+Current synthesis treats self-improvement as a transactional search over system variants: diagnose the causal layer, generate diverse scoped mutations, validate with sufficiently independent assurance, preserve lineage/rollback, and select by lifetime utility rather than immediate benchmark score.
+
+Remaining gaps: learned optimizers/meta-gradients; autonomous tool/skill-library evolution; memory/world-model self-improvement; self-generated curricula under independent grounding; long-running open-ended populations; causal layer attribution; trusted-root migration; formal self-update protocols; improvement under scarce evaluators; recursive/meta-mutation depth; patch-debt and architecture-churn economics.
 
 ## Phase 7 — Cross-domain synthesis
 
 Extract implementation-neutral laws, trade-offs, recurring patterns and contradictions. No architecture design yet.
 
+**Next active area.**
+
+Exit condition: produce a compact evidence-traceable set of required functions, constraints and unresolved design dimensions that no longer relies on named contemporary implementations.
+
 ## Phase 8 — Forget implementations
 
-For every required function, restate the problem without names such as Transformer, RAG, CoT, RLM, agent, vector DB, biological neuron, DNA, LoRA, RLHF, world-model product names, or current frameworks.
+For every required function, restate the problem without names such as Transformer, RAG, CoT, RLM, agent, vector DB, biological neuron, DNA, LoRA, RLHF, world-model product names, verifier products, or current frameworks.
 
 ## Phase 9 — Clean-sheet architecture
 
@@ -59,3 +53,7 @@ Derive candidate systems from requirements and evidence. Maintain multiple compe
 ## Phase 10 — Experimental reconstruction
 
 Build the smallest instrumented research organism capable of testing architectural choices. Existing models may be temporary probes; they are not presumed to be the final cognitive substrate.
+
+## Open targeted gap closure
+
+All completed first passes remain open. Gap closure should be prioritized when cross-domain synthesis depends on an unresolved claim, not simply to maximize paper count.
