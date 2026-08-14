@@ -14,7 +14,7 @@ Named model blocks, natural-language reasoning, databases, agents, harnesses, bi
 
 Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no A/B/C/D family selected**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **150 added passing tests**, four integrated composition generations (`I01`–`I04`) and guarded self-improvement experiments. **Twenty provisional implementation-neutral principles** currently survive their promotion gates.
+Phase 10 now contains **190 added test cases**, five integrated generations (`I01`–`I05`) plus **I05B imperfect-feedback metacognition**, guarded self-improvement experiments, and implemented E24 predictive-representation discrimination. **Twenty-three provisional implementation-neutral principles** currently survive their promotion gates.
 
 ## What the experiments are converging toward
 
@@ -23,39 +23,54 @@ The principle list is increasingly collapsing into fewer candidate laws:
 - **scope follows coupling, responsibility and causal extent**;
 - **state follows expected future value and recoverability**;
 - **optional work follows marginal value under shared scarcity**;
-- **sharing follows reusable structure until interference dominates**;
+- **sharing and structural indirectness follow reusable regularity**;
+- **execution follows state change until consistency coupling justifies synchronization**;
+- **fidelity follows decision sensitivity, uncertainty propagation and consequence**;
+- **predictive compression is only sufficient relative to future/action-relevant distinctions and recoverability**;
 - **authority follows independent current evidence/invariants, not confidence alone**;
 - **verification follows the failure layer that can still invalidate the transition**;
 - **durable change requires stronger and refreshing evidence**;
 - **self-improvement diversity is retained only while future option value pays for it**;
-- **repair blast radius expands only when evidence says the causal root is equally broad**.
+- **repair blast radius expands only when evidence says the causal root is equally broad**;
+- **metacognitive estimates are revisable state and can themselves justify active evidence acquisition**.
 
 The current architecture-compression hypothesis is:
 
-`typed state/transition proposals -> shared value/resource allocator -> layer-specific assurance + current authority boundary -> execute -> observe -> causal credit -> staged/appropriately-scoped update`
+`typed state/transition proposals -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity -> observe -> causal credit -> staged/appropriately-scoped update`
 
 This is **not** yet a selected architecture.
 
-## Latest self-improvement constraints
+## Latest composition checkpoint
 
-The Atlas did not begin deeper self-change search until it had experimentally stronger promotion controls.
+### I05 — learned transition metacognition
 
-- **PS-017:** consequential categorical authority must be independent, current and revocable; contextual risk remains adaptive inside the authorized envelope.
-- **PS-018:** self-change regression evidence must remain independent from the proposal path and refresh across changing coverage/timescale.
-- **PS-019:** alternative lineages are priced option value; one incumbent wins when the objective is stable, an archive wins when reuse/stepping stones justify its cost.
-- **PS-020:** choose the smallest repair scope that covers the inferred cause; escalate blast radius only when recurrence/coupling evidence earns it.
+Operation reliability, family-specific coordination benefit and evaluator/verifier quality are learned online rather than supplied as fixed constants. After a hidden quality swap, the conditional learner takes a real performance hit and then recovers; globally pooled or frozen estimates do not recover as well. Categorical authority remains exact and external.
 
-These extend the earlier state, metacontrol, evidence, assurance and credit principles rather than replacing them. See `clean-sheet/DESIGN_LEDGER.md` for PS-001 through PS-020 and their falsifiers.
+### I05B — imperfect feedback about the evaluator
 
-## JEPA status
+Audit evidence about verifier correctness becomes delayed, censored and noisy. With no audit feedback the system accumulates ~493 false durable writes/run. Sparse passive feedback adapts slowly. A selective higher-quality audit policy spends audit effort on ~37.6% of tasks, reaches ~1.760 utility/task versus ~1.571 passive / ~1.294 no-feedback, and reduces false durable writes to ~47.
 
-JEPA is explicitly inside the Atlas as a **candidate predictive-representation mechanism family**, not a selected component.
+The implication is recursive but not magical: uncertainty about a tool/evaluator becomes ordinary belief state; evidence about that belief is another priced information-acquisition operation.
 
-The extracted neutral question is:
+## Structural/timing/fidelity checkpoint
 
-> What should a predictive representation be required to preserve, and what information can it safely treat as nuisance?
+- **PS-021:** indirect/developmental structural rules earn themselves when repeated regularity makes one coordinated mutation reusable; local overrides remain necessary for exceptions/irregularity.
+- **PS-022:** event-scoped execution beats global ticking under sparse locality, while scoped synchronization barriers become necessary for shared-version consistency; eager sync can win again when global consistency is continuously demanded.
+- **PS-023:** approximate fidelity is useful while its propagated error cannot change enough downstream value; exact/higher fidelity is purchased when decision sensitivity, horizon or consequence makes approximation material.
 
-`E24_JEPA_PREDICTIVE_REPRESENTATION.md` is specified to compare raw reconstruction, task-sufficient prediction, coarse/dense latent targets and latent prediction plus recoverable source evidence. Objective shifts and intervention tests are intentionally included so JEPA can fail.
+These are rules, not commitments to developmental programs, event loops or any numeric format.
+
+## JEPA / E24 status
+
+JEPA remains explicitly inside the Atlas as a **candidate predictive-representation mechanism family**, not a selected component.
+
+E24 is now implemented. In the objective-shift family a four-feature coarse predictive latent is excellent on the original task but falls to chance when the later task needs a lower-ranked factor; denser latent state or compact latent + recoverable source evidence retain/recover it. In the intervention family all policies look equally strong passively, but the coarse latent falls to chance when a lower-predictability action-discriminating cue becomes necessary.
+
+The resulting refinement is implementation-neutral:
+
+> **Predictive compression should optimize lifetime decision/intervention utility, not passive prediction accuracy alone. Target breadth and recoverable evidence are part of the predictive objective.**
+
+This is already largely covered by PS-012/PS-023, so no separate "JEPA principle" was created.
 
 ## Discovery target
 
@@ -65,13 +80,16 @@ Human knowledge is treated as bootstrap state rather than the final epistemic ce
 
 E23/E23B demonstrate controlled beyond-teacher mechanics; they are not claimed as new human knowledge.
 
+## Current provisional selection count
+
+**PS-001 through PS-023** are active reversible constraints. See `clean-sheet/DESIGN_LEDGER.md` for the complete evidence trail and falsifiers.
+
 ## Next milestone
 
-1. **I05:** learn more of I04's transition metadata instead of supplying calibrated value/coupling/authority/verifier estimates;
-2. **E17:** test fixed mature structure vs direct structural mutation vs developmental/generative organization under the trusted self-change protocol;
-3. run E18/E19 only if timing/fidelity materially discriminate the emerging organization;
-4. elevate **E24 JEPA** if predictive representation becomes the bottleneck;
-5. only then compare the remaining Phase-9 architecture families on matched integrated tasks.
+1. **I06:** compose timing, fidelity and predictive-state/rematerialization decisions inside the shared allocator rather than leaving E18/E19/E24 as separate policies;
+2. harden I05B further with correlated/adversarial audit failures and partially unresolved outcomes;
+3. begin matched end-to-end A/B/C/D architecture-family elimination only after I06 shows which organization boundaries remain necessary;
+4. build a neural E24C only if actual learned predictive-objective geometry remains architecture-discriminating after composition.
 
 ## Organizing hypothesis
 
