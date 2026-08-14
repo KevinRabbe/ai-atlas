@@ -18,6 +18,18 @@ Catastrophic interference; stability-plasticity deadlock; replay-induced forgett
 
 Overthinking; premature stopping; greedy-path lock-in; search explosion; correlated samples mistaken for independent evidence; verifier gaming; bad branch pruning; recursive fan-out; lossy subagent summaries; duplicated worker effort; aggregation bottlenecks; tool misuse; stale/untrusted tool output; retry loops; context flooding; harness overfitting; runtime self-modification regression; consensus of correlated agent errors; external-context retrieval misses; expensive computation with no marginal information gain.
 
+## Persistent intelligence / memory
+
+Write-everything memory bloat; false durable memories; stale facts treated as current truth; event history confused with current belief; temporal scope lost; identity/entity merge or split errors; contradiction accumulation; old preferences/workflows over-applied; semantic-similarity retrieval of irrelevant evidence; retrieval success without correct action use; false reflection/abstraction; provenance destroyed during consolidation; audit evidence deleted during forgetting; memory poisoning; self-reinforcing false memories; obsolete procedure retained after environment change; hidden cross-session contamination.
+
+## Temporal state and world models
+
+Last-observation-as-truth; partial-observability blindness; hidden-state alternatives collapsed too early; action effects not propagated into belief; model bias; omitted decision-relevant variables; reward-predictive but transfer-poor latent state; compounding rollout error; uncertainty collapsed during imagination; simulator exploitation; realistic-looking prediction mistaken for calibrated prediction; stale world model trusted after regime change; same faulty model used as generator and verifier; failure to query reality when model uncertainty dominates.
+
+## Multimodal grounding / embodiment
+
+Cross-modal false binding; modality dominance; disagreement collapsed before uncertainty is resolved; language bottleneck discarding sensor/action precision; stale object identity across views/sessions; semantic transfer without correct physical affordances; action tokenization reducing control fidelity; perception treated as passive when an information-gathering action is available.
+
 ## Context and memory
 
 Retrieval misses; irrelevant-context interference; stale state; false memory consolidation; contradiction accumulation; unbounded context growth; provenance loss.
