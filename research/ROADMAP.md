@@ -4,7 +4,7 @@
 
 Taxonomy/evidence discipline, computational substrate, learning/adaptation, inference-time intelligence, persistent intelligence, verification/control, self-improvement and first cross-domain synthesis completed first passes on 2026-08-14. Targeted gap closure remains open.
 
-A focused synthesis later added **discovery & epistemic growth**: human knowledge is bootstrap evidence/methodology rather than a permanent epistemic ceiling; F26 captures the requirement to turn uncertainty into testable hypotheses and verified new knowledge.
+Discovery/epistemic growth is explicit: human knowledge is bootstrap evidence/methodology rather than a permanent epistemic ceiling; F26 requires turning uncertainty into testable hypotheses and independently supported new knowledge.
 
 ## Phase 8 — Forget implementations
 
@@ -12,150 +12,85 @@ First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit
 
 ## Phase 9 — Clean-sheet architecture
 
-First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No architecture family selected.** Four organization families remain active: hierarchical explicit allocation; distributed event-driven local control; tightly integrated predictive computation with external evidence/authority; developmental/variant-generating organization.
+First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No architecture family selected.** A/B/C/D remain competing organization families.
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Fifteen reversible implementation-neutral principles have survived their current promotion gates. Composition testing is now the primary strategy.**
+**Active. Twenty reversible implementation-neutral principles have survived their current promotion gates.** The experimental strategy has moved from isolated mechanisms to composition and now to guarded self-improvement.
 
-### Current provisional selections
+The current validation history contains **150 Phase-10 added passing tests**.
 
-1. PS-001 — typed hybrid boundary state;
-2. PS-002 — staged adaptive persistence;
-3. PS-003 — coupling-scoped coordination;
-4. PS-004 — derived current belief with evidence linkage;
-5. PS-005 — value-of-computation stopping;
-6. PS-006 — consequence-sensitive hypothesis plurality;
-7. PS-007 — value-driven active evidence acquisition;
-8. PS-008 — verified epistemic frontier expansion;
-9. PS-009 — conditional sharing with isolation fallback;
-10. PS-010 — joint adaptive resource substitution under shared scarcity;
-11. PS-011 — retrieval by expected applicability/downstream value;
-12. PS-012 — adaptive predictive-state breadth / recoverable optionality;
-13. PS-013 — failure-mode-independent assurance;
-14. PS-014 — consequence/uncertainty/resource-sensitive assurance allocation;
-15. PS-015 — causal/eligibility-scoped delayed credit.
+## Composition checkpoint
 
-These remain reversible constraints, not concrete modules and not a selected Phase-9 architecture family.
+I01–I03 showed that memory, uncertainty, active evidence, discovery, metacognition and assurance interact rather than compose trivially.
 
----
+**I04** is the current architecture-compression experiment. It replaces several separate controllers with one typed transition/resource allocator. A common allocator adapts resource use as workload changes, but a flattened scalar controller catastrophically mistakes local value for authority. Current synthesis:
 
-# Composition generations
+`typed state/transition proposal -> shared marginal-value/resource allocator -> failure-layer assurance + current authority gate -> execute -> observe -> scoped credit -> staged/appropriately-scoped update`
 
-## I01 — first integrated epistemic organism
+This is a hypothesis, not a selected architecture.
 
-Mixed memory conflict, high-stakes ambiguity, active observation, frontier discovery and shared resource scarcity in one lifecycle.
+## Guarded self-improvement checkpoint
 
-Key result: the complete composition outperforms each one-principle ablation, but gains are uneven. Immediate consolidation turns evaluator mistakes into persistent downstream errors, showing that discovery governance and memory cannot be evaluated independently.
+Self-change experiments were delayed until the acceptance machinery had independent/current authority and regression evidence.
 
-## I02 — learned metacognition
+### E14/E14B — capability authority
 
-Removes the assumption that operation quality and verifier safety are known.
+Categorical capability authority and contextual risk solve different problems. Authority must be independent from the proposing behavior and remain current/revocable; a versioned boundary keeps zero categorical violations under changing grants/revocations while avoiding an always-live lookup on ~98.9% of tasks.
 
-The organism learns:
+### E20/E20B — self-change regression evidence
 
-- changing retrieval/probe quality under hidden regime drift;
-- when shared family evidence transfers versus when domain-private evidence is needed;
-- which verifier/task family has a correlated blind spot;
-- when independent secondary evidence is worth its cost.
+Visible tests are optimization signals, not sufficient promotion evidence. Fixed hidden evidence can become stale in either state-space coverage or timescale. Rotating independent evidence preserves capability under both synthetic shifts; maximal adversarial testing is safer but more conservative and expensive.
 
-This reproduces PS-009/PS-010 inside an integrated lifetime rather than an isolated benchmark.
+### E15/E15B — lineage diversity
 
-## I03 — assurance composition
+A bounded archive loses to one incumbent when the objective is stationary, but wins when old variants regain value or temporarily inferior stepping stones are necessary. Diversity is therefore priced future optionality, not a universal population requirement.
 
-Separates:
+### E16 — repair scope
 
-- final-result correctness;
-- process/state-transition validity;
-- evaluator failure-mode independence;
-- consequence-sensitive assurance allocation.
+Local, component and structural repair each win in a different causal regime. The selected rule is **minimal sufficient blast radius**: start with the smallest reversible scope that plausibly covers the cause and escalate only when recurrence/coupling evidence earns the wider risk/cost.
 
-E13 shows correlated evaluators remain exploitable as search pressure rises, promoting PS-013. E21 plus I02 shows assurance allocation has a real cost/consequence crossover, promoting PS-014.
+## Current provisional selection count
 
-DL-012 verification granularity remains deliberately open after one task family.
+**PS-001 through PS-020** are active. They remain reversible constraints, not product components.
 
----
+The newest selections are:
 
-# Credit assignment
+- PS-016 — failure-layer-targeted verification;
+- PS-017 — independent current/revocable capability authority;
+- PS-018 — rotating independent self-change regression evidence;
+- PS-019 — resource-priced lineage diversity / variant optionality;
+- PS-020 — evidence-scaled repair scope / minimal sufficient blast radius.
 
-## E10A — serial sparse reward
+See `clean-sheet/DESIGN_LEDGER.md` for the complete list and falsifiers.
 
-At nine stages, final-only global blame collapses under credit ambiguity while noisy local evidence learns successfully. A local-eligibility hybrid keeps delayed global feedback but retains only suspicious stage state.
+## JEPA / predictive representation
 
-## E10B — sparse causal scope
+JEPA is explicitly retained as a candidate mechanism family, not a commitment. **E24** is specified to compare latent-target prediction against raw reconstruction, current-task-sufficient prediction, denser latent targets and latent state backed by recoverable source evidence. It is intentionally designed so JEPA can lose after objective shifts or intervention tests.
 
-Two speculative branches execute while only one determines the final outcome. Broadcasting reward to both branches trains causally irrelevant computation. Branch-scoped credit eliminates that contamination; local eligibility narrows delayed state and blame further.
+## Next milestone
 
-Together they promote PS-015: delayed outcomes may remain global, but credit should propagate only across transitions that remain causally/evidentially eligible.
+Near-term order:
 
----
+1. **I05 — learned transition metadata:** remove more oracle/calibrated fields from I04; learn value, coupling, authority risk and verifier independence online;
+2. **E17 — mature structure:** fixed structure vs direct structural mutation vs developmental/generative organization, now governed by PS-018/PS-020;
+3. **E18/E19** only where execution timing or fidelity actually discriminates the emerging organization;
+4. **E24 JEPA** rises in priority if predictive representation/state becomes the integration bottleneck;
+5. compare A/B/C/D end-to-end only after the common-kernel boundaries stabilize enough for matched implementations.
 
-# What the experiments are converging toward
+## Phase-10 substantial-completion condition
 
-The current fifteen principles increasingly collapse into fewer implementation-neutral laws:
+Before Phase 10 is considered substantially complete, the combined organism should show that:
 
-### 1. Scope follows coupling / responsibility
-
-Control, communication and credit should remain local until real dependencies require broader coordination.
-
-### 2. State follows expected future value
-
-Hot-state breadth, persistence, retrieval and evidence retention depend on future usefulness, correction value and rematerialization cost.
-
-### 3. Work follows marginal value
-
-Reasoning, observation, search and assurance are resources to allocate—not fixed rituals or budgets that must be consumed.
-
-### 4. Sharing follows reusable structure
-
-Shared learned state transfers useful regularities until interference exceeds the benefit; private/isolation paths remain available.
-
-### 5. Epistemic authority follows evidence
-
-Novelty, confidence, evaluator votes and model identity do not themselves justify durable belief. Independence, provenance, verifier scope and consequence matter.
-
-### 6. Durability raises the evidence requirement
-
-A state transition that will be reused, propagated or modify the system deserves stronger assurance than a temporary hypothesis or computation.
-
-The next architecture question is whether these can be implemented by **one small typed state-transition/resource-allocation substrate** while retaining distinct authority/failure semantics where necessary.
-
----
-
-# Next milestone — I04
-
-Build an integrated organism that removes more hand-coded policy boundaries.
-
-I04 should:
-
-1. use one typed proposal/state-transition interface for compute, retrieval, observation, verification, persistence and credit eligibility;
-2. learn estimates of expected future value, resource quality, coupling and verifier independence online;
-3. embed PS-012 adaptive hot-state breadth in the same lifetime;
-4. use conditional shared/private estimators where transfer evidence warrants it;
-5. test pairwise and multi-principle ablations rather than only one-at-a-time removals;
-6. measure whether a common allocator causes authority leaks—for example treating an ordinary cognitive score as permission to perform a durable or privileged transition;
-7. keep mechanisms replaceable so architecture boundaries can still be falsified.
-
-After I04 stabilizes, highest-value open decisions are:
-
-- DL-012 — second verification-granularity family;
-- DL-014 — learned behavior versus externally enforced capability boundaries;
-- DL-020 — hidden/rotating regression evidence under repeated self-improvement;
-- DL-015/DL-016 — lineage and mutation scope once the acceptance machinery is trustworthy;
-- DL-018/DL-019 — event-driven execution and adaptive fidelity on the resulting architecture.
-
-## Integration exit condition
-
-Before treating Phase 10 as substantially complete, the combined organism should demonstrate that:
-
-- selected principles retain lifetime value when composed;
-- metacontrol/state-estimation overhead does not consume those gains;
-- provenance/authority interfaces remain stable under shared learned control;
-- the system can distinguish uncertainty about the world from uncertainty about its tools/evaluators/self;
-- failures remain attributable enough to revise specific mechanisms;
-- unsupported state transitions can remain tentative/unresolved;
-- at least one architecture family becomes empirically dominated on matched end-to-end tasks, or evidence shows why multiple organizations remain Pareto-optimal.
+- selected principles retain lifetime value under composition;
+- learned metacontrol overhead does not consume the gains;
+- authority/provenance remain stable under shared learned control;
+- world/tool/evaluator/self uncertainty remain distinguishable;
+- self-change uses independent refreshing evidence and scoped rollback/change;
+- failures remain attributable enough to revise mechanisms;
+- unsupported transitions can remain tentative/unresolved;
+- at least one architecture family is empirically dominated under matched end-to-end tests, or evidence explains a persistent Pareto frontier.
 
 ## Open targeted gap closure
 
-Add literature only when it materially changes an active experimental/design decision, not simply to maximize source count.
+Add literature only when it materially changes an active experimental/design decision. The Atlas optimizes discriminatory evidence, not source count.
