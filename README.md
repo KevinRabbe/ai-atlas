@@ -12,76 +12,95 @@ Named model blocks, natural-language reasoning, databases, agents, harnesses, bi
 
 ## Current state
 
-Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no A/B/C/D family selected**. Phase 10 experimental reconstruction: **active**.
+Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **201 added test cases**, integrated generations through **I06** plus I05B imperfect-feedback metacognition, guarded self-improvement experiments, implemented E24 predictive-representation discrimination, and **AF01**, the first matched A/B/C/D architecture-family benchmark. **Twenty-three provisional implementation-neutral principles** currently survive their promotion gates.
+Phase 10 now contains **217 added test cases**, integrated experiments through **I07**, and architecture-level comparisons **AF01–AF03**. **Twenty-three provisional implementation-neutral principles** survive their current promotion gates.
+
+No fixed A/B/C/D architecture family is selected.
 
 ## What the experiments are converging toward
 
-The principle list is increasingly collapsing into fewer candidate laws:
+The current evidence increasingly supports a smaller set of recurring laws:
 
-- **scope follows coupling, responsibility and causal extent**;
-- **state follows expected future value and recoverability**;
-- **optional work follows marginal value under shared scarcity**;
-- **material complements/substitutes must be allocated jointly when their interaction changes value**;
-- **sharing and structural indirectness follow reusable regularity**;
-- **execution follows state change until consistency coupling justifies synchronization**;
-- **fidelity follows decision sensitivity, uncertainty propagation and consequence**;
-- **predictive compression is only sufficient relative to future/action-relevant distinctions and recoverability**;
-- **authority follows independent current evidence/invariants, not confidence alone**;
-- **verification follows the failure layer that can still invalidate the transition**;
-- **durable change requires stronger and refreshing evidence**;
-- **self-improvement diversity is retained only while future option value pays for it**;
-- **repair blast radius expands only when evidence says the causal root is equally broad**;
-- **metacognitive estimates are revisable state and can themselves justify active evidence acquisition**;
-- **organization may itself be an adaptive choice rather than one permanent global architecture.**
+- scope follows coupling, responsibility and causal extent;
+- state follows expected future value and recoverability;
+- optional work follows marginal value under shared scarcity;
+- material complements/substitutes require interaction-aware allocation;
+- sharing and structural indirectness follow reusable regularity;
+- execution follows state change until consistency coupling justifies synchronization;
+- fidelity follows decision sensitivity, uncertainty propagation and consequence;
+- predictive compression is sufficient only relative to future/action-relevant distinctions and recoverability;
+- authority follows independent current evidence/invariants, not confidence alone;
+- verification follows the residual failure layer;
+- durable change requires stronger and refreshing evidence;
+- self-improvement diversity is retained only while future option value pays for it;
+- repair blast radius expands only when evidence says the causal root is equally broad;
+- metacognitive estimates are revisable state and can themselves justify active evidence acquisition;
+- **organizational mode, organizational scope and scope membership may themselves be adaptive state.**
 
-The current architecture-compression hypothesis is:
+## Current architecture-compression hypothesis
 
-`typed state/transition proposals -> learned shared value/resource allocator with material interaction models -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity/state breadth -> observe -> causal credit -> staged/appropriately-scoped update`
+```text
+source/world evidence
+      ↓
+typed state + transition proposals
+      ↓
+learned interaction-aware value/resource allocator
+      ↓
+dynamic coupling scopes
+      ├─ local/distributed organization where locality pays
+      ├─ hierarchical arbitration where coupling/scarcity pays
+      ├─ integrated/shared computation where transfer pays
+      └─ variant preservation where recurrence/option value pays
+      ↓
+failure-layer assurance + current authority boundary
+      ↓
+execute at scoped timing / fidelity / state breadth
+      ↓
+observe → causal credit → staged appropriately-scoped update
+```
 
-This is **not** yet a selected architecture.
+This is **not** yet the final architecture.
 
-## I06 — composition of runtime choices
+## I06 — runtime choices interact
 
-I06 puts high fidelity, source rematerialization versus broad hot state, synchronization and active intervention into one shared finite runtime budget.
+I06 combines fidelity, source rematerialization vs broad hot state, synchronization and active intervention inside one finite runtime budget.
 
-Across 30 seeds, the learned joint allocator reaches ~`1.564` utility/task versus ~`1.355` for independently learned operation controllers, ~`1.410` for a uniform safe bundle and ~`0.477` for always-cheap execution. It takes a real hit after the hidden regime swap and later recovers, so the result is adaptive rather than oracle-driven.
+Across 30 seeds, learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for independent operation controllers and ~`1.410` for a uniform safe bundle.
 
-The main result is architectural rather than numerical:
+The result is not “use a grouped knapsack.” The result is:
 
-> **good local operation values are insufficient when operations are complements or substitutes.**
+> **good local operation values are insufficient when operations materially complement or substitute for one another.**
 
-The allocator must model the interactions that materially change downstream value.
+## AF01–AF03 — architecture families become modes and scopes
 
-## AF01 — architecture families form a Pareto frontier
+AF01 gives the same I06 substrate to canonical A/B/C/D organizations and finds a Pareto frontier rather than one winner.
 
-AF01 fixes the I06 task/runtime substrate and varies only organizational bias:
+AF02 then lets a selector infer organization from noisy observable structure. It reaches ~`1.563` utility/step versus ~`1.509` for the best fixed mode and ~`1.576` oracle. But when regimes change too quickly, switching loses to a fixed organization.
 
-- **A:** hierarchical/global arbitration over conditional estimates;
-- **B:** local bidding + resource-local auction;
-- **C:** pooled shared-core experience + joint allocation;
-- **D:** preserved conditional variants + online selector/archive cost.
+AF03 makes four domains coexist simultaneously. Scoped organization wins when domains differ and coupling is low; global organization wins again when domains are homogeneous and tightly coupled.
 
-No family wins universally. D is strongest in the tightly switching/coupled stress family; C is strongest in the recurring mixed family; A/B expose different error-versus-coordination-cost trade-offs in sparse work. Sparse rankings change when organization overhead prices are swept.
+So the current interpretation is stronger than “hybrid architecture”:
 
-The important implication is:
+> **organization should be chosen at the scope and timescale where its expected future value exceeds identification, switching, carrying and boundary costs.**
 
-> **A/B/C/D increasingly look like organizational modes that are useful under different conditions, not necessarily mutually exclusive final architectures.**
+## I07 — topology itself becomes revisable state
 
-AF02 will test whether one system can infer those conditions and change organization dynamically while paying explicit switching/carrying cost.
+I07 removes predefined subsystem boundaries. A learner sees a noisy changing dependency graph over 12 components and must split/merge coordination scopes while paying migration cost.
 
-## JEPA / E24 status
+With 120-step structural regimes it reaches ~`1.058` utility/step versus `1.027` for the best static topology and ~`1.075` oracle, recovering ~90% pairwise scope structure. At 20-step regimes the adaptive topology falls below static global organization.
 
-JEPA remains explicitly inside the Atlas as a **candidate predictive-representation mechanism family**, not a selected component.
+This suggests that a mature architecture may not have one permanent module graph. **Scope membership itself can be learned state, provided structural persistence pays for migration.**
 
-E24 is implemented. A coarse predictive latent is efficient on the original objective but can fall to chance after a future objective or intervention requires a discarded distinction. Dense latent state and compact latent + recoverable source evidence retain/recover it.
+## JEPA / E24
 
-Current refinement:
+JEPA remains explicitly inside the Atlas as a candidate predictive-representation mechanism, not a selected component.
 
-> **Predictive compression should optimize lifetime decision/intervention utility, not passive prediction accuracy alone. Target breadth and recoverable evidence are part of the predictive objective.**
+E24 shows that a coarse predictive latent can be very efficient yet lose a future/action-relevant distinction. Dense predictive state or compact latent + recoverable source evidence preserves the option.
 
-No separate "JEPA principle" was created because this evidence is already captured by PS-012/PS-023.
+Current conclusion:
+
+> predictive compression should optimize lifetime decision/intervention utility, not passive prediction accuracy alone.
 
 ## Discovery target
 
@@ -89,7 +108,7 @@ Human knowledge is treated as bootstrap state rather than the final epistemic ce
 
 `inherited knowledge -> competing hypothesis -> search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`
 
-E23/E23B demonstrate controlled beyond-teacher mechanics; they are not claimed as new human knowledge.
+The goal is not merely an AI that reproduces humanity's knowledge, but one that can expand the shared knowledge frontier through independently verifiable discovery.
 
 ## Current provisional selection count
 
@@ -97,14 +116,22 @@ E23/E23B demonstrate controlled beyond-teacher mechanics; they are not claimed a
 
 ## Next milestone
 
-1. **AF02:** test an evidence-driven organizational mode selector against fixed A/B/C/D and an oracle mode scheduler;
-2. vary hidden coupling/sharedness/recurrence, regime duration and switching cost so the adaptive system can fail through misclassification or thrashing;
-3. I05C afterward for correlated/adversarial audit evidence and unresolved outcomes;
-4. neural E24C only if predictive-objective geometry remains architecture-discriminating after the organizational comparison.
+The next step is no longer another named architecture family benchmark. It is the first **executable candidate architecture skeleton** built around dynamic typed scopes.
+
+A real split/merge must move or preserve:
+
+- source/evidence ownership and references;
+- predictive/hot state;
+- resource ownership/arbitration;
+- authority identities/versions;
+- in-flight event work;
+- causal credit and regression evidence.
+
+The test is whether those invariants survive topology change without making dynamic organization too expensive.
 
 ## Organizing hypothesis
 
-Practical intelligence may be adaptive selection of typed state transitions **and organizational modes**, with allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
+Practical intelligence may be adaptive selection of typed state transitions **and organizational topology**, with computation, information, interaction, durable change, assurance and exploration allocated under uncertainty and finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
 
 This remains falsifiable.
 
