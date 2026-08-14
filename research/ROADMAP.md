@@ -30,50 +30,62 @@ First evidence pass completed on 2026-08-14. Current synthesis treats self-impro
 
 ## Phase 7 — Cross-domain synthesis
 
-First cross-domain synthesis completed on 2026-08-14.
-
-Produced cross-domain principles, implementation-neutral required functions, unresolved design dimensions, an anti-assumption register and prioritized open questions. Focused gap closures were completed for machine-native representation/communication and objective uncertainty/metareasoning.
+First cross-domain synthesis completed on 2026-08-14, including focused gap closures for machine-native representation/communication and objective uncertainty/metareasoning.
 
 ## Phase 8 — Forget implementations
 
-**First-pass clean-sheet functional reconstruction completed on 2026-08-14. Exit gate: PASS.**
+First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit gate: PASS.**
 
-Phase-8 outputs:
-
-- `clean-sheet/PROBLEM_MODEL.md` — environment/state-transition problem and semantic state classes;
-- `clean-sheet/FUNCTIONAL_SPECIFICATION.md` — capability contracts with consumed/produced state, invariants and failure signals;
-- `clean-sheet/STATE_AND_INFORMATION_MODEL.md` — evidence, belief, time, authority, provenance, uncertainty and persistence semantics;
-- `clean-sheet/RESOURCE_MODEL.md` — lifetime compute/memory/movement/communication/energy/interaction/assurance cost model;
-- `clean-sheet/INVARIANTS.md` — 35 cross-system invariants;
-- `clean-sheet/ASSURANCE_AND_CHANGE_PROTOCOL.md` — consequence-sensitive transition and recovery protocol;
-- `clean-sheet/UNRESOLVED_CHOICES.md` — implementation-free architecture dimensions;
-- `clean-sheet/TRACEABILITY.md` — evidence path and falsifiers;
-- `clean-sheet/PHASE8_EXIT_CHECK.md` — explicit gate audit.
-
-The specification no longer requires contemporary architecture/model/product names and admits multiple fundamentally different organization strategies.
+Produced a standalone problem/state model, functional contracts, state/information semantics, resource model, invariants, assurance/change protocol, unresolved choices, traceability and an explicit exit audit.
 
 ## Phase 9 — Clean-sheet architecture
 
-**Active.**
+**First-pass candidate generation completed on 2026-08-14. Exit gate: PASS. No architecture selected.**
 
-Derive multiple competing systems from the Phase-8 specification. Maintain alternatives wherever evidence is insufficient; do not prematurely collapse the design dimensions.
+Four competing organization families are retained:
 
-Phase-9 requirements:
+1. hierarchical explicit allocation;
+2. distributed event-driven local control;
+3. tightly integrated predictive computation with external evidence/authority;
+4. developmental/variant-generating organization.
 
-1. construct multiple coherent architecture families from the same functional specification;
-2. map every proposed mechanism to Phase-8 functions/invariants/resources;
-3. state which unresolved choices each candidate embodies;
-4. identify strengths, failure modes and expected bottlenecks;
-5. define discriminating experiments under matched resource/assurance budgets;
-6. preserve hybrid/alternative candidates where evidence is insufficient;
-7. record no final selection until experimental reconstruction can actually distinguish them.
+Phase 9 produced:
 
-Exit condition: candidate architectures and an experiment matrix precise enough to build the smallest instrumented research organism in Phase 10.
+- candidate family specifications under `clean-sheet/candidates/`;
+- `clean-sheet/PHASE9_COMPARISON.md`;
+- `clean-sheet/EXPERIMENT_MATRIX.md` with 22 discriminating experiments;
+- an unresolved `clean-sheet/DESIGN_LEDGER.md`;
+- `clean-sheet/PHASE9_EXIT_CHECK.md`.
+
+No candidate is preferred globally. Architecture selections are now gated on matched experimental evidence.
 
 ## Phase 10 — Experimental reconstruction
 
-Build the smallest instrumented research organism capable of discriminating architectural choices. Existing models may be temporary experimental probes; they are not presumed to be the final cognitive substrate.
+**Active.**
+
+Build the smallest instrumented research organism capable of discriminating the Phase-9 choices. Existing models/algorithms may be temporary experimental probes; they are not presumed to be the final cognitive substrate.
+
+Initial Tier-1 priorities:
+
+1. direct-address evidence versus compressed evolving state;
+2. fixed versus adaptive computation;
+3. hierarchical versus distributed operation allocation;
+4. integrated versus heterogeneous computation;
+5. internal representation format;
+6. immediate durable learning versus staged consolidation.
+
+Phase-10 implementation rules:
+
+- one shared experiment harness with replaceable policies/mechanisms rather than separate bespoke systems;
+- deterministic synthetic environments first, so hidden ground truth and resource accounting are available;
+- every mechanism instrumented for state size, operation count, latency, communication and assurance cost;
+- architecture variants must share tasks/data/budgets;
+- no external model/API required for the first Tier-1 experiments;
+- every experiment emits machine-readable results and enough trace state for failure analysis;
+- use existing models only later as controlled probes when a question specifically requires learned language/world knowledge.
+
+Exit condition: enough experimental evidence to move at least several high-value design-ledger decisions from `unresolved` to provisional selections with explicit falsifiers.
 
 ## Open targeted gap closure
 
-All completed first passes remain open. Gap closure should be prioritized when Phase-9 candidate comparison depends materially on an unresolved claim, not simply to maximize paper count.
+All completed first passes remain open. New literature should be added when it materially changes an active experimental/design decision, not merely to maximize source count.
