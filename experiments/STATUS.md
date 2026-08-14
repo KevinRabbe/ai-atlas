@@ -1,81 +1,93 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-three provisional design principles selected; composition + guarded self-improvement experiments are active. No Phase-9 architecture family is selected.**
+**Checkpoint: twenty-three provisional design principles selected; integrated composition and matched architecture-family discrimination are active. No Phase-9 architecture family is selected.**
 
 ## Implemented blocks
 
 Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and E24 predictive representation / JEPA mechanism discrimination.
 
-Integrated composition generations are **I01–I05 plus I05B**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned/revisable; **I05B makes the evidence used to learn evaluator quality delayed, censored and noisy.**
+Integrated composition generations are **I01–I06 plus I05B**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned/revisable; I05B makes evidence about evaluator quality delayed/censored/noisy; **I06 composes fidelity, source rematerialization/hot-state breadth, synchronization and active intervention inside one shared runtime allocator.**
+
+**AF01** is the first matched A/B/C/D family comparison. It fixes the I06 runtime substrate and varies organizational bias rather than giving each family different capabilities/resources.
 
 JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 gives evidence both for latent predictive efficiency and against overly coarse/passive-only predictive sufficiency.
 
 ## Validation
 
-Phase 10 now contains **190 added test cases**. The prior 184-test checkpoint was extended by I05B imperfect metacognitive feedback: 6 tests.
+Phase 10 now contains **201 added test cases**: the prior 190-test checkpoint plus 6 I06 tests and 5 AF01 tests.
 
-The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were first exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
+The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
 ---
 
 # Latest findings
 
-## I05B — metacognitive learning under delayed/noisy/censored evidence
+## I06 — integrated runtime allocation
 
-Two evaluator families swap quality halfway through the lifetime. A visible approval may receive no later audit, a delayed noisy passive audit, or a selectively purchased faster/higher-quality audit.
+Runtime operations are now treated as typed complements/substitutes competing for the same finite capacity:
+
+- high-fidelity computation;
+- source rematerialization vs broader hot state;
+- synchronization for coupled/version-sensitive work;
+- active intervention/observation.
 
 30-seed means:
 
-| feedback mode | utility/task | false durable writes/run | correct durable writes/run | verifications/task | active audits/task |
-|---|---:|---:|---:|---:|---:|
-| exact delayed audit | **1.7782** | 61.87 | **2592.3** | 0.4587 | 0.0000 |
-| passive noisy/censored | 1.5711 | 47.10 | 2243.4 | 0.3954 | 0.0000 |
-| **selective active audit** | **1.7595** | **46.80** | 2542.9 | 0.4460 | **0.3759** |
-| no feedback | 1.2939 | **493.37** | 3734.7 | 0.7893 | 0.0000 |
+| policy | utility/task | error rate | pre-shift | early post-shift | late post-shift | capacity use |
+|---|---:|---:|---:|---:|---:|---:|
+| oracle joint | **1.7482** | **0.0790** | 1.7338 | 1.7608 | 1.7633 | 0.9694 |
+| **learned joint** | **1.5640** | **0.1096** | **1.6244** | 1.0682 | **1.6327** | 0.8307 |
+| factorized independent | 1.3549 | 0.1409 | 1.6101 | 0.5923 | 1.2500 | 0.9012 |
+| uniform safe | 1.4096 | 0.1744 | 1.3973 | 1.4200 | 1.4223 | **0.9930** |
+| uniform cheap | 0.4769 | 0.2747 | 0.4685 | 0.5217 | 0.4746 | 0.0000 |
 
-Sparse passive feedback reacts too slowly to the hidden quality swap: first-500 post-shift utility is ~`-0.0769`. Selective audit stays at ~`1.0557` early post-shift and reaches ~`1.8504` late, close to the exact-feedback baseline.
+The learned joint allocator takes a genuine hit after the hidden regime swap, then relearns. Factorized local controllers consume more capacity and suffer more discarded-state, consistency, intervention and sensitivity failures because material operation interactions are not represented.
 
-Audit demand falls as metacognitive uncertainty shrinks (~`0.461` pre-shift active-audit rate to ~`0.268` late post-shift).
+**Interpretation:** good local operation values are insufficient when operations substitute or complement one another. Runtime allocation must represent the interactions that materially change downstream value. No new principle is promoted; I06 strengthens PS-010/012/022/023.
 
-**Interpretation:** uncertainty about tool/evaluator reliability is ordinary epistemic state. Learning about that state is itself an active evidence operation whose value competes with its cost. No new principle is promoted; I05B recursively exercises PS-007/013/014/010 while PS-017 keeps authority independent.
+## AF01 — first matched architecture-family Pareto test
+
+Canonical stress embodiments share the same I06 task stream, operation bundles, success model and total resource capacity:
+
+- A: conditional/local estimates + global hierarchical arbitration;
+- B: local best-bundle bids + resource-local auction;
+- C: pooled shared-core experience + joint allocation;
+- D: preserved conditional models + online variant selection and archive cost.
+
+Eight-seed utility means:
+
+| scenario | A | B | C | D |
+|---|---:|---:|---:|---:|
+| sparse stationary | 1.6033 | 1.5991 | 1.5614 | **1.6098** |
+| coupled switching | 1.3683 | 1.3704 | 1.3896 | **1.4435** |
+| recurring mixed | 1.3953 | 1.3806 | **1.4797** | 1.4367 |
+
+The scalar utility table does not tell the whole story. In sparse work A has the lowest error, B cuts control traffic from 2.0 messages/task to ~0.772 and explicit overhead from 0.036 to ~0.0022, C has zero explicit organization traffic but pays pooling interference, and D pays archive maintenance.
+
+Organization-cost sensitivity changes the sparse ranking: at 2x overhead price B becomes best of A/B/C/D in that stress family. C remains strongest in the tested recurring-mixed family across the 0.5x–2x organization-cost sweep.
+
+**Interpretation:** AF01 exposes a genuine organizational Pareto frontier. Hierarchical, distributed, integrated and developmental organization each earn themselves in different regimes. No family is eliminated or selected from AF01 alone.
+
+The stronger emerging hypothesis is that A/B/C/D may describe **organizational modes** of one system rather than mutually exclusive universal architectures.
+
+## I05B — metacognitive learning under delayed/noisy/censored evidence
+
+30-seed means:
+
+| feedback mode | utility/task | false durable writes/run | active audits/task |
+|---|---:|---:|---:|
+| exact delayed audit | **1.7782** | 61.87 | 0.0000 |
+| passive noisy/censored | 1.5711 | 47.10 | 0.0000 |
+| **selective active audit** | **1.7595** | **46.80** | **0.3759** |
+| no feedback | 1.2939 | **493.37** | 0.0000 |
+
+Uncertainty about tool/evaluator reliability is ordinary epistemic state; learning about that state is itself a priced active-evidence operation.
 
 ## E24 — predictive latent efficiency vs future/interventional sufficiency
 
-E24 uses empirical predictive-feature objectives as a model-free proxy, not a JEPA neural implementation.
+A coarse latent is highly efficient on its original objective but can fall to chance when a previously discarded distinction becomes future- or action-relevant. Dense predictive state and compact latent + recoverable source preserve/recover that distinction. In the intervention family all variants look strong passively, while the coarse passive latent falls to ~0.490 action-conditioned accuracy versus ~0.899 for dense/raw/source-backed state.
 
-### Objective shift
-
-| policy | initial balanced acc. | future balanced acc. | lifetime net | future hot width |
-|---|---:|---:|---:|---:|
-| raw reconstruction | 0.9601 | **0.8504** | 0.8332 | 24 |
-| task sufficient | 0.9601 | 0.6280 | 0.7820 | 4 |
-| **coarse latent target** | 0.9601 | **0.5000** | 0.7180 | **4** |
-| dense latent target | 0.9601 | **0.8504** | 0.8752 | 10 |
-| **latent + recoverable source** | 0.9601 | **0.8504** | **0.8797** | **5** |
-
-### Passive prediction vs intervention
-
-| policy | passive balanced acc. | intervention balanced acc. | lifetime net | intervention hot width |
-|---|---:|---:|---:|---:|
-| raw reconstruction | 0.9498 | **0.8989** | 0.8763 | 16 |
-| task sufficient | 0.9498 | 0.5884 | 0.7571 | 4 |
-| **coarse latent target** | 0.9498 | **0.4899** | 0.7078 | **4** |
-| dense latent target | 0.9498 | **0.8989** | 0.8943 | 10 |
-| **latent + recoverable source** | 0.9498 | **0.8989** | **0.9028** | **5** |
-
-No JEPA-specific principle is promoted. E24 refines PS-012/PS-023: predictive compression must optimize lifetime decision/intervention utility, and target breadth/recoverable evidence are part of that objective.
-
-## E18 / PS-022 — event-scoped execution
-
-Sparse dependency work favors event propagation over global ticking; version-coupled work requires scoped barriers. Eager synchronization wins again when consistent snapshots are nearly continuous.
-
-## E19 / PS-023 — adaptive fidelity
-
-Approximate state is efficient until its uncertainty can change consequential decisions. Adaptive precision/replay beats uniform-low and uniform-high policies in threshold and accumulated-trajectory families.
-
-## E17/E17B / PS-021 — structural indirectness follows regularity
-
-Repeated structural state and dependency topology reward compact generative rules; irregular/local organization requires direct/local override paths.
+No JEPA-specific principle is promoted. E24 refines PS-012/PS-023: predictive compression must optimize lifetime decision/intervention value, not passive prediction alone.
 
 ---
 
@@ -109,13 +121,14 @@ Repeated structural state and dependency topology reward compact generative rule
 
 # Current architecture compression hypothesis
 
-`typed state/transition proposals -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity -> observe -> causal credit -> staged/appropriately-scoped update`
+`typed state/transition proposals -> learned shared marginal-value/resource allocator with material interaction models -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity/state breadth -> observe -> causal credit -> staged/appropriately-scoped update`
 
 Recurring laws:
 
 - scope follows coupling/responsibility/causal extent;
 - state follows future value and recoverability;
 - optional work follows marginal value;
+- **material complements/substitutes must be allocated jointly rather than by independent local scores**;
 - sharing and structural indirectness follow reusable regularity;
 - execution follows events until consistency coupling justifies synchronization;
 - fidelity follows decision sensitivity, uncertainty propagation and consequence;
@@ -125,16 +138,18 @@ Recurring laws:
 - durable change requires stronger and refreshing evidence;
 - self-improvement diversity is retained only while future option value pays for itself;
 - repair blast radius expands only when evidence says the root cause is equally broad;
-- metacognitive estimates are themselves revisable state, and evidence about those estimates is resource-priced too.
+- metacognitive estimates are revisable state, and evidence about those estimates is resource-priced too;
+- **organization itself may be conditional on locality, coupling, reusable structure and regime recurrence rather than fixed globally.**
 
 This remains a hypothesis, not a selected architecture.
 
 ## Next high-value work
 
-1. **I06:** compose timing, fidelity and predictive-state/rematerialization operations inside the common allocator rather than leaving E18/E19/E24 separate;
-2. **I05C:** correlated/adversarial audit sources and partially unresolved outcomes;
-3. only then begin matched A/B/C/D architecture-family elimination;
-4. neural E24C only if actual predictive-objective geometry remains architecture-discriminating after composition.
+1. **AF02 — adaptive organization:** infer coupling/sharedness/recurrence from observable evidence and choose among local, hierarchical, pooled and variant-preserving organizational modes under explicit switch/carrying cost;
+2. compare the adaptive mode system with every fixed A/B/C/D embodiment and an oracle mode scheduler;
+3. stress AF02 with regime-duration and organization-switch-cost sweeps to expose mode thrashing/misclassification;
+4. **I05C** afterward: correlated/adversarial audit sources and partially unresolved outcomes;
+5. neural E24C only if predictive-objective geometry remains architecture-discriminating after AF02.
 
 ## Guardrail
 
