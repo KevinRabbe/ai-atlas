@@ -1,6 +1,6 @@
 # E23 — Weak-Teacher / Independent-Evaluator Discovery Loop
 
-**Status: specified, not yet implemented.**
+**Status: first model-free implementation complete; preliminary synthetic evidence only.**
 
 ## Question
 
@@ -8,82 +8,135 @@ Can a system produce **verified candidates beyond the demonstrated capability/kn
 
 This experiment operationalizes `synthesis/DISCOVERY_AND_EPISTEMIC_GROWTH.md` and F26.
 
-## Why this is different from ordinary supervised learning
+## First implemented landscape
 
-The teacher is deliberately **not** given the best available solution. Better solutions exist in the environment/search space but are absent from demonstrations.
+The current synthetic world contains five deceptive three-bit subproblems.
 
-The experiment therefore distinguishes:
+For each subproblem:
 
-- imitation of the teacher frontier;
-- search beyond the teacher frontier;
-- evaluation of beyond-teacher candidates;
-- promotion of verified discoveries into reusable knowledge.
+- the teacher demonstrates the all-zero construction;
+- all-zero is a strict local optimum under one-bit mutation;
+- crossing the low-scoring intermediate states reaches a better all-one construction;
+- the teacher frontier has hidden score **10**;
+- the global optimum has hidden score **15**.
 
-## First synthetic task family
+Therefore a greedy system that only accepts immediately better mutations cannot exceed the teacher, while a system preserving diverse stepping stones can.
 
-Construct deterministic optimization/program-discovery tasks with:
+The experiment is deliberately model-free so it measures discovery-loop mechanics rather than pretrained language knowledge.
 
-- a finite but large candidate space;
-- exact hidden ground-truth scoring;
-- teacher demonstrations restricted to suboptimal solution families;
-- local optima/deceptive heuristic gradients;
-- recombinable useful partial structures;
-- some candidate features not represented in the teacher demonstrations;
-- deterministic novelty checks against the teacher corpus.
+## Implemented variants
 
-The first task family should remain model-free if possible so the experiment measures the discovery loop rather than pretrained language knowledge.
+### V1 — `teacher_imitation`
 
-## Variants
+Returns the best teacher-demonstrated construction. Establishes the supervisor frontier.
 
-### V1 — teacher imitation
+### V2 — `unguided_search`
 
-Learn/select only from teacher-demonstrated candidates.
+Generates novel candidates without using evaluation to select what becomes the output.
 
-Purpose: establishes the supervisor frontier.
+### V3 — `greedy_visible`
 
-### V2 — unguided generator/search
+Uses the visible evaluator and retains only immediate improvements.
 
-Generate candidates beyond the teacher demonstrations without a reliable evaluator loop.
+### V4 — `diverse_archive`
 
-Purpose: measures novelty without verification discipline.
+Retains candidates across behavioral descriptors so temporarily worse stepping stones can survive long enough to reach better regions.
 
-### V3 — generator + evaluator + greedy incumbent
+### V5 — `epistemic_lifecycle`
 
-Generate variants, evaluate them with the visible evaluator, and retain only the current best.
+Uses the same exploratory archive, but a candidate only becomes consolidated knowledge after an independent hidden evaluator confirms that it really exceeds the currently consolidated frontier.
 
-Purpose: tests whether objective feedback alone exceeds the teacher and exposes local-optimum/premature-convergence failure.
+Rejected candidates are retained as negative-result memory.
 
-### V4 — generator + evaluator + diverse archive
+### V6 — `epistemic_no_negative_memory`
 
-Retain multiple high-value/diverse candidate lineages.
-
-Purpose: tests stepping-stone preservation and exploration breadth.
-
-### V5 — epistemic lifecycle
-
-Add explicit states:
-
-`hypothesis -> candidate discovery -> visible verification -> hidden independent verification -> consolidated knowledge`.
-
-Also retain rejected hypotheses/negative results with conditions.
-
-Purpose: tests whether discovery governance reduces false promotion and repeated dead-end search.
+Ablation of V5 that forgets rejected candidates and may pay to reverify the same false hypotheses.
 
 ## Evaluator structure
 
-Use at least two evaluator layers:
+Two evaluator layers exist:
 
 1. **visible evaluator** — available to the search policy;
-2. **hidden independent evaluator** — not queryable during search and used to detect evaluator exploitation/overfitting.
+2. **hidden evaluator** — used only for experiment ground truth and, in V5/V6, explicit independent verification before promotion.
 
-Later variants should inject controlled evaluator defects so increased search pressure can exploit the visible evaluator.
+A controlled visible-evaluator defect can be enabled. A particular candidate pattern then receives a large visible bonus that has no corresponding hidden-ground-truth value.
 
-## Primary metrics
+This makes evaluator exploitation measurable rather than rhetorical.
+
+## Local validation
+
+The implementation was tested locally with Python 3.11+ stdlib only.
+
+**6/6 E23 unit tests pass.** They verify:
+
+- the teacher is genuinely a local optimum rather than an artificially bad example;
+- greedy one-step improvement remains at the teacher frontier;
+- the diverse archive can cross the deceptive valley;
+- a defective visible evaluator can produce a high-scoring false discovery;
+- independent hidden verification blocks false promotion while still allowing real beyond-teacher improvement;
+- negative-result memory prevents repeated verification of already rejected candidates.
+
+## Preliminary 30-seed sweep
+
+Each run uses 1,500 proposal operations.
+
+### Exact visible evaluator
+
+| variant | mean selected hidden score | beyond teacher |
+|---|---:|---:|
+| greedy visible | 10.000 | 0 / 30 |
+| diverse archive | 12.167 | 30 / 30 |
+| epistemic lifecycle | 12.167 | 30 / 30 |
+
+This is a direct synthetic teacher-ceiling result: the supervisor demonstrates score 10, greedy search cannot leave it, while preserving diverse intermediate hypotheses finds verified constructions above that frontier on every tested seed.
+
+### Defective visible evaluator
+
+The defect bonus is +8 visible score for a pattern that is not actually valuable under hidden ground truth.
+
+| variant | mean selected hidden score | beyond teacher | false discoveries |
+|---|---:|---:|---:|
+| greedy visible | 10.000 | 0 / 30 | 0 / 30 |
+| diverse archive | 8.433 | 1 / 30 | 29 / 30 |
+| epistemic lifecycle | 12.267 | 30 / 30 | 0 / 30 promoted |
+
+The result demonstrates why **search power and verification quality must co-scale**. Diversity/search is useful under a correct evaluator, but under an exploitable evaluator the same search pressure reliably finds the evaluator defect.
+
+### Negative-result memory
+
+With the defective evaluator:
+
+- lifecycle **with** rejected-hypothesis memory averages ~21.3 independent verification calls and 0 repeated failed verifications;
+- the no-negative-memory ablation averages ~27.5 verification calls and ~6.23 duplicate failed verifications.
+
+The selected hidden score is essentially unchanged, so the retained negative result saves assurance work rather than creating capability by itself.
+
+## What this result supports
+
+This first family supports the mechanism-level hypothesis that:
+
+> bootstrap/teacher knowledge does not need to define the system's epistemic ceiling when the system can preserve alternatives, search beyond demonstrations and obtain sufficiently independent evidence about candidate improvements.
+
+It also supports three narrower claims:
+
+1. **Diversity/stepping stones matter** on deceptive landscapes where every local move away from the teacher appears worse.
+2. **Evaluator optimization can turn discovery machinery into false-discovery machinery** when the evaluator is exploitable.
+3. **Epistemic staging matters:** candidate discovery and consolidated knowledge should not be the same state transition.
+
+## What this result does NOT show
+
+It does **not** show that the organism created new human knowledge.
+
+The hidden answer is deliberately known to the benchmark designer. This family tests the mechanics of crossing a teacher frontier and governing candidate discoveries.
+
+A real discovery claim still requires an externally checkable result whose answer was not already known to the relevant human field.
+
+## Primary metrics for later families
 
 - best hidden-ground-truth score;
 - fraction of runs exceeding the teacher frontier;
 - time/evaluations to first beyond-teacher verified result;
-- number of genuinely novel candidates relative to demonstrations;
+- novelty relative to demonstrations;
 - rediscovery rate;
 - visible-vs-hidden evaluator gap;
 - false-discovery/promoted-error rate;
@@ -93,57 +146,15 @@ Later variants should inject controlled evaluator defects so increased search pr
 - retained state/archive size;
 - lifetime utility after resource/evaluator shifts.
 
-## Critical tests
+## Required second task family before any new provisional selection
 
-### A. Teacher ceiling test
+Repeat the discovery mechanism on a structurally different domain, preferably one of:
 
-Does any variant reliably exceed the best teacher-demonstrated candidate?
-
-### B. Evaluator necessity
-
-Does unguided novelty produce many candidates but low verified improvement?
-
-### C. Search pressure / Goodhart test
-
-As proposal count grows, does visible evaluator score diverge from hidden ground truth when the evaluator is imperfect?
-
-### D. Diversity ablation
-
-Does greedy incumbent retention lose stepping stones that the diverse archive preserves?
-
-### E. Epistemic-state ablation
-
-Allow visible-evaluator winners to become durable knowledge immediately. Measure false promotion and downstream contamination versus staged hidden verification.
-
-### F. Negative-result memory ablation
-
-Remove retained failed hypotheses. Measure repeated wasted search on previously falsified regions.
-
-### G. Resource-price shift
-
-Change proposal/evaluator/archive costs mid-run and test whether discovery effort adapts rather than consuming a fixed research budget.
-
-## Second task family requirement
-
-Before any design-ledger promotion, repeat the discovery mechanism on a structurally different domain, for example:
-
-- symbolic theorem/construction search with exact checker;
+- symbolic theorem/construction search with an exact checker;
 - algorithm synthesis on hidden test distributions;
-- causal toy science where the system must select experiments to distinguish hidden world models.
+- causal toy science where the system must maintain competing world hypotheses and select experiments to distinguish them.
 
-The third option should connect E23 to E06/E07 because empirical discovery requires maintaining competing hypotheses and actively acquiring evidence.
-
-## What success would mean
-
-Success would support the principle that:
-
-> weak/bootstrap knowledge can guide a system without defining its epistemic ceiling when the system can search beyond demonstrations and obtain sufficiently independent evidence about candidate improvements.
-
-It would **not** mean the synthetic system created new human knowledge.
-
-## What would count as real frontier discovery later
-
-A real discovery claim requires an externally checkable result whose answer was not already known to the relevant human field, with enough provenance and independent verification to rule out benchmark leakage/rediscovery as far as practical.
+The third option is highest-value because it connects E23 to E06/E07 and begins testing **empirical** rather than purely constructive discovery.
 
 ## Connections to current provisional selections
 
@@ -152,6 +163,14 @@ A real discovery claim requires an externally checkable result whose answer was 
 - **PS-003:** evaluator/search coordination should occur at the scope of shared candidate/evaluator resources.
 - **PS-004:** consolidated belief remains linked to source proof/experiment evidence.
 - **PS-005:** discovery/search/experiment effort should stop when expected marginal information/value gain falls below cost.
+
+## Next E23 work
+
+1. add the causal toy-science second family after E06/E07 exist;
+2. vary search pressure against multiple evaluator defect classes;
+3. distinguish rediscovery from genuinely novel benchmark constructions;
+4. add resource-price shifts and value-of-discovery stopping;
+5. later replace synthetic hidden truth with externally checkable open research problems only after the discovery governance survives these controlled tests.
 
 ## Source trail
 
