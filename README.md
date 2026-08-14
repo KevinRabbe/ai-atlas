@@ -10,37 +10,26 @@ The repository does **not** assemble today's AI stack by habit. It extracts mech
 
 Named model blocks, natural-language reasoning, databases, agents, recursive systems, harnesses, biological mechanisms, particular learning algorithms, world-model products, verifier products, self-improvement frameworks and current hardware are candidates or evidence—not axioms.
 
-## Repository layers
-
-- `atlas/` — mechanism-centric evidence notes;
-- `sources/` — primary-source registry;
-- `research/` — roadmap, claims, contradictions and failure modes;
-- `synthesis/` — cross-domain deductions, including discovery/epistemic growth;
-- `clean-sheet/` — implementation-free requirements, competing architecture families, experiment matrix and design ledger;
-- `experiments/` — Phase-10 instrumented research organism.
-
 ## Current state
 
 Evidence through self-improvement is mapped to first-pass depth. Cross-domain synthesis is complete to first-pass depth. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no architecture family selected**. Phase 10 experimental reconstruction: **active**.
 
-The project now has constructive and empirical discovery experiments plus promotion-depth tests for control, learned sharing, persistent state, representation, inference compute, belief ambiguity, active observation, persistence timescale and cross-resource allocation.
+The experimental organism now covers coordination, learned sharing, persistent evidence/current belief, representation, adaptive compute, competing hypotheses, active observation, predictive-state breadth, persistence timescales, retrieval policy, cross-resource allocation and verified beyond-teacher discovery mechanics.
 
-The dominant result is not a universal winning mechanism. It is **conditional structure**:
+The dominant result is **conditional structure rather than universal winners**:
 
-- coordinate only where dependencies/shared scarcity actually couple decisions;
-- share learned computation where structure is reusable, but retain isolation when transfer becomes interference;
-- maintain fast current belief without erasing evidence needed for revision;
-- preserve multiple hypotheses when ambiguity and wrong-commitment consequence justify their cost;
-- acquire observations/experiments only when their expected information/decision value is worth the interaction;
-- allocate inference effort by marginal value rather than consuming a fixed budget;
-- let persistence timescales respond to stability;
-- treat exact identity/control/provenance differently from approximate learned state;
-- substitute jointly among compute, memory, observation and verification when their economics/quality/capacity change;
-- allow search beyond the human/bootstrap corpus, but never equate novelty with knowledge.
+- coordination follows the scope of coupling;
+- sharing is useful where structure is reusable and harmful where it creates interference;
+- current belief should remain revisable from evidence;
+- multiple hypotheses are worth carrying when ambiguity and consequence justify their cost;
+- observation and inference are resource-priced operations;
+- exact identity/provenance and approximate learned state have different representation requirements;
+- persistence timescale must distinguish actual world change from unreliable evidence when possible;
+- retrieval should optimize applicability/downstream value rather than resemblance alone;
+- cross-resource allocation must account for substitution and shared scarcity;
+- human/bootstrap knowledge may be exceeded, but novelty becomes knowledge only through sufficiently independent evidence.
 
 ## Current provisional clean-sheet selections
-
-Phase 10 has produced ten reversible principle-level selections:
 
 1. **PS-001 — typed hybrid boundary state**;
 2. **PS-002 — staged adaptive persistence**;
@@ -51,34 +40,44 @@ Phase 10 has produced ten reversible principle-level selections:
 7. **PS-007 — value-driven active evidence acquisition**;
 8. **PS-008 — verified epistemic frontier expansion**;
 9. **PS-009 — conditional sharing with isolation fallback**;
-10. **PS-010 — joint adaptive resource substitution under shared scarcity**.
+10. **PS-010 — joint adaptive resource substitution under shared scarcity**;
+11. **PS-011 — retrieval by expected applicability/downstream value**.
 
 These are not product components and do not select architecture A/B/C/D. Their concrete mechanisms remain open and falsifiable.
+
+## One important question still open
+
+E08's first predictive-state-breadth family shows that no fixed state width dominates:
+
+- fixed future objective -> narrow decision-sufficient state is cheapest;
+- occasional objective change -> narrow hot state + recoverable source evidence wins;
+- rapid objective switching -> broad hot state wins because repeated reconstruction becomes expensive.
+
+DL-008 remains unresolved until this survives a second learned/dynamic predictive family.
 
 ## Discovery target
 
 Human knowledge is treated as the bootstrap state, not the final epistemic ceiling.
 
-The target lifecycle is approximately:
-
-`inherited knowledge -> competing hypothesis -> search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`.
+`inherited knowledge -> competing hypothesis -> search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`
 
 The current E23/E23B experiments demonstrate controlled **beyond-teacher mechanics**, not new human knowledge.
 
-## Next decisive targets
+## Next milestone
 
-The highest-value remaining core questions are:
+The next major step is **composition rather than accumulation**:
 
-- E08 predictive-state breadth under objective change;
-- E11 retrieval by downstream decision value rather than similarity alone;
-- separating observation noise from genuine environmental volatility in adaptive persistence;
-- then integrating PS-001 through PS-010 and testing whether the principles compose without interaction regressions.
+1. finish E08's second family;
+2. construct a next-generation integrated organism constrained by PS-001 through PS-011;
+3. test whether the principles still improve lifetime utility when they interact;
+4. measure metacontrol/state/provenance overhead and ablate each principle;
+5. only then move deeper into verification, credit assignment, self-improvement and physical co-design.
 
-See `clean-sheet/DESIGN_LEDGER.md`, `experiments/STATUS.md` and `research/ROADMAP.md` for the current checkpoint.
+See `clean-sheet/DESIGN_LEDGER.md`, `experiments/STATUS.md` and `research/ROADMAP.md` for the detailed checkpoint.
 
 ## Organizing hypothesis
 
-The synthesis treats practical intelligence as potentially involving adaptive selection of state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources. Phase-10 experiments now support multiple pieces independently, but the hypothesis remains falsifiable and does not determine a final architecture.
+Practical intelligence may involve adaptive selection of state transitions and allocation of computation, information, interaction, durable change, assurance and exploration under uncertainty and finite resources. Current experiments support multiple pieces independently, but this remains falsifiable and does not determine a final architecture.
 
 ## End goal
 
