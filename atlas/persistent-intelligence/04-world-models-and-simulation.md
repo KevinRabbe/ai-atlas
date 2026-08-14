@@ -13,6 +13,8 @@ Predict action-conditioned future state well enough to compare candidate actions
 | P-WM-03 | Compact latent predictive models can support control directly from pixels and reduce required environment interaction. | O | E4 | P-S019, P-S020 |
 | P-WM-04 | Self-supervised predictive representation learning over large-scale video can transfer into action-conditioned robotic planning with relatively little robot interaction. | O | E3 | P-S022 |
 | P-WM-05 | Deployment-time world-model memory/revision can improve prediction and downstream planning without changing backbone weights in evaluated LLM-agent environments. | O | E2 | P-S023 |
+| P-WM-06 | I-JEPA/V-JEPA provide evidence that useful predictive representations can be learned by predicting target embeddings/features rather than reconstructing raw pixels. | O | E4 | P-S030, P-S031 |
+| P-WM-07 | V-JEPA 2.1 improves dense spatial/temporal grounding by increasing predictive supervision across visible/masked and intermediate representations, suggesting target granularity remains an important design variable even within latent-prediction families. | O/I | E2 | P-S032 |
 
 ## World model != renderer
 
@@ -39,6 +41,20 @@ The difficult clean-sheet question is therefore:
 > sufficient for which future decisions?
 
 A compressed model can be excellent for today's objective and useless for a later one if it discarded the wrong latent variables.
+
+## JEPA as a competing predictive-target mechanism
+
+I-JEPA and V-JEPA sharpen a separate question from ordinary latent dynamics: **must the prediction target itself live in observation space?** Their answer is no in the studied vision/video settings; the predictor can be trained against learned target representations instead of reconstructing pixels.
+
+This is relevant because raw reconstruction may force capacity toward unpredictable/nuisance detail. But the opposite failure is equally important: a representation can become too invariant and erase a distinction that a future objective, safety constraint or intervention requires.
+
+V-JEPA 2.1 is useful evidence against an oversimplified "coarse semantics are enough" interpretation: it deliberately strengthens dense spatial/temporal predictive supervision.
+
+Atlas therefore keeps the following alternatives alive:
+
+`raw reconstruction / generative latent dynamics / current-task sufficient prediction / coarse latent-target prediction / dense latent-target prediction / recoverable source + narrow predictive state`.
+
+No alternative is privileged until lifetime objective shifts, action-conditioned prediction and resource cost are tested. See `08-jepa-latent-predictive-learning.md` and `../../experiments/E24_JEPA_PREDICTIVE_REPRESENTATION.md`.
 
 ## Multi-timescale simulation
 
@@ -72,4 +88,4 @@ If model uncertainty is high, more imagined rollouts can amplify error rather th
 
 ## Failure modes
 
-Model bias; omitted decision-relevant variable; reward-predictive but transfer-poor latent state; compounding rollout error; simulator exploitation; hallucinated affordances; incorrect other-agent model; failure to update after environment change; treating realistic-looking prediction as calibrated prediction.
+Model bias; omitted decision-relevant variable; reward-predictive but transfer-poor latent state; compounding rollout error; simulator exploitation; hallucinated affordances; incorrect other-agent model; failure to update after environment change; treating realistic-looking prediction as calibrated prediction; latent-target invariance suppresses rare future-relevant state; passive prediction mistaken for intervention/causal prediction.
