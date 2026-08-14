@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-atlas-lab"
+version = "0.1.0"
+description = "Model-free experimental organism for AI Atlas architecture research"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+ai-atlas-lab = "ai_atlas_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
