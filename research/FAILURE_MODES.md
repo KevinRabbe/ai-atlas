@@ -46,6 +46,14 @@ Prompt injection; instruction/data authority confusion; confused-deputy behavior
 
 Public-test overfitting; hidden capability regression; candidate change modifying its own evaluator; rollback path modified by candidate; correlated defense layers; no atomic activation; no recovery artifact; gradual drift below thresholds; delayed adversarial behavior after acceptance; regression suite narrowed to optimized metrics; irreversible persistent change before independent validation.
 
+## Self-improvement search and attribution
+
+Wrong mutation layer selected; weights changed to repair interface/harness defects; local patches masking structural weaknesses; broad structural mutation without causal diagnosis; simultaneous multi-layer updates hiding attribution; greedy single-lineage convergence; stepping stones discarded; archive/population explosion; diversity with no functional value; mutation-operator collapse; benchmark monoculture; self-generated trace/data feedback collapse; harness optimized for current score but harmful future training data; evaluator co-evolves to redefine success.
+
+## Self-improvement economics and lineage
+
+Immediate benchmark gain with worse lifetime utility; endless self-tuning; patch debt; frequent architecture churn; improvement compute starves task compute; version provenance lost; accepted change cannot roll back; child variant overwrites all alternatives; meta-mutation changes future search faster than assurance can evaluate; architecture/hardware-specific gain mislabeled universal; control-root stagnation or unsafe control-root self-replacement.
+
 ## Context and memory
 
 Retrieval misses; irrelevant-context interference; stale state; false memory consolidation; contradiction accumulation; unbounded context growth; provenance loss.
