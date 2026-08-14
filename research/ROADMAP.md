@@ -16,7 +16,7 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-three reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **260 added test cases**.
+**Active. Twenty-four reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **278 added test cases**.
 
 The experimental strategy has progressed through:
 
@@ -33,7 +33,10 @@ The experimental strategy has progressed through:
 11. independent assurance for structural reconfiguration;
 12. a persistent reusable typed-scope runtime API;
 13. overlapping/non-owning coordination scopes;
-14. directional dependency semantics and reciprocity-triggered sharing.
+14. directional dependency semantics;
+15. partial-failure structural migration;
+16. partial-failure singular ownership handoff;
+17. version-fenced failure-isolated publication in the reusable runtime.
 
 ## Current architecture spine
 
@@ -45,7 +48,7 @@ stable typed semantic identities
         +--> directional dependencies
         |
         +--> disjoint ownership topology
-        |       + dynamic split / merge
+        |       dynamic split / merge
         |
         +--> overlapping non-owning coordination scopes
                 temporary or persistent
@@ -56,108 +59,128 @@ interaction-aware value/resource allocation
         ↓
 consequence-sensitive independent assurance
         ↓
-versioned transition protocol
-  execute / forward / stage / commit / rollback
+PREPARE non-authoritative candidate state
+        ↓
+version + current-authority publication fence
+        ↓
+PUBLISH coherent topology / ownership / durable version
+        ↓
+retire old version / forward in-flight work
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
-The scalar/value allocator cannot manufacture epistemic, capability or topology authority.
+The value allocator cannot manufacture epistemic, capability or publication authority.
 
-## I06–I09 — architecture-scale composition
+## I06–I12 — architecture-scale composition
 
-I06 shows that fidelity, rematerialization/hot state, synchronization and intervention interact enough that independent operation pricing loses to joint allocation (~`1.564` vs ~`1.355` utility/task).
+I06 shows that runtime operations such as fidelity, rematerialization, synchronization and intervention interact enough that a joint allocator (~`1.564` utility/task) beats independent operation controllers (~`1.355`).
 
-AF01–AF03 and I07 then show that organizational mode, organizational scope and scope membership can all be adaptive state, but each form of structural plasticity has a persistence-vs-transition-cost timescale.
+AF01–AF03 and I07 show organizational mode, scope and membership can all be adaptive state when structural persistence pays for inference/switch/migration cost.
 
-I08 gives dynamic scopes real typed state. Stable evidence/provenance, authority, resource leases and in-flight work survive split/merge when semantics are addressed independently from topology and events carry topology epochs.
+I08 gives dynamic scopes real typed state; I09 adds independent assurance before consequential reconfiguration under correlated evidence.
 
-I09 adds the promotion boundary: under correlated/spoofed coupling evidence, a higher threshold on the same source is insufficient; sufficiently independent assurance may be worth buying before moving real state.
+I10 creates the reusable `TypedScopeRuntime` so later stresses use common identity/authority/topology/event semantics.
 
-## I10 — reusable typed-scope organism runtime
+I11 separates stable semantic ownership from overlapping coordination membership. I12 separates directional dependence from reciprocal/shared organization. The runtime therefore carries distinct typed relations rather than one generic module graph.
 
-`TypedScopeRuntime` is now the common architecture substrate for later experiments.
+## I13 — partial topology migration failure
 
-It provides:
+Naive in-place migration can fail after only part of the new topology becomes live. At 20% failure probability and ordinary event load it corrupts ~20% of migration attempts, loses ~3.96 events/migration and duplicates ~0.51.
 
-- evidence/source and predictive-rematerialization records;
-- current versioned authority;
-- singular resource leases;
-- typed transition proposals;
-- interaction-aware bundle allocation;
-- independent proposal-specific assurance;
-- staged scope changes + rollback;
-- topology epochs and exactly-once event forwarding.
+Stop-world, staged and dual-version mechanisms isolate preparation from visible publication and keep those corruption metrics at zero in the family.
 
-Eight semantic tests and five end-to-end scenario tests exercise these boundaries. The scenario repeatedly changes topology and authority while work is in flight without bypassing the runtime API.
+The mechanisms cross over with failure risk and live traffic: direct update can win when failure exposure is negligible; blocking can win when traffic is cheap to stop; staged publication wins at ordinary live load; dual-version handoff can win at very high live traffic.
 
-## I11 — cross-cutting coordination without forced ownership migration
+## I13B — singular resource ownership handoff
 
-A component may need to coordinate with more than one group while its semantic ownership remains stable.
+The second family reproduces the same abstract boundary with a different invariant.
 
-Sparse cross-cutting work favors temporary non-owning overlays. Frequent recurring cross-cutting work can justify persistent overlap. Dense continuous coupling eventually makes one merged/global scope cheaper again.
+Make-before-break can expose two writers and duplicate work. Break-before-make can expose zero writer and lose work. Stop-world, staged lease publication and dual-read/single-write preserve singular write ownership.
 
-The runtime therefore gains a separate `CoordinationScopeRegistry`. Membership may overlap, but coordination scopes do not own evidence, leases or authority.
+Default 30-seed results favor staged/dual publication (~`0.770–0.774` utility/handoff) over make-before-break (~`0.562`) and break-before-make (~`0.385`).
 
-## I12 — directional dependency semantics
+## PS-024 — failure-isolated consequential transition publication
 
-One-way dependency does not imply reverse flow.
+I13 + I13B satisfy the second-family promotion gate:
 
-Sparse directional work favors directional links over symmetric relationships. Reciprocal clusters justify shared coordination. Mixed regimes require both simultaneously. The adaptive representation reaches ~`0.7394` lifetime utility versus ~`0.7116` global, ~`0.7034` directed-only and ~`0.6689` symmetric-only at the default 180-step regime duration.
+> **Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants; publish authority/ownership/topology only across a coherence boundary after required validation. Select direct, blocking, staged or dual-version publication according to failure risk, blast radius, live-work pressure and isolation cost.**
 
-At 20-step regimes static global wins, again showing that richer structure must amortize inference lag.
+This is a semantic rule, not a selection of transactions, locks, consensus, blue/green deployment or another named implementation.
 
-The runtime now includes a typed `DependencyRegistry`; reciprocity is detectable evidence for sharing but does not automatically create a scope, authority or ownership transfer.
+## I13C — reusable publication protocol
+
+`PublicationProtocol` now encodes the rule explicitly:
+
+- prepare topology/resource handoff without changing live authority/ownership;
+- remember the topology epoch or lease version the candidate was prepared against;
+- require sufficient independent assurance where consequence demands it;
+- re-read current capability authority at publication time;
+- reject stale prepared plans;
+- publish the coherent version/lease change;
+- discard without changing live state.
+
+The protocol therefore handles two important races:
+
+1. two topology plans prepared from epoch N cannot both publish after one advances to N+1;
+2. a resource handoff prepared before a revocation cannot inherit the old permission at publish time.
 
 ## JEPA / E24
 
-JEPA remains a candidate mechanism, not a commitment. E24 shows latent prediction can be efficient while passive predictive sufficiency still fails under future objectives/interventions. Recoverable source evidence substantially improves the compression/optionality frontier.
+JEPA remains a candidate mechanism, not a commitment. E24 shows latent prediction can be efficient while passive predictive sufficiency fails under future objectives/interventions. Recoverable source evidence improves the compression/optionality frontier.
 
 No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-023** are active reversible constraints. I08–I12 refine/compose those rules rather than creating additional principle labels.
+**PS-001 through PS-024** are active reversible constraints.
 
-## Next milestone — I13 partial structural commit
+## Next milestone — live handoff + revocation + crash recovery
 
-The reusable runtime still assumes structural commit is atomic.
+### I14A — authority changes during staged/dual handoff
 
-I13 should deliberately fail migration at different points and compare:
+Run queued external work while:
 
-1. naive in-place migration;
-2. stop-the-world copy/replace;
-3. staged transactional migration with version fence + rollback;
-4. incremental/dual-version handoff if needed as a separate alternative.
+- a topology/resource candidate is prepared;
+- authority is revoked or granted mid-handoff;
+- old and new versions may coexist briefly;
+- events from old topology epochs remain in flight.
 
-Measure:
+Required invariants:
 
-- semantic corruption after failure;
-- evidence/source reachability;
-- resource-lease uniqueness;
-- current authority correctness;
-- exactly-once in-flight event behavior;
-- topology epoch consistency;
-- downtime/blocked work;
-- copied state / migration operations;
-- rollback/recovery work.
+- current categorical authority wins at execution/publication;
+- no prepared copy can reactivate revoked authority;
+- no duplicate external effect across versions;
+- stale assurance/version tokens cannot publish after relevant authority/version changes.
 
-### Discriminator
+### I14B — crash/restart between prepare and publish
 
-A structural-update protocol earns selection only if it preserves invariants under partial failure without paying more downtime/copy cost than the avoided corruption is worth.
+Crash at different lifecycle points:
 
-Do not assume “transactions” by name; compare the mechanisms.
+- before preparation complete;
+- after preparation but before assurance;
+- after assurance but before publication;
+- immediately after publication before old-version cleanup.
 
-## After I13
+Do **not** assume a write-ahead log/database first.
 
-High-value stresses remain:
+Compare the minimum persisted facts required to determine safely after restart whether to:
 
-- nested/overlapping **ownership** only if non-owning overlays prove insufficient;
+- discard the candidate;
+- resume preparation;
+- publish;
+- retain the current old version;
+- finish retiring an already-published old version.
+
+Only if recovery cannot be solved from already-required version/semantic state should a new durable intent/log mechanism be added.
+
+## Later targeted work
+
 - partial migration of bounded caches and delayed credit traces;
-- simultaneous structural change + authority revocation;
 - I05C correlated/adversarial evaluator audits and partially unresolved outcomes;
+- nested/overlapping **ownership** only if non-owning coordination overlays prove insufficient;
 - neural E24C only if predictive-objective geometry remains architecture-discriminating;
-- hardware co-design only after the transition/topology/fidelity laws are stable enough for substrate assumptions to be informative.
+- hardware co-design only after transition/topology/fidelity laws are stable enough for substrate assumptions to be informative.
 
 ## Phase-10 substantial-completion condition
 
@@ -165,13 +188,13 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 
 - selected principles retain lifetime value under composition;
 - learned metacontrol overhead does not consume the gains;
-- authority/provenance remain stable under learned control and topology changes;
+- authority/provenance remain stable under learned control, topology changes and multi-version handoffs;
 - world/tool/evaluator/self uncertainty remain distinguishable;
 - self-change uses independent refreshing evidence and scoped rollback/change;
 - failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- the common executable runtime reproduces important experimental boundaries without experiment-specific privileged semantics;
-- structural updates remain safe enough under partial failure or the evidence identifies where static organization is preferable.
+- crash/restart cannot turn prepared but unpublished state into accidental authority;
+- the common executable runtime reproduces important boundaries without experiment-specific privileged semantics.
 
 ## Open targeted gap closure
 
