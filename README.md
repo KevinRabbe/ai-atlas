@@ -16,26 +16,40 @@ Named model blocks, natural-language reasoning, databases, agents, recursive sys
 - `sources/` — primary-source registry;
 - `research/` — roadmap, claims, contradictions and failure modes;
 - `synthesis/` — cross-domain deductions;
-- `clean-sheet/` — implementation-free requirements, competing architecture families and experiment matrix;
+- `clean-sheet/` — implementation-free requirements, competing architecture families, experiment matrix and design ledger;
 - `experiments/` — Phase-10 instrumented research organism.
 
 ## Current state
 
-Evidence passes through self-improvement are complete to first-pass depth. Cross-domain synthesis is complete to first-pass depth. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no architecture selected**. Phase 10 experimental reconstruction: **active**.
+Evidence passes through self-improvement are complete to first-pass depth. Cross-domain synthesis is complete to first-pass depth. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS; no architecture family selected**. Phase 10 experimental reconstruction: **active**.
 
-The clean-sheet work retains four competing organizations: hierarchical explicit allocation; distributed event-driven local control; tightly integrated predictive computation with external evidence/authority; developmental/variant-generating organization.
+All six Tier-1 experiment shapes are implemented, and promotion follow-ups now include second task families for control, integration and representation plus an adaptive hidden-volatility persistence test.
 
-Phase 10 now implements all six Tier-1 discriminator shapes: E01, E02, E03, E04, E05 and E09.
+The experiments increasingly show **conditional structure rather than universal winners**:
 
-The newest 12-seed synthetic sweeps show reproducible **trade-offs rather than a universal winner**: sparse versus dense dependency structure changes the value of global coordination; shared learned state trades transfer against interference as task relatedness changes; compact approximate state, exact machine fields, versioned interfaces and audit/recovery have different representation requirements.
+- coordination scope should grow when dependencies/contention become broader;
+- learned sharing trades reusable transfer against cross-task interference;
+- exact state, approximate numerical state, protocol metadata and auditability have different representation requirements;
+- persistence timescale should respond to environmental stability rather than being one global constant.
 
-These results are intentionally **not yet architecture selections**. A second task family and resource-regime shift are required before moving design-ledger choices out of `unresolved`.
+## First provisional clean-sheet selections
 
-See `experiments/STATUS.md` and `research/ROADMAP.md` for the current checkpoint.
+Phase 10 has produced two reversible principle-level selections for the current experimental generation:
+
+1. **PS-001 — typed hybrid boundary state.** Exact identity/control/provenance stays exact; tolerant numerical state may use compact approximate/learned channels; version/integrity is explicit; human-readable audit need not be the hot-path representation.
+2. **PS-002 — staged adaptive persistence.** New evidence normally enters reversible state before globally durable mutation, with consolidation timescale/threshold allowed to adapt to estimated environmental stability.
+
+These are not product components and do not select architecture A/B/C/D. Their implementations remain open and falsifiable.
+
+See `clean-sheet/DESIGN_LEDGER.md`, `experiments/STATUS.md` and `research/ROADMAP.md` for the current checkpoint.
 
 ## Organizing hypothesis
 
 The synthesis currently treats practical intelligence as potentially involving adaptive selection of state transitions and allocation of compute, durable change, information, assurance and exploration/design effort under uncertainty and finite resources. This remains falsifiable; it is not a definition of intelligence and does not determine architecture.
+
+## Next decisive target
+
+E22 tests whether the allocation hypothesis survives at system level when compute, memory, observation and verification can substitute for each other under changing resource prices. DL-001 control organization remains deliberately unresolved until that test exists.
 
 ## End goal
 
