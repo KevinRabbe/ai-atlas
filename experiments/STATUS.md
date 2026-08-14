@@ -1,58 +1,42 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-three provisional design principles selected; integrated composition and matched architecture-family discrimination are active. No Phase-9 architecture family is selected.**
-
-## Implemented blocks
-
-Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and E24 predictive representation / JEPA mechanism discrimination.
-
-Integrated composition generations are **I01–I06 plus I05B**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned/revisable; I05B makes evidence about evaluator quality delayed/censored/noisy; **I06 composes fidelity, source rematerialization/hot-state breadth, synchronization and active intervention inside one shared runtime allocator.**
-
-**AF01** is the first matched A/B/C/D family comparison. It fixes the I06 runtime substrate and varies organizational bias rather than giving each family different capabilities/resources.
-
-JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 gives evidence both for latent predictive efficiency and against overly coarse/passive-only predictive sufficiency.
+**Checkpoint: twenty-three provisional design principles selected; composition has progressed through I07 and architecture-level tests AF01–AF03. No fixed Phase-9 A/B/C/D family is selected.**
 
 ## Validation
 
-Phase 10 now contains **201 added test cases**: the prior 190-test checkpoint plus 6 I06 tests and 5 AF01 tests.
+Phase 10 now contains **217 added test cases**.
+
+Recent additions:
+
+- I06 integrated runtime allocation: 6 tests;
+- AF01 matched fixed-family Pareto benchmark: 5 tests;
+- AF02 adaptive organizational mode selection: 6 tests;
+- AF03 simultaneous scoped organization: 5 tests;
+- I07 dynamic scope formation: 5 tests.
 
 The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
+## Implemented experimental surface
+
+Core/promotion experiments cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, E18 execution timing, E19 fidelity allocation, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, E23/E23B beyond-teacher discovery, and E24 predictive representation / JEPA mechanism discrimination.
+
+Integrated composition generations now run through **I07**, with I05B as the imperfect-feedback metacognition branch.
+
+JEPA remains an explicit candidate mechanism family, **not a selected architecture component**. E24 supports latent predictive efficiency but rejects overly coarse/passive-only predictive sufficiency.
+
 ---
 
-# Latest findings
+# Latest architecture-level findings
 
-## I06 — integrated runtime allocation
+## I06 — interaction-aware runtime allocation
 
-Runtime operations are now treated as typed complements/substitutes competing for the same finite capacity:
+I06 puts high fidelity, source rematerialization vs broad hot state, synchronization and active intervention into one shared runtime budget.
 
-- high-fidelity computation;
-- source rematerialization vs broader hot state;
-- synchronization for coupled/version-sensitive work;
-- active intervention/observation.
+30-seed learned-joint utility is ~`1.5640`/task versus ~`1.3549` for factorized independent controllers, ~`1.4096` uniform-safe and ~`0.4769` uniform-cheap. The learned allocator suffers a real hidden-shift drop and later recovers.
 
-30-seed means:
+**Result:** operation values cannot always be summed independently. Material complements/substitutes require interaction-aware allocation.
 
-| policy | utility/task | error rate | pre-shift | early post-shift | late post-shift | capacity use |
-|---|---:|---:|---:|---:|---:|---:|
-| oracle joint | **1.7482** | **0.0790** | 1.7338 | 1.7608 | 1.7633 | 0.9694 |
-| **learned joint** | **1.5640** | **0.1096** | **1.6244** | 1.0682 | **1.6327** | 0.8307 |
-| factorized independent | 1.3549 | 0.1409 | 1.6101 | 0.5923 | 1.2500 | 0.9012 |
-| uniform safe | 1.4096 | 0.1744 | 1.3973 | 1.4200 | 1.4223 | **0.9930** |
-| uniform cheap | 0.4769 | 0.2747 | 0.4685 | 0.5217 | 0.4746 | 0.0000 |
-
-The learned joint allocator takes a genuine hit after the hidden regime swap, then relearns. Factorized local controllers consume more capacity and suffer more discarded-state, consistency, intervention and sensitivity failures because material operation interactions are not represented.
-
-**Interpretation:** good local operation values are insufficient when operations substitute or complement one another. Runtime allocation must represent the interactions that materially change downstream value. No new principle is promoted; I06 strengthens PS-010/012/022/023.
-
-## AF01 — first matched architecture-family Pareto test
-
-Canonical stress embodiments share the same I06 task stream, operation bundles, success model and total resource capacity:
-
-- A: conditional/local estimates + global hierarchical arbitration;
-- B: local best-bundle bids + resource-local auction;
-- C: pooled shared-core experience + joint allocation;
-- D: preserved conditional models + online variant selection and archive cost.
+## AF01 — fixed architecture families form a Pareto frontier
 
 Eight-seed utility means:
 
@@ -62,32 +46,55 @@ Eight-seed utility means:
 | coupled switching | 1.3683 | 1.3704 | 1.3896 | **1.4435** |
 | recurring mixed | 1.3953 | 1.3806 | **1.4797** | 1.4367 |
 
-The scalar utility table does not tell the whole story. In sparse work A has the lowest error, B cuts control traffic from 2.0 messages/task to ~0.772 and explicit overhead from 0.036 to ~0.0022, C has zero explicit organization traffic but pays pooling interference, and D pays archive maintenance.
+Different regimes reward different organization. Sparse rankings also change as explicit organization costs change. AF01 therefore does not justify selecting or eliminating a fixed family.
 
-Organization-cost sensitivity changes the sparse ranking: at 2x overhead price B becomes best of A/B/C/D in that stress family. C remains strongest in the tested recurring-mixed family across the 0.5x–2x organization-cost sweep.
+## AF02 — organization itself can be adaptive
 
-**Interpretation:** AF01 exposes a genuine organizational Pareto frontier. Hierarchical, distributed, integrated and developmental organization each earn themselves in different regimes. No family is eliminated or selected from AF01 alone.
+AF02 removes the hidden regime label. The selector sees noisy observed coupling/conflict/transfer/recurrence cues plus its own realized reward history.
 
-The stronger emerging hypothesis is that A/B/C/D may describe **organizational modes** of one system rather than mutually exclusive universal architectures.
+30-seed default:
 
-## I05B — metacognitive learning under delayed/noisy/censored evidence
+| policy | utility/step | best-mode fraction |
+|---|---:|---:|
+| fixed A | 1.4834 | ~0.25 |
+| fixed B | 1.4518 | ~0.25 |
+| fixed C | 1.4394 | ~0.25 |
+| fixed D | **1.5087** | ~0.25 |
+| **adaptive** | **1.5625** | **0.9065** |
+| oracle | **1.5762** | 1.0000 |
 
-30-seed means:
+The learned selector uses B ~87% in local regimes, A ~91% under high coupling, C ~92% under high sharedness and D ~92% under recurrence.
 
-| feedback mode | utility/task | false durable writes/run | active audits/task |
-|---|---:|---:|---:|
-| exact delayed audit | **1.7782** | 61.87 | 0.0000 |
-| passive noisy/censored | 1.5711 | 47.10 | 0.0000 |
-| **selective active audit** | **1.7595** | **46.80** | **0.3759** |
-| no feedback | 1.2939 | **493.37** | 0.0000 |
+**Falsifier:** at only 20 steps/regime, adaptive organization loses to the best fixed mode. Organizational plasticity earns itself only when expected regime persistence exceeds identification/switch/carrying cost.
 
-Uncertainty about tool/evaluator reliability is ordinary epistemic state; learning about that state is itself a priced active-evidence operation.
+## AF03 — organization should also be scoped
 
-## E24 — predictive latent efficiency vs future/interventional sufficiency
+Four domains operate simultaneously.
 
-A coarse latent is highly efficient on its original objective but can fall to chance when a previously discarded distinction becomes future- or action-relevant. Dense predictive state and compact latent + recoverable source preserve/recover that distinction. In the intervention family all variants look strong passively, while the coarse passive latent falls to ~0.490 action-conditioned accuracy versus ~0.899 for dense/raw/source-backed state.
+- heterogeneous domains + cross-domain coupling `0.12`: scoped adaptive ~`1.5543`, global adaptive ~`1.4947`;
+- homogeneous domains + coupling `0.80`: global adaptive ~`1.5711`, scoped adaptive ~`1.5537`.
 
-No JEPA-specific principle is promoted. E24 refines PS-012/PS-023: predictive compression must optimize lifetime decision/intervention value, not passive prediction alone.
+In heterogeneous domains the scoped advantage decays continuously as cross-domain coupling rises and is essentially gone at coupling `1.0`.
+
+**Result:** neither global organization nor maximal modularity is universal. Organizational scope expands with coupling.
+
+## I07 — dynamic scope formation from noisy dependencies
+
+I07 removes predefined domain boundaries. Twelve nodes move among three recurring hidden dependency partitions. The learner sees noisy pairwise interaction events and periodically splits/merges scopes, paying migration cost.
+
+20-seed default:
+
+| topology | utility/step | pairwise scope accuracy |
+|---|---:|---:|
+| global | 1.0270 | 0.2727 |
+| local | 0.8950 | 0.7273 |
+| fixed initial | 0.9760 | 0.7273 |
+| **adaptive** | **1.0583** | **0.9045** |
+| oracle | **1.0748** | 1.0000 |
+
+With 120-step regimes adaptive scope formation beats every static topology after migration cost. At 20 steps/regime it falls to ~`0.9842`, below static global `1.0270`.
+
+**Result:** topology membership itself can be revisable state, but topology plasticity only earns itself on timescales that amortize evidence/migration cost.
 
 ---
 
@@ -117,39 +124,45 @@ No JEPA-specific principle is promoted. E24 refines PS-012/PS-023: predictive co
 22. PS-022 — event-scoped execution with consistency-triggered synchronization;
 23. PS-023 — value/sensitivity-scaled fidelity allocation.
 
+No additional principle is created from AF01–AF03/I07 yet; they are composition-level evidence for how the existing laws organize a whole system.
+
 ---
 
 # Current architecture compression hypothesis
 
-`typed state/transition proposals -> learned shared marginal-value/resource allocator with material interaction models -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity/state breadth -> observe -> causal credit -> staged/appropriately-scoped update`
+```text
+source/world evidence
+      ↓
+typed state + transition proposals
+      ↓
+learned interaction-aware value/resource allocation
+      ↓
+dynamic coupling scopes
+      ├─ local/distributed organization where locality pays
+      ├─ hierarchical arbitration where scarcity/coupling pays
+      ├─ integrated/shared computation where transfer pays
+      └─ variant preservation where recurrence/option value pays
+      ↓
+failure-layer assurance + current authority boundary
+      ↓
+execute at scoped timing / fidelity / state breadth
+      ↓
+observe → causal credit → staged appropriately-scoped update
+```
 
-Recurring laws:
+The strongest new architecture inference is:
 
-- scope follows coupling/responsibility/causal extent;
-- state follows future value and recoverability;
-- optional work follows marginal value;
-- **material complements/substitutes must be allocated jointly rather than by independent local scores**;
-- sharing and structural indirectness follow reusable regularity;
-- execution follows events until consistency coupling justifies synchronization;
-- fidelity follows decision sensitivity, uncertainty propagation and consequence;
-- predictive compression is valid only relative to future/action-relevant distinctions and recoverability;
-- authority follows independent current evidence/invariants;
-- verification follows residual failure layer;
-- durable change requires stronger and refreshing evidence;
-- self-improvement diversity is retained only while future option value pays for itself;
-- repair blast radius expands only when evidence says the root cause is equally broad;
-- metacognitive estimates are revisable state, and evidence about those estimates is resource-priced too;
-- **organization itself may be conditional on locality, coupling, reusable structure and regime recurrence rather than fixed globally.**
+> **mode, scope and scope membership are all potentially adaptive state, but each form of plasticity must earn its identification, switching, carrying and migration costs.**
 
-This remains a hypothesis, not a selected architecture.
+This remains a hypothesis, not a final selected architecture.
 
 ## Next high-value work
 
-1. **AF02 — adaptive organization:** infer coupling/sharedness/recurrence from observable evidence and choose among local, hierarchical, pooled and variant-preserving organizational modes under explicit switch/carrying cost;
-2. compare the adaptive mode system with every fixed A/B/C/D embodiment and an oracle mode scheduler;
-3. stress AF02 with regime-duration and organization-switch-cost sweeps to expose mode thrashing/misclassification;
-4. **I05C** afterward: correlated/adversarial audit sources and partially unresolved outcomes;
-5. neural E24C only if predictive-objective geometry remains architecture-discriminating after AF02.
+1. build the first **executable candidate architecture skeleton** around dynamic typed scopes rather than another abstract family benchmark;
+2. make split/merge operations move real evidence references, predictive state, resource ownership, authority versions and in-flight events while preserving invariants;
+3. then stress topology changes with stale/adversarial coupling evidence;
+4. I05C remains queued for correlated/adversarial audit sources and partially unresolved outcomes;
+5. neural E24C remains conditional on representation geometry still being architecture-discriminating.
 
 ## Guardrail
 
