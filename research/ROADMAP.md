@@ -12,13 +12,13 @@ First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit
 
 ## Phase 9 — Clean-sheet architecture
 
-First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No architecture family selected.** A/B/C/D remain competing organization families.
+First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS. No architecture family selected.** A/B/C/D remain competing organizational hypotheses.
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-three reversible implementation-neutral principles have survived their current promotion gates.** The strategy has moved from isolated mechanisms to composition, guarded self-improvement, and now representation/timing/fidelity integration.
+**Active. Twenty-three reversible implementation-neutral principles have survived their current promotion gates.** The strategy has moved from isolated mechanisms to composition, guarded self-improvement, integrated runtime allocation, and now matched organization-level discrimination.
 
-The current validation history contains **190 Phase-10 added test cases**.
+The current validation history contains **201 Phase-10 added test cases**.
 
 ## Composition generations
 
@@ -26,21 +26,21 @@ The current validation history contains **190 Phase-10 added test cases**.
 
 I01–I03 showed that memory, uncertainty, active evidence, discovery, metacognition and assurance interact rather than compose trivially. I04 then replaced several separate controllers with one typed transition/resource allocator.
 
-Current compression hypothesis:
+A common allocator can adapt resource use, but its ordinary scalar/value estimate cannot manufacture epistemic or external authority.
 
-`typed state/transition proposal -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority gate -> execute at scoped timing/fidelity -> observe -> scoped credit -> staged/appropriately-scoped update`
+### I05 / I05B — learned and imperfect metacognition
 
-A common allocator can adapt resource use, but its scalar/value estimate cannot itself manufacture epistemic or external authority.
+Operation quality, family-specific coordination value and verifier safety become revisable learned state. I05B then makes feedback about evaluator quality delayed, censored and noisy. Selective higher-quality audit evidence recovers much of the exact-feedback performance while paying audit cost only where metacognitive uncertainty/consequence warrants it.
 
-### I05 — learned metacognition
+### I06 — integrated runtime allocation
 
-Operation quality, family-specific coordination value and verifier safety become revisable learned state. A hidden regime shift makes old estimates wrong; the conditional learner drops and then recovers, while frozen/global estimates remain worse. This removes another oracle assumption from I04.
+I06 stops treating timing, fidelity, state breadth/rematerialization and active observation as independent hand-written policies.
 
-### I05B — imperfect feedback
+The shared allocator chooses typed runtime bundles under one capacity budget. Across 30 seeds, learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for independently learned operation controllers and ~`1.410` for a uniform safe bundle.
 
-Truth about evaluator quality is delayed, censored and noisy. Selective higher-quality audit evidence recovers much of the exact-feedback performance while paying audit cost only where metacognitive uncertainty/consequence warrants it.
+Factorized control produces more discarded-state, consistency, intervention and sensitivity failures even while consuming more capacity. The result adds a new composition-level rule without a new principle number:
 
-This strengthens the view that **metacognition itself participates in information/resource allocation** rather than requiring a separate magical supervisor.
+> **when operations materially complement or substitute for one another, their value must be represented jointly enough to prevent locally rational but globally wasteful choices.**
 
 ## Guarded self-improvement checkpoint
 
@@ -50,62 +50,73 @@ This strengthens the view that **metacognition itself participates in informatio
 - **PS-020:** repair scope expands only with evidence that the causal root is broader;
 - **PS-021:** indirect/developmental structural rules earn themselves only where reusable regularity justifies shared mutation and local overrides remain available.
 
-## Execution/fidelity checkpoint
+## Execution/fidelity/predictive-state checkpoint
 
-### E18 / PS-022
+- **PS-022:** event-scoped work beats global ticking under locality, while shared consistency introduces scoped barriers; eager sync can win again when common snapshots are continuously demanded.
+- **PS-023:** fidelity is allocated by sensitivity, uncertainty propagation, consequence and recoverability.
+- **E24 / JEPA:** passive predictive sufficiency is not intervention sufficiency; predictive target breadth and recoverable source evidence belong inside the lifetime objective. No JEPA-specific principle is selected.
 
-Sparse local state change favors event-scoped work over global ticks. Shared-version tasks require scoped synchronization barriers; eager synchronization becomes rational again when common snapshots are demanded continuously.
+## AF01 — first matched architecture-family comparison
 
-### E19 / PS-023
+AF01 holds the I06 runtime substrate constant and changes only organizational bias.
 
-Uniform-low precision loses on boundary-sensitive/accumulated error; uniform-high precision wastes resources on insensitive cases. Fidelity is allocated by sensitivity, uncertainty propagation, consequence and recoverability.
+Canonical embodiments:
 
-## JEPA / E24 predictive representation
+- A — conditional/local estimates + global hierarchical arbitration;
+- B — local best-bundle bids + resource-local auction;
+- C — pooled shared-core experience + global joint allocation;
+- D — preserved conditional models + online selector/archive cost.
 
-JEPA remains a candidate mechanism family, not a commitment. E24 is now implemented with two model-free discriminators.
+AF01 produces a **Pareto frontier rather than a universal winner**.
 
-### Objective shift
+- sparse work exposes error vs coordination/message-cost trade-offs among A/B/C/D;
+- D is strongest in the tightly switching/coupled regime;
+- C is strongest in the recurring mixed regime;
+- sparse ranking changes as organization overhead prices change.
 
-A coarse predictive latent is cheapest and excellent on the original objective but loses a lower-ranked factor required later. Dense predictive state and latent + recoverable source retain/recover that factor and outperform raw reconstruction on priced lifetime utility.
-
-### Passive vs intervention
-
-All representations appear strong on passive prediction. The coarse passive latent then falls to chance when intervention consequence depends on a lower-predictability cue. Dense/source-backed representations retain it.
-
-Current conclusion:
-
-> **passive predictive sufficiency is not intervention sufficiency; predictive target breadth and recoverability belong inside the lifetime objective.**
-
-This refines PS-012/PS-023 rather than creating a JEPA-specific principle.
+This is a substantive result: the Phase-9 families increasingly look like **organizational modes** that could coexist inside one adaptive system.
 
 ## Current provisional selection count
 
-**PS-001 through PS-023** are active reversible constraints, not product components or a chosen A/B/C/D architecture. See `clean-sheet/DESIGN_LEDGER.md` for complete evidence/falsifiers.
+**PS-001 through PS-023** are active reversible constraints, not product components or a chosen architecture family. See `clean-sheet/DESIGN_LEDGER.md` for complete evidence/falsifiers.
 
-## Next milestone — I06
+## Next milestone — AF02 adaptive organization
 
-I06 should stop treating timing, fidelity and predictive-state breadth/rematerialization as separate hand-written policies.
+AF02 should directly test the mode hypothesis rather than repeat AF01.
 
-It should:
+The adaptive system must not see a hidden label saying which organization is best. It should infer useful organization from observable evidence such as:
 
-1. place event execution, synchronization, fidelity escalation, hot-state expansion and source rematerialization into the shared transition/resource proposal interface;
-2. let those operations compete under one resource/latency budget;
-3. learn enough of their marginal value online that hidden workload/objective shifts create real adaptation costs;
-4. preserve typed authority/provenance and failure-layer assurance outside the ordinary allocation score;
-5. test interaction regressions—for example whether low fidelity corrupts the metacognitive estimate that decides whether to buy higher fidelity, or whether delayed event execution makes source state stale before rematerialization;
-6. ablate whole law combinations rather than adding another isolated toy mechanism.
+1. contention / capacity pressure;
+2. local-vs-cross-domain dependency errors;
+3. transfer/interference between task families;
+4. recurrence of previous workload regimes;
+5. control-message and archive-carrying costs;
+6. prediction loss of current versus preserved organizational models.
 
-## Architecture-family elimination gate
+Compare:
 
-After I06, begin matched A/B/C/D end-to-end comparisons only if the common boundaries are stable enough that the comparison is not just four differently hand-tuned systems.
+- fixed A;
+- fixed B;
+- fixed C;
+- fixed D;
+- **adaptive organizational mode selector**;
+- oracle mode scheduler as upper bound.
 
-At least one family should become empirically dominated, or the experiments should identify a genuine Pareto frontier explaining why multiple organizations remain useful.
+AF02 must price mode switching and retained organizational state. Sweep regime duration and switching price to expose mode thrashing or slow detection.
+
+### Key discriminator
+
+If the adaptive selector robustly beats every fixed family after switching/carrying overhead, then **selecting A/B/C/D as the final architecture is probably the wrong abstraction**.
+
+The emerging answer would instead be a typed common substrate that instantiates local, hierarchical, integrated or variant-preserving organization where their evidence-conditioned future value earns the cost.
+
+If switching overhead/misclassification makes a fixed family better, then the Pareto frontier remains genuinely architectural rather than merely modal.
 
 ## Later targeted work
 
-- I05C: correlated/adversarial audit sources and unresolved outcomes;
-- neural E24C: actual predictive/reconstructive learning objectives at matched capacity/compute, only if the distinction remains architecture-relevant;
-- hardware co-design after timing/fidelity/state-allocation laws have enough stability to make hardware assumptions informative rather than premature.
+- **I05C:** correlated/adversarial audit sources and partially unresolved outcomes;
+- neural E24C only if actual predictive/reconstructive objective geometry remains architecture-discriminating after AF02;
+- hardware co-design after timing/fidelity/state/organization laws are stable enough to make hardware assumptions informative.
 
 ## Phase-10 substantial-completion condition
 
@@ -118,7 +129,7 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 - self-change uses independent refreshing evidence and scoped rollback/change;
 - failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- at least one architecture family is empirically dominated under matched end-to-end tests, or evidence explains a persistent Pareto frontier.
+- architecture-family evidence either empirically dominates a family or explains a persistent Pareto/mode frontier under matched end-to-end tests.
 
 ## Open targeted gap closure
 
