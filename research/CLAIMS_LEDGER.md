@@ -5,7 +5,7 @@ This file tracks cross-domain claims that may affect architecture. Detailed evid
 | Claim ID | Claim | Type | Strength | Status | Needed evidence |
 |---|---|---|---|---|---|
 | C-001 | Larger parametric models are not the only way to increase effective system capability. | I | E3 | active | broader controlled comparisons of model-vs-system scaling |
-| C-002 | Conditional computation can increase model capacity without proportional active compute. | O | E3 | active | broader architecture/hardware replication |
+| C-002 | Conditional computation can increase model capacity without proportional active compute. | O | E4 | active | end-to-end communication/energy comparisons across routing regimes |
 | C-003 | External non-parametric state can improve access to knowledge beyond parametric memory alone. | O | E4 | active | characterize optimal division between stores |
 | C-004 | Inference-time search/sampling can trade additional compute for higher task performance. | O | E4 | active | task-conditional scaling laws and stopping policies |
 | C-005 | Agent/harness interface design can materially change capability while holding backbone weights fixed. | O | E3 | active | independent replications across environments |
@@ -24,5 +24,13 @@ This file tracks cross-domain claims that may affect architecture. Detailed evid
 | C-018 | Sequential learning under uncertainty contains an exploration–exploitation trade-off; information acquisition can have decision value and cost. | O | E5 | active | bounded/safe exploration in rich environments |
 | C-019 | Compute-optimal learning depends on joint allocation across data, capacity and compute and shifts by regime; empirical scaling laws are not universal constants. | I | E4 | active | system-level scaling including memory, tools, retrieval and inference compute |
 | C-020 | Differentiability is not necessary for credit assignment; alternative estimators/bootstrapping mechanisms have different information, variance and memory requirements. | I | E5 | active | hybrid credit across neural/tool/program boundaries |
+| C-021 | Directly addressable history and bounded recurrent state have different capability/cost profiles; neither is established as universally dominant. | I | E4 | active | matched large-scale studies across recall, state tracking and generalization |
+| C-022 | Parallel training and recurrent inference can be two execution forms of the same learned sequence operator. | O | E4 | active | broader operator/hardware replication |
+| C-023 | Realized cost cannot be inferred from FLOPs/asymptotic complexity alone; memory traffic, utilization and synchronization can dominate. | O | E5 | active | standardized multi-hardware cost reporting |
+| C-024 | Persistent inference state representation can materially determine memory bandwidth, feasible context/batch size and throughput. | O | E4 | active | state-quality trade-offs beyond language decoding |
+| C-025 | Conditional computation introduces routing, load-balance and communication costs that can offset sparse arithmetic savings. | O | E4 | active | topology-aware end-to-end energy/latency studies |
+| C-026 | Numerical sensitivity is non-uniform; precision can often be reduced selectively without proportional capability loss. | O | E4 | active | recurrent/persistent-state and safety-critical precision studies |
+| C-027 | Functional heterogeneity can outperform homogeneous computation in some matched regimes, but its advantage is workload and systems dependent. | I | E3 | active | fixed-budget ablations across hardware/task regimes |
+| C-028 | Architecture and hardware are coupled through locality, dataflow and communication, while specific accelerator details remain transient constraints. | I | E5 | active | alternative-hardware comparisons using equivalent functional workloads |
 
 Rules: every claim must remain falsifiable; confidence changes only when evidence changes; contradictions are linked rather than hidden.
