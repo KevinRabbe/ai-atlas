@@ -4,7 +4,7 @@ No architectural choice is accepted without a traceable reason. This ledger reco
 
 ## Status
 
-**Phase 10 has produced ten provisional principle-level selections. No whole Phase-9 architecture family is selected.**
+**Phase 10 has produced eleven provisional principle-level selections. No whole Phase-9 architecture family is selected.**
 
 The detailed measurements live in the experiment notes; this ledger keeps the current decision, evidence trail and falsifier compact enough to remain auditable.
 
@@ -17,10 +17,10 @@ The detailed measurements live in the experiment notes; this ledger keeps the cu
 | DL-005 | inference budget | **provisional — value-of-computation stopping** | E05 noisy evidence + E05B costly candidate evaluation | adaptive control overhead/miscalibration makes fixed compute better across changing task difficulty, value and resource prices |
 | DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06 noisy four-world family + E23B same-intervention causal ablation | single-belief state matches lifetime utility under ambiguity/consequence shifts after equal state/coordination cost |
 | DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07 probe-cost/complementarity + E23B causal intervention family | passive/fixed acquisition matches adaptive lifetime utility under changing informativeness, option value, cost and risk |
-| DL-008 | predictive-state breadth | unresolved | world-model/objective-transfer synthesis | E08 objective-switch experiment |
+| DL-008 | predictive-state breadth | unresolved; first family shows a hot-state / recoverable-source / reconstruction crossover | E08 objective-switch optionality family | second learned/dynamic family must reproduce the frontier before promotion |
 | DL-009 | learning persistence | **provisional — staged adaptive persistence** | E09 noisy regime stream + E09B hidden-volatility adaptation | after independently varying sensor noise and true volatility, adaptive persistence loses lifetime utility to a fixed timescale |
 | DL-010 | credit architecture | unresolved | foundations + biology + agent boundaries | E10 global vs factorized delayed credit |
-| DL-011 | memory retrieval policy | unresolved | persistent-memory evidence suggests downstream value matters | E11 similarity vs temporal/causal/downstream-value retrieval |
+| DL-011 | memory retrieval policy | **provisional — retrieve for expected applicability/downstream value; similarity is a proxy signal** | E11 stale-procedure family + E11 surface-vs-causal/action family with explicit check cost | similarity-only retrieval consistently matches lifetime utility under regime changes, causal conflicts and equal retrieval cost, or applicability checking costs exceed avoided errors |
 | DL-012 | verification granularity | unresolved | Phase-5 verification evidence | E12 outcome vs transition/process checks under equal assurance budget |
 | DL-013 | evaluator redundancy | principle favors independent failure modes; mechanism open | evaluator/Goodhart evidence + E23 evaluator exploit | E13 correlated-vs-independent evaluators under increasing search pressure |
 | DL-014 | capability constraints | external hard boundary retained for consequential effects; implementation open | security/control evidence | E14 behavior-only vs external boundaries vs hybrid |
@@ -39,69 +39,56 @@ The detailed measurements live in the experiment notes; this ledger keeps the cu
 # Provisional selections
 
 ## PS-001 — Typed hybrid boundary state
-
-Exact identity, control and provenance semantics remain exact. Tolerant numerical/learned state may use compact approximate representations. Version and integrity semantics remain explicit. Human-readable views are generated when audit/communication requires them rather than being mandatory on the internal hot path.
+Exact identity, control and provenance semantics remain exact. Tolerant numerical/learned state may use compact approximate representations. Version and integrity remain explicit; human-readable views need not occupy the hot path.
 
 ## PS-002 — Staged adaptive persistence
-
-New evidence normally enters reversible/tentative state before globally durable mutation. Consolidation lifetime/threshold should respond to estimated confidence and environmental stability. The estimator and storage implementation remain experimental.
+New evidence normally enters reversible/tentative state before globally durable mutation. Consolidation lifetime/threshold should respond to confidence and estimated environmental stability.
 
 ## PS-003 — Coupling-scoped coordination
-
-Keep decisions local while dependencies and scarcity are local. Expand coordination only to the resource/domain/global scope where choices become coupled. This selects a **scope rule**, not a fixed centralized or distributed topology.
+Keep decisions local while dependencies/scarcity are local. Expand coordination only to the resource/domain/global scope where choices become coupled. This selects a scope rule, not a fixed topology.
 
 ## PS-004 — Derived current belief with evidence linkage
-
-Maintain current belief cheaply for repeated reasoning/action, while retaining links to source evidence whenever later correction, contradiction handling, provenance or audit has meaningful expected value. Evidence retention itself remains a resource/value decision.
+Maintain current belief cheaply for repeated reasoning/action while retaining source linkage whenever later correction, contradiction handling, provenance or audit has meaningful expected value.
 
 ## PS-005 — Value-of-computation stopping
-
-Continue optional inference work only while its estimated marginal downstream value exceeds computation, latency, risk and opportunity cost. A maximum budget is a ceiling/guardrail, not a target to consume.
+Continue optional inference work only while estimated marginal downstream value exceeds compute, latency, risk and opportunity cost. Maximum budgets are ceilings, not targets.
 
 ## PS-006 — Consequence-sensitive hypothesis plurality
-
-Do not force one current world state when materially different states remain plausible and wrong commitment is costly. Preserve alternatives while their expected decision/discovery value exceeds their state/coordination cost; collapse or prune as evidence resolves ambiguity or stakes fall.
+Preserve multiple plausible world states while ambiguity × consequence justifies their state/coordination cost; collapse/prune as evidence resolves ambiguity or stakes fall.
 
 ## PS-007 — Value-driven active evidence acquisition
-
-Observation and experiment are resource-consuming operations. Acquire evidence when expected downstream or epistemic value exceeds interaction cost/risk. Include multi-step option value when observations are complementary, and stop when remaining information is not worth its price.
+Acquire observations/interventions when expected downstream or epistemic value exceeds interaction cost/risk, including multi-step option value when evidence channels are complementary.
 
 ## PS-008 — Verified epistemic frontier expansion
-
-Human/bootstrap knowledge is a starting prior and method library, not a permanent epistemic ceiling. Search and experimentation may leave demonstrated answers, but novelty remains tentative. Candidate discoveries become durable knowledge only through domain-appropriate evidence sufficiently independent from the proposal/optimization path, with verifier scope and provenance retained. Rejected and unresolved hypotheses remain distinct epistemic states.
+Human/bootstrap knowledge is a starting prior and method library, not a permanent epistemic ceiling. Novel candidates remain tentative until domain-appropriate evidence sufficiently independent from the proposal path supports promotion into durable knowledge.
 
 ## PS-009 — Conditional sharing with isolation fallback
-
-Share learned computation when evidence shows reusable structure creates transfer benefit after active-compute and communication costs. Preserve isolated/private paths when task structure diverges or shared updates create interference.
-
-E02C removes the main prior confound: with the same **45 learned parameters**, its routed shared/private learner activates only one path per example and uses less arithmetic than the specialist baseline. At sharedness 0.98 it beats specialists across 240/480/1,200-example regimes; at 0.75 and 0.15 specialists remain better. The selected object is the **conditional sharing rule**, not the current EMA router or a fixed modularity level.
+Share learned computation when reusable structure creates transfer benefit after active-compute/communication cost. Preserve isolated/private paths when task structure diverges or shared updates create interference. E02C confirms the frontier at equal 45-parameter storage and lower realized compute than specialists.
 
 ## PS-010 — Joint adaptive resource substitution under shared scarcity
+When compute, memory, observation, verification or other operations substitute for one another and share limited capacity, allocation must account jointly for current value, price/quality and scarcity coupling. E22B shows that better local estimates can worsen system regret if uncoordinated tasks rush the same resource.
 
-When operations/resources substitute for one another and share limited capacity, allocation must account jointly for current value, price/quality and capacity coupling. Local policies remain appropriate only while their choices do not materially contend for the same scarce resource.
+## PS-011 — Retrieval by expected applicability / downstream value
+Persistent evidence should ultimately be selected for expected usefulness to the current decision, belief update or action—not semantic resemblance by itself. Similarity remains a valuable cheap candidate signal when it predicts applicability well.
 
-E22B isolates this from E22's price-shift result. Across 30 seeds, post-drift reference regret is approximately:
-
-- adaptive joint: **0.086**;
-- frozen joint: **0.206**;
-- frozen independent: **0.387**;
-- adaptive independent: **0.468**.
-
-The surprising failure is informative: fresher local quality estimates can **increase** system regret when many individually rational tasks rush toward the same newly attractive resource. The selected object is joint substitution under coupling, not the current greedy allocator.
+E11 pins both sides: in a stable corpus, similarity is cheapest because deeper checks do not change the answer; under staleness or surface/causal conflict, temporal, causal, outcome and verification semantics become worth their additional retrieval cost. The selected object is the **retrieval objective**, not the current hand-coded scorer.
 
 ---
 
 ## Current architecture implications
 
-The ten selections constrain an eventual system without choosing its named architecture:
+The eleven selections constrain an eventual system without choosing its named architecture:
 
-- local computation remains attractive, but coordination appears where coupling appears;
-- shared learned structure is conditional, with isolation retained as an interference boundary;
-- current belief is fast but revisable from evidence;
+- coordination appears where coupling appears;
+- shared computation is conditional, with isolation retained as an interference boundary;
+- current belief remains fast and evidence-revisable;
 - ambiguous high-consequence worlds may require several live hypotheses;
-- information, inference compute and cross-resource substitutions are all explicitly allocatable;
+- retrieval targets applicability/value rather than resemblance alone;
+- observation, inference compute and cross-resource substitutions are explicitly allocatable;
 - knowledge changes pass through reversible stages;
 - discovery may exceed the bootstrap teacher, but only evidence promotes novelty into knowledge.
+
+E08 additionally shows that representation breadth is a lifetime optionality problem: narrow current-decision state, recoverable cold source state and broad hot state occupy different points depending on objective-switch frequency. DL-008 remains unresolved pending a second dynamic/predictive family.
 
 ## Architecture-family status
 
@@ -112,7 +99,7 @@ The ten selections constrain an eventual system without choosing its named archi
 | C — Integrated Predictive Core + External Evidence | retain | how far integration can go before interference/authority/provenance boundaries dominate |
 | D — Developmental Variant System | retain | structural adaptation, indirect organization and variant populations |
 
-No family is selected because PS-001 through PS-010 can be implemented by multiple families.
+No family is selected because PS-001 through PS-011 can be implemented by multiple families.
 
 ## Selection rule
 
