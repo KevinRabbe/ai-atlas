@@ -20,9 +20,7 @@ Remaining gaps: formal value-of-computation/metareasoning; latent/executable rea
 
 ## Phase 4 — Persistent intelligence
 
-**First evidence pass completed on 2026-08-14; not saturated.**
-
-The coupled pass maps governed memory lifecycle, experience abstraction, temporal belief state, world models/simulation, model uncertainty/reality checks, multimodal grounding/action and long-horizon stateful agents.
+First evidence pass completed on 2026-08-14; not saturated. The coupled pass maps governed memory lifecycle, experience abstraction, temporal belief state, world models/simulation, model uncertainty/reality checks, multimodal grounding/action and long-horizon stateful agents.
 
 Current synthesis separates event history from current belief, treats memory as evolving governed state rather than passive storage, treats world models as decision-relevant predictive state rather than necessarily full reconstruction, and requires memory/world-model quality to be evaluated through future actions rather than recall/prediction metrics alone.
 
@@ -30,15 +28,21 @@ Remaining gaps: memory poisoning/persistent false beliefs; temporal/causal knowl
 
 ## Phase 5 — Verification, reliability and control
 
-Map evaluators, formal methods, tests, reward models, process/outcome supervision, calibration, interpretability, monitoring, containment, robustness and failure propagation.
+**First evidence pass completed on 2026-08-14; not saturated.**
 
-**Next active area.**
+The coupled pass maps verifier/evaluator quality, process vs outcome checks, formal verification, calibration/selective prediction, Goodhart/reward hacking, interpretability/monitoring, agent security/capability boundaries, control protocols and transactional regression gates.
 
-Exit condition: define how claims, memories, predictions, actions and self-modifications are checked; how trust/permissions scale with evidence; and how failures are contained before durable or irreversible effects propagate.
+Current synthesis treats verification as scoped evidence and introduces **assurance allocation**: the amount and independence of evidence/control required before a transition should scale with consequence, uncertainty, scope, persistence, privilege, irreversibility and optimization pressure.
+
+Remaining gaps: formal verification outside theorem proving; robust/OOD risk control; scalable oversight beyond current weak-to-strong analogues; stronger adaptive/colluding adversaries; secure provenance/capability systems; adversarial mechanistic monitoring; post-deployment incident recovery; property/fuzz testing for agents; quantitative assurance budgets; sustained self-modification with hidden rotating tests.
 
 ## Phase 6 — Self-improvement
 
 Map improvement of prompts, context policies, skills, harness code, routing, tools, memory, training data, weights and architecture. Separate timescales and require regression gates.
+
+**Next active area.**
+
+Exit condition: define what may self-modify, how candidate improvements are generated/evaluated, how credit is assigned to the changed layer, how regressions/Goodhart are contained, and which recovery/control components remain outside the self-modifying boundary.
 
 ## Phase 7 — Cross-domain synthesis
 
