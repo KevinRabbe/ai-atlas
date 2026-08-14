@@ -8,7 +8,7 @@ The purpose of this repository is **not** to document today's implementations an
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Named model blocks, natural-language reasoning, vector databases, agents, recursive systems, harnesses, biological mechanisms, particular learning algorithms, world-model products, and current hardware are candidates or evidence—not axioms.
+After a research area has been mapped, synthesis should restate the problem in implementation-neutral terms and ask what computational mechanism is actually required. Named model blocks, natural-language reasoning, vector databases, agents, recursive systems, harnesses, biological mechanisms, particular learning algorithms, world-model products, verifier products, and current hardware are candidates or evidence—not axioms.
 
 ## Repository layers
 
@@ -26,16 +26,18 @@ After a research area has been mapped, synthesis should restate the problem in i
 - Learning & adaptation: first evidence pass complete; not saturated.
 - Inference-time intelligence: first evidence pass complete; not saturated.
 - Persistent intelligence: first evidence pass complete; not saturated.
-- Phase 5 verification, reliability & control: next active area.
+- Verification, reliability & control: first evidence pass complete; not saturated.
+- Phase 6 self-improvement: next active area.
 - Clean-sheet architecture selection: deliberately **not started**.
 
-Three recurring allocation problems now span the Atlas:
+Four recurring allocation problems now span the Atlas:
 
 1. **compute allocation** — what operation should run next, where and for how long;
 2. **change allocation** — what state should change, how durable it should be and when it should consolidate or be forgotten;
-3. **information allocation** — what evidence/state remains active, what is abstracted or archived, and what can safely be discarded.
+3. **information allocation** — what evidence/state remains active, what is abstracted or archived, and what can safely be discarded;
+4. **assurance allocation** — how much independent evidence, restriction or authorization a proposed transition needs before it may propagate.
 
-Persistent-intelligence research adds a critical constraint: a long-lived system needs both an evidence history and an uncertainty-aware estimate of what is true *now*. Memory, world state and prediction cannot safely collapse into one append-only context.
+Persistent-intelligence research adds a critical constraint: a long-lived system needs both an evidence history and an uncertainty-aware estimate of what is true *now*. Verification/control adds another: a passing evaluator score is scoped evidence, not universal truth, and capability should remain separable from authority.
 
 These are provisional cross-domain patterns, not yet a final theory of intelligence.
 
