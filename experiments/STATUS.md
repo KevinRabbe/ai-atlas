@@ -1,172 +1,79 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: fifteen provisional design principles selected; composition testing is now the primary experimental strategy.**
+**Checkpoint: sixteen provisional design principles selected; composition testing is the primary experimental strategy. No Phase-9 architecture family is selected.**
 
 ## Implemented blocks
 
-Core and promotion experiments:
-
-- E01/E01B — coordination topology and shared scarcity;
-- E02/E02B/E02C — transfer/interference and compute-matched conditional sharing;
-- E03/E03B — current state, source evidence and revision;
-- E04/E04B — typed representation/fidelity;
-- E05/E05B — adaptive compute and value-of-search;
-- E06 — hypothesis plurality;
-- E07 — active evidence acquisition;
-- E08/E08B — predictive-state breadth and online breadth adaptation;
-- E09/E09B/E09C — staged persistence, volatility adaptation and noise-vs-change identification;
-- E10/E10B — serial and branching delayed credit assignment;
-- E11 — retrieval similarity vs temporal/causal/downstream applicability;
-- E22/E22B — cross-resource substitution, capacity contention and quality drift;
-- E23/E23B — constructive and empirical beyond-teacher discovery mechanics.
+Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit assignment, E11 retrieval, E12B workflow verification granularity, E14 capability boundaries, E22/E22B cross-resource metacontrol, and E23/E23B beyond-teacher discovery.
 
 Integrated composition generations:
 
-- **I01 — integrated epistemic organism:** memory conflict, ambiguity, active evidence, discovery staging and shared resource allocation;
-- **I02 — adaptive integrated organism:** online resource-quality learning, conditional shared/private estimation and fallible learned assurance;
-- **I03 — assurance composition:** verification granularity, evaluator independence under optimizer pressure and consequence-sensitive assurance allocation.
+- **I01 — integrated epistemic organism**: memory conflict, ambiguity, active evidence, discovery staging and shared resources;
+- **I02 — adaptive organism**: learned operation quality, conditional shared/private estimates and fallible assurance;
+- **I03 — assurance composition**: process/outcome granularity, evaluator independence and assurance prices;
+- **I04 — typed transition/resource kernel**: one common allocator with typed authority/durability/consequence boundaries.
+
+JEPA is now explicitly registered as a candidate predictive-representation family. **E24 is specified, not implemented**, and is intentionally allowed to lose against reconstruction/task-sufficient/recoverable-source alternatives.
 
 ## Validation
 
-This continuation added:
+The previous Phase-10 history contained **104 added passing tests**. This continuation adds:
 
-- E08B: 4 tests;
-- I01: 5 tests;
-- I02: 5 replicated tests;
-- I03: 6 replicated tests;
-- E10A: 5 replicated tests;
-- E10B: 5 replicated tests.
+- I04 transition kernel: 5 tests;
+- E12B workflow granularity: 5 tests;
+- E14 capability boundaries: 5 tests.
 
-The continuation's local suite is **30/30 passing**, taking the Phase-10 added-test history to **104 passing tests**. Runtime code remains Python 3.11+ stdlib-only.
+The continuation-local suite is **15/15 passing**, taking the Phase-10 added-test history to **119 passing tests**. Runtime experiment code remains Python 3.11+ stdlib-only.
 
 ---
 
 # Latest composition findings
 
-## E08B / PS-012 — adaptive state breadth
+## I04 — common allocation works; flat authority does not
 
-Across a hidden low-switch → high-switch → low-switch lifetime:
-
-- always broad: net ~`0.9880`;
-- always narrow: net ~`0.9797`;
-- adaptive breadth: **~`0.9909`**.
-
-The adaptive controller changes broad-state fraction approximately `0.0006 → 0.9903 → 0.0678` without receiving the hidden regime label.
-
-## I01 — individually good principles do not contribute equally
-
-30-seed net utility/task:
-
-| variant | utility/task |
-|---|---:|
-| **integrated full** | **2.3589** |
-| no plurality | 2.3418 |
-| no active information | 2.0879 |
-| similarity retrieval | 1.9437 |
-| immediate consolidation | 1.8541 |
-| independent/first-come allocation | 2.2756 |
-
-Immediate visible-evaluator consolidation creates ~`54.6` false durable writes/run, demonstrating that a discovery failure becomes a persistent-memory failure when the result is reused.
-
-## I02 — metacognition itself must be learned
-
-Operation/resource quality changes through three hidden regimes and differs by task family.
-
-30-seed lifetime utility/task:
-
-| estimator | utility/task |
-|---|---:|
-| **conditional shared/private** | **1.3511** |
-| all shared | 1.2659 |
-| all private | 1.3316 |
-| frozen initial quality | 1.3391 |
-
-Frozen initial economics is strongest while its assumptions remain true and degrades sharply in the first drift regime (`~0.880` vs `~1.062` conditional).
-
-Assurance result:
-
-| verifier policy | utility/task | false durable writes/run | secondary checks/task |
-|---|---:|---:|---:|
-| **adaptive learned assurance** | **1.3511** | 0.433 | **0.02022** |
-| primary only | 1.1281 | **12.10** | 0.00000 |
-| uniform double | 1.3487 | 0.433 | 0.02132 |
-
-The system learns an observable unsafe-primary-approval rate around `0.193` for the risky family and `0.060` for the safer family.
-
-## I03 / PS-013 — evaluator independence
-
-A shared evaluator exploit becomes increasingly likely to be found as candidate search pressure rises.
-
-At search pressure `16`:
-
-- single primary exploit acceptance: ~`0.434`;
-- correlated double evaluator: ~`0.430`;
-- independent double evaluator: **~`0.0176`**.
-
-The second correlated evaluator adds cost without removing the relevant failure mode. This promotes **PS-013 — failure-mode-independent assurance**.
-
-## I03 / PS-014 — assurance is a priced resource
-
-Default assurance prices:
-
-- implicit confidence-triggered self-check: ~`-0.982` utility/task;
-- explicit adaptive assurance: ~`0.543`;
-- uniform heavy verification: **~`0.635`**.
-
-Uniform heavy checking is correctly better when assurance is cheap relative to error consequence.
-
-When independent/process verification price scales to `1.5×`:
-
-- explicit adaptive: **~`0.420`**;
-- uniform heavy: ~`0.257`.
-
-At `2×`:
-
-- explicit adaptive: **~`0.294`**;
-- uniform heavy: ~`-0.128`.
-
-Together I02 + I03 promote **PS-014 — consequence/uncertainty/resource-sensitive assurance allocation**.
-
-## I03 / E12 — verification granularity stays open
-
-Outcome-only and process-only checks fail differently:
-
-- outcome-only process-failure acceptance: ~`0.113`;
-- process-only final-failure acceptance: ~`0.227`;
-- uniform both reduces both but costs ~`0.400`/task;
-- adaptive granularity produces the best first-family net (`~0.013`) at ~`0.329` verification cost/task.
-
-DL-012 is intentionally **not promoted** until a structurally different task family reproduces the result.
-
----
-
-# Credit assignment
-
-## E10A — serial sparse delayed reward
-
-Nine stages must all be correct before a final success signal appears.
+A hidden workload shift changes demand from cognition/observation toward research/external-effect tasks while all variants retain five total operation slots per batch.
 
 30-seed means:
 
-| policy | tail success | false blame/episode | delayed items/episode |
-|---|---:|---:|---:|
-| global trajectory | 0.189 | 4.038 | 9.000 |
-| local diagnostics | **0.692** | 1.898 | **0.000** |
-| eligibility hybrid | **0.692** | **0.537** | 2.186 |
-
-A stage-count dry run shows the factorized advantage appears as outcome ambiguity grows: global credit is adequate around five stages and collapses as compositional depth rises.
-
-## E10B / PS-015 — sparse causal scope
-
-Two speculative five-stage branches execute, but only one causally determines the outcome.
-
-| policy | tail success | inactive-branch updates | false blame | delayed items |
+| variant | utility/task | false durable writes/run | unsafe external effects/run | authority violations/run |
 |---|---:|---:|---:|---:|
-| global all branches | 0.533 | **5.0** | 1.380 | 10.000 |
-| branch factorized | **0.812** | **0.0** | 0.878 | 5.000 |
-| branch + eligibility | **0.812** | **0.0** | **0.147** | **1.123** |
+| **typed shared kernel** | **0.9758** | 5.13 | **5.03** | **0.0** |
+| typed fixed silos | 0.7846 | **2.67** | 6.57 | **0.0** |
+| flat scalar kernel | **-0.3494** | **194.13** | **68.43** | **1144.7** |
 
-E10A + E10B promote **PS-015 — causal/eligibility-scoped delayed credit**.
+The shared typed kernel reallocates verification from ~`0.1003`/task before the task-mix shift to ~`0.1546` afterward, while ordinary work allocation falls ~`0.3164 -> 0.2620`.
+
+**Interpretation:** a common marginal-value/resource allocator can replace some separate controllers, but its score cannot also be the authority token for durable knowledge or consequential external effects.
+
+## E12B / PS-016 — verification granularity
+
+A multi-step workflow separates intermediate invariant violations from final-output corruption. An invalid intermediate transition may be repaired before the final output, and a valid process may still end in a corrupted result.
+
+30-seed means:
+
+| policy | utility/task | process harm | outcome harm | checks/task |
+|---|---:|---:|---:|---:|
+| process only | 1.6521 | **0.0050** | 0.1113 | 1.0000 |
+| outcome only | 1.3030 | 0.1337 | **0.0042** | 1.0000 |
+| uniform both | 1.8803 | **0.0053** | **0.0041** | 2.0000 |
+| **adaptive granularity** | **1.9877** | 0.0226 | 0.0180 | **1.0684** |
+
+Together with I03, this promotes **PS-016 — failure-layer-targeted verification**. Process/outcome/authority/provenance checks are not assumed substitutable merely because they all increase confidence.
+
+## E14 — capability boundaries
+
+Tasks separate exact categorical authorization from context-dependent action risk. Mid-lifetime, unauthorized privileged attempts become better at spoofing the behavioral risk cue.
+
+30-seed means:
+
+| policy | utility/task | invariant violations/run | contextual harms/run | blocked rate |
+|---|---:|---:|---:|---:|
+| behavior only | -2.2985 | 364.63 | **226.10** | 0.3100 |
+| narrow hard only | -1.7620 | **0** | 795.90 | **0.0781** |
+| broad hard | -1.3474 | **0** | 616.60 | 0.2798 |
+| **hybrid** | **0.3530** | **0** | **226.10** | 0.3708 |
+
+Behavior-only invariant violations rise ~`157.1 -> 207.5` after the spoof shift. A narrow hard boundary holds them at zero. Hard-only control still fails contextually; an over-broad hard boundary deletes legitimate capability. The strongest first-family result is therefore **narrow categorical enforcement + adaptive contextual control**. DL-014 remains open until changing delegation/revocation and boundary-failure cases are tested.
 
 ---
 
@@ -186,33 +93,37 @@ E10A + E10B promote **PS-015 — causal/eligibility-scoped delayed credit**.
 12. PS-012 — adaptive predictive-state breadth / recoverable optionality;
 13. PS-013 — failure-mode-independent assurance;
 14. PS-014 — consequence/uncertainty/resource-sensitive assurance allocation;
-15. PS-015 — causal/eligibility-scoped delayed credit.
-
-No Phase-9 architecture family is selected.
+15. PS-015 — causal/eligibility-scoped delayed credit;
+16. PS-016 — failure-layer-targeted verification.
 
 ---
 
 # What is converging
 
-Composition is beginning to collapse several apparently separate mechanisms into common abstract rules:
+The evidence increasingly compresses into fewer architecture laws than the provisional-principle count suggests:
 
-- **scope follows coupling/responsibility** — control and credit widen only when dependencies do;
-- **state follows future value** — breadth, persistence and retrieval depend on expected future use and recoverability;
-- **work follows marginal value** — compute, sensing and assurance are allocatable rather than fixed budgets;
-- **sharing follows reusable structure** — transfer is useful until interference outweighs it;
-- **authority follows evidence** — confidence, novelty and correlated votes do not create epistemic authority;
-- **durability demands stronger evidence** — persistent state changes have higher downstream consequence than temporary computation.
+- **scope follows coupling/responsibility**;
+- **state follows future value and recoverability**;
+- **work follows marginal value under shared scarcity**;
+- **sharing follows reusable structure**;
+- **authority follows evidence and typed invariants, not confidence alone**;
+- **verification follows the residual failure layer**;
+- **durability raises the evidence requirement**.
 
-These may eventually become fewer architecture primitives than the fifteen PS entries suggest. Testing that collapse is now more important than accumulating additional isolated modules.
+I04 suggests a candidate clean-sheet skeleton:
+
+`typed state/transition proposals -> shared value/resource allocator -> layer-specific assurance/authority gate -> execute transition -> observe outcome -> scoped credit/update`
+
+This remains a hypothesis, not a selected architecture.
 
 ## Next high-value work
 
-1. construct **I04**, where one typed state-transition/resource allocator tries to implement several PS rules rather than separate hand-coded controllers;
-2. give it learned estimates for future value, coupling, verifier independence and credit eligibility;
-3. test pairwise/multi-principle ablations and interaction regressions;
-4. finish DL-012 with a second verification-granularity family;
-5. then move into E14 capability boundaries and E20 self-change regression evidence before enabling deeper self-improvement experiments.
+1. **E14B** — changing delegation/revocation and boundary-maintenance failure;
+2. **E20** — visible vs mixed-hidden vs rotating/adversarial regression evidence before deeper self-improvement;
+3. **I05** — learn more of the I04 transition metadata (value, coupling, authority risk, verifier independence) rather than supplying it;
+4. then E15/E16 self-improvement lineage/repair scope under the trusted-change protocol;
+5. E24 JEPA predictive representation remains queued and should move up if I05 exposes a predictive-state bottleneck.
 
 ## Guardrail
 
-The research organism is not an architecture merely because more mechanisms have been combined. Architecture selection waits until the composition experiments reveal which boundaries remain necessary under shared learned state, authority and resource control.
+Do not turn the common transition kernel into a universal scalar controller. The current evidence specifically supports shared allocation **while preserving typed authority, failure and durability semantics**.
