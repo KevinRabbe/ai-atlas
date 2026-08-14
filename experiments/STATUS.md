@@ -1,71 +1,83 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-one provisional design principles selected; composition + guarded self-improvement experiments are active. No Phase-9 architecture family is selected.**
+**Checkpoint: twenty-three provisional design principles selected; composition + guarded self-improvement experiments are active. No Phase-9 architecture family is selected.**
 
 ## Implemented blocks
 
-Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, **E17/E17B structural organization**, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, and E23/E23B beyond-teacher discovery.
+Core/promotion experiments now cover E01/E01B coordination, E02/E02B/E02C sharing/interference, E03/E03B evidence/current state, E04/E04B representation, E05/E05B compute allocation, E06 ambiguity, E07 active information, E08/E08B predictive-state breadth, E09/E09B/E09C persistence, E10/E10B credit, E11 retrieval, E12B verification granularity, E14/E14B capability authority, E15/E15B lineage diversity, E16 repair/change scope, E17/E17B structural organization, **E18 execution timing**, **E19 fidelity allocation**, E20/E20B self-change regression evidence, E22/E22B cross-resource metacontrol, and E23/E23B beyond-teacher discovery.
 
-Integrated composition generations are now **I01–I05**. I04 tests one shared typed state-transition/resource allocator; **I05 makes key metacognitive estimates learned and revisable rather than supplied by oracle metadata.**
+Integrated composition generations are **I01–I05**. I04 tests one shared typed state-transition/resource allocator; I05 makes key metacognitive estimates learned and revisable rather than supplied by oracle metadata.
 
 JEPA is explicitly registered as a candidate predictive-representation family. **E24 is specified but not implemented** and may lose against reconstruction/task-sufficient/recoverable-source alternatives.
 
 ## Validation
 
-Phase 10 now has **166 added passing tests**. Since the prior 150-test checkpoint this work added:
+Phase 10 now contains **178 added test cases**. The 166-test I05/E17 checkpoint was extended with:
 
-- I05 learned transition metacognition: 6 tests;
-- E17 structural development: 5 tests;
-- E17B dependency workflow structure: 5 tests.
+- E18 execution timing: 6 tests;
+- E19 fidelity allocation: 6 tests.
 
-Runtime experiment code remains Python 3.11+ stdlib-only.
+The shell environment could not clone GitHub because DNS resolution is unavailable there. The E17B/E18/E19 semantic assertions were executed independently in the local Python reasoning environment and passed; connector writes were verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
 ---
 
 # Latest findings
 
-## I05 — metacognitive estimates are revisable state
+## E18 / PS-022 — event-scoped execution + consistency-triggered synchronization
 
-A hidden regime shift changes operation benefit, family-specific coordination value, visible-evaluator failure and secondary-verifier reliability. The learned variants do not receive the hidden regime or true reliabilities.
+### Sparse event graph
 
-30-seed means:
-
-| variant | net utility/task | pre-shift | first 60 post-shift | last 100 post-shift |
+| variant | utility/step | stale reads | operations/step | messages/step |
 |---|---:|---:|---:|---:|
-| oracle typed upper bound | **0.7597** | 0.7394 | **0.7683** | **0.7902** |
-| **learned conditional typed** | **0.6818** | **0.7052** | 0.5170 | **0.7400** |
-| learned global typed | 0.6257 | 0.6395 | 0.5963 | 0.6222 |
-| frozen conditional typed | 0.5859 | **0.7052** | 0.4535 | 0.4851 |
+| sync global | 0.8560 | **0.0000** | 80.000 | 0.000 |
+| async naive | 0.6671 | 0.2681 | **6.217** | 0.000 |
+| **scoped event** | **0.9815** | **0.0000** | **8.699** | 5.699 |
 
-The conditional learner takes a real hit when its prior estimates become wrong, then relearns the new economics. Frozen estimates do not recover; global pooling cannot represent the family-specific reversal cleanly.
+Event-driven execution preserves exact dependency state while avoiding global idle work. Naive async misses dependent invalidations.
 
-For the `coupled` task, learned extra-work allocation reverses from family 1 before the shift (~0.0432/task versus ~0.0034 family 0) to family 0 afterward (~0.0353 versus ~0.0134). All typed variants retain zero categorical authority violations.
+### Version-coupled snapshot
 
-I05 is a composition checkpoint, not a new principle. A key limitation is the clean delayed audit signal supplied for synthetic research outcomes.
+At 55% update / 30% snapshot-query demand:
+
+| variant | utility/step | inconsistent queries | operations/step |
+|---|---:|---:|---:|
+| sync global | 0.2513 | **0.0000** | 26.492 |
+| async naive | -0.3675 | 0.9991 | **4.417** |
+| **scoped event + barrier** | **0.2624** | **0.0000** | **11.565** |
+
+The scoped barrier coalesces several logical versions before materializing a common snapshot. But at ~90% snapshot demand eager sync becomes better (~0.8508 versus ~0.8202), establishing the synchronization-frequency crossover.
+
+This promotes **PS-022 — event-scoped execution with consistency-triggered synchronization**.
+
+## E19 / PS-023 — fidelity is a priced resource
+
+### One-shot threshold decisions
+
+| variant | utility/task | error rate | high-fidelity rate | fidelity cost |
+|---|---:|---:|---:|---:|
+| low | 1.6869 | 0.0626 | 0.0000 | **0.0100** |
+| high | 2.2523 | **0.0000** | 1.0000 | 0.0800 |
+| **adaptive** | **2.3057** | **0.0000** | **0.2082** | **0.0267** |
+
+High-fidelity use rises from ~0.126 at consequence 1 to ~0.374 at consequence 6.
+
+### Accumulated trajectory constraint
+
+| variant | utility/episode | error rate | false-safe rate | exact replay rate |
+|---|---:|---:|---:|---:|
+| low | 0.4173 | 0.1072 | 0.0477 | 0.0000 |
+| high | 0.7902 | **0.0000** | **0.0000** | 1.0000 |
+| **adaptive** | **0.8434** | **0.0050** | **0.0020** | **0.4813** |
+
+Exact replay rises with consequence (~0.380 at consequence 4 to ~0.572 at consequence 12). This promotes **PS-023 — value/sensitivity-scaled fidelity allocation**.
+
+## I05 — learned transition metacognition
+
+A hidden regime shift changes operation benefit, family-specific coordination value, visible-evaluator failure and secondary-verifier reliability. The conditional learner drops to ~0.517 immediately post-shift and recovers to ~0.740 in the final 100 batches, versus ~0.485 frozen and ~0.622 globally pooled. Categorical authority remains exact and external.
 
 ## E17/E17B / PS-021 — structural indirectness follows regularity
 
-E17A tests structural state; E17B tests operational dependency topology.
-
-### E17A repeated structural state
-
-Adaptive indirect encoding reaches ~`0.9951` net versus ~`0.8754` direct, with ~`5.6` final parameters versus 64. Under irregular local changes, always-generative search is worse while adaptive indirect falls back to local behavior.
-
-### E17B repeated dependency workflow
-
-| variant | net utility/round | dependency violations | mean latency | first 10 after coherent shift |
-|---|---:|---:|---:|---:|
-| direct | 0.9814 | 0.0123 | 1.0349 | 0.7084 |
-| generative | 0.9955 | 0.00060 | 1.0013 | **1.0000** |
-| **adaptive indirect** | **0.9958** | **0.00051** | **1.0008** | **1.0000** |
-
-In the irregular workflow, direct/adaptive indirect are ~`0.968`, while always-generative falls to ~`0.9608` because the global proposal consumes search budget and adds unnecessary structural blast radius.
-
-Together these promote **PS-021 — regularity-scaled structural encoding / local override fallback**. This does not select Phase-9 family D.
-
-## Earlier active checkpoint
-
-I04 established common allocation with typed authority: ~`0.9758` utility/task typed shared versus ~`0.7846` fixed typed silos and `-0.3494` flat scalar. PS-016 through PS-020 remain active constraints covering verification layer, capability authority, self-change regression evidence, lineage diversity and repair scope.
+Repeated structural state and repeated dependency topology both reward a compact shared generative rule; irregular/local structure punishes always-global mutation. Adaptive indirect encoding retains local override/isolation and therefore keeps the repeated-structure advantage without paying the global-mutation penalty on irregular tasks.
 
 ---
 
@@ -91,15 +103,15 @@ I04 established common allocation with typed authority: ~`0.9758` utility/task t
 18. PS-018 — rotating independent self-change regression evidence;
 19. PS-019 — resource-priced lineage diversity / variant optionality;
 20. PS-020 — evidence-scaled repair scope / minimal sufficient blast radius;
-21. **PS-021 — regularity-scaled structural encoding / local override fallback.**
+21. PS-021 — regularity-scaled structural encoding / local override fallback;
+22. **PS-022 — event-scoped execution with consistency-triggered synchronization**;
+23. **PS-023 — value/sensitivity-scaled fidelity allocation.**
 
 ---
 
 # Current architecture compression hypothesis
 
-The evidence increasingly points toward fewer primitives than the 21 principle labels:
-
-`typed state/transition proposals -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority boundary -> execute -> observe -> causal credit -> staged/appropriately-scoped update`
+`typed state/transition proposals -> learned shared marginal-value/resource allocator -> failure-layer assurance + current authority boundary -> execute at scoped timing/fidelity -> observe -> causal credit -> staged/appropriately-scoped update`
 
 Recurring laws:
 
@@ -107,6 +119,8 @@ Recurring laws:
 - state follows future value and recoverability;
 - optional work follows marginal value;
 - sharing and structural indirectness follow reusable regularity;
+- execution follows events until consistency coupling justifies synchronization;
+- fidelity follows decision sensitivity, uncertainty propagation and consequence;
 - authority follows independent current evidence/invariants;
 - verification follows residual failure layer;
 - durable change requires stronger and refreshing evidence;
@@ -118,10 +132,10 @@ This remains a hypothesis, not a selected architecture.
 
 ## Next high-value work
 
-1. **E18 — execution timing:** synchronous/global ticks vs asynchronous/event-driven work under sparse local events and tightly coupled/barrier workloads;
-2. **E19 — fidelity allocation:** uniform exact/high fidelity vs compact/approximate vs adaptive fidelity with exact side semantics;
-3. **E24 JEPA** remains queued and rises if predictive-state/representation becomes the bottleneck;
-4. continue I05 with partial/noisy/censored delayed feedback rather than clean post-decision audit labels.
+1. **E24 JEPA predictive representation:** now the largest explicitly specified representation discriminator; compare latent target prediction against reconstruction, task-sufficient prediction and recoverable-source alternatives under objective shift/intervention;
+2. **I05B:** degrade metacognitive feedback from exact delayed audit to noisy/partial/censored outcomes;
+3. integrate E18/E19 into a future I06 kernel to test whether timing/fidelity decisions can share the common allocator without unstable feedback loops;
+4. architecture-family elimination only after those composition tests provide end-to-end evidence.
 
 ## Guardrail
 
