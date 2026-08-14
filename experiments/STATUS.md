@@ -1,96 +1,94 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: Tier-1 and first Tier-2 epistemic/action block complete to promotion depth; ten provisional design principles selected on 2026-08-14.**
+**Checkpoint: eleven provisional design principles selected; predictive-state breadth remains open after one family.**
 
-## Implemented experimental families
+## Implemented experimental blocks
 
-Core/promotion work now includes:
-
-- E01/E01B — coordination topology and shared-resource contention;
-- E02/E02B/E02C — integration, compositional transfer/interference and compute-matched conditional sharing;
-- E03/E03B — current state, evidence history and source revision;
-- E04/E04B — representation/interface fidelity and machine-native/exact hybrid state;
-- E05/E05B — adaptive compute and value-of-search stopping;
-- E06 — consequence-sensitive hypothesis plurality;
-- E07 — active value-of-information acquisition;
-- E09/E09B — staged/adaptive persistence;
-- E22/E22B — cross-resource substitution, shared capacity and quality drift;
+- E01/E01B — coordination topology and shared scarcity;
+- E02/E02B/E02C — transfer/interference and compute-matched conditional sharing;
+- E03/E03B — current state, evidence history and revision;
+- E04/E04B — typed representation/fidelity;
+- E05/E05B — adaptive compute and value-of-search;
+- E06 — hypothesis plurality;
+- E07 — active evidence acquisition;
+- E08 — predictive-state breadth / future-objective optionality;
+- E09/E09B/E09C — staged persistence, volatility adaptation and noise-vs-change identification;
+- E11 — retrieval similarity vs temporal/causal/downstream applicability;
+- E22/E22B — cross-resource substitution, capacity contention and quality drift;
 - E23/E23B — constructive and empirical beyond-teacher discovery mechanics.
 
 ## Validation
 
-The latest additions E02C and E22B each add **4 passing local semantic tests**. Together with the earlier Phase-10 validation groups, the current reconstruction history contains **62 newly added passing unit tests**.
+E08, E11 and E09C each add **4 passing local semantic tests**. Including earlier Phase-10 groups, the experimental reconstruction history now contains **74 newly added passing unit tests**. Runtime code remains Python 3.11+ stdlib-only.
 
-All experimental runtime code remains Python 3.11+ stdlib-only.
+## Latest findings
 
-## Latest system-level findings
+### E08 — state breadth is future-objective dependent
 
-### E02C — compute-matched conditional sharing
+A 12-bit world is queried under objectives A/B. The benchmark prices hot-state rent, cold/source retention and rematerialization separately.
 
-The routed candidate and specialist baseline both contain **45 learned parameters**. The routed system activates either a 15-parameter shared path or a 10-parameter task-private path per example, never both. Specialists activate 15 task-specific parameters.
+20-seed net-utility means:
 
-The specialist baseline uses 75 train operations/example and 30 test operations/example. The routed candidate remains below both budgets.
-
-20-seed accuracy means:
-
-| training examples | sharedness | specialists | routed shared/private |
+| goal-switch probability | broad hot | narrow current-objective | source-recoverable hybrid |
 |---:|---:|---:|---:|
-| 240 | 0.98 | 0.867 | **0.896** |
-| 240 | 0.75 | **0.864** | 0.852 |
-| 240 | 0.15 | **0.863** | 0.786 |
-| 480 | 0.98 | 0.913 | **0.930** |
-| 480 | 0.75 | **0.925** | 0.882 |
-| 480 | 0.15 | **0.920** | 0.834 |
-| 1,200 | 0.98 | 0.962 | **0.973** |
-| 1,200 | 0.75 | **0.974** | 0.909 |
-| 1,200 | 0.15 | **0.966** | 0.869 |
+| 0.00 | 0.976 | **0.994** | 0.990 |
+| 0.02 | 0.976 | 0.820 | **0.989** |
+| 0.10 | 0.976 | 0.759 | **0.983** |
+| 0.20 | ~**0.976** | 0.751 | ~**0.976** |
+| 0.50 | **0.976** | 0.746 | 0.953 |
+| 0.80 | **0.976** | 0.744 | 0.931 |
 
-The transfer/interference result therefore survives parameter and active-compute matching. The current router is intentionally imperfect and still overuses sharing in low-relatedness regimes.
+No selection is promoted yet. The first family shows that decision sufficiency is relative to the expected future objective distribution: narrow state wins when goals are fixed, recoverable-source state wins under occasional changes, and broad hot state wins when reconstruction becomes constant.
 
-### E22B — shared capacity + resource-quality drift
+### E11 — retrieval objective
 
-Twelve tasks compete each round for 3 memory, 3 compute, 2 observation and 2 verification slots. All policies know current prices, but resource competence changes twice.
+Two families now separate semantic resemblance from applicability.
 
-30-seed means (`actual utility / reference regret / unserved rate`):
+- In a stable corpus, similarity is cheapest because deeper checks do not change the correct answer.
+- As exact-topic memories become stale, similarity accuracy falls from 1.0 to ~0 while temporal/applicability retrieval remains 1.0.
+- In a separate surface-vs-causal family, similarity falls with surface/causal conflict while decision-value retrieval remains 1.0 by checking mechanism, outcome and verification.
 
-| policy | regime 0 | regime 1 | regime 2 | post-shift regret |
-|---|---|---|---|---:|
-| frozen independent | 0.731 / 0.218 / 0.326 | 0.455 / 0.379 / 0.292 | 0.428 / 0.395 / 0.296 | 0.387 |
-| adaptive independent | 0.684 / 0.265 / 0.383 | 0.416 / 0.419 / 0.582 | 0.303 / 0.518 / 0.699 | 0.468 |
-| frozen joint | 0.952 / 0.000 / 0.264 | 0.624 / 0.207 / 0.239 | 0.622 / 0.204 / 0.209 | 0.206 |
-| **adaptive joint** | **0.903 / 0.042 / 0.294** | **0.781 / 0.052 / 0.407** | **0.704 / 0.121 / 0.474** | **0.086** |
+This promotes **PS-011 — retrieval by expected applicability/downstream value**, while retaining similarity as a cheap candidate signal when it is a good proxy.
 
-A useful failure appears: adaptive-but-capacity-blind local policies can become *worse* after learning that a resource improved, because many tasks independently rush toward the same scarce slots. Learning local value and coordinating shared scarcity are distinct functions.
+### E09C — noise vs true volatility
+
+30-seed means:
+
+| regime | single sensor | always corroborate | adaptive corroboration |
+|---|---|---|---|
+| stable + noisy | 0.901 acc / 198.5 false updates / 0.901 net | 0.993 / 0.33 / 0.987 | **0.988 / 9.53 / 0.983** |
+| volatile + clean | **0.909 / 8.77 / 0.909** | 0.902 / 0.20 / 0.896 | **0.908 / 7.57 / 0.908**, second sensor ~10.6% |
+| stable + clean | **0.997 / 0.00 / 0.997** | 0.997 / 0.00 / 0.991 | **0.997 / 0.00 / 0.996**, second sensor 10% |
+
+A single observation channel can confound `world changed` with `sensor failed`. Independent corroboration resolves the ambiguity, but reading it constantly is wasteful. This closes the earlier PS-002 noise/volatility falsifier and couples persistence control to PS-006/PS-007.
 
 ## Current provisional selections
 
-1. **PS-001 — typed hybrid boundary state**;
-2. **PS-002 — staged adaptive persistence**;
-3. **PS-003 — coupling-scoped coordination**;
-4. **PS-004 — derived current belief with evidence linkage**;
-5. **PS-005 — value-of-computation stopping**;
-6. **PS-006 — consequence-sensitive hypothesis plurality**;
-7. **PS-007 — value-driven active evidence acquisition**;
-8. **PS-008 — verified epistemic frontier expansion**;
-9. **PS-009 — conditional sharing with isolation fallback**;
-10. **PS-010 — joint adaptive resource substitution under shared scarcity**.
+1. PS-001 — typed hybrid boundary state;
+2. PS-002 — staged adaptive persistence;
+3. PS-003 — coupling-scoped coordination;
+4. PS-004 — derived current belief with evidence linkage;
+5. PS-005 — value-of-computation stopping;
+6. PS-006 — consequence-sensitive hypothesis plurality;
+7. PS-007 — value-driven active evidence acquisition;
+8. PS-008 — verified epistemic frontier expansion;
+9. PS-009 — conditional sharing with isolation fallback;
+10. PS-010 — joint adaptive resource substitution under shared scarcity;
+11. PS-011 — retrieval by expected applicability/downstream value.
 
-No Phase-9 architecture family is selected. These are implementation-neutral constraints that multiple families can satisfy.
+No Phase-9 architecture family is selected.
 
-## Highest-value unresolved questions
+## Next milestone
 
-- **DL-008 predictive-state breadth:** broad reconstructive state versus decision-sufficient compressed state versus source-recoverable hybrid;
-- **DL-011 retrieval objective:** similarity versus temporal/causal/downstream decision value;
-- **E09B noise versus volatility:** distinguish sensor unreliability from genuine environmental change;
-- later verification/control and self-improvement experiments remain intentionally unresolved.
+The project has enough individually supported principles to justify a shift in experimental strategy.
 
-## Next targets
+Next:
 
-1. E08 predictive-state breadth with objective switches;
-2. E11 retrieval by downstream decision value;
-3. E09B noise-versus-volatility disentanglement;
-4. then assemble a next-generation organism constrained by PS-001 through PS-010 and measure interaction regressions rather than assuming individually useful principles compose cleanly.
+1. finish E08 with a second learned/dynamic predictive family;
+2. build a **next-generation integrated organism** constrained by PS-001 through PS-011;
+3. test interaction regressions and ablate each principle under matched lifetime resources;
+4. only then continue into deeper verification, credit-assignment, self-improvement and physical-co-design decisions.
 
 ## Guardrail
 
-The measuring instrument must remain simpler than the hypothesis it measures. Every selection remains reversible, and novel output is never promoted to knowledge merely because the generator or its visible evaluator prefers it.
+The next integrated organism must not simply bolt eleven named modules together. It should discover the smallest mechanism boundaries that satisfy the selected functions, while every principle remains replaceable and falsifiable.
