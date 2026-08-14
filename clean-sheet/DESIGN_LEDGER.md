@@ -18,7 +18,7 @@ The detailed measurements live in the experiment notes; this ledger keeps the cu
 | DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06 noisy four-world family + E23B same-intervention causal ablation | single-belief state matches lifetime utility under ambiguity/consequence shifts after equal state/coordination cost |
 | DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07 probe-cost/complementarity + E23B causal intervention family | passive/fixed acquisition matches adaptive lifetime utility under changing informativeness, option value, cost and risk |
 | DL-008 | predictive-state breadth | unresolved; first family shows a hot-state / recoverable-source / reconstruction crossover | E08 objective-switch optionality family | second learned/dynamic family must reproduce the frontier before promotion |
-| DL-009 | learning persistence | **provisional — staged adaptive persistence** | E09 noisy regime stream + E09B hidden-volatility adaptation | after independently varying sensor noise and true volatility, adaptive persistence loses lifetime utility to a fixed timescale |
+| DL-009 | learning persistence | **provisional — staged adaptive persistence with evidence about change-source uncertainty** | E09 noisy regime stream + E09B hidden-volatility adaptation + E09C independent corroboration under sensor-noise/world-change confounding | correlated/adversarial observation failures or expensive corroboration erase the lifetime benefit, or a simpler fixed-timescale policy dominates once evidence-acquisition cost is fully priced |
 | DL-010 | credit architecture | unresolved | foundations + biology + agent boundaries | E10 global vs factorized delayed credit |
 | DL-011 | memory retrieval policy | **provisional — retrieve for expected applicability/downstream value; similarity is a proxy signal** | E11 stale-procedure family + E11 surface-vs-causal/action family with explicit check cost | similarity-only retrieval consistently matches lifetime utility under regime changes, causal conflicts and equal retrieval cost, or applicability checking costs exceed avoided errors |
 | DL-012 | verification granularity | unresolved | Phase-5 verification evidence | E12 outcome vs transition/process checks under equal assurance budget |
@@ -43,6 +43,8 @@ Exact identity, control and provenance semantics remain exact. Tolerant numerica
 
 ## PS-002 — Staged adaptive persistence
 New evidence normally enters reversible/tentative state before globally durable mutation. Consolidation lifetime/threshold should respond to confidence and estimated environmental stability.
+
+E09C adds a boundary condition: apparent volatility is not always identifiable from one observation stream. When `world changed` and `sensor failed` remain plausible alternatives, persistence control should be allowed to acquire sufficiently independent corroborating evidence. That corroboration is itself resource-priced and should be requested selectively rather than made permanently mandatory.
 
 ## PS-003 — Coupling-scoped coordination
 Keep decisions local while dependencies/scarcity are local. Expand coordination only to the resource/domain/global scope where choices become coupled. This selects a scope rule, not a fixed topology.
@@ -84,7 +86,7 @@ The eleven selections constrain an eventual system without choosing its named ar
 - current belief remains fast and evidence-revisable;
 - ambiguous high-consequence worlds may require several live hypotheses;
 - retrieval targets applicability/value rather than resemblance alone;
-- observation, inference compute and cross-resource substitutions are explicitly allocatable;
+- observation, corroboration, inference compute and cross-resource substitutions are explicitly allocatable;
 - knowledge changes pass through reversible stages;
 - discovery may exceed the bootstrap teacher, but only evidence promotes novelty into knowledge.
 
