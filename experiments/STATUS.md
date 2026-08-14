@@ -1,96 +1,123 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: Tier-1 implementation complete; five provisional design principles selected; first epistemic-growth experiment implemented on 2026-08-14.**
+**Checkpoint: Tier-1 complete; Tier-2 belief/information block implemented; eight provisional design principles selected on 2026-08-14.**
 
 ## Implemented probes
 
 Tier-1: E01 hierarchical vs distributed allocation; E02 integrated vs heterogeneous learned computation; E03 direct-address vs compressed state; E04 representation/interface; E05 fixed vs adaptive compute; E09 immediate vs staged consolidation.
 
-Promotion/system follow-ups now include:
+Promotion/system follow-ups: E01B, E02B, E03B, E04B, E05B, E09B, E22.
 
-- `E01B_RESOURCE_CONTENTION` — second control-topology family with scarce shared verification capacity;
-- `E02B_COMPOSITIONAL_INTEGRATION` — second integration family using compositional features and a partially shared candidate;
-- `E03B_EVIDENCE_REVISION` — second memory family with source retractions/corrections and provenance queries;
-- `E04B_SEARCH_STATE_REPRESENTATION` — second representation family with backtracking state, exact IDs, variable stack state and learned quantized scores;
-- `E05B_VALUE_OF_SEARCH` — second adaptive-compute family with costly exact candidate evaluation;
-- `E09B_ADAPTIVE_VOLATILITY` — adaptive consolidation threshold under hidden stable/volatile regimes;
-- `E22_CROSS_RESOURCE_METACONTROL` — learned substitution among memory, compute, observation and verification under changing resource prices;
-- `E23_DISCOVERY_LOOP` — weak-teacher / independent-evaluator search that tests whether the organism can cross a demonstrated teacher frontier without promoting evaluator exploits as knowledge.
+Epistemic-growth/Tier-2 work now includes:
 
-## Local validation added during this continuation
+- `E23_DISCOVERY_LOOP` — constructive weak-teacher / independent-evaluator discovery;
+- `E06_BELIEF_HYPOTHESES` — single belief versus consequence-sensitive hypothesis plurality;
+- `E07_ACTIVE_INFORMATION` — passive/fixed/myopic versus value-driven active evidence acquisition;
+- `E23B_CAUSAL_SCIENCE` — causal toy science requiring active interventions to resolve theories that passive teacher knowledge cannot distinguish.
 
-**42 newly added unit tests pass in local validation groups** across the Tier-1/follow-up/discovery modules. Original baseline E03/E05/E09 source remains intact; follow-up modules reuse baseline policies where useful.
+## Validation
 
-Multi-seed sweeps completed:
+The new E06/E07/E23B group was executed locally with Python 3.11+ stdlib only.
+
+**12 new Tier-2 tests pass locally** in this continuation. Combined with the earlier Phase-10 additions, the current local validation history contains **54 newly added passing unit tests** across the experimental reconstruction work.
+
+Multi-seed sweeps now include:
 
 - E01/E02/E04: 12 seeds;
-- E01B: 20 seeds × three verification-capacity regimes;
-- E02B: 12 seeds × three relatedness regimes × three training-data budgets;
+- E01B: 20 seeds × verification-capacity regimes;
+- E02B: 12 seeds × relatedness × data budgets;
 - E03B: 20 seeds × source-retraction regimes;
 - E04B: 20 seeds × score-distribution shifts;
-- E05B: 20 seeds × exact-evaluation cost regimes;
-- E09B: 30 seeds across alternating hidden volatility regimes;
-- E22: 30 seeds × three resource-price regimes after common warm-up;
-- E23: 30 seeds under exact and deliberately defective visible evaluators.
+- E05B: 20 seeds × evaluation-cost regimes;
+- E09B: 30 seeds × alternating hidden volatility;
+- E22: 30 seeds × resource-price regimes;
+- E23: 30 seeds under exact and defective visible evaluators;
+- E06: 20 seeds × observation-reliability regimes;
+- E07: 20 seeds × probe-cost regimes;
+- E23B: 30 seeds × experiment-cost regimes plus false-theory-consequence sweeps.
 
-## Replicated patterns
+## New Tier-2 findings
 
-- **Control:** coordination cost/benefit follows coupling. Sparse dependencies reward local execution; broader dependencies and shared scarcity require arbitration at the scope of that coupling.
-- **Integration:** two task families show a transfer/interference continuum. Shared state helps when structure is reusable and data scarce; isolation wins as task rules diverge; partial sharing can occupy the middle but must justify extra arithmetic.
-- **Persistent state:** current-state compression is cheap when source history never matters again, but evidence retractions break unlinked compressed beliefs. Evidence-linked current state keeps current decisions cheap while preserving correction/provenance semantics.
-- **Representation:** exact identity/control state, approximate numerical state, protocol/version metadata and audit/recovery have different fidelity/bandwidth requirements.
-- **Inference compute:** two different task families show that useful inference effort moves with uncertainty/difficulty, task consequence and operation price; fixed maximum budgets are not efficient effort targets.
-- **Persistence timescale:** hidden-volatility adaptation improves the stability/plasticity frontier.
-- **Cross-resource metacontrol:** after resource prices change, adaptive allocation substitutes among memory, compute, observation and verification; frozen resource economics accumulates large regret.
-- **Epistemic growth:** preserving diverse stepping stones can cross a deceptive teacher frontier that greedy improvement cannot; however, stronger search aggressively exploits a defective evaluator unless candidate discoveries pass independent verification before consolidation.
+### E06 — belief ambiguity
 
-## E23 first-family result
+With four hidden worlds and noisy evidence, forcing the maximum-posterior world causes large wrong-commitment rates when evidence is weak. Preserving the full hypothesis set plus a safe action greatly improves utility in those regimes, while the gap narrows as observations become decisive.
 
-The teacher demonstrates a local-optimum construction with hidden score 10; the benchmark global optimum is 15.
+20-seed means:
 
-With an exact visible evaluator and 1,500 proposals/run across 30 seeds:
+| reliability | single utility / wrong | multiple utility / wrong / safe |
+|---:|---:|---:|
+| 0.56 | -0.373 / 0.686 | 0.100 / 0.000 / 1.000 |
+| 0.65 | -0.154 / 0.577 | 0.129 / 0.120 / 0.701 |
+| 0.80 | 0.274 / 0.363 | 0.409 / 0.053 / 0.539 |
+| 0.97 | 0.882 / 0.059 | 0.894 / 0.002 / 0.114 |
 
-- greedy visible search: mean hidden score **10.000**, beyond teacher **0/30**;
-- diverse archive: mean hidden score **12.167**, beyond teacher **30/30**;
-- epistemic lifecycle: mean hidden score **12.167**, beyond teacher **30/30**.
+The causal second-family ablation gives both variants the same intervention. Preserving unresolved theories becomes better as the cost of a false theory rises; forced single commitment remains better when false claims are cheap. This establishes a real crossover rather than a universal preference for plurality.
 
-With a controlled +8 visible evaluator exploit:
+### E07 — active information acquisition
 
-- diverse archive: mean hidden score **8.433**, false visible discoveries **29/30**;
-- epistemic lifecycle with independent hidden verification: mean hidden score **12.267**, beyond teacher **30/30**, false promoted discoveries **0/30**.
+The benchmark compares passive observation, always buying both probes, myopic one-step VOI and bounded two-step VOI.
 
-Negative-result memory preserves the same selected hidden performance while reducing independent verification calls from ~27.5 to ~21.3 and eliminating repeated failed verifications in the tested defective-evaluator regime.
+A useful failure appeared during development: one-step VOI can reject a probe whose standalone value is low even though it unlocks a valuable second probe. The final benchmark therefore preserves myopic VOI as an explicit ablation.
 
-This is a synthetic demonstration of **beyond-teacher verified search mechanics**, not a claim of new human knowledge.
+20-seed means:
+
+| probe cost | passive net | fixed net / queries | myopic net / queries | lookahead net / queries |
+|---:|---:|---:|---:|---:|
+| 0.02 | 0.124 | 1.062 / 2.000 | 1.062 / 2.000 | 1.062 / 2.000 |
+| 0.08 | 0.124 | 0.942 / 2.000 | 0.877 / 1.617 | 0.942 / 2.000 |
+| 0.20 | 0.124 | 0.702 / 2.000 | 0.161 / 0.069 | 0.702 / 1.986 |
+| 0.60 | 0.124 | -0.098 / 2.000 | 0.124 / 0.000 | 0.183 / 0.612 |
+| 2.00 | 0.124 | -2.898 / 2.000 | 0.124 / 0.000 | 0.124 / 0.000 |
+
+The lookahead policy buys all information when it is cheap, becomes selective at intermediate prices and stops completely when probing is not worth its cost.
+
+### E23B — causal empirical discovery
+
+Three candidate causal theories are observationally indistinguishable under inherited/passive evidence. Interventions reveal different signatures.
+
+30-seed means:
+
+| experiment cost | teacher accuracy/net | fixed-one accuracy/net | active accuracy / experiments / unresolved / net |
+|---:|---:|---:|---:|
+| 0.01 | 0.338 / -0.324 | 0.672 / 0.334 | 1.000 / 1.662 / 0.000 / 0.983 |
+| 0.05 | 0.338 / -0.324 | 0.672 / 0.294 | 1.000 / 1.662 / 0.000 / 0.917 |
+| 0.20 | 0.338 / -0.324 | 0.672 / 0.144 | 1.000 / 1.662 / 0.000 / 0.668 |
+| 0.60 | 0.338 / -0.324 | 0.672 / -0.256 | 0.000 / 0.000 / 1.000 / 0.000 |
+| 1.00 | 0.338 / -0.324 | 0.672 / -0.656 | 0.000 / 0.000 / 1.000 / 0.000 |
+
+At low/moderate cost the active system identifies the hidden theory exactly and crosses the passive teacher frontier. At high cost it performs no experiment and leaves the result unresolved instead of fabricating a theory.
 
 ## Provisional selections
 
-The design ledger contains five selections for the **current experimental generation**, not final architecture choices:
+The design ledger now contains eight reversible principle-level selections for the current experimental generation:
 
-1. **PS-001 — typed hybrid boundary state.** Exact fields stay exact; tolerant numerical fields may use compact approximate/learned channels; version/integrity is explicit; human-readable audit need not occupy the hot path.
-2. **PS-002 — staged adaptive persistence.** Evidence normally enters reversible state before globally durable mutation, and consolidation timescale/threshold may adapt to estimated environmental stability.
-3. **PS-003 — coupling-scoped coordination.** Keep execution/local decisions local while coupling is local; introduce arbitration only where dependencies/shared scarcity actually couple decisions.
-4. **PS-004 — derived current belief with evidence linkage.** Current belief is maintained cheaply for repeated use while remaining linked to source evidence where future correction/provenance has nonzero value.
-5. **PS-005 — value-of-computation stopping.** Additional inference work is purchased only while estimated marginal downstream value exceeds current computation/latency/risk cost.
+1. **PS-001 — typed hybrid boundary state**;
+2. **PS-002 — staged adaptive persistence**;
+3. **PS-003 — coupling-scoped coordination**;
+4. **PS-004 — derived current belief with evidence linkage**;
+5. **PS-005 — value-of-computation stopping**;
+6. **PS-006 — consequence-sensitive hypothesis plurality**;
+7. **PS-007 — value-driven active evidence acquisition**;
+8. **PS-008 — verified epistemic frontier expansion**.
 
-No A/B/C/D architecture family is selected; all five principles can be implemented by multiple families.
+PS-008 is deliberately narrow: supervision/bootstrap knowledge may guide search without defining the ceiling, but novelty remains tentative and requires sufficiently independent evidence before durable promotion. The current E23/E23B systems do **not** claim new human knowledge.
 
 ## Still unresolved
 
-- **DL-002 cognitive integration:** two families support adaptive degree-of-sharing, but the most interesting partial E02B mechanism is not realized-compute matched.
-- **DL-006/DL-007:** belief ambiguity and active information acquisition are the next Tier-2 state/action questions and prerequisites for the empirical-discovery form of E23.
-- **DL-022:** cross-resource adaptive substitution has only one system-level task family so far.
-- **F26 discovery:** one constructive synthetic family now works; a second structurally different family is required before any new discovery principle can move into the design ledger.
+- **DL-002 cognitive integration:** partial sharing still needs realized-compute matching.
+- **DL-008 predictive-state breadth:** broad reconstruction versus decision-sufficient state remains open.
+- **DL-011 memory retrieval objective:** similarity versus downstream decision value remains open experimentally.
+- **DL-022 cross-resource metacontrol:** needs a second family with shared capacity and resource-quality drift.
+- E09B still needs explicit disentanglement of observation noise from true environmental volatility.
 
 ## Next targets
 
 1. compute-matched conditional sharing for E02B;
-2. E22B with simultaneous resource capacity contention and quality drift;
-3. Tier-2 E06 multiple belief hypotheses and E07 active information acquisition;
-4. E23 second family: causal toy science requiring experiment selection between competing hypotheses;
-5. E09B observation-noise vs true-volatility disentanglement and eventually learned consolidation control;
-6. then assemble the next-generation research organism from the surviving provisional constraints rather than from a named modern AI stack.
+2. E22B with capacity contention + quality drift;
+3. Tier-2 E08 predictive-state breadth and E11 retrieval objective;
+4. E09B noise-versus-volatility disentanglement;
+5. then assemble the next-generation organism from PS-001 through PS-008 and test whether the combined system retains the individual advantages without interaction regressions.
 
 ## Guardrail
 
-During Phase 10 the measuring instrument must remain simpler than the hypotheses it measures, every provisional selection remains reversible, and **novel output is never promoted to knowledge merely because the generator or its visible evaluator prefers it**.
+The measuring instrument must remain simpler than the hypotheses it measures. Every provisional selection remains reversible, and novel output is never promoted to knowledge merely because the generator or its visible evaluator prefers it.
