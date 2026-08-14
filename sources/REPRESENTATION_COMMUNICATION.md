@@ -23,9 +23,18 @@ Primary/original sources used in the focused Phase-7 gap closure.
 - **R-S008** — Zou, J. et al. (2025), *Latent Collaboration in Multi-Agent Systems (LatentMAS)*. https://arxiv.org/abs/2511.20639
 - **R-S009** — Tang, Y. et al. (2025), *Augmenting Multi-Agent Communication with State Delta Trajectory*. https://arxiv.org/abs/2506.19209
 
+## Joint-embedding / predictive representation learning
+
+- **R-S010** — Assran, M. et al. (2023), *Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture (I-JEPA)*. https://arxiv.org/abs/2301.08243
+- **R-S011** — Bardes, A. et al. (2024), *Revisiting Feature Prediction for Learning Visual Representations from Video (V-JEPA)*. https://arxiv.org/abs/2404.08471
+- **R-S012** — Huang, H., LeCun, Y., Balestriero, R. (2025), *LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures*. NeurIPS 2025 workshop paper. https://openreview.net/forum?id=meGygz3CkM
+- **R-S013** — Mur-Labadia, L. et al. (2026), *V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning*. https://arxiv.org/abs/2603.14482
+
+R-S012 is retained as **early cross-domain evidence**, not as established evidence that JEPA-style objectives dominate autoregressive language modelling. Its workshop status and limited replication keep its Atlas evidence strength below I-JEPA/V-JEPA.
+
 ## Cross-phase evidence
 
-Also relevant: multimodal alignment sources (CLIP, ImageBind, Perceiver IO), system communication/locality sources, persistent-state provenance evidence, and inference-time latent/executable reasoning gaps already registered in their corresponding source files.
+Also relevant: V-JEPA 2 (`P-S022`) in Persistent Intelligence, multimodal alignment sources (CLIP, ImageBind, Perceiver IO), system communication/locality sources, persistent-state provenance evidence, and inference-time latent/executable reasoning gaps already registered in their corresponding source files.
 
 ## Gaps
 
@@ -36,4 +45,6 @@ Also relevant: multimodal alignment sources (CLIP, ImageBind, Perceiver IO), sys
 - representation protocols that remain stable under self-improvement;
 - causal-faithfulness of human-readable audit channels;
 - information-theoretic comparison of text/discrete/continuous/hybrid communication under fixed bandwidth;
-- hardware-aware learned representation granularity.
+- hardware-aware learned representation granularity;
+- whether predictive latent targets preserve future-useful distinctions better per unit compute than raw reconstruction or task-specific state prediction;
+- whether JEPA-like objectives transfer beyond perception/world-state learning without imposing an unsuitable latent geometry.
