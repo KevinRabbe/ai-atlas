@@ -4,6 +4,9 @@ from collections import defaultdict
 from dataclasses import dataclass
 import random
 
+from .evidence_assurance import decide_evidence_assurance
+from .evidence_lineage import EvidenceSummary
+
 
 @dataclass(frozen=True)
 class I20Config:
@@ -38,14 +41,27 @@ def _penalties(family: str) -> tuple[float, float, float]:
     raise ValueError(f"unknown evidence family: {family}")
 
 
+def _summary_for_primary(stale: bool) -> EvidenceSummary:
+    # Three visible records exist, but all three are one lineage. A stale
+    # lineage is retained in the record count while no longer counted as
+    # current resolving evidence, matching EvidenceLineageRegistry semantics.
+    return EvidenceSummary(
+        record_count=3,
+        independent_lineages=0 if stale else 1,
+        resolving_lineages=0 if stale else 1,
+        stale_records=3 if stale else 0,
+        unresolved_records=0,
+        conflict=False,
+    )
+
+
 def run_i20(config: I20Config, policy: str) -> dict[str, float]:
     """Use one evidence-allocation rule across external and metacognitive claims.
 
     The value-aware policy receives imperfect source-error estimates, not hidden
-    truth. It sees whether the current lineage is stale, the decision
-    consequence, and the current lineage's binary conclusion. Three visible
-    copies remain one failure lineage; their record count does not improve the
-    estimated error probability.
+    truth. Evidence structure is represented through the same `EvidenceSummary`
+    consumed by the reusable assurance API. Three visible copies remain one
+    failure lineage; their record count does not improve estimated quality.
     """
 
     valid = {
@@ -78,26 +94,10 @@ def run_i20(config: I20Config, policy: str) -> dict[str, float]:
             not truth if rng.random() < actual_primary_error else truth
         )
 
-        # The visible interface exposes three records, but all three descend
-        # from the same lineage and therefore carry the same label/failure.
         visible_records = (primary_label, primary_label, primary_label)
+        summary = _summary_for_primary(stale)
         false_positive_penalty, false_negative_penalty, unresolved_penalty = _penalties(
             family
-        )
-
-        wrong_penalty = (
-            false_positive_penalty if primary_label else false_negative_penalty
-        )
-        current_expected_harm = (
-            estimated_primary_error * wrong_penalty * consequence
-        )
-        average_independent_wrong_penalty = (
-            false_positive_penalty + false_negative_penalty
-        ) / 2.0
-        expected_independent_harm = (
-            config.estimated_independent_error
-            * average_independent_wrong_penalty
-            * consequence
         )
 
         queried = False
@@ -136,29 +136,35 @@ def run_i20(config: I20Config, policy: str) -> dict[str, float]:
                 )
 
         else:  # lineage_value
-            expected_gain = (
-                current_expected_harm
-                - expected_independent_harm
-                - config.independent_cost
+            assurance = decide_evidence_assurance(
+                summary,
+                current_label=primary_label,
+                estimated_current_error=estimated_primary_error,
+                estimated_independent_error=config.estimated_independent_error,
+                consequence=consequence,
+                false_positive_penalty=false_positive_penalty,
+                false_negative_penalty=false_negative_penalty,
+                independent_cost=config.independent_cost,
+                unresolved_penalty=unresolved_penalty,
             )
-            queried = expected_gain > 0.0
-            if not queried:
+            if assurance.action == "use_current":
                 decision = primary_label
-            elif rng.random() < config.independent_unavailable:
-                # Missing resolution is not positive evidence. Decide whether
-                # retaining uncertainty is cheaper than trusting the current
-                # imperfect lineage; otherwise retain the primary decision.
-                if current_expected_harm > unresolved_penalty * consequence:
+            elif assurance.action == "unresolved":
+                decision = None
+                unresolved = True
+            else:
+                queried = True
+                if rng.random() < config.independent_unavailable:
+                    # The requested resolving path itself failed to resolve. Do
+                    # not rewrite that absence as positive evidence.
                     decision = None
                     unresolved = True
                 else:
-                    decision = primary_label
-            else:
-                decision = (
-                    not truth
-                    if rng.random() < config.independent_error
-                    else truth
-                )
+                    decision = (
+                        not truth
+                        if rng.random() < config.independent_error
+                        else truth
+                    )
 
         if queried:
             metrics["independent_queries"] += 1.0
