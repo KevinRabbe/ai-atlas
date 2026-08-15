@@ -19,14 +19,21 @@ class PreparedPublication:
     requires_assurance: bool = False
     status: str = "prepared"
 
+    @property
+    def publication_ref(self) -> str:
+        # Stable inside the persisted prepared-publication identity. A mature
+        # implementation may use another globally unique encoding; Atlas only
+        # requires that the authoritative state can identify this publication.
+        return f"{self.kind}:{self.proposal_id}:{self.publication_id}"
+
 
 class PublicationProtocol:
     """Failure-isolated prepare -> validate -> publish protocol.
 
     Preparation never grants authority or changes live ownership/topology. The
     publication fence checks that the state being replaced is still the state
-    the candidate was prepared against, then re-reads current authority before
-    making a consequential resource handoff visible.
+    the candidate was prepared against, re-reads current authority, and stamps
+    publication provenance into the same modeled authoritative state change.
     """
 
     def __init__(self, runtime: TypedScopeRuntime) -> None:
@@ -133,6 +140,7 @@ class PublicationProtocol:
             self.runtime.commit_scope_change(
                 publication.topology_change_id,
                 assurance_token_id=assurance_token_id,
+                publication_ref=publication.publication_ref,
             )
 
         elif publication.kind == "resource_handoff":
@@ -160,6 +168,7 @@ class PublicationProtocol:
             self.runtime.transfer_resource(
                 publication.resource_id,
                 publication.new_holder_id,
+                publication_ref=publication.publication_ref,
             )
         else:
             raise AssertionError(f"unsupported publication kind {publication.kind}")
