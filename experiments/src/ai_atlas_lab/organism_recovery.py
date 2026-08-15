@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .evidence_assurance import EvidenceAssuranceDecision, decide_evidence_assurance
+from .evidence_lineage import EvidenceLineageRegistry
 from .external_effect_protocol import (
     ExternalEffectIntent,
     ExternalExecutionObservation,
@@ -28,14 +30,17 @@ def _resource_ref(resource_id: str, holder_id: int) -> str:
 
 @dataclass
 class OrganismRecoveryCoordinator:
-    """Compose I14-I18 recovery semantics over the common typed runtime.
+    """Compose crash, publication and external-evidence recovery semantics.
 
-    The coordinator does not own authority. It observes authoritative runtime
-    state/provenance, resolves current permission where a NEW attempt is
-    required, and returns a typed recovery decision.
+    The coordinator does not own authority or truth. It observes authoritative
+    runtime state/provenance, resolves current permission where a NEW attempt is
+    required, and can use the shared evidence-lineage assurance layer to decide
+    whether external execution evidence is sufficient, needs another failure
+    lineage, or should remain unresolved.
     """
 
     runtime: TypedScopeRuntime
+    evidence_registry: EvidenceLineageRegistry | None = None
 
     def record_for_publication(self, publication: PreparedPublication) -> RecoveryRecord:
         if publication.kind == "resource_handoff":
@@ -47,8 +52,6 @@ class OrganismRecoveryCoordinator:
                 publication_id=publication.publication_ref,
                 kind="resource_handoff",
                 expected_base_version=publication.expected_lease_version,
-                # Runtime-wide lease numbering means the exact resulting
-                # numeric version need not be knowable before publication.
                 target_version=None,
                 target_ref=_resource_ref(
                     publication.resource_id,
@@ -117,6 +120,40 @@ class OrganismRecoveryCoordinator:
             observation,
             current_validation_ok=current_validation,
             current_assurance_ok=current_assurance_ok,
+        )
+
+    def plan_external_execution_evidence(
+        self,
+        claim_ref: str,
+        *,
+        current_step: int,
+        current_label: bool | None,
+        estimated_current_error: float,
+        estimated_independent_error: float,
+        consequence: float,
+        duplicate_penalty: float,
+        missed_penalty: float,
+        independent_cost: float,
+        unresolved_penalty: float,
+    ) -> EvidenceAssuranceDecision:
+        if self.evidence_registry is None:
+            raise RuntimeError("external evidence planning requires an EvidenceLineageRegistry")
+        summary = self.evidence_registry.summarize(
+            claim_ref,
+            current_step=current_step,
+        )
+        # External binary label semantics: True = effect applied. A false True
+        # risks omission; a false False risks duplicate retry.
+        return decide_evidence_assurance(
+            summary,
+            current_label=current_label,
+            estimated_current_error=estimated_current_error,
+            estimated_independent_error=estimated_independent_error,
+            consequence=consequence,
+            false_positive_penalty=missed_penalty,
+            false_negative_penalty=duplicate_penalty,
+            independent_cost=independent_cost,
+            unresolved_penalty=unresolved_penalty,
         )
 
     def recover_external_effect(
