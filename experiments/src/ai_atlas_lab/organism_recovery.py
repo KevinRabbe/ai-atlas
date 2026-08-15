@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .evidence_aggregation import BinaryEvidenceEstimate, aggregate_binary_evidence
 from .evidence_assurance import EvidenceAssuranceDecision, decide_evidence_assurance
 from .evidence_dependence import EvidenceDependenceModel
 from .evidence_lineage import EvidenceLineageRegistry
@@ -29,6 +30,12 @@ def _resource_ref(resource_id: str, holder_id: int) -> str:
     return f"resource:{resource_id}:holder:{holder_id}"
 
 
+@dataclass(frozen=True)
+class ExternalEvidencePlan:
+    estimate: BinaryEvidenceEstimate
+    assurance: EvidenceAssuranceDecision
+
+
 @dataclass
 class OrganismRecoveryCoordinator:
     """Compose crash, publication and external-evidence recovery semantics.
@@ -40,8 +47,8 @@ class OrganismRecoveryCoordinator:
     should remain unresolved.
 
     Exact source lineage is optional. When a learned EvidenceDependenceModel is
-    attached, evidence summaries combine exact provenance with sufficiently
-    supported learned effective dependence.
+    attached, evidence summaries and aggregation combine exact provenance with
+    sufficiently supported learned effective dependence.
     """
 
     runtime: TypedScopeRuntime
@@ -166,6 +173,58 @@ class OrganismRecoveryCoordinator:
             independent_cost=independent_cost,
             unresolved_penalty=unresolved_penalty,
         )
+
+    def plan_external_execution_evidence_from_sources(
+        self,
+        claim_ref: str,
+        *,
+        current_step: int,
+        source_error_estimates: dict[str, float],
+        estimated_independent_error: float,
+        consequence: float,
+        duplicate_penalty: float,
+        missed_penalty: float,
+        independent_cost: float,
+        unresolved_penalty: float,
+        dependence_context: str | None = None,
+        minimum_independence_confidence: float = 0.50,
+    ) -> ExternalEvidencePlan:
+        """Aggregate raw current records before pricing another evidence path.
+
+        This closes the privileged-caller gap in the older planning method:
+        copied records cannot first be converted into an overconfident label and
+        then handed to lineage-aware assurance. The current label/error estimate
+        is derived from effective failure groups inside the common evidence path.
+        """
+
+        if self.evidence_registry is None:
+            raise RuntimeError("external evidence planning requires an EvidenceLineageRegistry")
+        estimate = aggregate_binary_evidence(
+            self.evidence_registry,
+            claim_ref,
+            current_step=current_step,
+            source_error_estimates=source_error_estimates,
+            positive_value_ref="applied",
+            negative_value_ref="absent",
+            dependence_model=self.evidence_dependence_model,
+            dependence_context=dependence_context,
+            minimum_independence_confidence=minimum_independence_confidence,
+        )
+        assurance = self.plan_external_execution_evidence(
+            claim_ref,
+            current_step=current_step,
+            current_label=estimate.label,
+            estimated_current_error=estimate.estimated_error,
+            estimated_independent_error=estimated_independent_error,
+            consequence=consequence,
+            duplicate_penalty=duplicate_penalty,
+            missed_penalty=missed_penalty,
+            independent_cost=independent_cost,
+            unresolved_penalty=unresolved_penalty,
+            dependence_context=dependence_context,
+            minimum_independence_confidence=minimum_independence_confidence,
+        )
+        return ExternalEvidencePlan(estimate=estimate, assurance=assurance)
 
     def recover_external_effect(
         self,
