@@ -16,7 +16,7 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-five reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **308 added test cases**.
+**Active. Twenty-five reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **377 added test cases**.
 
 The experimental strategy has progressed through:
 
@@ -30,17 +30,20 @@ The experimental strategy has progressed through:
 8. typed-state migration and structural assurance;
 9. persistent reusable typed-scope runtime;
 10. overlapping coordination and directional dependencies;
-11. partial-failure topology/resource publication;
-12. version-fenced failure-isolated publication;
-13. crash/restart recovery from base/target semantic identity;
-14. external-effect recovery across receiver-identifiable and non-identifiable environments;
-15. separation of historical execution evidence from current capability authority.
+11. failure-isolated topology/resource publication;
+12. crash/restart recovery from semantic publication identity;
+13. external-effect recovery and current-authority separation;
+14. correlated/stale external evidence and partially-unresolved metacognitive audits;
+15. publication provenance inside authoritative state;
+16. common crash-aware organism recovery;
+17. shared typed evidence-lineage + assurance allocation;
+18. transient cache/credit recovery across structural change.
 
 ## Current architecture spine
 
 ```text
 stable typed semantic identities
-  subjects / evidence / provenance / sources
+  subjects / source evidence / publication provenance
   authority versions / resource leases
         |
         +--> directional dependencies
@@ -51,82 +54,107 @@ typed transition proposals
         ↓
 interaction-aware value/resource allocation
         ↓
-consequence-sensitive independent assurance
+evidence-lineage structure
+  lineage / stale? / resolves? / conflict
+        + learned source-quality estimates
+        ↓
+consequence-sensitive assurance allocation
         ↓
 PREPARE non-authoritative candidate state
         ↓
-version / target / current-authority publication fence
+version / publication-provenance / current-authority fence
         ↓
-PUBLISH coherent internal authoritative version
+PUBLISH coherent internal authoritative state
         |
         +--> external effect path
-        |       effect-specific external execution evidence
-        |       current authority for every new/retry attempt
-        |       unresolved state when execution cannot be identified
+        |       effect-specific external evidence
+        |       current authority for every fresh/retry attempt
+        |       unresolved execution when exact status cannot be known
         ↓
-crash recovery from semantic base/target identity
+crash recovery from semantic identity/provenance
         ↓
-observe → causal credit → staged appropriately-scoped update
+selective transient-state persistence / rematerialization / replay
+        ↓
+observe → versioned causal credit → staged appropriately-scoped update
 ```
 
-The value allocator cannot manufacture epistemic, capability, publication or external-execution authority.
+The value allocator cannot manufacture epistemic, capability, publication, causal or external-execution authority.
 
 ## I06–I13 — architecture-scale composition
 
-I06 shows that runtime operations interact enough that joint allocation (~`1.564` utility/task) beats factorized control (~`1.355`). AF01–AF03 and I07 show organizational mode/scope/membership can all be adaptive when persistence pays for switching/migration. I08–I10 move stable semantic state through live topology and make that substrate reusable. I11/I12 split ownership, overlapping coordination and directional dependency into distinct relations.
+I06 shows runtime operations interact enough that joint allocation (~`1.564` utility/task) beats factorized control (~`1.355`). AF01–AF03 and I07 show organizational mode/scope/membership can all be adaptive when persistence pays for switching/migration. I08–I10 make stable semantic state movable through live topology. I11/I12 split ownership, overlapping coordination and directional dependency into distinct relations.
 
-I13/I13B expose partial visibility as a first-class failure mode. Naive topology mutation can leave mixed routing state; naive writer handoff can produce two writers or zero writer. Staged/blocking/dual-version mechanisms preserve invariants under different load/failure economics.
+I13/I13B expose partial visibility as a first-class failure mode. This promotes **PS-024 — failure-isolated consequential transition publication**.
 
-### PS-024 — failure-isolated consequential transition publication
+## I14 / I18 / I19 — crash-aware internal publication
 
-> **Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants; publish authority/ownership/topology only across a coherence boundary after required validation. Select direct, blocking, staged or dual-version publication according to failure risk, blast radius, live-work pressure and isolation cost.**
+I14 shows a local phase marker cannot distinguish `already published but completion marker lost` from `not published`, and old assurance cannot safely overwrite current revocation/retraction or newer state.
 
-`PublicationProtocol` implements prepared-against topology/lease versions, current-authority re-check and stale-plan rejection without selecting a storage/transaction technology.
-
-## I14 — crash/restart around the publication fence
-
-I14 tests resource ownership and durable-knowledge promotion across crashes in prepared, assured, published-but-unmarked, published-and-marked and superseded states.
-
-Phase + old approval is insufficient. It cannot tell whether publication already became authoritative just before the crash and can overwrite newer state. Re-checking current authority/evidence prevents revoked/retracted retries but still cannot solve already-published or superseded ambiguity.
-
-The minimum surviving semantics are currently:
+I18 refines the minimum recovery semantics:
 
 ```text
 stable publication identity
 expected base authoritative version
-intended target version
-target identity/digest
+target semantic identity/digest
+optional predicted target version
 references needed to reacquire current validation
 ```
 
-`RecoveryRecord` deliberately does not persist old approval as standing authority.
+Target numeric version can be unknown at preparation time. State value alone can also be produced by another transition. `ResourceLease.publication_ref` and `topology_publication_ref` therefore carry publication provenance at the same modeled authoritative commit boundary.
 
-## I15 — crash ambiguity at an external side effect
+I19 integrates those semantics into `OrganismRecoveryCoordinator` over the common runtime.
 
-Internal version fencing cannot prove that the external world already acted.
+## I15–I17 / PS-025 — external execution recovery
 
-An externally recognized stable effect identity or exact effect-specific reconciliation removes retry ambiguity in the identifiable family. Their overhead only earns itself when duplicate/omission consequence is high enough.
+I15 shows local state cannot prove that the outside world already acted. Receiver-recognized stable effect identity or exact effect-specific reconciliation can remove ambiguity; a non-identifiable physical effect can remain irreducibly uncertain.
 
-A second physical/non-identifiable family demonstrates the hard boundary: if the environment cannot attribute observed state to this particular effect, noisy sensing cannot reconstruct exact history. Recovery must retain uncertainty and choose retry/abstention according to consequence.
+I16 separates historical execution evidence from current permission to execute again. This promotes **PS-025 — externally grounded effect recovery / execution-authority separation**.
 
-## I16 — historical execution vs permission to execute again
+I17 then corrupts the external evidence plane itself. Three copied receipts from one failure lineage behave like one source. Independent reconciliation helps only when aggregation respects failure provenance, and its use is resource-priced.
 
-Current capability authority and external execution evidence are separately grounded.
+## I05C — metacognitive audits reproduce the same evidence law
 
-30-seed default means:
+Verifier-quality audit records can be correlated, stale and unavailable.
 
-- authority-only: ~`-0.560` utility, ~32.4% duplicate effects, ~17.6% history error;
-- evidence-only: ~`0.379` utility, ~9.8% unauthorized retries;
-- revocation-erases-history: ~`0.705` utility, ~17.6% history error;
-- **separated:** ~`0.969` utility, zero modeled duplicate, unauthorized-retry and history errors.
+Uniform independent audit calibrates much better than correlated majority; selective independent audit preserves similar calibration with fewer checks. Treating missing resolution as success can raise throughput while worsening calibration and false durable writes, showing that epistemic support and action value remain distinct.
 
-This promotes:
+## Shared evidence-lineage runtime
 
-### PS-025 — externally grounded effect recovery / execution-authority separation
+`EvidenceLineageRegistry` represents:
 
-> **Local intent, phase state or past approval do not establish that an external effect occurred. Recover exact execution from sufficiently effect-specific external evidence or receiver-recognized identity; gate every fresh/retry effect by current authority. If exact execution cannot be identified, preserve an unresolved state and price retry versus abstention explicitly.**
+- source/failure lineage;
+- staleness;
+- whether a record actually resolves the claim;
+- contradiction across independent resolving lineages.
 
-This is a semantic rule, not a selection of an idempotency-key API, outbox, distributed transaction, remote receipt store or sensor technology.
+It does not assign truth/reliability.
+
+`EvidenceAssuranceDecision` combines that structure with separately learned source-quality estimates, consequence/asymmetric harm and independent-check cost.
+
+## I20 / I21 — one assurance controller across domains
+
+I20 mixes external-execution and metacognitive claims under one policy.
+
+Default 30-seed result:
+
+- record-count confidence: ~`3.062` utility/task, ~`1.438` harm;
+- stale-only: ~`3.651`, ~`0.798`;
+- uniform independent: ~`3.585`, ~`0.733`, 1.0 check/task;
+- **lineage-value:** ~`3.782`, ~`0.592`, ~`0.695` checks/task.
+
+I21 moves lineage-aware evidence planning inside `OrganismRecoveryCoordinator`, removing the privileged assumption that external receipts arrive already interpreted.
+
+## I22 — transient state recovery
+
+### Hot/predictive cache
+
+Adaptive persist/rematerialize reaches ~`0.3335` utility/item versus ~`0.3278` rematerialize-all and ~`0.2314` persist-all. It retains only ~`0.171` of items and greatly reduces stale cache reuse.
+
+### Delayed causal-credit trace
+
+Unversioned positional restoration reaches ~`0.6083` utility/item but falsely blames ~`15.3%` of recovered trace items after structure changes. Versioned causal identity or source replay removes false blame (~`0.7073` utility). Adaptive recovery mixes exact trace persistence and replay for ~`0.7859`.
+
+This composes PS-012/015/022/024: transient recovery is value-priced, but validity remains typed by currentness or causal identity.
 
 ## JEPA / E24
 
@@ -136,49 +164,37 @@ No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-025** are active reversible constraints.
+**PS-001 through PS-025** are active reversible constraints. I17–I22 are composition/refinement evidence, not new principle selections.
 
-## Next milestone — corrupt external execution evidence
+## Next milestone — typed transient-state runtime
 
-The next discriminator should attack the evidence plane PS-025 now relies on.
+Implement the minimum runtime records implied by I22:
 
-Test effect recovery when receipts/observations are:
+1. source-backed hot state:
+   - stable subject/state identity;
+   - source/rematerialization reference;
+   - creation/generation context;
+   - currentness/recovery status;
+2. delayed credit eligibility:
+   - stable historical transition identity;
+   - structural/generation context;
+   - optional replay/source reference;
+   - explicit invalidation when no legitimate causal target survives.
 
-- delayed;
-- stale;
-- duplicated/correlated rather than independent;
-- contradictory;
-- partially unavailable;
-- adversarially biased toward retry or completion.
+Then run a real integrated crash scenario where:
 
-Compare:
+- topology/resource publication may commit or remain prepared;
+- authority may change while the process is down;
+- external effect evidence can be stale/correlated;
+- old-epoch events are pending;
+- hot state can be persisted/rematerialized;
+- delayed credit arrives after recovery.
 
-1. trust-one-source recovery;
-2. confidence/majority aggregation;
-3. effect-specific source precedence/provenance;
-4. independent reconciliation purchased according to consequence;
-5. unresolved-state retention when evidence conflict cannot be resolved cheaply.
+The discriminator is whether all typed invariants survive **without** restoring an opaque full-process snapshot.
 
-Primary metrics:
+## Later targeted work
 
-- duplicate external effects;
-- omitted effects;
-- unauthorized retries;
-- false historical completion;
-- unresolved lifetime/cost;
-- reconciliation spend;
-- recovery latency.
-
-The key falsifier is whether ordinary confidence aggregation can match typed provenance/independence-aware recovery after equal evidence cost.
-
-## Integration after that discriminator
-
-Move `RecoveryRecord` and `ExternalEffectProtocol` into the reusable organism execution lifecycle so later experiments do not get privileged recovery semantics.
-
-Then return to:
-
-- I05C correlated/adversarial evaluator audits with partially unresolved outcomes;
-- bounded-cache and delayed-credit survival across structural recovery;
+- learn/uncertain evidence-lineage relations rather than receiving lineage IDs as exact metadata;
 - nested/overlapping **ownership** only if non-owning coordination overlays prove insufficient;
 - neural E24C only if predictive-objective geometry remains architecture-discriminating;
 - hardware co-design only after transition/topology/fidelity/recovery laws are stable enough for substrate assumptions to be informative.
@@ -189,13 +205,13 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 
 - selected principles retain lifetime value under composition;
 - learned metacontrol overhead does not consume the gains;
-- authority/provenance remain stable under learned control, topology changes, multi-version handoffs and crash recovery;
+- authority/provenance remain stable under learned control, topology change, handoff and crash recovery;
 - world/tool/evaluator/self uncertainty remain distinguishable;
 - self-change uses independent refreshing evidence and scoped rollback/change;
 - failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- crash/restart cannot turn prepared state or old approval into accidental authority;
-- external effect recovery does not confuse local intent, historical execution and current capability permission;
+- crash/restart cannot turn prepared state, copied evidence, old approval or unversioned transient pointers into accidental authority/knowledge/credit;
+- external effect recovery separates local intent, execution history and current permission;
 - the common executable runtime reproduces these boundaries without experiment-specific privileged semantics.
 
 ## Open targeted gap closure
