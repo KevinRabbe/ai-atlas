@@ -33,6 +33,7 @@ class ResourceLease:
     resource_id: str
     holder_id: int
     version: int
+    publication_ref: str | None = None
 
 
 @dataclass(frozen=True)
@@ -93,10 +94,12 @@ class AllocationResult:
 
 
 class TypedScopeRuntime:
-    """Persistent architecture substrate derived from Atlas I04-I09.
+    """Persistent architecture substrate derived from Atlas I04-I18.
 
     Topology is revisable organizational state. Exact semantic identities,
     provenance, authority and resource leases remain independently addressed.
+    Publication provenance can be stamped into the same authoritative state
+    transition as a topology epoch or resource lease change.
     """
 
     def __init__(
@@ -115,6 +118,7 @@ class TypedScopeRuntime:
         self._subject_set = set(subject_tuple)
         self.topology_labels: tuple[int, ...] = tuple(range(len(subject_tuple)))
         self.topology_epoch = 0
+        self.topology_publication_ref: str | None = None
         self.structural_assurance_threshold = structural_assurance_threshold
 
         self.evidence: dict[int, EvidenceRecord] = {}
@@ -194,7 +198,13 @@ class TypedScopeRuntime:
         record = self.authority[subject_id]
         return AuthorityRecord(record.allowed, record.version)
 
-    def lease_resource(self, resource_id: str, holder_id: int) -> ResourceLease:
+    def lease_resource(
+        self,
+        resource_id: str,
+        holder_id: int,
+        *,
+        publication_ref: str | None = None,
+    ) -> ResourceLease:
         self._require_subject(holder_id)
         existing = self.leases.get(resource_id)
         if existing is not None and existing.holder_id != holder_id:
@@ -204,17 +214,33 @@ class TypedScopeRuntime:
         if existing is not None:
             return existing
         self._lease_version += 1
-        lease = ResourceLease(resource_id, holder_id, self._lease_version)
+        lease = ResourceLease(
+            resource_id,
+            holder_id,
+            self._lease_version,
+            publication_ref,
+        )
         self.leases[resource_id] = lease
         self.costs.writes += 1
         return lease
 
-    def transfer_resource(self, resource_id: str, new_holder_id: int) -> ResourceLease:
+    def transfer_resource(
+        self,
+        resource_id: str,
+        new_holder_id: int,
+        *,
+        publication_ref: str | None = None,
+    ) -> ResourceLease:
         self._require_subject(new_holder_id)
         if resource_id not in self.leases:
             raise KeyError(f"resource {resource_id!r} has no current lease")
         self._lease_version += 1
-        lease = ResourceLease(resource_id, new_holder_id, self._lease_version)
+        lease = ResourceLease(
+            resource_id,
+            new_holder_id,
+            self._lease_version,
+            publication_ref,
+        )
         self.leases[resource_id] = lease
         self.costs.writes += 1
         return lease
@@ -438,6 +464,7 @@ class TypedScopeRuntime:
         change_id: int,
         *,
         assurance_token_id: int | None = None,
+        publication_ref: str | None = None,
     ) -> int:
         change = self.topology_changes[change_id]
         if change.status != "staged":
@@ -454,6 +481,7 @@ class TypedScopeRuntime:
         if change.new_labels != self.topology_labels:
             self.topology_labels = change.new_labels
             self.topology_epoch += 1
+            self.topology_publication_ref = publication_ref
             self.costs.messages += len(change.moved_subjects)
             self.costs.writes += len(change.moved_subjects)
         change.status = "committed"
@@ -529,6 +557,12 @@ class TypedScopeRuntime:
         events_target_valid = all(
             event.target_id in self._subject_set for event in self.events.values()
         )
+        publication_refs_valid = all(
+            lease.publication_ref is None or bool(lease.publication_ref)
+            for lease in self.leases.values()
+        ) and (
+            self.topology_publication_ref is None or bool(self.topology_publication_ref)
+        )
         return {
             "evidence_identity": evidence_subjects_valid,
             "predictive_identity": predictive_subjects_valid,
@@ -536,4 +570,5 @@ class TypedScopeRuntime:
             "authority_complete": authority_complete,
             "event_identity": events_target_valid,
             "topology_shape": len(self.topology_labels) == len(self.subjects),
+            "publication_provenance": publication_refs_valid,
         }
