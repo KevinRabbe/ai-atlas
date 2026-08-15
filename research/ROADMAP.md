@@ -16,7 +16,7 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-five reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **377 added test cases**.
+**Active. Twenty-five reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **392 added test cases**.
 
 The experimental strategy has progressed through:
 
@@ -37,7 +37,8 @@ The experimental strategy has progressed through:
 15. publication provenance inside authoritative state;
 16. common crash-aware organism recovery;
 17. shared typed evidence-lineage + assurance allocation;
-18. transient cache/credit recovery across structural change.
+18. transient cache/credit recovery across structural change;
+19. integrated crash/topology/evidence/transient recovery lifecycle.
 
 ## Current architecture spine
 
@@ -73,7 +74,11 @@ PUBLISH coherent internal authoritative state
         ↓
 crash recovery from semantic identity/provenance
         ↓
-selective transient-state persistence / rematerialization / replay
+old-epoch event forwarding + current authority re-check
+        ↓
+typed transient recovery
+  hot state -> currentness / source rematerialization
+  credit -> exact causal identity / source replay
         ↓
 observe → versioned causal credit → staged appropriately-scoped update
 ```
@@ -106,55 +111,52 @@ I19 integrates those semantics into `OrganismRecoveryCoordinator` over the commo
 
 ## I15–I17 / PS-025 — external execution recovery
 
-I15 shows local state cannot prove that the outside world already acted. Receiver-recognized stable effect identity or exact effect-specific reconciliation can remove ambiguity; a non-identifiable physical effect can remain irreducibly uncertain.
+I15 shows local state cannot prove the outside world already acted. Receiver-recognized stable effect identity or exact reconciliation can remove ambiguity; a non-identifiable physical effect can remain irreducibly uncertain.
 
 I16 separates historical execution evidence from current permission to execute again. This promotes **PS-025 — externally grounded effect recovery / execution-authority separation**.
 
-I17 then corrupts the external evidence plane itself. Three copied receipts from one failure lineage behave like one source. Independent reconciliation helps only when aggregation respects failure provenance, and its use is resource-priced.
+I17 then corrupts the external evidence plane. Three copied receipts from one failure lineage behave like one source. Independent reconciliation helps only when aggregation respects failure provenance, and its use is resource-priced.
 
 ## I05C — metacognitive audits reproduce the same evidence law
 
-Verifier-quality audit records can be correlated, stale and unavailable.
+Verifier-quality audit records can be correlated, stale and unavailable. Uniform independent audit calibrates much better than correlated majority; selective independent audit preserves similar calibration with fewer checks. Missing resolution is not positive evidence, even when a riskier action can have higher short-run expected utility.
 
-Uniform independent audit calibrates much better than correlated majority; selective independent audit preserves similar calibration with fewer checks. Treating missing resolution as success can raise throughput while worsening calibration and false durable writes, showing that epistemic support and action value remain distinct.
+## I20 / I21 — one evidence-assurance controller across domains
 
-## Shared evidence-lineage runtime
+`EvidenceLineageRegistry` represents source lineage, staleness, resolution and conflict without assigning truth/reliability. `EvidenceAssuranceDecision` combines that structure with learned quality, consequence/asymmetric harm and check cost.
 
-`EvidenceLineageRegistry` represents:
-
-- source/failure lineage;
-- staleness;
-- whether a record actually resolves the claim;
-- contradiction across independent resolving lineages.
-
-It does not assign truth/reliability.
-
-`EvidenceAssuranceDecision` combines that structure with separately learned source-quality estimates, consequence/asymmetric harm and independent-check cost.
-
-## I20 / I21 — one assurance controller across domains
-
-I20 mixes external-execution and metacognitive claims under one policy.
-
-Default 30-seed result:
+Default I20:
 
 - record-count confidence: ~`3.062` utility/task, ~`1.438` harm;
 - stale-only: ~`3.651`, ~`0.798`;
 - uniform independent: ~`3.585`, ~`0.733`, 1.0 check/task;
 - **lineage-value:** ~`3.782`, ~`0.592`, ~`0.695` checks/task.
 
-I21 moves lineage-aware evidence planning inside `OrganismRecoveryCoordinator`, removing the privileged assumption that external receipts arrive already interpreted.
+I21 moves evidence planning inside the common recovery coordinator.
 
-## I22 — transient state recovery
+## I22 — typed transient recovery
 
-### Hot/predictive cache
+Source-backed hot state can be persisted/rematerialized according to reuse/currentness economics. Delayed credit requires exact historical transition identity/version or replayable source history after structural change.
 
-Adaptive persist/rematerialize reaches ~`0.3335` utility/item versus ~`0.3278` rematerialize-all and ~`0.2314` persist-all. It retains only ~`0.171` of items and greatly reduces stale cache reuse.
+`TransientStateRegistry` now stores only the typed recovery metadata required for those decisions; it does not own source evidence, authority or topology.
 
-### Delayed causal-credit trace
+## I23 — whole-lifecycle recovery composition
 
-Unversioned positional restoration reaches ~`0.6083` utility/item but falsely blames ~`15.3%` of recovered trace items after structure changes. Versioned causal identity or source replay removes false blame (~`0.7073` utility). Adaptive recovery mixes exact trace persistence and replay for ~`0.7859`.
+I23 combines topology publication, crash/restart, publication provenance, source changes, transient state, delayed credit, old-epoch external events, authority revocation, stale/correlated external receipts and independent reconciliation in every episode.
 
-This composes PS-012/015/022/024: transient recovery is value-priced, but validity remains typed by currentness or causal identity.
+Approximate 30-seed means:
+
+| policy | utility/episode | stale hot | false credit | unauthorized old event | duplicate publication attempt |
+|---|---:|---:|---:|---:|---:|
+| **typed recovery** | **~2.67** | **0** | **0** | **0** | **0** |
+| opaque snapshot restore | ~-1.47 | ~0.716 | ~0.397 | ~0.299 | ~0.502 |
+| discard transient | ~1.27 | 0 | 0 | 0 | 0 |
+
+Typed recovery keeps useful cache/credit value that safe discard loses, while avoiding the semantic failures of opaque snapshot restoration.
+
+This establishes a strong current architecture inference:
+
+> **Recovery should restore semantically valid typed state, not blindly restore process memory and not indiscriminately discard all transient work.**
 
 ## JEPA / E24
 
@@ -164,37 +166,41 @@ No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-025** are active reversible constraints. I17–I22 are composition/refinement evidence, not new principle selections.
+**PS-001 through PS-025** are active reversible constraints. I17–I23 are composition/refinement evidence, not new principle selections.
 
-## Next milestone — typed transient-state runtime
+## Next milestone — evidence-lineage inference
 
-Implement the minimum runtime records implied by I22:
+Current lineage experiments know which records share an upstream failure lineage. Real systems often will not.
 
-1. source-backed hot state:
-   - stable subject/state identity;
-   - source/rematerialization reference;
-   - creation/generation context;
-   - currentness/recovery status;
-2. delayed credit eligibility:
-   - stable historical transition identity;
-   - structural/generation context;
-   - optional replay/source reference;
-   - explicit invalidation when no legitimate causal target survives.
+Next discriminate:
 
-Then run a real integrated crash scenario where:
+1. exact supplied lineage metadata — upper-bound comparator;
+2. raw source identity / record-count heuristics;
+3. learned correlation/causal-lineage inference from shared error histories;
+4. active lineage-discovery tests when independence matters;
+5. explicit unresolved independence when lineage cannot be established cheaply.
 
-- topology/resource publication may commit or remain prepared;
-- authority may change while the process is down;
-- external effect evidence can be stale/correlated;
-- old-epoch events are pending;
-- hot state can be persisted/rematerialized;
-- delayed credit arrives after recovery.
+Stress cases should include:
 
-The discriminator is whether all typed invariants survive **without** restoring an opaque full-process snapshot.
+- apparently separate services mirroring one upstream source;
+- common-mode time-window failures;
+- sources that become dependent only after a backend/provider migration;
+- genuinely independent sources that happen to agree for long periods;
+- adversarial attempts to manufacture apparent source diversity.
+
+Primary metrics:
+
+- false-independence rate;
+- false-dependence rate;
+- downstream duplicate/omission/false-promotion harm;
+- active discovery cost;
+- time to detect a dependency change;
+- calibration of `effective independent evidence`.
+
+The key question is whether evidence-lineage relation belongs mostly in exact stable metadata, learned approximate state, or a typed hybrid of both.
 
 ## Later targeted work
 
-- learn/uncertain evidence-lineage relations rather than receiving lineage IDs as exact metadata;
 - nested/overlapping **ownership** only if non-owning coordination overlays prove insufficient;
 - neural E24C only if predictive-objective geometry remains architecture-discriminating;
 - hardware co-design only after transition/topology/fidelity/recovery laws are stable enough for substrate assumptions to be informative.
