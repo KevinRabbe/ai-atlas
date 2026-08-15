@@ -16,7 +16,7 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-four reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **278 added test cases**.
+**Active. Twenty-five reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **308 added test cases**.
 
 The experimental strategy has progressed through:
 
@@ -25,18 +25,16 @@ The experimental strategy has progressed through:
 3. guarded self-improvement;
 4. learned metacognition under imperfect feedback;
 5. interaction-aware runtime allocation;
-6. fixed architecture-family comparison;
-7. adaptive organizational modes;
-8. simultaneous scoped organization;
-9. learned dynamic topology;
-10. typed-state migration across topology epochs;
-11. independent assurance for structural reconfiguration;
-12. a persistent reusable typed-scope runtime API;
-13. overlapping/non-owning coordination scopes;
-14. directional dependency semantics;
-15. partial-failure structural migration;
-16. partial-failure singular ownership handoff;
-17. version-fenced failure-isolated publication in the reusable runtime.
+6. architecture-family Pareto comparison;
+7. adaptive organizational modes/scopes/topology;
+8. typed-state migration and structural assurance;
+9. persistent reusable typed-scope runtime;
+10. overlapping coordination and directional dependencies;
+11. partial-failure topology/resource publication;
+12. version-fenced failure-isolated publication;
+13. crash/restart recovery from base/target semantic identity;
+14. external-effect recovery across receiver-identifiable and non-identifiable environments;
+15. separation of historical execution evidence from current capability authority.
 
 ## Current architecture spine
 
@@ -46,12 +44,8 @@ stable typed semantic identities
   authority versions / resource leases
         |
         +--> directional dependencies
-        |
-        +--> disjoint ownership topology
-        |       dynamic split / merge
-        |
+        +--> dynamic ownership topology
         +--> overlapping non-owning coordination scopes
-                temporary or persistent
         ↓
 typed transition proposals
         ↓
@@ -61,69 +55,78 @@ consequence-sensitive independent assurance
         ↓
 PREPARE non-authoritative candidate state
         ↓
-version + current-authority publication fence
+version / target / current-authority publication fence
         ↓
-PUBLISH coherent topology / ownership / durable version
+PUBLISH coherent internal authoritative version
+        |
+        +--> external effect path
+        |       effect-specific external execution evidence
+        |       current authority for every new/retry attempt
+        |       unresolved state when execution cannot be identified
         ↓
-retire old version / forward in-flight work
+crash recovery from semantic base/target identity
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
-The value allocator cannot manufacture epistemic, capability or publication authority.
+The value allocator cannot manufacture epistemic, capability, publication or external-execution authority.
 
-## I06–I12 — architecture-scale composition
+## I06–I13 — architecture-scale composition
 
-I06 shows that runtime operations such as fidelity, rematerialization, synchronization and intervention interact enough that a joint allocator (~`1.564` utility/task) beats independent operation controllers (~`1.355`).
+I06 shows that runtime operations interact enough that joint allocation (~`1.564` utility/task) beats factorized control (~`1.355`). AF01–AF03 and I07 show organizational mode/scope/membership can all be adaptive when persistence pays for switching/migration. I08–I10 move stable semantic state through live topology and make that substrate reusable. I11/I12 split ownership, overlapping coordination and directional dependency into distinct relations.
 
-AF01–AF03 and I07 show organizational mode, scope and membership can all be adaptive state when structural persistence pays for inference/switch/migration cost.
+I13/I13B expose partial visibility as a first-class failure mode. Naive topology mutation can leave mixed routing state; naive writer handoff can produce two writers or zero writer. Staged/blocking/dual-version mechanisms preserve invariants under different load/failure economics.
 
-I08 gives dynamic scopes real typed state; I09 adds independent assurance before consequential reconfiguration under correlated evidence.
-
-I10 creates the reusable `TypedScopeRuntime` so later stresses use common identity/authority/topology/event semantics.
-
-I11 separates stable semantic ownership from overlapping coordination membership. I12 separates directional dependence from reciprocal/shared organization. The runtime therefore carries distinct typed relations rather than one generic module graph.
-
-## I13 — partial topology migration failure
-
-Naive in-place migration can fail after only part of the new topology becomes live. At 20% failure probability and ordinary event load it corrupts ~20% of migration attempts, loses ~3.96 events/migration and duplicates ~0.51.
-
-Stop-world, staged and dual-version mechanisms isolate preparation from visible publication and keep those corruption metrics at zero in the family.
-
-The mechanisms cross over with failure risk and live traffic: direct update can win when failure exposure is negligible; blocking can win when traffic is cheap to stop; staged publication wins at ordinary live load; dual-version handoff can win at very high live traffic.
-
-## I13B — singular resource ownership handoff
-
-The second family reproduces the same abstract boundary with a different invariant.
-
-Make-before-break can expose two writers and duplicate work. Break-before-make can expose zero writer and lose work. Stop-world, staged lease publication and dual-read/single-write preserve singular write ownership.
-
-Default 30-seed results favor staged/dual publication (~`0.770–0.774` utility/handoff) over make-before-break (~`0.562`) and break-before-make (~`0.385`).
-
-## PS-024 — failure-isolated consequential transition publication
-
-I13 + I13B satisfy the second-family promotion gate:
+### PS-024 — failure-isolated consequential transition publication
 
 > **Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants; publish authority/ownership/topology only across a coherence boundary after required validation. Select direct, blocking, staged or dual-version publication according to failure risk, blast radius, live-work pressure and isolation cost.**
 
-This is a semantic rule, not a selection of transactions, locks, consensus, blue/green deployment or another named implementation.
+`PublicationProtocol` implements prepared-against topology/lease versions, current-authority re-check and stale-plan rejection without selecting a storage/transaction technology.
 
-## I13C — reusable publication protocol
+## I14 — crash/restart around the publication fence
 
-`PublicationProtocol` now encodes the rule explicitly:
+I14 tests resource ownership and durable-knowledge promotion across crashes in prepared, assured, published-but-unmarked, published-and-marked and superseded states.
 
-- prepare topology/resource handoff without changing live authority/ownership;
-- remember the topology epoch or lease version the candidate was prepared against;
-- require sufficient independent assurance where consequence demands it;
-- re-read current capability authority at publication time;
-- reject stale prepared plans;
-- publish the coherent version/lease change;
-- discard without changing live state.
+Phase + old approval is insufficient. It cannot tell whether publication already became authoritative just before the crash and can overwrite newer state. Re-checking current authority/evidence prevents revoked/retracted retries but still cannot solve already-published or superseded ambiguity.
 
-The protocol therefore handles two important races:
+The minimum surviving semantics are currently:
 
-1. two topology plans prepared from epoch N cannot both publish after one advances to N+1;
-2. a resource handoff prepared before a revocation cannot inherit the old permission at publish time.
+```text
+stable publication identity
+expected base authoritative version
+intended target version
+target identity/digest
+references needed to reacquire current validation
+```
+
+`RecoveryRecord` deliberately does not persist old approval as standing authority.
+
+## I15 — crash ambiguity at an external side effect
+
+Internal version fencing cannot prove that the external world already acted.
+
+An externally recognized stable effect identity or exact effect-specific reconciliation removes retry ambiguity in the identifiable family. Their overhead only earns itself when duplicate/omission consequence is high enough.
+
+A second physical/non-identifiable family demonstrates the hard boundary: if the environment cannot attribute observed state to this particular effect, noisy sensing cannot reconstruct exact history. Recovery must retain uncertainty and choose retry/abstention according to consequence.
+
+## I16 — historical execution vs permission to execute again
+
+Current capability authority and external execution evidence are separately grounded.
+
+30-seed default means:
+
+- authority-only: ~`-0.560` utility, ~32.4% duplicate effects, ~17.6% history error;
+- evidence-only: ~`0.379` utility, ~9.8% unauthorized retries;
+- revocation-erases-history: ~`0.705` utility, ~17.6% history error;
+- **separated:** ~`0.969` utility, zero modeled duplicate, unauthorized-retry and history errors.
+
+This promotes:
+
+### PS-025 — externally grounded effect recovery / execution-authority separation
+
+> **Local intent, phase state or past approval do not establish that an external effect occurred. Recover exact execution from sufficiently effect-specific external evidence or receiver-recognized identity; gate every fresh/retry effect by current authority. If exact execution cannot be identified, preserve an unresolved state and price retry versus abstention explicitly.**
+
+This is a semantic rule, not a selection of an idempotency-key API, outbox, distributed transaction, remote receipt store or sensor technology.
 
 ## JEPA / E24
 
@@ -133,54 +136,52 @@ No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-024** are active reversible constraints.
+**PS-001 through PS-025** are active reversible constraints.
 
-## Next milestone — live handoff + revocation + crash recovery
+## Next milestone — corrupt external execution evidence
 
-### I14A — authority changes during staged/dual handoff
+The next discriminator should attack the evidence plane PS-025 now relies on.
 
-Run queued external work while:
+Test effect recovery when receipts/observations are:
 
-- a topology/resource candidate is prepared;
-- authority is revoked or granted mid-handoff;
-- old and new versions may coexist briefly;
-- events from old topology epochs remain in flight.
+- delayed;
+- stale;
+- duplicated/correlated rather than independent;
+- contradictory;
+- partially unavailable;
+- adversarially biased toward retry or completion.
 
-Required invariants:
+Compare:
 
-- current categorical authority wins at execution/publication;
-- no prepared copy can reactivate revoked authority;
-- no duplicate external effect across versions;
-- stale assurance/version tokens cannot publish after relevant authority/version changes.
+1. trust-one-source recovery;
+2. confidence/majority aggregation;
+3. effect-specific source precedence/provenance;
+4. independent reconciliation purchased according to consequence;
+5. unresolved-state retention when evidence conflict cannot be resolved cheaply.
 
-### I14B — crash/restart between prepare and publish
+Primary metrics:
 
-Crash at different lifecycle points:
+- duplicate external effects;
+- omitted effects;
+- unauthorized retries;
+- false historical completion;
+- unresolved lifetime/cost;
+- reconciliation spend;
+- recovery latency.
 
-- before preparation complete;
-- after preparation but before assurance;
-- after assurance but before publication;
-- immediately after publication before old-version cleanup.
+The key falsifier is whether ordinary confidence aggregation can match typed provenance/independence-aware recovery after equal evidence cost.
 
-Do **not** assume a write-ahead log/database first.
+## Integration after that discriminator
 
-Compare the minimum persisted facts required to determine safely after restart whether to:
+Move `RecoveryRecord` and `ExternalEffectProtocol` into the reusable organism execution lifecycle so later experiments do not get privileged recovery semantics.
 
-- discard the candidate;
-- resume preparation;
-- publish;
-- retain the current old version;
-- finish retiring an already-published old version.
+Then return to:
 
-Only if recovery cannot be solved from already-required version/semantic state should a new durable intent/log mechanism be added.
-
-## Later targeted work
-
-- partial migration of bounded caches and delayed credit traces;
-- I05C correlated/adversarial evaluator audits and partially unresolved outcomes;
+- I05C correlated/adversarial evaluator audits with partially unresolved outcomes;
+- bounded-cache and delayed-credit survival across structural recovery;
 - nested/overlapping **ownership** only if non-owning coordination overlays prove insufficient;
 - neural E24C only if predictive-objective geometry remains architecture-discriminating;
-- hardware co-design only after transition/topology/fidelity laws are stable enough for substrate assumptions to be informative.
+- hardware co-design only after transition/topology/fidelity/recovery laws are stable enough for substrate assumptions to be informative.
 
 ## Phase-10 substantial-completion condition
 
@@ -188,13 +189,14 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 
 - selected principles retain lifetime value under composition;
 - learned metacontrol overhead does not consume the gains;
-- authority/provenance remain stable under learned control, topology changes and multi-version handoffs;
+- authority/provenance remain stable under learned control, topology changes, multi-version handoffs and crash recovery;
 - world/tool/evaluator/self uncertainty remain distinguishable;
 - self-change uses independent refreshing evidence and scoped rollback/change;
 - failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- crash/restart cannot turn prepared but unpublished state into accidental authority;
-- the common executable runtime reproduces important boundaries without experiment-specific privileged semantics.
+- crash/restart cannot turn prepared state or old approval into accidental authority;
+- external effect recovery does not confuse local intent, historical execution and current capability permission;
+- the common executable runtime reproduces these boundaries without experiment-specific privileged semantics.
 
 ## Open targeted gap closure
 
