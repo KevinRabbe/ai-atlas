@@ -25,7 +25,8 @@ class ExternalEvidenceCorruptionTests(unittest.TestCase):
         selective = run_i17(config, "selective_independent")
         uniform = run_i17(config, "uniform_independent")
         self.assertLess(selective["independent_queries"], 0.75)
-        self.assertGreater(selective["utility"], uniform["utility"])
+        self.assertLess(selective["weighted_harm"], 0.25)
+        self.assertLess(uniform["weighted_harm"], selective["weighted_harm"])
 
     def test_uniform_checking_can_win_when_independent_evidence_is_cheap(self) -> None:
         config = I17Config(seed=7, independent_cost=0.01)
