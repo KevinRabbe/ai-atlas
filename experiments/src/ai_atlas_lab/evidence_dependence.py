@@ -22,6 +22,10 @@ class EvidenceDependenceModel:
     contexts. A relation can be queried globally across contexts or within one
     claim/domain context, and bounded explicit probes may be global or scoped.
 
+    Confidence requires both distance from the relation threshold and actual
+    resolved observation support. A prior score near zero is therefore not
+    mistaken for established independence.
+
     This is an experimental semantic substrate, not a selected mature causal-
     discovery algorithm.
     """
@@ -33,6 +37,7 @@ class EvidenceDependenceModel:
         covariance_threshold: float = 0.025,
         confidence_scale: float = 0.035,
         prior_error: float = 0.12,
+        full_confidence_observations: float = 30.0,
     ) -> None:
         if not 0.0 < decay < 1.0:
             raise ValueError("decay must lie in (0, 1)")
@@ -42,14 +47,18 @@ class EvidenceDependenceModel:
             raise ValueError("confidence_scale must be positive")
         if not 0.0 <= prior_error <= 1.0:
             raise ValueError("prior_error must lie in [0, 1]")
+        if full_confidence_observations <= 0.0:
+            raise ValueError("full_confidence_observations must be positive")
 
         self.decay = decay
         self.covariance_threshold = covariance_threshold
         self.confidence_scale = confidence_scale
         self.prior_error = prior_error
+        self.full_confidence_observations = full_confidence_observations
         self.sources: set[str] = set()
         self.error_rate: dict[str, dict[str, float]] = {}
         self.joint_error: dict[str, dict[tuple[str, str], float]] = {}
+        self.observation_weight: dict[str, float] = {}
         self.probe_cache: dict[
             tuple[str, str, str | None],
             tuple[bool, int],
@@ -90,6 +99,7 @@ class EvidenceDependenceModel:
             for index, left in enumerate(ordered)
             for right in ordered[index + 1 :]
         }
+        self.observation_weight[context_key] = 0.0
 
     def observe_resolution(
         self,
@@ -108,6 +118,9 @@ class EvidenceDependenceModel:
         errors = {source: int(label != truth) for source, label in labels.items()}
         rates = self.error_rate[context_key]
         joints = self.joint_error[context_key]
+        self.observation_weight[context_key] = (
+            self.decay * self.observation_weight[context_key] + 1.0
+        )
         for source, error in errors.items():
             rates[source] = (
                 self.decay * rates[source]
@@ -157,6 +170,17 @@ class EvidenceDependenceModel:
                 joints[pair] - rates[left] * rates[right]
             )
         return sum(residuals) / len(residuals) if residuals else 0.0
+
+    def observation_support(self, *, context_key: str | None = None) -> float:
+        if not self.observation_weight:
+            return 0.0
+        if context_key is not None:
+            weight = self.observation_weight.get(context_key, 0.0)
+        else:
+            weight = sum(self.observation_weight.values()) / len(
+                self.observation_weight
+            )
+        return min(1.0, weight / self.full_confidence_observations)
 
     def _cached_probe(
         self,
@@ -220,9 +244,12 @@ class EvidenceDependenceModel:
             *pair,
             context_key=context_key,
         )
-        confidence = min(
+        distance_confidence = min(
             1.0,
             abs(score - self.covariance_threshold) / self.confidence_scale,
+        )
+        confidence = distance_confidence * self.observation_support(
+            context_key=context_key
         )
         return DependenceEstimate(
             pair[0],
