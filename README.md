@@ -14,7 +14,7 @@ Named model blocks, natural-language reasoning, databases, agents, harnesses, bi
 
 Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **308 added test cases**, integrated work through **I16**, architecture-family comparisons **AF01–AF03**, and a persistent reusable architecture substrate. **Twenty-five provisional implementation-neutral principles** survive their current promotion gates.
+Phase 10 now contains **377 added test cases**, integrated work through **I22**, architecture-family comparisons **AF01–AF03**, and a persistent crash-aware typed runtime. **Twenty-five provisional implementation-neutral principles** survive their current promotion gates.
 
 No fixed A/B/C/D architecture family is selected as a universal whole-system architecture. Their useful mechanisms increasingly behave like organizational modes that can be activated at different scopes and timescales.
 
@@ -23,27 +23,27 @@ No fixed A/B/C/D architecture family is selected as a universal whole-system arc
 The current evidence increasingly supports a smaller set of recurring laws:
 
 - scope follows coupling, responsibility and causal extent;
-- state follows expected future value and recoverability;
+- state follows expected future value, recoverability and validity after change;
 - optional work follows marginal value under shared scarcity;
 - material complements/substitutes require interaction-aware allocation;
 - sharing and structural indirectness follow reusable regularity;
 - execution follows state change until consistency coupling justifies synchronization;
 - fidelity follows decision sensitivity, uncertainty propagation and consequence;
 - predictive compression is sufficient only relative to future/action-relevant distinctions and recoverability;
-- authority follows independent current evidence/invariants, not confidence alone;
+- authority follows independent current invariants, not confidence or historical permission;
 - verification follows the residual failure layer;
-- durable change requires stronger and refreshing evidence;
-- organizational mode, scope and membership may themselves be adaptive state;
-- ownership, coordination, directional dependence, authority, provenance and resource identity are different typed relationships;
-- multi-step consequential change separates preparation from authoritative publication whenever partial visibility can violate invariants;
-- crash recovery follows authoritative version/target identity rather than local process phase;
-- **external execution fact and permission to execute again are separate evidence/authority questions.**
+- **record count does not equal evidence independence**;
+- publication state value does not necessarily identify which transition produced it;
+- multi-step consequential change separates preparation from authoritative publication when partial visibility can violate invariants;
+- crash recovery follows authoritative base/version/target/publication provenance rather than local process phase;
+- external execution fact and permission to execute again are separate evidence/authority questions;
+- transient cache/credit state is recovered only while future value and semantic validity justify persistence/rematerialization/replay.
 
 ## Current executable architecture hypothesis
 
 ```text
 stable typed semantic identities
-  subjects / evidence / provenance / sources
+  subjects / source evidence / publication provenance
   authority versions / resource leases
         |
         +--> directional dependencies
@@ -54,86 +54,104 @@ typed transition proposals
         ↓
 interaction-aware value/resource allocator
         ↓
-consequence-sensitive independent assurance
+evidence-lineage structure
+  lineage / staleness / resolves? / conflict
+        + learned source-quality estimates
+        ↓
+consequence-sensitive assurance allocation
         ↓
 PREPARE non-authoritative candidate state
         ↓
-version + target + current-authority publication fence
+version + publication-provenance + current-authority fence
         ↓
-PUBLISH coherent internal authoritative version
+PUBLISH coherent internal authoritative state
         |
         +--> external effect path
-        |       externally grounded execution evidence
-        |       current authority for every new/retry attempt
+        |       effect-specific external evidence
+        |       current authority for every fresh/retry attempt
         |       unresolved status if exact execution cannot be known
         ↓
-recover from semantic identity/version after crash
+crash recovery from semantic identity/provenance
         ↓
-observe → causal credit → staged appropriately-scoped update
+selective persist / rematerialize / replay of transient state
+        ↓
+observe → versioned causal credit → staged appropriately-scoped update
 ```
 
 This is **not** yet a frozen final architecture.
 
-## I06–I13 — adaptive organization becomes an executable typed runtime
+## From architecture families to adaptive organization
 
-I06 combines fidelity, source rematerialization/hot state, synchronization and intervention in one finite budget. Learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for factorized independent controllers.
+I06 combines fidelity, source rematerialization/hot state, synchronization and intervention in one finite budget. Joint allocation reaches ~`1.564` utility/task versus ~`1.355` factorized control.
 
-AF01–AF03 show that A/B/C/D behave as regime-dependent organizational modes. AF02 learns mode selection; AF03 shows multiple modes can coexist at different scopes; I07 learns scope membership itself from changing dependency evidence.
+AF01–AF03 show A/B/C/D are not universal winners. Their useful behavior tracks locality, coupling/scarcity, shared transfer and recurrence/variant option value. AF02 learns organizational mode; AF03 lets different scopes use different modes; I07 learns scope membership itself.
 
-I08 migrates real typed state through topology epochs; I09 adds independent assurance under correlated topology evidence. I10 turns those semantics into reusable `TypedScopeRuntime`.
+I08–I13 turn those laws into a reusable typed runtime with stable semantic identity, dynamic topology, overlapping coordination, directional dependencies, singular leases, epoch-routed events and failure-isolated publication.
 
-I11 separates overlapping coordination from ownership. I12 separates one-way dependency from reciprocity. I13/I13B show that unfinished consequential change cannot safely leak into authoritative topology/resource ownership when partial failure is meaningful.
+## PS-024 — publication and crash recovery
 
-This promotes **PS-024 — failure-isolated consequential transition publication**.
+I13/I13B show unfinished topology/resource changes can violate invariants if partially visible. I14 shows a local lifecycle phase cannot tell `already published but marker lost` from `not published`.
 
-## I14 — crash recovery is not a phase flag
-
-I14 crashes both resource ownership and durable-knowledge promotion around the publication fence.
-
-A remembered `prepared/assured/published` phase fails because publication can become authoritative immediately before a crash while the local completion marker is lost. Across the synthetic 30-seed crash distribution, phase-based recovery is correct only ~`0.62` of the time and duplicates publication ~`0.22` of the time.
-
-Version-fenced recovery reaches exact modeled recovery by retaining only the required semantics:
+I18 adds a deeper attribution result: exact numeric target version may not be knowable at preparation time, and another publication can independently produce the same target state. Recovery therefore distinguishes:
 
 ```text
-stable publication identity
-expected base authoritative version
-intended target version + target identity/digest
-references needed to reacquire current validation
+what state is authoritative?
+        !=
+which publication produced it?
 ```
 
-Old approval is **not** persisted as standing authority. Any retry re-resolves current authority/evidence.
+`PublicationProtocol` now stamps publication provenance at the same modeled coherence boundary as resource/topology authority. `RecoveryRecord.target_version` can be optional when publication provenance identifies the committed transition.
 
-This strengthens PS-024 without selecting a WAL, database transaction, journal or event-sourcing implementation.
+The selected principle remains **PS-024 — failure-isolated consequential transition publication**; no WAL/database/journal/transaction implementation is selected.
 
-## I15 — local state cannot prove the external world acted
+## PS-025 — external execution recovery
 
-For an external service that recognizes a stable effect identity, deduplicated replay or exact reconciliation removes crash retry ambiguity. At the default high duplicate consequence, stable external identity reaches ~`0.9825` utility versus ~`-1.161` blind retry.
+I15 shows local state cannot prove the external world already acted after a crash. Receiver-recognized stable effect identity or exact effect-specific reconciliation can remove ambiguity when the environment participates; non-identifiable physical effects may remain unresolved.
 
-But the result is conditional: when duplicate harm is nearly zero and identity/reconciliation overhead is deliberately expensive, blind retry can be cheaper.
+I16 then separates historical execution from current permission:
 
-A second family removes the cooperative API assumption. A physical/non-identifiable effect can only be inferred through a noisy aggregate sensor. Exact history cannot be recovered: the system must retain uncertainty and choose retry versus abstention from consequence.
+```text
+external execution evidence -> did it happen?
+current capability authority -> may we try again now?
+```
 
-## I16 — execution evidence is not retry authority
+This promotes **PS-025 — externally grounded effect recovery / execution-authority separation**.
 
-I16 composes effect-specific external evidence with current capability revocation.
+## I17 / I05C — correlated evidence is one failure lineage
 
-The separated policy reaches ~`0.969` utility with zero modeled duplicates, unauthorized retries and history errors. Conflating the two questions creates three different failures:
+Three copied receipts or audits are not three independent observations.
 
-- authority-only recovery duplicates ~32.4% of ambiguous prior effects and misrecords ~17.6%;
-- evidence-only recovery retries after revocation ~9.8% of the time;
-- treating revocation as historical non-execution misrecords ~17.6% of already-applied effects.
+I17 reproduces this for external execution; I05C reproduces it for the organism's own verifier-quality learning. Raw majority can even pay for one genuinely independent check and still ignore it by outvoting it with three copies from one source lineage.
 
-This promotes:
+Missing audit resolution is also not positive evidence. Treating it as success can raise throughput in one synthetic regime, but worsens calibration and increases false durable writes.
 
-> **PS-025 — externally grounded effect recovery / execution-authority separation:** local intent, phase state or past approval cannot establish that an external effect occurred. Determine exact execution from sufficiently effect-specific external evidence or receiver-recognized identity; gate every fresh/retry effect by current authority. If exact execution cannot be identified, preserve unresolved state and price retry versus abstention explicitly.
+## I20 / I21 — one evidence-assurance substrate
 
-The selected object is the semantic boundary, not an HTTP idempotency key, outbox, distributed transaction, receipt database or sensor technology.
+`EvidenceLineageRegistry` represents lineage, staleness, whether an observation resolves the claim, and conflict. It does **not** assign truth/reliability.
+
+`EvidenceAssuranceDecision` combines that structure with learned source-quality estimates, consequence/asymmetric harm and independent-check cost.
+
+I20 applies the same policy to external-execution and metacognitive claims:
+
+- record-count confidence: ~`3.062` utility/task, ~`1.438` harm;
+- uniform independent: ~`3.585`, ~`0.733` harm, one check/task;
+- **lineage-value:** ~`3.782`, ~`0.592` harm, ~`0.695` checks/task.
+
+I21 moves that planning inside `OrganismRecoveryCoordinator`, removing the privileged assumption that external receipts arrive already interpreted as trustworthy.
+
+## I22 — transient state across recovery
+
+Source-backed hot/predictive state should not automatically survive a crash. Adaptive persistence/rematerialization reaches ~`0.3335` utility/item versus ~`0.3278` rematerialize-all and ~`0.2314` persist-all, while greatly reducing stale cache reuse.
+
+Delayed credit has a different validity condition. Unversioned positional restoration creates ~`15.3%` false blame after structure changes; exact causal transition identity/version removes it. When exact trace persistence becomes expensive, retained source history can be replayed instead.
+
+So recovery obeys the same value law as normal runtime, but **validity is typed**: currentness for cache, causal identity for credit.
 
 ## JEPA / E24
 
 JEPA remains explicitly inside the Atlas as a candidate predictive-representation mechanism, not a selected component.
 
-E24 shows that coarse predictive latent state can be highly efficient yet discard a future/action-relevant distinction. Dense predictive state or compact latent + recoverable source evidence preserves the option.
+E24 shows that coarse predictive latent state can be efficient yet discard a future/action-relevant distinction. Dense predictive state or compact latent + recoverable source evidence preserves the option.
 
 > Predictive compression should optimize lifetime decision/intervention utility, not passive prediction accuracy alone.
 
@@ -151,19 +169,16 @@ The goal is an AI capable of expanding the shared knowledge frontier through ind
 
 ## Next milestone
 
-The next stress attacks **external execution evidence itself**:
+Implement the minimal typed transient-state registry implied by I22:
 
-- delayed receipts;
-- stale receipts;
-- correlated/duplicated evidence sources;
-- contradictory external observations;
-- high-consequence cases where independent reconciliation may earn its cost.
+- source-backed hot state with rematerialization reference + generation context;
+- delayed credit eligibility tied to stable transition identity/version, optionally replayable from retained source history.
 
-Then the I14 recovery record and PS-025 external-effect protocol should be integrated into `TypedScopeRuntime`, so crash/recovery is part of the common organism rather than a side experiment.
+Then run a real topology/publication crash scenario where authoritative recovery, external evidence, hot-state recovery, in-flight events and delayed credit coexist.
 
 ## Organizing hypothesis
 
-Practical intelligence may be adaptive selection of typed state transitions and typed organizational relationships under finite resources, with semantic boundaries strong enough that **confidence, local phase, historical approval and current authority cannot impersonate one another**.
+Practical intelligence may be adaptive selection of typed state transitions and typed organizational relationships under finite resources, with semantic boundaries strong enough that **confidence, record count, local phase, historical approval, publication state, evidence lineage, causal identity and current authority cannot impersonate one another**.
 
 This remains falsifiable.
 
