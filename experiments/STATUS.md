@@ -1,10 +1,10 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-four provisional design principles selected; composition has progressed through I13C plus the reusable typed-scope runtime. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
+**Checkpoint: twenty-five provisional design principles selected; composition has progressed through I16 plus the reusable typed-scope runtime. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
 
 ## Validation
 
-Phase 10 now contains **278 added test cases**.
+Phase 10 now contains **308 added test cases**.
 
 Architecture/composition additions since the 190-test metacognitive/JEPA checkpoint:
 
@@ -23,7 +23,12 @@ Architecture/composition additions since the 190-test metacognitive/JEPA checkpo
 - typed directional-dependency registry: 3;
 - I13 partial topology/structural commit: 6;
 - I13B singular resource/service ownership handoff: 6;
-- I13C publication-fence runtime semantics: 6.
+- I13C publication-fence runtime semantics: 6;
+- I14 crash/restart recovery: 6;
+- minimal recovery protocol: 6;
+- I15 external-effect crash ambiguity: 6;
+- I16 execution-evidence / current-authority separation: 6;
+- external-effect recovery protocol: 6.
 
 The shell environment cannot clone GitHub because DNS resolution is unavailable there. Recent numerical discriminators were exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only.
 
@@ -33,109 +38,112 @@ The shell environment cannot clone GitHub because DNS resolution is unavailable 
 
 ## I06–I12 — from common allocation to typed dynamic organization
 
-I06 shows that runtime operations such as fidelity, rematerialization, synchronization and intervention interact enough that a joint allocator (~`1.564` utility/task) beats independent operation controllers (~`1.355`).
+I06 shows that fidelity, rematerialization, synchronization and intervention interact enough that a joint allocator (~`1.564` utility/task) beats independent operation controllers (~`1.355`).
 
-AF01–AF03 and I07 then show that organizational mode, organizational scope and scope membership can all be revisable state, but plasticity only pays when dependency structure persists long enough to amortize inference/switch/migration cost.
+AF01–AF03 and I07 show that organizational mode, organizational scope and scope membership can all be revisable state, but plasticity only pays when dependency structure persists long enough to amortize inference/switch/migration cost.
 
-I08 puts exact evidence/provenance, predictive source references, versioned authority, singular resource leases and in-flight events behind real topology epochs. The typed-epoch runtime reaches ~`1.0744` utility/step versus ~`0.9957` static typed topology while preserving zero tested failures across event routing, authority, provenance, rematerialization and resource uniqueness.
+I08 puts exact evidence/provenance, predictive source references, versioned authority, singular resource leases and in-flight events behind topology epochs. The typed-epoch runtime reaches ~`1.0744` utility/step versus ~`0.9957` static typed topology while preserving the tested routing, authority, provenance, rematerialization and resource-uniqueness invariants.
 
 I09 shows topology proposal evidence is not automatically topology-promotion evidence: under correlated spoofing, selective independent checking raises attacked pairwise topology accuracy to ~`0.933` with zero harmful accepted migrations in the matched family.
 
-I10 converts those boundaries into the reusable `TypedScopeRuntime`, with exact semantic records, typed proposals, interaction-aware allocation, independent assurance, staged scope change/rollback and topology-epoch event forwarding.
+I10 converts those boundaries into reusable `TypedScopeRuntime`. I11 separates semantic ownership from overlapping non-owning coordination membership. I12 separates directional dependence from reciprocity/shared organization.
 
-I11 separates semantic ownership from coordination membership. Sparse cross-cutting work favors temporary non-owning overlays; frequent recurrence can justify persistent overlap; dense continuous coupling justifies one merged/global scope. `CoordinationScopeRegistry` therefore supports overlapping non-owning memberships without transferring evidence, leases or authority.
+## I13 / I13B / I13C — publication is a typed transition boundary
 
-I12 separates one-way dependence from reciprocity. Sparse directional work should not create reverse flow; reciprocal clusters can earn shared scopes; mixed regimes use both. `DependencyRegistry` stores explicit one-way relationships over stable subject identities.
+I13 fails topology migration after a random subset of moves. At 20% failure probability and ordinary event load, naive in-place mutation corrupts ~20.2% of attempts, loses ~3.96 events and duplicates ~0.51. Stop-world, staged and dual-version mechanisms isolate unfinished state from authoritative routing and keep those modeled corruption metrics at zero.
 
-## I13 — partial topology/structural publication failure
+I13B reproduces the boundary with singular resource ownership: make-before-break can expose two writers; break-before-make can expose zero writer. Failure-isolated mechanisms preserve singular write ownership.
 
-I13 fails migration after a random subset of 12 subject moves.
+I13C makes this executable through `PublicationProtocol`: topology epoch / lease-version fences, current-authority re-check, independent assurance and discard semantics prevent stale prepared plans from publishing.
 
-Default 30-seed result, 20% failure probability and event rate 8:
-
-| mechanism | net utility/migration | corrupt rate | lost events | duplicate events | downtime |
-|---|---:|---:|---:|---:|---:|
-| naive in-place | 2.860 | ~0.202 | ~3.96 | ~0.51 | 0.000 |
-| stop-world replace | 3.241 | **0.000** | **0.000** | **0.000** | ~1.299 |
-| **staged transaction** | **3.310** | **0.000** | **0.000** | **0.000** | ~0.402 |
-| dual-version handoff | 3.291 | **0.000** | **0.000** | **0.000** | **0.000** |
-
-The mechanisms cross over with failure risk and live traffic:
-
-- essentially zero failure + very low traffic: direct live change is cheapest;
-- high failure + low traffic: blocking replacement can be rational;
-- high live traffic: dual-version handoff can earn its extra temporary state.
-
-## I13B — singular ownership handoff reproduces the boundary
-
-This second family changes one exact resource/service writer rather than topology.
-
-Naive make-before-break can leave two writers; break-before-make can leave zero writer.
-
-Default 30-seed result, 20% failure and request rate 10:
-
-| mechanism | utility/handoff | ownership violation | duplicate writes | lost requests | downtime |
-|---|---:|---:|---:|---:|---:|
-| make-before-break | 0.5621 | ~0.065 | ~0.780 | 0.000 | 0.000 |
-| break-before-make | 0.3846 | ~0.064 | 0.000 | ~5.142 | 0.000 |
-| stop-world transfer | 0.6841 | **0.000** | **0.000** | **0.000** | ~1.080 |
-| staged lease fence | 0.7704 | **0.000** | **0.000** | **0.000** | ~0.120 |
-| **dual-read / single-write** | **0.7743** | **0.000** | **0.000** | **0.000** | **0.000** |
-
-High-failure/high-live-traffic conditions favor dual-read/single-write; zero-failure/low-traffic can make direct handoff cheapest.
-
-## PS-024 — failure-isolated consequential transition publication
-
-I13 + I13B meet the second-family promotion gate.
+### PS-024 — failure-isolated consequential transition publication
 
 > **Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants; publish authority/ownership/topology only across a coherence boundary after required validation. Choose direct, blocking, staged or dual-version publication according to partial-failure risk, blast radius, live-work pressure and isolation cost.**
 
-The selected object is the failure-isolation boundary between **preparation** and **authoritative publication**, not transactions, locks, consensus, blue/green deployment or another named implementation.
+## I14 — crash/restart requires semantic publication identity, not a remembered phase
 
-## I13C — publication protocol is now explicit in the runtime
+I14 crashes resource ownership and durable-knowledge promotion in five lifecycle states: prepared, assured, published-but-unmarked, published-and-marked, or superseded.
 
-`PublicationProtocol` hardens the reusable runtime with version fences:
+30-seed means:
 
-- preparation does not change live topology/resource ownership;
-- a topology candidate records the epoch it was prepared against;
-- a resource handoff records the lease version it was prepared against;
-- publication rejects stale topology/lease plans;
-- current authority is re-read at publication, so revocation after preparation blocks the handoff;
-- consequential publication still requires independent assurance;
-- discard leaves the live state unchanged.
+| recovery policy | resource correct | knowledge correct | duplicate publish | superseded overwrite |
+|---|---:|---:|---:|---:|
+| old assurance replay | ~0.599 | ~0.594 | ~0.220 | ~0.160 |
+| phase + current recheck | ~0.620 | ~0.620 | ~0.220 | ~0.160 |
+| **version-fenced** | **1.000** | **1.000** | **0** | **0** |
+| ideal atomic snapshot | **1.000** | **1.000** | **0** | **0** |
 
-A specific concurrency bug is now prevented: two topology changes staged at epoch N cannot both publish. Once one advances the topology epoch, the other is stale.
+Old assurance replay additionally publishes after current resource revocation (~2.1%) or knowledge-source retraction (~2.6%). Current recheck fixes those authority/evidence failures but cannot tell `already published but marker lost` from `not published` and cannot prevent superseded overwrite.
+
+`RecoveryRecord` therefore stores only the implementation-neutral semantics required to classify recovery:
+
+- stable publication identity;
+- expected base authoritative version;
+- intended target version;
+- target identity/digest;
+- references needed to reacquire current validation.
+
+It intentionally does **not** persist an `approved=true` bit as authority. A retry must satisfy current validation/assurance again.
+
+## I15 — local recovery stops at the external-world boundary
+
+I15 tests an effect whose authoritative fact is outside the organism.
+
+### Externally identifiable ledger/service
+
+Default duplicate penalty `4`, missed penalty `1`:
+
+| policy | utility | duplicate | missed |
+|---|---:|---:|---:|
+| blind retry | ~-1.161 | ~0.540 | 0 |
+| **stable externally recognized identity** | **~0.9825** | **0** | **0** |
+| exact external reconciliation | ~0.9580 | **0** | **0** |
+| abstain | ~0.8398 | 0 | ~0.160 |
+
+The result has a cost/consequence crossover. With identity cost `0.10`, reconciliation cost `0.15` and duplicate harm only `0.01`, blind retry (~0.995) is cheaper than carrying exact recovery semantics (~0.930 stable identity). Once duplicate consequence rises, exact external grounding earns its cost.
+
+### Non-identifiable physical effect
+
+When the environment cannot recognize this effect identity, only a noisy aggregate sensor is available. Exact recovery is impossible in the model: sensor reconciliation leaves both duplicate (~5.8%) and omitted (~3.9%) effects.
+
+When duplicate harm dominates, abstention/risk-sensitive no-retry is rational. When omission harm dominates, retry after sufficiently negative sensor evidence becomes rational. The state remains epistemically unresolved rather than being forced into a false exact history.
+
+## I16 — execution evidence and execution authority are separate
+
+I16 adds current capability revocation to external recovery.
+
+30-seed means:
+
+| policy | utility | duplicate | unauthorized retry | history error |
+|---|---:|---:|---:|---:|
+| authority only | ~-0.560 | ~0.324 | 0 | ~0.176 |
+| evidence only | ~0.379 | 0 | ~0.098 | 0 |
+| revocation erases history | ~0.705 | 0 | 0 | ~0.176 |
+| **separated** | **~0.969** | **0** | **0** | **0** |
+
+The surviving semantics are:
+
+```text
+external execution evidence
+        -> did the old effect happen?
+
+current capability authority
+        -> may a NEW attempt be issued now?
+```
+
+A revocation cannot rewrite a historical effect as absent, and an old effect/receipt cannot authorize a new retry.
+
+### PS-025 — externally grounded effect recovery / execution-authority separation
+
+> **Local intent, phase state or past approval do not establish that an external effect occurred. Recover exact execution from sufficiently effect-specific external evidence or receiver-recognized identity; gate every new/retry effect by current capability authority. When exact external execution cannot be identified, retain an unresolved state and price retry versus abstention by explicit consequence rather than fabricating certainty.**
+
+The selected object is the semantic boundary, not an HTTP idempotency key, outbox, distributed transaction, receipt database or sensor technology.
 
 ---
 
 # Current provisional selections
 
-PS-001 through PS-024 are active reversible constraints:
-
-1. typed hybrid boundary state;
-2. staged adaptive persistence;
-3. coupling-scoped coordination;
-4. derived current belief with evidence linkage;
-5. value-of-computation stopping;
-6. consequence-sensitive hypothesis plurality;
-7. value-driven active evidence acquisition;
-8. verified epistemic frontier expansion;
-9. conditional sharing with isolation fallback;
-10. joint adaptive resource substitution under shared scarcity;
-11. retrieval by expected applicability/downstream value;
-12. adaptive predictive-state breadth / recoverable optionality;
-13. failure-mode-independent assurance;
-14. consequence/uncertainty/resource-sensitive assurance allocation;
-15. causal/eligibility-scoped delayed credit;
-16. failure-layer-targeted verification;
-17. independent current/revocable capability authority;
-18. rotating independent self-change regression evidence;
-19. resource-priced lineage diversity / variant optionality;
-20. evidence-scaled repair scope / minimal sufficient blast radius;
-21. regularity-scaled structural encoding / local override fallback;
-22. event-scoped execution with consistency-triggered synchronization;
-23. value/sensitivity-scaled fidelity allocation;
-24. **failure-isolated consequential transition publication**.
+**PS-001 through PS-025** are active reversible constraints. PS-024 covers failure-isolated internal consequential publication; PS-025 covers the point where execution authority/fact lives outside the organism.
 
 ---
 
@@ -147,12 +155,8 @@ stable typed semantic identities
   authority versions / resource leases
         |
         +--> directional dependencies
-        |
-        +--> disjoint ownership topology
-        |       dynamic split / merge
-        |
+        +--> dynamic ownership topology
         +--> overlapping non-owning coordination scopes
-                temporary or persistent
         ↓
 typed transition proposals
         ↓
@@ -162,29 +166,34 @@ consequence-sensitive independent assurance
         ↓
 PREPARE non-authoritative candidate state
         ↓
-version + current-authority publication fence
+version/current-authority publication fence
         ↓
-PUBLISH coherent topology / ownership / durable version
+PUBLISH coherent internal authoritative version
+        |
+        +--> if external effect:
+        |       external effect identity/evidence
+        |       + current authority for any new attempt
+        |       + unresolved state if execution cannot be identified
         ↓
 retire old version / forward in-flight work
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
-The strongest current inference is:
+The strongest new inference is:
 
-> **organization is not one graph with one meaning, and consequential change is not one mutation with one moment. Typed relationships evolve through prepared, validated and coherently published versions while stable identity/authority/provenance survive the reorganization.**
+> **Crash recovery cannot be derived from local process phase. Internal authority is recovered from version + identity; external execution is recovered from external effect-specific evidence. Past approval is evidence history, never standing authority to retry.**
 
-This remains a falsifiable candidate architecture, not a final product implementation.
+This remains a falsifiable candidate architecture, not a final implementation.
 
 ## Next high-value work
 
-1. run simultaneous **authority revocation during staged/dual topology and service handoff** with in-flight work, now through `PublicationProtocol`;
-2. inject crash/restart between prepare and publish to test recovery of prepared-but-unpublished candidates;
-3. persist publication intent/log state only if crash recovery proves it is required rather than assuming a database/WAL;
-4. then return to I05C correlated/adversarial evaluator audits and partially unresolved outcomes;
+1. attack external execution evidence itself with delayed, stale, correlated and contradictory sources; measure when independent reconciliation earns its cost;
+2. integrate `RecoveryRecord` and external-effect recovery decisions into the reusable organism runtime rather than leaving them as side protocols;
+3. return to I05C correlated/adversarial evaluator audits with partially unresolved outcomes—the same evidence-identity problem now appears in metacognition;
+4. test bounded-cache / delayed-credit survival across structural recovery;
 5. neural E24C remains conditional on representation geometry still being architecture-discriminating.
 
 ## Guardrail
 
-Self-improvement, topology change and resource ownership change remain inside the staged publication protocol: current capability authority, sufficiently independent assurance, version fences, rollback/discard where possible, and no proposal path may treat its own score or stale prepared state as publication authority.
+Self-improvement, topology/resource publication and external effect recovery remain typed transitions. No proposal score, stale assurance, prepared candidate, local phase marker or historical permission may manufacture current authority or external execution fact.
