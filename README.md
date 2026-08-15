@@ -14,7 +14,7 @@ Named model blocks, natural-language reasoning, databases, agents, harnesses, bi
 
 Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS**. Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **278 added test cases**, integrated work through **I13C**, architecture-family comparisons **AF01–AF03**, and a persistent reusable architecture substrate. **Twenty-four provisional implementation-neutral principles** survive their current promotion gates.
+Phase 10 now contains **308 added test cases**, integrated work through **I16**, architecture-family comparisons **AF01–AF03**, and a persistent reusable architecture substrate. **Twenty-five provisional implementation-neutral principles** survive their current promotion gates.
 
 No fixed A/B/C/D architecture family is selected as a universal whole-system architecture. Their useful mechanisms increasingly behave like organizational modes that can be activated at different scopes and timescales.
 
@@ -33,13 +33,11 @@ The current evidence increasingly supports a smaller set of recurring laws:
 - authority follows independent current evidence/invariants, not confidence alone;
 - verification follows the residual failure layer;
 - durable change requires stronger and refreshing evidence;
-- self-improvement diversity is retained only while future option value pays for it;
-- repair blast radius expands only when evidence says the causal root is equally broad;
-- metacognitive estimates are revisable state and can themselves justify active evidence acquisition;
 - organizational mode, scope and membership may themselves be adaptive state;
-- semantics that must survive reorganization cannot be defined only by the organization being changed;
-- ownership, coordination, directional dependence, authority, provenance and resource identity are different typed relationships rather than one generic module graph;
-- **multi-step consequential change must separate preparation from authoritative publication whenever partial visibility can violate invariants.**
+- ownership, coordination, directional dependence, authority, provenance and resource identity are different typed relationships;
+- multi-step consequential change separates preparation from authoritative publication whenever partial visibility can violate invariants;
+- crash recovery follows authoritative version/target identity rather than local process phase;
+- **external execution fact and permission to execute again are separate evidence/authority questions.**
 
 ## Current executable architecture hypothesis
 
@@ -49,12 +47,8 @@ stable typed semantic identities
   authority versions / resource leases
         |
         +--> directional dependencies
-        |
-        +--> disjoint ownership topology
-        |       + dynamic split / merge
-        |
+        +--> dynamic ownership topology
         +--> overlapping non-owning coordination scopes
-                temporary or persistent
         ↓
 typed transition proposals
         ↓
@@ -64,85 +58,76 @@ consequence-sensitive independent assurance
         ↓
 PREPARE non-authoritative candidate state
         ↓
-version + current-authority publication fence
+version + target + current-authority publication fence
         ↓
-PUBLISH coherent topology / ownership / durable version
+PUBLISH coherent internal authoritative version
+        |
+        +--> external effect path
+        |       externally grounded execution evidence
+        |       current authority for every new/retry attempt
+        |       unresolved status if exact execution cannot be known
         ↓
-retire old version / forward in-flight work
+recover from semantic identity/version after crash
         ↓
 observe → causal credit → staged appropriately-scoped update
 ```
 
 This is **not** yet a frozen final architecture.
 
-## I06–I09 — from allocation to safe dynamic topology
+## I06–I13 — adaptive organization becomes an executable typed runtime
 
-I06 combines fidelity, source rematerialization/hot state, synchronization and intervention in one runtime budget. Learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for factorized independent controllers.
+I06 combines fidelity, source rematerialization/hot state, synchronization and intervention in one finite budget. Learned joint allocation reaches ~`1.564` utility/task versus ~`1.355` for factorized independent controllers.
 
 AF01–AF03 show that A/B/C/D behave as regime-dependent organizational modes. AF02 learns mode selection; AF03 shows multiple modes can coexist at different scopes; I07 learns scope membership itself from changing dependency evidence.
 
-I08 is the first real typed-state migration runtime. Across 30 seeds the typed-epoch variant reaches ~`1.0744` utility/step versus ~`0.9957` static typed topology while preserving zero tested failures in event routing, current authority, provenance, predictive rematerialization and resource uniqueness.
+I08 migrates real typed state through topology epochs; I09 adds independent assurance under correlated topology evidence. I10 turns those semantics into reusable `TypedScopeRuntime`.
 
-I09 attacks topology evidence with a correlated spoof source. Selective independent assurance raises attacked scope accuracy to ~`0.933` with zero harmful accepted migrations in the matched family. A higher confidence threshold on the same correlated source is not sufficient.
+I11 separates overlapping coordination from ownership. I12 separates one-way dependency from reciprocity. I13/I13B show that unfinished consequential change cannot safely leak into authoritative topology/resource ownership when partial failure is meaningful.
 
-## I10 — persistent organism runtime API
+This promotes **PS-024 — failure-isolated consequential transition publication**.
 
-I10 turns those results into a reusable `TypedScopeRuntime` rather than another standalone benchmark.
+## I14 — crash recovery is not a phase flag
 
-It exposes exact evidence/source records, predictive rematerialization, current versioned authority, singular resource leases, typed transition proposals, interaction-aware bundle allocation, proposal-specific assurance, staged/rolled-back topology changes and topology-epoch event forwarding.
+I14 crashes both resource ownership and durable-knowledge promotion around the publication fence.
 
-Eight semantic API tests plus five integration-scenario tests exercise these invariants while topology and authority change with work in flight.
+A remembered `prepared/assured/published` phase fails because publication can become authoritative immediately before a crash while the local completion marker is lost. Across the synthetic 30-seed crash distribution, phase-based recovery is correct only ~`0.62` of the time and duplicates publication ~`0.22` of the time.
 
-## I11 — coordination can overlap ownership
+Version-fenced recovery reaches exact modeled recovery by retaining only the required semantics:
 
-A disjoint ownership partition is not sufficient to represent every useful relationship.
+```text
+stable publication identity
+expected base authoritative version
+intended target version + target identity/digest
+references needed to reacquire current validation
+```
 
-Sparse cross-cutting work favors temporary non-owning coordination overlays; frequent recurring cross-cutting work can justify persistent overlap; dense continuous coupling eventually makes one global scope cheaper.
+Old approval is **not** persisted as standing authority. Any retry re-resolves current authority/evidence.
 
-The runtime therefore has a separate `CoordinationScopeRegistry`: memberships may overlap, but scopes do not own or duplicate evidence, authority or resource leases.
+This strengthens PS-024 without selecting a WAL, database transaction, journal or event-sourcing implementation.
 
-## I12 — dependency is directional until reciprocity earns sharing
+## I15 — local state cannot prove the external world acted
 
-A one-way dependency does not imply reverse information flow or shared state.
+For an external service that recognizes a stable effect identity, deduplicated replay or exact reconciliation removes crash retry ambiguity. At the default high duplicate consequence, stable external identity reaches ~`0.9825` utility versus ~`-1.161` blind retry.
 
-In sparse directional structure, symmetric links create ~`11.94` unsupported reverse relationships/step while directed/adaptive representations are effectively zero. Reciprocal clusters can justify shared coordination. Mixed regimes use both simultaneously.
+But the result is conditional: when duplicate harm is nearly zero and identity/reconciliation overhead is deliberately expensive, blind retry can be cheaper.
 
-Default 30-seed lifetime utility is ~`0.7394` reciprocity-adaptive versus ~`0.7116` global, ~`0.7034` directed-only and ~`0.6689` symmetric-only. At 20-step regimes static global wins because structural evidence changes too quickly.
+A second family removes the cooperative API assumption. A physical/non-identifiable effect can only be inferred through a noisy aggregate sensor. Exact history cannot be recovered: the system must retain uncertainty and choose retry versus abstention from consequence.
 
-The runtime also has a typed `DependencyRegistry`; reciprocity may motivate shared coordination but does not automatically create reverse flow, authority, ownership or a scope.
+## I16 — execution evidence is not retry authority
 
-## I13 / I13B — the path to a new structure matters
+I16 composes effect-specific external evidence with current capability revocation.
 
-I13 injects failure halfway through topology migration. Naive live mutation exposes mixed old/new state, losing/duplicating work. Stop-world replacement, staged publication and dual-version handoff keep the live system coherent but pay different blocking/state costs.
+The separated policy reaches ~`0.969` utility with zero modeled duplicates, unauthorized retries and history errors. Conflating the two questions creates three different failures:
 
-I13B reproduces the same boundary in a different problem: singular resource/service ownership. Make-before-break can produce two writers; break-before-make can produce no writer. Failure-isolated publication preserves singular ownership.
-
-The two families have real mechanism crossovers:
-
-- near-zero failure + negligible traffic can make direct update cheapest;
-- high failure + low traffic can justify blocking replacement;
-- ordinary live load favors staged/version-fenced publication;
-- high live traffic can justify temporary dual-version handoff.
+- authority-only recovery duplicates ~32.4% of ambiguous prior effects and misrecords ~17.6%;
+- evidence-only recovery retries after revocation ~9.8% of the time;
+- treating revocation as historical non-execution misrecords ~17.6% of already-applied effects.
 
 This promotes:
 
-> **PS-024 — failure-isolated consequential transition publication:** prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants; publish topology/ownership/authority-bearing versions only across a coherence boundary after required validation. Choose direct, blocking, staged or dual-version publication according to failure risk, blast radius, live-work pressure and isolation cost.
+> **PS-025 — externally grounded effect recovery / execution-authority separation:** local intent, phase state or past approval cannot establish that an external effect occurred. Determine exact execution from sufficiently effect-specific external evidence or receiver-recognized identity; gate every fresh/retry effect by current authority. If exact execution cannot be identified, preserve unresolved state and price retry versus abstention explicitly.
 
-The selected object is the failure-isolation semantic, not transactions, locks, consensus or blue/green deployment by name.
-
-## I13C — publication fences are now explicit
-
-`PublicationProtocol` makes PS-024 executable:
-
-- preparation does not mutate live ownership/topology;
-- topology candidates remember their prepared-against epoch;
-- resource handoffs remember the prepared-against lease version;
-- stale plans are rejected at publication;
-- current authority is re-read at publication, so revocation after preparation wins over stale prepared intent;
-- consequential publication still requires independent assurance;
-- discard leaves the live system unchanged.
-
-This also closes a concurrency hole: two topology plans staged from the same epoch cannot both publish after one has already advanced the epoch.
+The selected object is the semantic boundary, not an HTTP idempotency key, outbox, distributed transaction, receipt database or sensor technology.
 
 ## JEPA / E24
 
@@ -162,17 +147,23 @@ The goal is an AI capable of expanding the shared knowledge frontier through ind
 
 ## Current provisional selection count
 
-**PS-001 through PS-024** are active reversible constraints. See `clean-sheet/DESIGN_LEDGER.md` for the complete evidence trail and falsifiers.
+**PS-001 through PS-025** are active reversible constraints. See `clean-sheet/DESIGN_LEDGER.md` for the complete evidence trail and falsifiers.
 
 ## Next milestone
 
-The next stress should combine **authority revocation + in-flight work + a prepared or dual-version structural handoff** through `PublicationProtocol`.
+The next stress attacks **external execution evidence itself**:
 
-Then inject crash/restart between prepare and publish. Only if recovery requires durable intent/version records should the Atlas add a persistence/logging mechanism; do not assume a WAL/database beforehand.
+- delayed receipts;
+- stale receipts;
+- correlated/duplicated evidence sources;
+- contradictory external observations;
+- high-consequence cases where independent reconciliation may earn its cost.
+
+Then the I14 recovery record and PS-025 external-effect protocol should be integrated into `TypedScopeRuntime`, so crash/recovery is part of the common organism rather than a side experiment.
 
 ## Organizing hypothesis
 
-Practical intelligence may be adaptive selection of typed state transitions **and typed organizational relationships**, with consequential changes prepared, assured and coherently published under finite resources—while authority and evidence semantics remain stronger than ordinary confidence scores.
+Practical intelligence may be adaptive selection of typed state transitions and typed organizational relationships under finite resources, with semantic boundaries strong enough that **confidence, local phase, historical approval and current authority cannot impersonate one another**.
 
 This remains falsifiable.
 
