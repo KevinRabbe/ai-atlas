@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .evidence_assurance import EvidenceAssuranceDecision, decide_evidence_assurance
+from .evidence_dependence import EvidenceDependenceModel
 from .evidence_lineage import EvidenceLineageRegistry
 from .external_effect_protocol import (
     ExternalEffectIntent,
@@ -34,13 +35,18 @@ class OrganismRecoveryCoordinator:
 
     The coordinator does not own authority or truth. It observes authoritative
     runtime state/provenance, resolves current permission where a NEW attempt is
-    required, and can use the shared evidence-lineage assurance layer to decide
-    whether external execution evidence is sufficient, needs another failure
-    lineage, or should remain unresolved.
+    required, and uses the shared evidence-assurance layer to decide whether
+    external execution evidence is sufficient, needs another failure mode, or
+    should remain unresolved.
+
+    Exact source lineage is optional. When a learned EvidenceDependenceModel is
+    attached, evidence summaries combine exact provenance with sufficiently
+    supported learned effective dependence.
     """
 
     runtime: TypedScopeRuntime
     evidence_registry: EvidenceLineageRegistry | None = None
+    evidence_dependence_model: EvidenceDependenceModel | None = None
 
     def record_for_publication(self, publication: PreparedPublication) -> RecoveryRecord:
         if publication.kind == "resource_handoff":
@@ -135,12 +141,17 @@ class OrganismRecoveryCoordinator:
         missed_penalty: float,
         independent_cost: float,
         unresolved_penalty: float,
+        dependence_context: str | None = None,
+        minimum_independence_confidence: float = 0.50,
     ) -> EvidenceAssuranceDecision:
         if self.evidence_registry is None:
             raise RuntimeError("external evidence planning requires an EvidenceLineageRegistry")
-        summary = self.evidence_registry.summarize(
+        summary = self.evidence_registry.summarize_effective(
             claim_ref,
             current_step=current_step,
+            dependence_model=self.evidence_dependence_model,
+            dependence_context=dependence_context,
+            minimum_independence_confidence=minimum_independence_confidence,
         )
         # External binary label semantics: True = effect applied. A false True
         # risks omission; a false False risks duplicate retry.
