@@ -24,6 +24,15 @@ class EvidenceMetadata:
 
 
 @dataclass(frozen=True)
+class EffectiveEvidenceView:
+    current_records: tuple[EvidenceMetadata, ...]
+    group_by_source: dict[str, str]
+    stale_records: int
+    unresolved_dependence_sources: int
+    learned_dependence_used: bool
+
+
+@dataclass(frozen=True)
 class EvidenceSummary:
     record_count: int
     independent_lineages: int
@@ -203,7 +212,7 @@ class EvidenceLineageRegistry:
             unresolved_dependence,
         )
 
-    def summarize_effective(
+    def effective_view(
         self,
         claim_ref: str,
         *,
@@ -211,7 +220,7 @@ class EvidenceLineageRegistry:
         dependence_model: EvidenceDependenceModel | None = None,
         dependence_context: str | None = None,
         minimum_independence_confidence: float = 0.50,
-    ) -> EvidenceSummary:
+    ) -> EffectiveEvidenceView:
         records = [
             metadata
             for metadata in self.metadata.values()
@@ -226,6 +235,38 @@ class EvidenceLineageRegistry:
             dependence_context=dependence_context,
             minimum_independence_confidence=minimum_independence_confidence,
         )
+        self.runtime.costs.reads += len(records)
+        return EffectiveEvidenceView(
+            current_records=tuple(current),
+            group_by_source=groups,
+            stale_records=len(stale),
+            unresolved_dependence_sources=len(unresolved_dependence),
+            learned_dependence_used=dependence_model is not None,
+        )
+
+    def summarize_effective(
+        self,
+        claim_ref: str,
+        *,
+        current_step: int,
+        dependence_model: EvidenceDependenceModel | None = None,
+        dependence_context: str | None = None,
+        minimum_independence_confidence: float = 0.50,
+    ) -> EvidenceSummary:
+        all_records = [
+            metadata
+            for metadata in self.metadata.values()
+            if metadata.claim_ref == claim_ref
+        ]
+        view = self.effective_view(
+            claim_ref,
+            current_step=current_step,
+            dependence_model=dependence_model,
+            dependence_context=dependence_context,
+            minimum_independence_confidence=minimum_independence_confidence,
+        )
+        current = list(view.current_records)
+        groups = view.group_by_source
 
         current_groups = {groups[record.source_id] for record in current}
         resolving = [record for record in current if record.resolves_claim]
@@ -257,17 +298,16 @@ class EvidenceLineageRegistry:
             if self.sources[record.source_id].lineage_id is None
         }
 
-        self.runtime.costs.reads += len(records)
         return EvidenceSummary(
-            record_count=len(records),
+            record_count=len(all_records),
             independent_lineages=len(current_groups),
             resolving_lineages=len(resolving_groups),
-            stale_records=len(stale),
+            stale_records=view.stale_records,
             unresolved_records=sum(not record.resolves_claim for record in current),
             conflict=conflict,
             unknown_dependence_sources=len(unknown_sources),
-            unresolved_dependence_sources=len(unresolved_dependence),
-            learned_dependence_used=dependence_model is not None,
+            unresolved_dependence_sources=view.unresolved_dependence_sources,
+            learned_dependence_used=view.learned_dependence_used,
         )
 
     def summarize(self, claim_ref: str, *, current_step: int) -> EvidenceSummary:
