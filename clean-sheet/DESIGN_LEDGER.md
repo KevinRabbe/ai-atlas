@@ -4,7 +4,7 @@ No architectural choice is accepted without a traceable reason. This ledger reco
 
 ## Status
 
-**Phase 10 has twenty-five provisional principle-level selections. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture. The executable substrate now distinguishes internal publication authority, crash-recovery identity and externally grounded execution evidence.**
+**Phase 10 has twenty-five provisional principle-level selections. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture. The executable substrate now includes crash-aware publication provenance, external-effect recovery, typed evidence lineages and shared assurance allocation.**
 
 Detailed measurements live in the experiment notes; this ledger keeps current decisions, evidence and active falsifiers auditable.
 
@@ -12,29 +12,29 @@ Detailed measurements live in the experiment notes; this ledger keeps current de
 |---|---|---|---|---|
 | DL-001 | control organization | **provisional — coupling-scoped coordination** | E01/E01B, E22/E22B, I04–I13, AF01–AF03 | static global/local organization dominates after real inference, overlap/directionality, migration, assurance and publication costs |
 | DL-002 | cognitive integration | **provisional — conditional sharing with isolation fallback** | E02/E02B/E02C, I02/I05, AF01–AF03, I11/I12 | all-shared or all-isolated computation dominates conditional sharing after equal capacity, directionality and changing sharedness |
-| DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B, I01, E24/I06, I08/I10, I14–I16 | stable source/execution linkage costs more lifetime value than revision/provenance/recovery benefit |
-| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B, I01/I04/I05, E19/E24/I06, I08–I16 | one homogeneous representation matches exact identity/provenance/authority/resource/dependency/publication/external-effect semantics plus compact learned state |
+| DL-003 | history/current-state representation | **provisional — derived current belief linked to retained evidence** | E03/E03B, I01, E24/I06, I08/I10, I14–I22 | source/evidence/provenance linkage costs more lifetime value than revision, recovery, attribution and rematerialization benefit |
+| DL-004 | internal representation | **provisional — typed hybrid boundary state** | E04/E04B, I01/I04/I05, E19/E24/I06, I08–I22 | one homogeneous representation matches exact identity/provenance/authority/resource/publication/evidence-lineage/credit semantics plus compact learned state |
 | DL-005 | inference budget | **provisional — value-of-computation stopping** | E05/E05B, I01/I04/I05, E19/I06 | adaptive estimation overhead makes fixed compute better across changing task value/difficulty/prices |
-| DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06, E23B, I01, I15 | single-belief state matches lifetime utility under ambiguity/consequence shifts after equal state cost |
-| DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07, E23B, I01, I05B, I06, I09, I15 | passive/fixed acquisition matches adaptive value under changing informativeness/cost/risk including external reconciliation |
-| DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08/E08B, E19, E24, I06, I08/I10 | one fixed breadth dominates after source-retention/rematerialization and migration-safe-reference overhead |
+| DL-006 | belief ambiguity | **provisional — consequence-sensitive hypothesis plurality** | E06, E23B, I01, I15/I17/I20/I21 | single-belief state matches lifetime utility under ambiguity, external uncertainty and consequence shifts after equal state cost |
+| DL-007 | information acquisition | **provisional — value-driven active evidence acquisition** | E07, E23B, I01, I05B/I05C, I06, I09, I15/I17/I20/I21 | passive/fixed acquisition matches adaptive value under changing informativeness, independence, cost and risk |
+| DL-008 | predictive-state breadth | **provisional — adaptive hot-state breadth with recoverable optionality** | E08/E08B, E19, E24, I06, I08/I10, I22 | one fixed breadth/persistence rule dominates after source-rematerialization, stale-reuse and crash-recovery costs |
 | DL-009 | learning persistence | **provisional — staged adaptive persistence with change-source uncertainty** | E09/E09B/E09C, I01/I02, I13/I14 | correlated/adversarial evidence or staging/corroboration cost erases staged-persistence benefit |
-| DL-010 | credit architecture | **provisional — causal/eligibility-scoped delayed credit** | E10/E10B | global/full-history propagation matches learning and attribution under causal sparsity/depth |
+| DL-010 | credit architecture | **provisional — causal/eligibility-scoped delayed credit** | E10/E10B, I22 | global/full-history or unversioned positional propagation matches learning and attribution after structural/crash recovery |
 | DL-011 | retrieval policy | **provisional — expected applicability/downstream value; similarity is proxy** | E11, I01 | similarity-only retrieval matches lifetime utility under staleness/causal conflict at equal cost |
-| DL-012 | verification granularity | **provisional — failure-layer-targeted verification** | I03/E12, E12B, I09/I13–I16 | one generic verification layer matches process/outcome/authority/topology/publication/external-execution coverage at equal assurance cost |
-| DL-013 | evaluator redundancy | **provisional — assurance value follows failure-mode independence** | E23, I02, I03/E13, I05/I05B, I09 | correlated evaluator/audit ensembles match genuinely independent evidence under search/reconfiguration pressure |
-| DL-014 | capability constraints | **provisional — independent current/revocable authority + adaptive contextual control** | E14/E14B, I04/I05, I08/I10–I16 | prepared state, old assurance or external execution evidence can safely substitute for current authority |
+| DL-012 | verification granularity | **provisional — failure-layer-targeted verification** | I03/E12, E12B, I09, I13–I21 | one generic verification layer matches process/outcome/authority/topology/publication/external-execution/evidence-lineage coverage at equal cost |
+| DL-013 | evaluator redundancy | **provisional — assurance value follows failure-mode independence** | E23, I02, I03/E13, I05/I05B/I05C, I09, I17/I20/I21 | copied/correlated evidence matches genuinely independent lineages under search, recovery and reconfiguration pressure |
+| DL-014 | capability constraints | **provisional — independent current/revocable authority + adaptive contextual control** | E14/E14B, I04/I05, I08/I10–I21 | prepared state, old assurance or historical/external execution evidence can safely substitute for current authority |
 | DL-015 | self-improvement lineage | **provisional — resource-priced lineage diversity / variant optionality** | E15/E15B, AF01/AF02 | one incumbent matches recurrence/stepping-stone recovery after equal carrying/search/switch cost |
 | DL-016 | repair scope | **provisional — minimal sufficient causal blast radius** | E16, I09, I13/I13B | one fixed change scope matches adaptive lifetime utility across causal/topology/publication scales |
 | DL-017 | mature structure | **provisional — regularity-scaled structural encoding + local override** | E17/E17B, AF01–AF03, I07–I13 | direct/static one-graph structure matches typed adaptive relationships after migration/runtime/assurance/publication costs |
-| DL-018 | execution timing | **provisional — event-scoped execution + consistency-triggered synchronization** | E18, I06, AF01–AF03, I08/I10, I13 | eager global synchronization dominates after realistic event forwarding/topology/multi-version overhead |
+| DL-018 | execution timing | **provisional — event-scoped execution + consistency-triggered synchronization** | E18, I06, AF01–AF03, I08/I10, I13/I22 | eager global synchronization dominates after realistic event forwarding, topology and recovery overhead |
 | DL-019 | fidelity allocation | **provisional — value/sensitivity-scaled fidelity** | E19, E24, I06 | uniform high/low fidelity dominates after switching/replay/hardware costs |
-| DL-020 | self-change test exposure | **provisional — rotating independent regression evidence across coverage/timescale** | E20/E20B, I09/I13 analogy | refreshing/independent evidence costs more than prevented regression/reconfiguration/publication failures |
-| DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance** | I02, I03/E21, E12B, I05/I05B, I09/I10/I13–I16 | uniform-heavy or implicit self-check dominates across changing consequence/assurance/reconciliation prices |
-| DL-022 | cross-resource metacontrol | **provisional — joint adaptive substitution under shared scarcity** | E22/E22B, I01–I06, AF01, I08/I10 | factorized policies match interaction-aware allocation after equal learning/search/migration overhead |
+| DL-020 | self-change test exposure | **provisional — rotating independent regression evidence across coverage/timescale** | E20/E20B, I09/I13 analogy, I05C/I17 lineage result | refreshing/independent evidence costs more than prevented correlated regression/recovery failures |
+| DL-021 | assurance allocator | **provisional — consequence/uncertainty/resource-sensitive assurance** | I02, I03/E21, E12B, I05/I05B/I05C, I09, I13–I21 | uniform-heavy or implicit self-check dominates across changing consequence, lineage independence and assurance prices |
+| DL-022 | cross-resource metacontrol | **provisional — joint adaptive substitution under shared scarcity** | E22/E22B, I01–I06, AF01, I08/I10, I20/I22 | factorized policies match interaction-aware allocation after equal learning/search/recovery overhead |
 | DL-023 | epistemic frontier policy | **provisional — verified frontier expansion** | E23/E23B, I01/I02/I04/I05 | independent staging adds no reliability or beyond-teacher results require answer leakage |
-| DL-024 | consequential multi-step publication | **provisional — failure-isolated prepare/validate/publish** | I13 topology migration, I13B resource ownership, I13C runtime fence, I14 crash recovery | partial live updates/recovery remain harmless and cheaper without equivalent isolation/version/target semantics |
-| DL-025 | external-effect recovery | **provisional — externally grounded execution + separate current authority** | I15 identifiable/non-identifiable external effects + I16 revocation composition | local intent/phase/old permission matches effect-specific external grounding under crash ambiguity without duplicate/omission/authority failures |
+| DL-024 | consequential multi-step publication | **provisional — failure-isolated prepare/validate/publish** | I13/I13B/I13C, I14, I18/I19 | partial live update or phase-only recovery remains harmless/cheaper without equivalent isolation, base fencing and publication provenance |
+| DL-025 | external-effect recovery | **provisional — externally grounded execution + separate current authority** | I15/I16, I17, I20/I21 | local intent/record count/old permission matches effect-specific lineage-aware external grounding without duplicate, omission or authority failures |
 
 ---
 
@@ -43,7 +43,7 @@ Detailed measurements live in the experiment notes; this ledger keeps current de
 ## PS-001 — Typed hybrid boundary state
 Exact identity, control and provenance remain exact. Tolerant numerical/learned state may use compact approximate representations; version/integrity stay explicit.
 
-I08–I16 extend this through live architecture changes and crash recovery: evidence/resource/subject identity, authority, scope membership, directional relationships, publication versions and external effect execution have distinct semantics.
+I08–I22 extend this across live organization and recovery: subject/evidence identity, source lineage, authority, ownership, dependency, publication provenance, external execution and causal-credit validity remain distinct semantics.
 
 ## PS-002 — Staged adaptive persistence
 New evidence normally enters reversible/tentative state before globally durable mutation. Consolidation timescale responds to stability/confidence and can buy independent corroboration when change-source uncertainty matters.
@@ -52,16 +52,20 @@ New evidence normally enters reversible/tentative state before globally durable 
 Keep decisions/local organization local while dependencies/scarcity are local; expand coordination only to the scope where choices become coupled. I11 shows coordination may overlap ownership; I12 shows one-way dependence need not create reciprocal/shared organization.
 
 ## PS-004 — Derived current belief with evidence linkage
-Maintain cheap current belief while retaining source linkage whenever correction, contradiction, provenance, audit or future rematerialization has meaningful expected value. I14–I16 extend the same distinction to recovery: remembered local state cannot replace authoritative version or external execution evidence.
+Maintain cheap current belief while retaining source linkage whenever correction, contradiction, provenance, audit or future rematerialization has meaningful expected value.
+
+I14–I21 extend the same rule to recovery: local phase/state cannot replace authoritative publication provenance or effect-specific external execution evidence. I05C/I17 show record count cannot replace source-lineage provenance.
 
 ## PS-005 — Value-of-computation stopping
 Continue optional inference only while estimated marginal downstream value exceeds compute, latency, risk and opportunity cost.
 
 ## PS-006 — Consequence-sensitive hypothesis plurality
-Preserve multiple plausible states while ambiguity × consequence justifies their cost; prune as evidence resolves ambiguity or stakes fall. I15 shows an external effect may need to remain explicitly unresolved after crash when execution cannot be identified.
+Preserve multiple plausible states while ambiguity × consequence justifies their cost; prune as evidence resolves ambiguity or stakes fall. External execution and missing audit outcomes may remain explicitly unresolved.
 
 ## PS-007 — Value-driven active evidence acquisition
 Acquire observations/interventions when expected downstream or epistemic value exceeds interaction cost/risk, including multi-step option value, metacognitive evidence, topology assurance and external reconciliation.
+
+I20 demonstrates one shared acquisition rule across external-execution and metacognitive claims.
 
 ## PS-008 — Verified epistemic frontier expansion
 Bootstrap knowledge is a starting prior/method library, not a permanent epistemic ceiling. Novel candidates remain tentative until sufficiently independent evidence supports promotion.
@@ -78,22 +82,30 @@ Persistent evidence is ultimately selected for expected usefulness to the curren
 ## PS-012 — Adaptive predictive-state breadth / recoverable optionality
 Keep information hot in proportion to expected future value versus active/rematerialization cost; preserve recoverability for distinctions with meaningful option value.
 
+I22 extends this through crash recovery: source-backed hot state can be selectively persisted or rematerialized instead of restoring every cached value.
+
 ## PS-013 — Failure-mode-independent assurance
-Additional evaluators/audits matter only to the extent that they add evidence with sufficiently different relevant failure modes.
+Additional evaluators/audits/evidence matter only to the extent that they add sufficiently different relevant failure modes.
+
+I05C and I17 independently show that multiple records copied from one lineage remain one epistemic source. `EvidenceLineageRegistry` makes that relation explicit.
 
 ## PS-014 — Consequence/uncertainty/resource-sensitive assurance allocation
 Verification/audit/reconciliation effort scales with expected harm reduction, uncertainty, optimizer pressure and assurance cost. Heavy checking can win when cheap; selective checking when costly/scarce.
 
+`EvidenceAssuranceDecision` and I20 now implement the same allocation rule across external and metacognitive evidence.
+
 ## PS-015 — Causal/eligibility-scoped delayed credit
 Delayed outcomes update transitions that remain plausible contributors, not automatically the entire retained history.
 
+I22 adds recovery semantics: unversioned positional traces create false blame after structural change; exact causal identity/version or replayed historical source is required for safe delayed attribution.
+
 ## PS-016 — Failure-layer-targeted verification
-Verification targets the layer that can still invalidate the transition/result. Process, final outcome, provenance, authority, topology, publication and external execution evidence are not assumed substitutable.
+Verification targets the layer that can still invalidate the transition/result. Process, outcome, provenance, authority, topology, publication, external execution and evidence-lineage validity are not assumed substitutable.
 
 ## PS-017 — Independent current/revocable capability authority
 Categorical authority for consequential capability is enforced independently from the behavior proposing the effect. Authority remains current/revocable through explicit identity/version semantics.
 
-I13C shows preparation cannot capture authority. I16 shows external execution evidence cannot become retry authority: an already-applied effect may be recorded after revocation, but every fresh/retry effect is gated by current permission.
+Preparation cannot capture authority. Historical execution evidence may establish that an effect already happened after revocation, but every fresh/retry effect is gated by current permission.
 
 ## PS-018 — Rotating independent self-change regression evidence
 Evidence authorizing durable self-change stays sufficiently independent from the proposal/optimization path and refreshes coverage across changing state-space, failure modes and timescales.
@@ -108,7 +120,7 @@ Prefer the smallest reversible change whose inferred causal scope covers the def
 Represent/mutate structure indirectly when a compact rule captures reusable organization; preserve direct/local override or isolation where exceptions and local causal structure make shared mutation harmful.
 
 ## PS-022 — Event-scoped execution with consistency-triggered synchronization
-Execute computation when relevant state/dependency events occur while consistency scope remains local. Synchronize only across the dependency/version scope and when a common view is required. I08/I10 extend this to topology epochs and exactly-once forwarding.
+Execute computation when relevant state/dependency events occur while consistency scope remains local. Synchronize only across the dependency/version scope and when a common view is required. I08/I10 extend this to topology epochs and exactly-once forwarding; I22 extends version validity to recovered transient work/credit.
 
 ## PS-023 — Value/sensitivity-scaled fidelity allocation
 Treat numerical/computational fidelity as a resource dimension. Approximation is acceptable while plausible propagated error cannot change enough downstream value; escalate/recompute/rematerialize when sensitivity, accumulation, consequence or irrecoverability makes it material.
@@ -116,20 +128,18 @@ Treat numerical/computational fidelity as a resource dimension. Approximation is
 ## PS-024 — Failure-isolated consequential transition publication
 Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants. Publish topology, ownership or other authority-bearing versions only across a coherence boundary after required validation/current-authority/version checks.
 
-Choose direct, blocking, staged or dual-version publication according to failure risk, blast radius, live-work pressure and isolation cost. I14 adds crash continuity: phase/old approval are insufficient; recovery needs stable publication identity, expected base version and intended target version/identity, and any retry reacquires current validation.
+I14 shows crash recovery needs semantic publication identity/base fencing rather than a local phase marker. I18 refines the minimum semantics: **target numeric version may be unknown**, and state value alone cannot identify which transition produced it. When exact attribution matters, authoritative publication provenance must cross the same coherence boundary as the state change.
 
-The selected object is **failure isolation between preparation and authoritative publication**, not a WAL, transaction database, lock, consensus protocol or deployment pattern.
+Choose direct, blocking, staged or dual-version publication according to failure risk, blast radius, live-work pressure and isolation cost. The selected object is failure isolation/publication semantics, not a WAL, transaction database, lock, consensus protocol or deployment pattern.
 
 ## PS-025 — Externally grounded effect recovery / execution-authority separation
-Local intent, phase state, proposal confidence and past approval do not establish that an external effect occurred.
+Local intent, phase state, proposal confidence, record count and past approval do not establish that an external effect occurred.
 
-Use sufficiently effect-specific external evidence—or a stable effect identity recognized by the receiver—to determine/recover exact execution when consequence justifies its cost. Recording an already-applied effect is historical state and does not require permission to execute it again. Every fresh or retry effect is a new consequential transition and must satisfy **current** capability authority.
+Use sufficiently effect-specific external evidence—or a stable effect identity recognized by the receiver—to determine/recover exact execution when consequence justifies its cost. Recording an already-applied effect is historical state; every fresh/retry effect is a new consequential transition and must satisfy **current** capability authority.
 
 If the external world cannot identify/reconcile the effect exactly, preserve an unresolved execution state and allocate retry versus abstention from explicit duplicate/omission consequence instead of manufacturing certainty.
 
-I15 supplies two structurally different families: an externally identifiable ledger/service and a non-identifiable physical effect with noisy aggregate sensing. I16 composes exact external execution evidence with independent current revocation and shows that conflating execution history and authority creates duplicates, unauthorized retries or false history.
-
-Falsifier: local-only recovery matches effect-specific external grounding across crash ambiguity, revocation and noisy/non-identifiable environments after equal evidence/coordination cost, or effect-specific recovery costs systematically exceed the prevented duplicate/omission/authority harm in the regime where PS-025 is invoked.
+I17/I20/I21 refine the evidence side: copied receipts remain one failure lineage; independent reconciliation is allocated by consequence, staleness/conflict and cost; raw evidence planning now occurs inside the common recovery coordinator.
 
 ---
 
@@ -143,17 +153,17 @@ Resource allocation can unify while authority cannot flatten into the same scala
 
 Coarse predictive latent state is cheap but can discard future/action-relevant distinctions. Dense latent or compact latent + recoverable source preserves the option. No JEPA-specific principle is selected.
 
-## I14 — crash recovery extends the publication fence
+## I14–I19 — crash-aware publication and external execution
 
-A local lifecycle phase cannot tell `already published but completion marker lost` from `not published`, and old assurance cannot safely overwrite current revocation/retraction or a newer superseding version.
+I14 derives recovery from authoritative base/target semantics rather than local lifecycle phase. I15/I16 separate external execution evidence from local intent/current authority. I18 adds publication provenance to exact attribution. I19 composes these semantics over the reusable runtime.
 
-`RecoveryRecord` therefore records semantic transition identity/base/target facts, not an implementation-specific journal format. Recovery re-reads current validation for any retry.
+## I05C / I17 / I20 / I21 — one evidence-assurance substrate
 
-## I15/I16 — the external world is a separate evidence/authority plane
+External receipts and verifier audits reproduce the same correlation failure. `EvidenceLineageRegistry` represents lineages/staleness/resolution/conflict; learned quality remains separate; `EvidenceAssuranceDecision` allocates use-current/acquire-independent/unresolved. I20 applies one policy across two claim domains, and I21 routes external recovery through the same interface.
 
-I15 shows local versioning cannot determine whether the outside world already acted. Exact effect identity/reconciliation can remove ambiguity when the environment participates; otherwise execution may remain unresolved.
+## I22 — transient recovery follows typed future value
 
-I16 then separates the historical execution fact from permission to act again. This promotes PS-025.
+Source-backed hot state can be rematerialized instead of blindly persisted. Delayed credit requires exact historical causal identity/version or source replay rather than positional restoration after structural change.
 
 ---
 
@@ -161,7 +171,7 @@ I16 then separates the historical execution fact from permission to act again. T
 
 ```text
 stable typed semantic identities
-  subjects / evidence / provenance / sources
+  subjects / source evidence / publication provenance
   authority versions / resource leases
         |
         +--> typed directional dependencies
@@ -172,27 +182,33 @@ typed transition proposals
         ↓
 interaction-aware value/resource allocator
         ↓
-independent assurance + current authority
+EvidenceLineageRegistry
+  lineages / staleness / resolves? / conflict
+        + learned source-quality state
+        ↓
+shared consequence-sensitive assurance allocator
         ↓
 PREPARE non-authoritative candidate state
         ↓
-version / target / current-authority publication fence
+version / publication-provenance / current-authority fence
         ↓
-PUBLISH internal authoritative version
+PUBLISH internal authoritative state
         |
         +--> external effect path
-        |       effect-specific external execution evidence
+        |       effect-specific external evidence
         |       current authority for every new/retry attempt
-        |       unresolved status if exact execution cannot be identified
+        |       unresolved state when exact execution cannot be identified
         ↓
-crash recovery from base/target identity rather than local phase
+crash recovery from semantic identity/provenance
         ↓
-observe → causal credit → staged appropriately-scoped update
+selective transient-state persistence / rematerialization / replay
+        ↓
+observe → versioned causal credit → staged appropriately-scoped update
 ```
 
 The Phase-9 family labels remain candidate organizational modes rather than four mutually exclusive universal architectures.
 
-The next discriminator attacks **external execution evidence itself** with delay, staleness, correlated errors and contradiction. The architecture must decide when independent reconciliation is worth buying and when execution status must remain unresolved.
+The next implementation discriminator is a minimal **typed transient-state registry** for source-backed hot state and versioned/replayable causal-credit traces, followed by an integrated topology-crash scenario using those records.
 
 ## Selection rule
 
