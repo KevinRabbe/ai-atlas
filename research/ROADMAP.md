@@ -16,7 +16,7 @@ First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/
 
 ## Phase 10 — Experimental reconstruction
 
-**Active. Twenty-five reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **392 added test cases**.
+**Active. Twenty-six reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **412 added test cases**.
 
 The experimental strategy has progressed through:
 
@@ -38,7 +38,10 @@ The experimental strategy has progressed through:
 16. common crash-aware organism recovery;
 17. shared typed evidence-lineage + assurance allocation;
 18. transient cache/credit recovery across structural change;
-19. integrated crash/topology/evidence/transient recovery lifecycle.
+19. integrated crash/topology/evidence/transient recovery lifecycle;
+20. hidden/changing evidence-dependence inference;
+21. common-cause confounding of co-failure evidence;
+22. reusable learned evidence-dependence substrate.
 
 ## Current architecture spine
 
@@ -55,9 +58,13 @@ typed transition proposals
         ↓
 interaction-aware value/resource allocation
         ↓
-evidence-lineage structure
-  lineage / stale? / resolves? / conflict
+source identity + known provenance where available
         + learned source-quality estimates
+        + revisable evidence-dependence model
+            context-conditioned failure relations
+            optional provenance/dependency probes
+        ↓
+effective independent evidence structure
         ↓
 consequence-sensitive assurance allocation
         ↓
@@ -83,7 +90,7 @@ typed transient recovery
 observe → versioned causal credit → staged appropriately-scoped update
 ```
 
-The value allocator cannot manufacture epistemic, capability, publication, causal or external-execution authority.
+The value allocator cannot manufacture epistemic, capability, publication, causal or external-execution authority. Source identity also cannot manufacture evidence independence.
 
 ## I06–I13 — architecture-scale composition
 
@@ -123,7 +130,7 @@ Verifier-quality audit records can be correlated, stale and unavailable. Uniform
 
 ## I20 / I21 — one evidence-assurance controller across domains
 
-`EvidenceLineageRegistry` represents source lineage, staleness, resolution and conflict without assigning truth/reliability. `EvidenceAssuranceDecision` combines that structure with learned quality, consequence/asymmetric harm and check cost.
+`EvidenceLineageRegistry` represents known source lineage, staleness, resolution and conflict without assigning truth/reliability. `EvidenceAssuranceDecision` combines that structure with learned quality, consequence/asymmetric harm and check cost.
 
 Default I20:
 
@@ -134,13 +141,9 @@ Default I20:
 
 I21 moves evidence planning inside the common recovery coordinator.
 
-## I22 — typed transient recovery
+## I22 / I23 — typed transient recovery and whole-lifecycle composition
 
 Source-backed hot state can be persisted/rematerialized according to reuse/currentness economics. Delayed credit requires exact historical transition identity/version or replayable source history after structural change.
-
-`TransientStateRegistry` now stores only the typed recovery metadata required for those decisions; it does not own source evidence, authority or topology.
-
-## I23 — whole-lifecycle recovery composition
 
 I23 combines topology publication, crash/restart, publication provenance, source changes, transient state, delayed credit, old-epoch external events, authority revocation, stale/correlated external receipts and independent reconciliation in every episode.
 
@@ -152,11 +155,46 @@ Approximate 30-seed means:
 | opaque snapshot restore | ~-1.47 | ~0.716 | ~0.397 | ~0.299 | ~0.502 |
 | discard transient | ~1.27 | 0 | 0 | 0 | 0 |
 
-Typed recovery keeps useful cache/credit value that safe discard loses, while avoiding the semantic failures of opaque snapshot restoration.
-
 This establishes a strong current architecture inference:
 
 > **Recovery should restore semantically valid typed state, not blindly restore process memory and not indiscriminately discard all transient work.**
+
+## I24 — hidden/changing evidence dependence
+
+I24 removes exact lineage IDs from the learner. Stable visible sources share hidden failure ancestry that changes midway through the run.
+
+Approximate 30-seed result:
+
+| policy | utility/task | weighted harm | independent audits/task | dependency probes/task |
+|---|---:|---:|---:|---:|
+| source-count independence | ~4.157 | ~0.296 | ~0.277 | 0 |
+| all correlated | ~4.002 | ~0.331 | ~0.865 | 0 |
+| **learned dependence** | **~4.196** | **~0.232** | ~0.437 | 0 |
+| learned + active probe | ~4.194 | **~0.221** | ~0.423 | ~0.238 |
+| oracle | ~4.213 | ~0.216 | ~0.408 | 0 |
+
+The passive learner recovers hidden relations from independently resolved co-failure history, degrades when upstream dependencies change, then relearns. Explicit dependency/provenance probes are bought only where relation uncertainty can change assurance behavior.
+
+## I25 / PS-026 — common causes confound raw co-failure
+
+I25 introduces a second family: global task difficulty raises error across all evaluators, creating broad co-failure even among sources with independent ancestry.
+
+Raw co-failure therefore overstates dependence. Conditioning on a noisy observable difficulty context improves utility and reduces unnecessary auditing. Controlled pair-dependency evidence further reduces harm.
+
+Approximate 10-seed result:
+
+- raw co-failure: ~`4.116` utility, ~`0.296` harm, ~`0.433` audits/task;
+- **difficulty-conditioned:** ~`4.149`, ~`0.294`, ~`0.337` audits/task;
+- conditioned + probe: ~`4.145`, ~`0.277`, ~`0.335` audits/task;
+- oracle: ~`4.165`, ~`0.281`, ~`0.337` audits/task.
+
+This promotes:
+
+### PS-026 — learned / causally qualified evidence dependence
+
+> **Treat independence between evidence sources as uncertain, revisable relational state. Do not infer independent failure modes from record count, source names, agreement or raw co-failure alone. Infer dependence from outcome/provenance/intervention evidence while conditioning on plausible common causes, and acquire explicit dependency evidence when uncertainty about independence can materially change assurance value.**
+
+`EvidenceDependenceModel` is the current reusable model-free substrate. It keeps exact source identity, learned source quality and learned dependence separate.
 
 ## JEPA / E24
 
@@ -166,44 +204,58 @@ No JEPA-specific principle is selected.
 
 ## Current provisional selection count
 
-**PS-001 through PS-025** are active reversible constraints. I17–I23 are composition/refinement evidence, not new principle selections.
+**PS-001 through PS-026** are active reversible constraints.
 
-## Next milestone — evidence-lineage inference
+## Next milestone — conditional, directional and adversarial dependence
 
-Current lineage experiments know which records share an upstream failure lineage. Real systems often will not.
+PS-026 is deliberately narrow. The next discriminators should attack its pairwise symmetric assumptions.
 
-Next discriminate:
+### I26A — domain-conditional dependence
 
-1. exact supplied lineage metadata — upper-bound comparator;
-2. raw source identity / record-count heuristics;
-3. learned correlation/causal-lineage inference from shared error histories;
-4. active lineage-discovery tests when independence matters;
-5. explicit unresolved independence when lineage cannot be established cheaply.
+The same two source identities may share an upstream mechanism for one claim family but be independent for another.
 
-Stress cases should include:
+Compare:
 
-- apparently separate services mirroring one upstream source;
-- common-mode time-window failures;
-- sources that become dependent only after a backend/provider migration;
-- genuinely independent sources that happen to agree for long periods;
-- adversarial attempts to manufacture apparent source diversity.
+1. one global source-pair dependence model;
+2. claim-domain-conditioned dependence;
+3. value-priced domain-specific provenance probe;
+4. oracle relation.
 
-Primary metrics:
+Measure false independence, false dependence, assurance cost and cross-domain negative transfer.
 
-- false-independence rate;
-- false-dependence rate;
-- downstream duplicate/omission/false-promotion harm;
-- active discovery cost;
-- time to detect a dependency change;
-- calibration of `effective independent evidence`.
+### I26B — directional dependence
 
-The key question is whether evidence-lineage relation belongs mostly in exact stable metadata, learned approximate state, or a typed hybrid of both.
+Derived/copy relations are not necessarily symmetric:
+
+```text
+A -> B
+```
+
+can mean B inherits A's errors while A does not inherit B's independent failures.
+
+Test whether an undirected shared-lineage graph loses useful source ordering/provenance and whether a directional dependency representation improves aggregation/assurance.
+
+### I26C — adversarial apparent independence
+
+Let correlated sources intentionally decorrelate visible errors or selectively abstain so that ordinary co-failure statistics underestimate shared ancestry.
+
+Compare passive correlation inference with provenance/interventional diagnostics.
+
+### I26D — sparse / large source population
+
+Scale source count while reducing resolved feedback. Pairwise O(N²) dependence state may stop paying for itself.
+
+Test sparse graphs, low-rank/common-cause models, hierarchical grouping and active pair selection before selecting any scalable implementation.
+
+## Integration milestone
+
+After I26, the common assurance path should consume **learned effective dependence** directly and use exact lineage metadata only when provenance actually makes it known.
 
 ## Later targeted work
 
 - nested/overlapping **ownership** only if non-owning coordination overlays prove insufficient;
 - neural E24C only if predictive-objective geometry remains architecture-discriminating;
-- hardware co-design only after transition/topology/fidelity/recovery laws are stable enough for substrate assumptions to be informative.
+- hardware co-design only after transition/topology/fidelity/recovery/evidence-dependence laws are stable enough for substrate assumptions to be informative.
 
 ## Phase-10 substantial-completion condition
 
@@ -218,6 +270,7 @@ Before Phase 10 is considered substantially complete, the combined organism shou
 - unsupported transitions can remain tentative/unresolved;
 - crash/restart cannot turn prepared state, copied evidence, old approval or unversioned transient pointers into accidental authority/knowledge/credit;
 - external effect recovery separates local intent, execution history and current permission;
+- evidence independence can be learned without confusing broad common causes for shared ancestry;
 - the common executable runtime reproduces these boundaries without experiment-specific privileged semantics.
 
 ## Open targeted gap closure
