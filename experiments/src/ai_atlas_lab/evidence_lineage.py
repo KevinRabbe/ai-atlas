@@ -32,6 +32,7 @@ class EvidenceSummary:
     unresolved_records: int
     conflict: bool
     unknown_dependence_sources: int = 0
+    unresolved_dependence_sources: int = 0
     learned_dependence_used: bool = False
 
 
@@ -43,7 +44,10 @@ class EvidenceLineageRegistry:
     because their names differ. A learned EvidenceDependenceModel can supply
     additional effective relation structure for the current claim/context.
 
-    The registry still does not decide truth or source reliability and does not
+    Crucially, a below-threshold learned score is counted as evidence of
+    independence only when that estimate has enough observation support.
+
+    The registry does not decide truth or source reliability and does not
     duplicate evidence payloads.
     """
 
@@ -113,9 +117,14 @@ class EvidenceLineageRegistry:
         current_step: int,
         dependence_model: EvidenceDependenceModel | None,
         dependence_context: str | None,
-    ) -> dict[str, str]:
+        minimum_independence_confidence: float,
+    ) -> tuple[dict[str, str], set[str]]:
+        if not 0.0 <= minimum_independence_confidence <= 1.0:
+            raise ValueError("minimum_independence_confidence must lie in [0, 1]")
+
         source_ids = tuple(sorted({record.source_id for record in records}))
         parent = {source_id: source_id for source_id in source_ids}
+        unresolved_dependence: set[str] = set()
 
         def find(source_id: str) -> str:
             while parent[source_id] != source_id:
@@ -142,43 +151,57 @@ class EvidenceLineageRegistry:
                 ):
                     union(left, right)
 
+        modeled_sources = (
+            dependence_model.sources if dependence_model is not None else set()
+        )
+        uncertain_unknown_sources: set[str] = set()
+
         # Learned dependence may additionally collapse sources whose exact
         # lineage is unknown or whose distinct provenance still exhibits a
         # shared relevant failure mode/common cause.
         if dependence_model is not None:
-            modeled_sources = dependence_model.sources
             for index, left in enumerate(source_ids):
-                if left not in modeled_sources:
-                    continue
                 for right in source_ids[index + 1 :]:
-                    if right not in modeled_sources:
+                    if left not in modeled_sources or right not in modeled_sources:
                         continue
-                    if dependence_model.estimate(
+                    estimate = dependence_model.estimate(
                         left,
                         right,
                         step=current_step,
                         context_key=dependence_context,
-                    ).same_failure_lineage:
+                    )
+                    if estimate.same_failure_lineage:
                         union(left, right)
+                    elif estimate.confidence < minimum_independence_confidence:
+                        # Lack of positive dependence is not established
+                        # independence. Mark unknown-lineage participants as
+                        # unresolved and conservatively keep multiple uncertain
+                        # unknown sources in one effective failure component.
+                        if self.sources[left].lineage_id is None:
+                            uncertain_unknown_sources.add(left)
+                        if self.sources[right].lineage_id is None:
+                            uncertain_unknown_sources.add(right)
 
-        # Unknown and unmodeled sources are not evidence of independence. Keep
-        # them in one conservative unresolved-dependence component instead of
-        # assigning one lineage merely because each has a different name.
-        unmodeled_unknown = [
-            source_id
-            for source_id in source_ids
-            if self.sources[source_id].lineage_id is None
-            and (
-                dependence_model is None
-                or source_id not in dependence_model.sources
-            )
-        ]
-        if unmodeled_unknown:
-            anchor = unmodeled_unknown[0]
-            for source_id in unmodeled_unknown[1:]:
+        # Unknown sources absent from the learned model also have unresolved
+        # dependence. Different names do not grant independent-lineage status.
+        for source_id in source_ids:
+            if (
+                self.sources[source_id].lineage_id is None
+                and source_id not in modeled_sources
+            ):
+                uncertain_unknown_sources.add(source_id)
+
+        if uncertain_unknown_sources:
+            ordered_unknown = sorted(uncertain_unknown_sources)
+            anchor = ordered_unknown[0]
+            for source_id in ordered_unknown[1:]:
                 union(anchor, source_id)
+            unresolved_dependence.update(uncertain_unknown_sources)
 
-        return {source_id: find(source_id) for source_id in source_ids}
+        return (
+            {source_id: find(source_id) for source_id in source_ids},
+            unresolved_dependence,
+        )
 
     def summarize_effective(
         self,
@@ -187,6 +210,7 @@ class EvidenceLineageRegistry:
         current_step: int,
         dependence_model: EvidenceDependenceModel | None = None,
         dependence_context: str | None = None,
+        minimum_independence_confidence: float = 0.50,
     ) -> EvidenceSummary:
         records = [
             metadata
@@ -195,11 +219,12 @@ class EvidenceLineageRegistry:
         ]
         stale = [record for record in records if self._is_stale(record, current_step)]
         current = [record for record in records if record not in stale]
-        groups = self._effective_groups(
+        groups, unresolved_dependence = self._effective_groups(
             current,
             current_step=current_step,
             dependence_model=dependence_model,
             dependence_context=dependence_context,
+            minimum_independence_confidence=minimum_independence_confidence,
         )
 
         current_groups = {groups[record.source_id] for record in current}
@@ -241,6 +266,7 @@ class EvidenceLineageRegistry:
             unresolved_records=sum(not record.resolves_claim for record in current),
             conflict=conflict,
             unknown_dependence_sources=len(unknown_sources),
+            unresolved_dependence_sources=len(unresolved_dependence),
             learned_dependence_used=dependence_model is not None,
         )
 
