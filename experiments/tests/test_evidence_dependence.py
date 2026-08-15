@@ -54,6 +54,47 @@ class EvidenceDependenceModelTests(unittest.TestCase):
             conditioned.dependence_score("a", "c") + 0.01,
         )
 
+    def test_same_pair_can_have_different_dependence_by_domain(self) -> None:
+        rng = random.Random(13)
+        model = self.model()
+        for _ in range(1400):
+            truth = rng.random() < 0.5
+            shared = rng.random() < 0.18
+            model.observe_resolution(
+                {
+                    "a": not truth if shared else truth,
+                    "b": not truth if shared else truth,
+                    "c": not truth if rng.random() < 0.18 else truth,
+                },
+                truth,
+                context_key="domain-a",
+            )
+            model.observe_resolution(
+                {
+                    "a": not truth if rng.random() < 0.18 else truth,
+                    "b": not truth if rng.random() < 0.18 else truth,
+                    "c": not truth if rng.random() < 0.18 else truth,
+                },
+                truth,
+                context_key="domain-b",
+            )
+        self.assertTrue(
+            model.estimate(
+                "a",
+                "b",
+                step=1400,
+                context_key="domain-a",
+            ).same_failure_lineage
+        )
+        self.assertFalse(
+            model.estimate(
+                "a",
+                "b",
+                step=1400,
+                context_key="domain-b",
+            ).same_failure_lineage
+        )
+
     def test_probe_temporarily_overrides_observational_inference(self) -> None:
         model = self.model()
         model.remember_probe(
@@ -68,6 +109,32 @@ class EvidenceDependenceModelTests(unittest.TestCase):
         self.assertTrue(current.same_failure_lineage)
         self.assertTrue(current.explicitly_probed)
         self.assertFalse(expired.explicitly_probed)
+
+    def test_context_scoped_probe_does_not_leak_to_other_domain(self) -> None:
+        model = self.model()
+        model.remember_probe(
+            "a",
+            "b",
+            same_failure_lineage=True,
+            step=0,
+            ttl=100,
+            context_key="domain-a",
+        )
+        in_scope = model.estimate(
+            "a",
+            "b",
+            step=1,
+            context_key="domain-a",
+        )
+        out_of_scope = model.estimate(
+            "a",
+            "b",
+            step=1,
+            context_key="domain-b",
+        )
+        self.assertTrue(in_scope.same_failure_lineage)
+        self.assertTrue(in_scope.explicitly_probed)
+        self.assertFalse(out_of_scope.explicitly_probed)
 
     def test_components_collapse_only_inferred_dependent_sources(self) -> None:
         model = self.model()
@@ -101,6 +168,15 @@ class EvidenceDependenceModelTests(unittest.TestCase):
             ttl=10,
         )
         self.assertTrue(model.estimate("a", "b", step=1).same_failure_lineage)
+
+    def test_source_can_be_registered_after_context_exists(self) -> None:
+        model = EvidenceDependenceModel()
+        model.register_source("a")
+        model.register_source("b")
+        model.observe_resolution({"a": True, "b": True}, True)
+        model.register_source("c")
+        model.observe_resolution({"a": True, "b": True, "c": True}, True)
+        self.assertIn("c", model.error_rate["default"])
 
     def test_unknown_source_is_rejected(self) -> None:
         model = self.model()
