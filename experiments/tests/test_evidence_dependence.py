@@ -31,6 +31,30 @@ class EvidenceDependenceModelTests(unittest.TestCase):
         self.assertTrue(model.estimate("a", "b", step=1200).same_failure_lineage)
         self.assertFalse(model.estimate("a", "c", step=1200).same_failure_lineage)
 
+    def test_untrained_below_threshold_score_is_not_confident_independence(self) -> None:
+        model = self.model()
+        estimate = model.estimate("a", "b", step=0)
+        self.assertFalse(estimate.same_failure_lineage)
+        self.assertEqual(estimate.confidence, 0.0)
+        self.assertEqual(model.observation_support(), 0.0)
+
+    def test_resolved_history_builds_independence_confidence(self) -> None:
+        rng = random.Random(17)
+        model = self.model()
+        for _ in range(900):
+            truth = rng.random() < 0.5
+            model.observe_resolution(
+                {
+                    "a": not truth if rng.random() < 0.12 else truth,
+                    "b": not truth if rng.random() < 0.12 else truth,
+                },
+                truth,
+            )
+        estimate = model.estimate("a", "b", step=900)
+        self.assertFalse(estimate.same_failure_lineage)
+        self.assertGreater(estimate.confidence, 0.50)
+        self.assertGreater(model.observation_support(), 0.90)
+
     def test_context_conditioning_reduces_difficulty_confound(self) -> None:
         rng = random.Random(7)
         raw = self.model(threshold=0.015)
