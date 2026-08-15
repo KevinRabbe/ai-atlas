@@ -11,6 +11,7 @@ class DependenceEstimate:
     same_failure_lineage: bool
     confidence: float
     explicitly_probed: bool
+    context_key: str | None = None
 
 
 class EvidenceDependenceModel:
@@ -18,7 +19,8 @@ class EvidenceDependenceModel:
 
     Source identity, source reliability and source dependence remain separate.
     The model learns residual co-failure after conditioning on caller-supplied
-    context buckets and can temporarily cache explicit dependence probes.
+    contexts. A relation can be queried globally across contexts or within one
+    claim/domain context, and bounded explicit probes may be global or scoped.
 
     This is an experimental semantic substrate, not a selected mature causal-
     discovery algorithm.
@@ -48,12 +50,25 @@ class EvidenceDependenceModel:
         self.sources: set[str] = set()
         self.error_rate: dict[str, dict[str, float]] = {}
         self.joint_error: dict[str, dict[tuple[str, str], float]] = {}
-        self.probe_cache: dict[tuple[str, str], tuple[bool, int]] = {}
+        self.probe_cache: dict[
+            tuple[str, str, str | None],
+            tuple[bool, int],
+        ] = {}
 
     def register_source(self, source_id: str) -> None:
         if not source_id:
             raise ValueError("source identity must be non-empty")
+        if source_id in self.sources:
+            return
+
+        existing_sources = sorted(self.sources)
         self.sources.add(source_id)
+        for context_key, rates in self.error_rate.items():
+            rates[source_id] = self.prior_error
+            joints = self.joint_error[context_key]
+            for other in existing_sources:
+                pair = tuple(sorted((source_id, other)))
+                joints[pair] = self.prior_error**2
 
     def _pair(self, left: str, right: str) -> tuple[str, str]:
         if left not in self.sources or right not in self.sources:
@@ -66,14 +81,14 @@ class EvidenceDependenceModel:
             raise ValueError("context_key must be non-empty")
         if context_key in self.error_rate:
             return
+        ordered = sorted(self.sources)
         self.error_rate[context_key] = {
-            source: self.prior_error for source in self.sources
+            source: self.prior_error for source in ordered
         }
         self.joint_error[context_key] = {
             (left, right): self.prior_error**2
-            for left in sorted(self.sources)
-            for right in sorted(self.sources)
-            if left < right
+            for index, left in enumerate(ordered)
+            for right in ordered[index + 1 :]
         }
 
     def observe_resolution(
@@ -110,7 +125,13 @@ class EvidenceDependenceModel:
                     + (1.0 - self.decay) * joint
                 )
 
-    def dependence_score(self, left: str, right: str) -> float:
+    def dependence_score(
+        self,
+        left: str,
+        right: str,
+        *,
+        context_key: str | None = None,
+    ) -> float:
         if left == right:
             self._pair(left, right)
             return self.prior_error * (1.0 - self.prior_error)
@@ -118,9 +139,17 @@ class EvidenceDependenceModel:
         if not self.error_rate:
             return 0.0
 
+        contexts = (
+            (context_key,)
+            if context_key is not None
+            else tuple(self.error_rate)
+        )
         residuals: list[float] = []
-        for context_key, rates in self.error_rate.items():
-            joints = self.joint_error[context_key]
+        for current_context in contexts:
+            if current_context not in self.error_rate:
+                continue
+            rates = self.error_rate[current_context]
+            joints = self.joint_error[current_context]
             pair = (left, right)
             if pair not in joints:
                 continue
@@ -129,12 +158,29 @@ class EvidenceDependenceModel:
             )
         return sum(residuals) / len(residuals) if residuals else 0.0
 
+    def _cached_probe(
+        self,
+        pair: tuple[str, str],
+        *,
+        context_key: str | None,
+        step: int,
+    ) -> tuple[bool, int] | None:
+        if context_key is not None:
+            scoped = self.probe_cache.get((pair[0], pair[1], context_key))
+            if scoped is not None and scoped[1] >= step:
+                return scoped
+        global_probe = self.probe_cache.get((pair[0], pair[1], None))
+        if global_probe is not None and global_probe[1] >= step:
+            return global_probe
+        return None
+
     def estimate(
         self,
         left: str,
         right: str,
         *,
         step: int,
+        context_key: str | None = None,
     ) -> DependenceEstimate:
         if step < 0:
             raise ValueError("step cannot be negative")
@@ -147,21 +193,33 @@ class EvidenceDependenceModel:
                 True,
                 1.0,
                 True,
+                context_key,
             )
 
         pair = self._pair(left, right)
-        cached = self.probe_cache.get(pair)
-        if cached is not None and cached[1] >= step:
+        cached = self._cached_probe(
+            pair,
+            context_key=context_key,
+            step=step,
+        )
+        if cached is not None:
             return DependenceEstimate(
                 pair[0],
                 pair[1],
-                self.dependence_score(*pair),
+                self.dependence_score(
+                    *pair,
+                    context_key=context_key,
+                ),
                 cached[0],
                 1.0,
                 True,
+                context_key,
             )
 
-        score = self.dependence_score(*pair)
+        score = self.dependence_score(
+            *pair,
+            context_key=context_key,
+        )
         confidence = min(
             1.0,
             abs(score - self.covariance_threshold) / self.confidence_scale,
@@ -173,6 +231,7 @@ class EvidenceDependenceModel:
             score > self.covariance_threshold,
             confidence,
             False,
+            context_key,
         )
 
     def remember_probe(
@@ -183,11 +242,12 @@ class EvidenceDependenceModel:
         same_failure_lineage: bool,
         step: int,
         ttl: int,
+        context_key: str | None = None,
     ) -> None:
         if step < 0 or ttl < 0:
             raise ValueError("step and ttl must be non-negative")
         pair = self._pair(left, right)
-        self.probe_cache[pair] = (
+        self.probe_cache[(pair[0], pair[1], context_key)] = (
             same_failure_lineage,
             step + ttl,
         )
@@ -197,6 +257,7 @@ class EvidenceDependenceModel:
         source_ids: tuple[str, ...],
         *,
         step: int,
+        context_key: str | None = None,
     ) -> dict[str, str]:
         if len(set(source_ids)) != len(source_ids):
             raise ValueError("source_ids must be unique")
@@ -220,6 +281,11 @@ class EvidenceDependenceModel:
 
         for index, left in enumerate(source_ids):
             for right in source_ids[index + 1 :]:
-                if self.estimate(left, right, step=step).same_failure_lineage:
+                if self.estimate(
+                    left,
+                    right,
+                    step=step,
+                    context_key=context_key,
+                ).same_failure_lineage:
                     union(left, right)
         return {source: find(source) for source in source_ids}
