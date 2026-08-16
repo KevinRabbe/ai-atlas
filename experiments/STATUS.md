@@ -1,186 +1,203 @@
 # Phase 10 Experimental Status
 
-**Checkpoint: twenty-six provisional design principles selected; composition has progressed through I27 with a crash-aware typed organism, learned/scoped/directional evidence-dependence models and effective-lineage assurance aggregation. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
+**Checkpoint: twenty-seven provisional implementation-neutral principles selected; composition has progressed through I30 with a crash-aware typed organism, learned evidence-dependence/derivation semantics, selection-aware acquisition provenance and discovery verification. No fixed Phase-9 A/B/C/D family is selected as a universal whole-system architecture.**
 
 ## Validation
 
-Phase 10 now contains **469 added test cases**.
+Phase 10 now contains **522 added semantic test cases**.
 
-Additions since the 412-test PS-026 checkpoint:
+Latest delta:
 
-- I26A domain-conditional evidence dependence: 7 tests;
-- reusable `EvidenceDependenceModel` context/confidence semantics: +5 tests;
-- I26B directional evidence derivation: 7;
-- reusable `EvidenceDerivationModel`: 6;
-- I26C adversarial apparent independence: 7;
-- I26D large-source dependence-state scale: 7;
-- `EvidenceLineageRegistry` learned/unknown dependence integration: +5;
-- effective-lineage binary evidence aggregation: 7;
-- organism recovery with learned dependence + raw-evidence aggregation: 6.
+- I28A direction-aware evidence aggregation: 8 tests;
+- I28B multi-hop/path provenance: 7;
+- I28C cyclic/versioned temporal evidence: 8;
+- I28D sparse/delayed truth: 8;
+- I29 selective self-change auditing: 8;
+- reusable `EvidenceAcquisitionRegistry`: 6;
+- I30 selection-aware discovery verification: 8.
 
-The shell environment has previously been unable to clone GitHub because DNS resolution is unavailable there. Numerical discriminators are exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Runtime experiment code remains Python 3.11+ stdlib-only. Do not interpret the committed test count as a claim that a fresh clean-checkout suite was executed in that shell.
+The shell environment has previously been unable to clone GitHub because DNS resolution is unavailable there. Numerical discriminators are exercised in the local Python reasoning environment before connector publication; GitHub connector writes are verified on `main`. Do not interpret the committed test count as a claim that a fresh clean-checkout suite was executed in that shell.
 
 ---
 
 # Current architecture checkpoint
 
-## I06–I23 — typed adaptive organization, publication and recovery
+## Stable typed semantic plane
 
-I06 shows interacting runtime operations benefit from joint allocation. AF01–AF03 and I07 show organizational mode/scope/membership can all be adaptive when persistence pays for inference/switch/migration cost.
-
-I08–I13 turn stable identities, dynamic topology, overlapping coordination, directional dependencies, leases, in-flight work and structural assurance into reusable typed runtime state. I13/I13B/I13C promote **PS-024 — failure-isolated consequential transition publication**.
-
-I14–I19 make that runtime crash-aware: recovery follows authoritative publication provenance/base fencing rather than local phase, and external execution evidence remains separate from permission to issue a fresh/retry effect. I15/I16 promote **PS-025 — externally grounded effect recovery / execution-authority separation**.
-
-I22/I23 extend recovery to source-backed hot state and delayed credit. In the integrated I23 lifecycle, typed recovery reaches ~`2.67` utility/episode with zero modeled stale-hot use, false credit, unauthorized old-event execution or duplicate publication attempts; opaque snapshot restoration falls to ~`-1.47`, while safe transient discard reaches ~`1.27` but loses useful state.
-
-## I05C / I17 / I20 / I21 — evidence record count is not evidence independence
-
-External receipts and verifier audits independently reproduce the same failure: multiple records can be one failure lineage.
-
-`EvidenceLineageRegistry` initially represented exact known lineage/staleness/resolution/conflict. `EvidenceAssuranceDecision` then priced whether to use current evidence, acquire another failure mode or remain unresolved. I20 showed the same lineage-aware assurance rule can serve external and metacognitive claims.
-
-This promoted no new principle by itself; it strengthened PS-013/014.
-
-## I24 / I25 — PS-026: evidence independence may need to be learned
-
-I24 removes exact lineage IDs from the learner. Hidden upstream relationships change while visible source identities stay constant.
-
-Approximate 30-seed I24 means:
-
-| policy | utility/task | weighted harm | independent audits/task |
-|---|---:|---:|---:|
-| source-count independence | ~4.157 | ~0.296 | ~0.277 |
-| assume all correlated | ~4.002 | ~0.331 | ~0.865 |
-| **learned dependence** | **~4.196** | **~0.232** | ~0.437 |
-| learned + active probe | ~4.194 | **~0.221** | ~0.423 |
-| oracle | ~4.213 | ~0.216 | ~0.408 |
-
-I25 then adds a common-cause confounder: hard tasks make unrelated evaluators fail together. Raw co-failure therefore overstates shared ancestry; conditioning on a noisy difficulty context improves utility and reduces unnecessary audits.
-
-Together they promote:
-
-### PS-026 — learned / causally qualified evidence dependence
-
-> **Treat independence between evidence sources as uncertain, revisable relational state. Do not infer independent failure modes from record count, source names, agreement or raw co-failure alone. Infer dependence from outcome/provenance/intervention evidence while conditioning on plausible common causes, and acquire explicit dependency evidence when uncertainty about independence can materially change assurance value.**
-
-The selected object is the semantic requirement that evidence independence can itself be unknown/stale/learned/tested—not covariance clustering, causal discovery, provenance graphs or a particular diagnostic implementation.
-
-## I26A — dependence is claim-scope conditional
-
-The same six source identities have different hidden failure relations in external and metacognitive domains.
-
-Approximate means:
-
-| policy | utility/task | harm | audits/task | pair-relation accuracy |
-|---|---:|---:|---:|---:|
-| one global relation graph | ~4.146 | ~0.253 | ~0.547 | ~0.80 |
-| **domain-scoped relation** | **~4.224** | **~0.225** | **~0.387** | ~0.98 |
-| domain + active probe | ~4.225 | **~0.219** | ~0.395 | ~0.99 |
-| oracle | ~4.226 | ~0.219 | ~0.398 | exact |
-
-PS-026 is therefore refined: dependence is **typed/scoped relational state**, not necessarily one universal source-pair graph.
-
-`EvidenceDependenceModel` now distinguishes global residual relation from context-specific relation and supports context-scoped probes.
-
-## I26B — shared ancestry and directional derivation are different relations
-
-I26B models an upstream source A and derived children B/C that usually copy A but sometimes independently correct it. D is an independent comparator.
-
-Approximate 30-seed means:
-
-| policy | error rate | error when child departs from A |
-|---|---:|---:|
-| record count | ~0.125 | ~0.179 |
-| symmetric lineage collapse | ~0.181 | ~0.179 |
-| **directional provenance** | **~0.118** | **~0.142** |
-| **learned direction** | **~0.119** | **~0.144** |
-| Bayesian oracle | ~0.112 | ~0.103 |
-
-An undirected group can represent common-mode failure but loses **where evidence/errors flow**. Agreement downstream may be inherited; disagreement downstream may be the new evidence.
-
-`EvidenceDerivationModel` therefore remains separate from symmetric `EvidenceDependenceModel`.
-
-## I26C — observational independence can fail under selective frontier shift
-
-B/C look genuinely independent on ordinary tasks whose outcomes are resolved. On rare high-consequence frontier cases they switch to one hidden shared failure path; frontier outcomes are unavailable to passive dependence learning.
-
-Approximate 30-seed means:
-
-| policy | utility/task | weighted harm | ordinary error | frontier error |
-|---|---:|---:|---:|---:|
-| record count | ~0.858 | ~0.291 | ~0.032 | ~0.384 |
-| passive history | ~0.858 | ~0.291 | ~0.032 | ~0.384 |
-| always dependent | ~1.040 | ~0.246 | ~0.120 | ~0.124 |
-| **frontier stress/provenance probe** | **~1.524** | **~0.124** | ~0.032 | **~0.124** |
-| oracle | ~1.529 | ~0.124 | ~0.032 | ~0.124 |
-
-So `no observed co-failure` means independence on the observed/resolved distribution—not structural independence under an unobserved frontier. Explicit provenance/intervention can have option value where coverage is weak and consequence high.
-
-## I26D — dependence matters without requiring an N² graph
-
-At 128 sources there are 8,128 possible pairs, while each decision touches six relations and the active 32-source pool changes midway.
-
-Approximate 30-seed means:
-
-| policy | utility/task | relation cost | assurance harm | final relation state |
-|---|---:|---:|---:|---:|
-| assume independent | ~0.657 | 0 | ~0.343 | 0 |
-| dense exact graph | ~0.825 | ~0.175 | 0 | 8,128 |
-| query every time | ~0.910 | ~0.090 | 0 | 0 |
-| cache forever | ~0.984 | ~0.016 | 0 | ~992 |
-| **scoped TTL** | **~0.988** | **~0.012** | 0 | **~495** |
-
-When relation storage is made nearly free, permanent caching can beat TTL because re-querying dominates. The result is value/scoping, not mandatory expiry.
-
-## I27 — learned dependence is now inside the common assurance path
-
-I27 removes two remaining privileges.
-
-### Exact lineage is optional
-
-`EvidenceLineageRegistry.register_source()` no longer requires `lineage_id`.
-
-- exact shared lineage cannot be split by behavioral learning;
-- unknown names do not create independent evidence;
-- learned positive dependence can collapse unknown/distinct sources;
-- learned independence separates unknown sources only after sufficient resolved observation support;
-- an untrained below-threshold covariance score remains **independence unresolved**.
-
-`EvidenceDependenceModel` now includes observation-supported relation confidence.
-
-### Confidence is aggregated after effective grouping
-
-`aggregate_binary_evidence()` consumes source-quality estimates after exact/learned effective grouping.
-
-Sanity boundary for 10%-error sources:
+The common runtime increasingly separates semantics that conventional architectures often blur:
 
 ```text
-4 agreeing copies / one failure lineage -> ~10% error
-2 independent agreeing lineages        -> <2% error
-2 unknown source names / no support    -> ~10% error
+semantic/source identity
+    !=
+current belief
+    !=
+evidence provenance
+    !=
+publication provenance
+    !=
+capability authority
+    !=
+resource ownership
+    !=
+coordination membership
+    !=
+directional dependency
+    !=
+causal credit identity
 ```
 
-`OrganismRecoveryCoordinator.plan_external_execution_evidence_from_sources()` now runs:
+Dynamic topology may reorganize while these exact semantics remain stable/versioned.
+
+## Shared transition/resource plane
+
+Optional work is represented as typed transition proposals competing under finite resources. I04/I06 and later composition show allocation can be shared while authority cannot be flattened into the same scalar score.
+
+Current recurring controls include:
+
+- compute/stop decisions;
+- observation/intervention;
+- retrieval/rematerialization;
+- fidelity escalation;
+- synchronization;
+- verification/audit;
+- persistence/consolidation;
+- structural/topology change.
+
+Material complements, substitutions and shared scarcity are priced jointly enough to avoid locally rational but globally wasteful choices.
+
+## Publication, authority and recovery
+
+I13–I23 established the crash-aware publication/recovery spine:
 
 ```text
-raw records
-  -> effective provenance/dependence groups
-  -> source-quality-weighted claim estimate
-  -> shared assurance allocation
+PREPARE non-authoritative candidate
+    -> independent/current validation
+    -> version/publication/authority fence
+    -> PUBLISH coherent authoritative state
+    -> recover from authoritative semantic provenance
 ```
 
-This prevents copied record count from re-entering as false precision through an upstream caller.
+PS-024 requires failure-isolated consequential publication when partial visibility can violate invariants.
+
+PS-025 separates external execution history from current permission to execute again. Local intent or old approval cannot prove the outside world already acted.
+
+Typed transient recovery preserves useful hot state and delayed credit only when their semantic identity/currentness survives; otherwise state is rematerialized/replayed or discarded.
+
+## Evidence plane through I27
+
+The common evidence path now distinguishes:
+
+```text
+source identity
+    !=
+source quality
+    !=
+common-mode dependence
+    !=
+directional derivation
+    !=
+claim aggregation
+    !=
+assurance authority
+```
+
+PS-026 treats evidence independence as uncertain, revisable relational state.
+
+`EvidenceDependenceModel` represents scoped/common-mode dependence learned from resolved outcomes and optional dependency probes. Raw co-failure is not sufficient because broad task difficulty can correlate independent sources.
+
+`EvidenceDerivationModel` separately represents directional inheritance where downstream evidence can copy upstream errors yet also contribute independent correction.
+
+`EvidenceLineageRegistry` combines exact provenance where genuinely known with learned effective dependence. Unknown source names do **not** create independent evidence.
+
+`aggregate_binary_evidence()` aggregates once per effective failure group, so record count cannot re-enter as false precision through an upstream confidence estimate.
+
+## I28A–I28C — conditional/path/versioned derivation
+
+### I28A — direction changes marginal evidence
+
+Derived-child agreement often contains little new information; a child departure can be the genuinely new evidence. Static child discounting and symmetric collapse both lose important cases. Learned conditional direction improves late calibration and approaches the generative oracle on child-departure cases.
+
+### I28B — immediate-parent edges are not always enough
+
+When C can bypass B and consult A directly, `A != B, C == A` requires nonlocal provenance. Path-aware aggregation materially reduces those errors.
+
+When the shortcut is removed, extra path state stops helping and can slightly hurt. Full provenance depth is therefore conditional on actual nonlocal dependency.
+
+### I28C — source cycles can unroll through versioned observations
+
+Static source identities can form `A <-> B`, while individual revisions form a temporal DAG across generations. Static cycle collapse loses distinct innovation; treating every revision as independent creates false precision. Versioned temporal provenance approaches oracle calibration.
+
+## I28D — sparse/delayed truth
+
+The A/B structural relation changes while visible identities remain stable. Passive truth arrives on only ~1.18% of tasks and is delayed.
+
+Approximate 30-seed means:
+
+| policy | error | net utility | relation accuracy | post-shift relation accuracy |
+|---|---:|---:|---:|---:|
+| conservative | ~0.0854 | ~2.4679 | — | — |
+| passive behavioral | ~0.0830 | ~2.5032 | ~0.732 | ~0.000 |
+| disagreement-targeted truth | ~0.1152 | ~2.0001 | ~0.541 | ~0.987 |
+| coverage-targeted truth | ~0.0824 | ~2.5038 | ~0.828 | ~0.059 |
+| **provenance probe** | **~0.0809** | **~2.5332** | **~0.995** | **~0.926** |
+| oracle relation | ~0.0808 | ~2.5353 | 1.000 | 1.000 |
+
+The important failure is disagreement-targeted truth acquisition: it gets many more labels and detects the shift quickly, yet makes lifetime relation learning worse because the learner treats an `A != B` selected sample as representative of the full joint error process.
+
+## I29 / PS-027 — selection-aware evidence semantics
+
+I29 reproduces the selection failure in self-change auditing.
+
+A cheap evaluator has true population error ~15.5%. Auditing mostly candidates it flagged as risky and treating that selected audit set as population calibration drives the learned scalar error toward ~64%.
+
+A representative random audit recovers the global scalar, but the downstream promotion decision needs the conditional risks `P(harm|safe-looking)` and `P(harm|flagged)`. A conditional learner with heavy flagged auditing plus a small safe-path coverage sample learns both and improves lifetime utility.
+
+This promotes:
+
+### PS-027 — selection-aware evidence semantics
+
+> **When system policy affects which outcomes become observable, preserve enough acquisition/selection semantics that downstream learning does not silently generalize a selected sample to a population, stratum, dependence relation, calibration target or causal claim it does not support.**
+
+The selected object is the semantic requirement, not random sampling, inverse-propensity weighting, a fixed coverage percentage or any particular audit estimator.
+
+`EvidenceAcquisitionRegistry` is the current minimal runtime substrate. It records acquisition identity/mode and optional inclusion probability/scope separately from evidence content, lineage, quality and truth.
+
+## I30 — PS-027 inside discovery
+
+Discovery candidates above the visible threshold are independently verified before promotion. Rejected hypotheses can optionally be checked.
+
+Near-threshold rejected candidates are far richer in real discoveries than deep rejects. Sampling that near-threshold region and generalizing its success rate to all rejects inflates the ordinary-domain rejected truth estimate to ~0.48, versus ~0.15 under representative coverage.
+
+Approximate 30-seed means:
+
+| policy | net utility | discoveries | recovered discoveries | rejected verification rate |
+|---|---:|---:|---:|---:|
+| pass only | ~0.377 | ~0.178 | 0 | 0 |
+| near-threshold global | ~0.421 | ~0.237 | ~0.059 | ~0.266 |
+| random-domain scalar | ~0.381 | ~0.200 | ~0.023 | ~0.132 |
+| **selection-aware score bins** | **~0.461** | **~0.214** | **~0.036** | **~0.155** |
+| oracle score | ~0.524 | ~0.242 | ~0.065 | ~0.177 |
+
+I30 exposes another important boundary:
+
+> **verification authority is not statistical generalization authority.**
+
+An independently verified discovery can be authoritative about itself while the policy-selected set of verified discoveries remains a biased sample of the surrounding hypothesis space.
 
 ---
 
 # Current provisional selections
 
-**PS-001 through PS-026** are active reversible constraints.
+**PS-001 through PS-027** are active reversible constraints.
 
-PS-013 says assurance value comes from sufficiently different failure modes. PS-026 says the system may first need to determine whether those failure modes are actually independent and within what scope.
+Newest selections:
 
-No PS-027 is promoted by I26/I27; these experiments refine and compose PS-026.
+- PS-024 — failure-isolated consequential transition publication;
+- PS-025 — externally grounded effect recovery / execution-authority separation;
+- PS-026 — learned / causally qualified evidence dependence;
+- PS-027 — selection-aware evidence semantics.
+
+Earlier PS-001–PS-023 remain active; their detailed evidence trail is retained in `clean-sheet/DESIGN_LEDGER.md` and experiment notes.
 
 ---
 
@@ -188,8 +205,7 @@ No PS-027 is promoted by I26/I27; these experiments refine and compose PS-026.
 
 ```text
 stable typed semantic identities
-  subjects / source evidence / publication provenance
-  authority versions / resource leases
+  source / subject / publication / authority / lease identities
         |
         +--> dynamic ownership topology
         +--> non-owning coordination scopes
@@ -200,55 +216,50 @@ typed transition proposals
 interaction-aware value/resource allocator
         ↓
 EVIDENCE STRUCTURE
-  exact source identity
-  exact provenance where known
+  exact source/provenance where known
   learned source quality
-  symmetric/common-mode EvidenceDependenceModel
-      scoped + observation-supported
-  directional EvidenceDerivationModel
-      where inheritance matters
+  scoped common-mode dependence
+  directional derivation
+  versioned/path provenance when earned
+  acquisition/selection provenance
         ↓
-effective failure groups
-        ↓
-claim aggregation without record-count inflation
+effective evidence groups + conditional aggregation
         ↓
 consequence-sensitive assurance allocation
         ↓
-PREPARE non-authoritative candidate state
+PREPARE non-authoritative candidate
         ↓
-version / publication-provenance / current-authority fence
+current validation + version/publication/authority fence
         ↓
-PUBLISH internal authoritative state
+PUBLISH authoritative internal state
         |
-        +--> external effect path
-        |       effect-specific execution evidence
-        |       current authority for every new/retry attempt
-        |       unresolved status when exact execution cannot be identified
+        +--> external effects
+        |      external execution evidence
+        |      current authority for each new attempt
         ↓
-crash recovery from semantic identity/provenance
+semantic crash recovery
         ↓
-old-epoch event forwarding + current authority recheck
+typed transient recovery / event forwarding
         ↓
-typed transient recovery
-  hot state -> currentness / source rematerialization
-  credit -> exact causal identity / source replay
+observe outcomes
         ↓
-observe → versioned causal credit → staged appropriately-scoped update
+selection-aware learning + versioned causal credit
+        ↓
+staged appropriately-scoped update
 ```
 
-## Strongest current evidence-plane inference
+## Current strongest evidence-plane inference
 
-> **Evidence is not a bag of records. Its value depends on source quality, failure-mode dependence, derivation direction, scope/coverage and consequence. Those relations are themselves revisable state and should be materialized only where their expected assurance value pays for them.**
+> **Evidence is not a bag of records. Its value depends on source quality, failure-mode dependence, derivation direction, version/path provenance, acquisition process, scope/coverage and consequence. These relations are themselves typed state and should be learned/materialized only while their decision value pays for them.**
 
 ## Next high-value work
 
-1. integrate I26B directional derivation into generic evidence aggregation without turning every derivation edge into a hard discard rule;
-2. test multi-hop derivation A -> B -> C and cycles/mutual adaptation;
-3. test learned dependence/derivation under sparse or delayed truth rather than exact post-hoc resolution;
-4. then revisit whether a unified causal evidence graph is actually simpler/better than the current separate symmetric-dependence + directional-derivation models;
-5. nested/overlapping **ownership** remains unearned while non-owning coordination overlays suffice;
-6. neural E24C remains conditional on predictive-representation geometry becoming an architecture bottleneck.
+1. test whether the separate evidence representations (common-mode dependence, directional derivation, temporal/path provenance, acquisition provenance) should remain typed layers or can be compressed into a smaller unified causal evidence representation without losing semantics;
+2. compose PS-027 with self-improvement regression selection, where the optimizer can influence which failures become visible;
+3. test evidence relation/acquisition learning when truth itself is noisy or contested rather than exact delayed ground truth;
+4. nested/overlapping ownership remains unearned while non-owning coordination overlays suffice;
+5. neural E24C remains conditional on representation geometry becoming an architecture bottleneck.
 
 ## Guardrail
 
-No proposal score, record count, source name, raw agreement, raw co-failure, unsupported below-threshold score, stale assurance, prepared candidate, local phase marker, historical permission, missing audit, opaque snapshot or unversioned transient pointer may manufacture current authority, external execution fact, independent evidence, claim confidence or causal attribution.
+No proposal score, record count, source name, raw agreement, raw co-failure, unsupported independence score, selected audit sample, stale assurance, prepared state, old permission, opaque snapshot or unversioned pointer may manufacture current authority, independent evidence, population calibration, external execution fact, knowledge promotion or causal attribution.
