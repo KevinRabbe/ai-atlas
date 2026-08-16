@@ -187,7 +187,10 @@ def run_i28d(config: I28DConfig, policy: str) -> dict[str, float]:
     if policy not in valid:
         raise ValueError(f"unknown I28D policy: {policy}")
 
-    rng = random.Random(config.seed)
+    # Policy-dependent evidence acquisition must not perturb the hidden task
+    # stream. Every policy sees exactly the same world for a given seed.
+    world_rng = random.Random(config.seed)
+    acquisition_rng = random.Random(config.seed + 1_000_003)
     learner = SparseRelationLearner(config)
     pending: list[tuple[int, dict[str, bool], bool, str]] = []
     probe: tuple[bool, int] | None = None
@@ -205,7 +208,7 @@ def run_i28d(config: I28DConfig, policy: str) -> dict[str, float]:
         pending = future
 
         truth, labels, consequence, true_relation = _generate_task(
-            rng,
+            world_rng,
             config,
             step,
         )
@@ -250,8 +253,8 @@ def run_i28d(config: I28DConfig, policy: str) -> dict[str, float]:
                 )
 
         # Passive truth is sparse and delayed.
-        if rng.random() < config.passive_resolution_rate:
-            delay = rng.randint(
+        if acquisition_rng.random() < config.passive_resolution_rate:
+            delay = acquisition_rng.randint(
                 config.passive_delay_min,
                 config.passive_delay_max,
             )
@@ -289,7 +292,7 @@ def run_i28d(config: I28DConfig, policy: str) -> dict[str, float]:
                 if behavioral_relation is None or relation_confidence < 0.80
                 else config.active_resolution_rate / 2.0
             )
-            if rng.random() < active_rate:
+            if acquisition_rng.random() < active_rate:
                 pending.append(
                     (
                         step + config.active_resolution_delay,
