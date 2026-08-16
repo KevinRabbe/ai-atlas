@@ -8,237 +8,181 @@ The repository does **not** assemble today's AI stack by habit. It extracts mech
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-Named model blocks, natural-language reasoning, databases, agents, harnesses, biological mechanisms, learning algorithms, verifier products, JEPA, world-model implementations and current hardware are evidence/candidates—not axioms.
+Transformers, agents, RAG, databases, JEPA, world models, natural-language reasoning, biological mechanisms, verifier products, current hardware and other named implementations are evidence/candidates—not axioms.
 
 ## Current state
 
-Phases 0–7 evidence/synthesis: first-pass complete. Phase 8 implementation forgetting: **PASS**. Phase 9 competing architecture generation: **PASS**. Phase 10 experimental reconstruction: **active**.
+- Phases 0–7 evidence/synthesis: first-pass complete.
+- Phase 8 implementation forgetting: **PASS**.
+- Phase 9 competing architecture generation: **PASS**.
+- Phase 10 experimental reconstruction: **active**.
 
-Phase 10 now contains **469 added test cases** and integrated work through **I27**. **Twenty-six provisional implementation-neutral principles** survive their current promotion gates.
+Phase 10 currently contains **522 added semantic test cases** and **27 provisional implementation-neutral principles (`PS-001` through `PS-027`)**.
 
-No fixed A/B/C/D architecture family is selected as a universal whole-system architecture. Their useful mechanisms increasingly behave like organizational modes that can activate at different scopes and timescales.
+No fixed Phase-9 architecture family A/B/C/D is selected as one universal whole-system architecture. Their useful behaviors increasingly appear as conditional organizational modes that can coexist at different scopes and timescales.
+
+See:
+
+- `experiments/STATUS.md` — current experimental checkpoint;
+- `clean-sheet/DESIGN_LEDGER.md` — principle/evidence ledger through PS-026;
+- `clean-sheet/PS027_SELECTION_AWARE_EVIDENCE.md` — PS-027 promotion addendum;
+- individual `experiments/*.md` notes for measurements/falsifiers.
 
 ## What the experiments are converging toward
 
-Current evidence repeatedly supports these distinctions:
+A smaller set of recurring laws keeps reappearing across unrelated tasks:
 
-- scope follows coupling, responsibility and causal extent;
-- state follows expected future value, recoverability and semantic validity;
-- optional work follows marginal value under shared scarcity;
-- material complements/substitutes require interaction-aware allocation;
-- sharing follows reusable regularity while interference earns isolation;
-- execution follows state change until consistency coupling justifies synchronization;
-- fidelity follows decision sensitivity, uncertainty propagation and consequence;
-- authority follows independent current invariants, not confidence or historical permission;
-- verification follows the failure layer that can still invalidate the result;
-- publication state, process phase and state value are not interchangeable;
-- external execution fact and permission to execute again are separately grounded;
-- surviving bytes do not imply surviving semantics after crash/reorganization;
-- record count does not equal independent evidence;
-- source identity does not equal source quality;
-- source quality does not equal source dependence;
-- **evidence independence itself may be unknown, scoped, stale, learned and actively tested**;
-- shared/common-mode dependence and directional derivation are different relations;
-- absence of observed co-failure does not prove independence outside the observed distribution;
-- relation state should be materialized only where its expected assurance value pays for it.
+- **scope follows coupling / causal responsibility**;
+- **state follows expected future value and recoverability**;
+- **optional work follows marginal value under shared scarcity**;
+- **sharing follows reusable regularity; isolation follows interference**;
+- **execution follows events until consistency coupling earns synchronization**;
+- **fidelity follows sensitivity and consequence**;
+- **authority follows explicit current invariants, not confidence**;
+- **durability raises the evidence requirement**;
+- **verification targets the remaining failure layer**;
+- **consequential multi-step change separates preparation from publication**;
+- **recovery restores semantic validity, not merely surviving bytes**;
+- **external execution history and permission to act again are separate**;
+- **evidence independence itself may be unknown and learned**;
+- **evidence acquisition can change what the observed sample means**.
 
 ## Current executable architecture hypothesis
 
 ```text
-stable typed semantic identities
-  subjects / source evidence / publication provenance
-  current authority / resource ownership
+STABLE TYPED SEMANTIC PLANE
+  subject/source identities
+  source evidence
+  publication provenance
+  authority versions
+  resource leases
         |
-        +--> adaptive ownership topology
-        +--> overlapping non-owning coordination scopes
-        +--> operational directional dependencies
+        +--> dynamic ownership topology
+        +--> non-owning coordination scopes
+        +--> directional operational dependencies
         ↓
-typed transition proposals
+TYPED TRANSITION PROPOSALS
         ↓
-interaction-aware value/resource allocator
+INTERACTION-AWARE VALUE / RESOURCE ALLOCATION
         ↓
 EVIDENCE PLANE
-  exact source identity
-  exact provenance where known
-  learned source quality
-  common-mode EvidenceDependenceModel
-      scoped + observation-supported
-  directional EvidenceDerivationModel
-      where inheritance changes marginal evidence
+  source identity
+  source quality
+  common-mode dependence
+  directional derivation
+  versioned/path provenance
+  acquisition / selection provenance
         ↓
-effective failure groups
+effective evidence + claim aggregation
         ↓
-claim aggregation without record-count inflation
+CONSEQUENCE-SENSITIVE ASSURANCE
         ↓
-consequence-sensitive assurance allocation
+PREPARE non-authoritative candidate
         ↓
-PREPARE non-authoritative candidate state
+current validation + version/publication/authority fence
         ↓
-version + publication-provenance + current-authority fence
-        ↓
-PUBLISH coherent authoritative state
+PUBLISH authoritative internal state
         |
         +--> external effect path
-        |       effect-specific execution evidence
-        |       current authority for every fresh/retry attempt
-        |       unresolved status when exact execution cannot be known
+        |      effect-specific execution evidence
+        |      current authority for every fresh/retry attempt
         ↓
-semantic crash recovery
+SEMANTIC CRASH / TOPOLOGY RECOVERY
         ↓
-old-epoch forwarding + typed transient recovery
-  hot state -> currentness / source rematerialization
-  credit -> exact causal identity / source replay
+typed transient recovery + old-epoch event forwarding
         ↓
-observe → versioned causal credit → staged appropriately-scoped update
+OBSERVE OUTCOMES
+        ↓
+selection-aware learning + versioned causal credit
+        ↓
+staged / appropriately-scoped update
 ```
 
-This is **not** yet a frozen final architecture.
+This is still a falsifiable architecture hypothesis, not a frozen final design.
 
-## Publication, crash recovery and external effects
+## Latest evidence-plane result
 
-I13–I19 establish that consequential state change is not one mutation with one moment.
+The Atlas originally knew source lineages exactly. That assumption has been removed progressively.
 
-**PS-024 — failure-isolated consequential transition publication** separates non-authoritative preparation from authoritative publication when partial visibility can violate invariants. Crash recovery follows publication provenance/base fencing rather than process phase. State value alone may not identify which transition produced it.
-
-**PS-025 — externally grounded effect recovery / execution-authority separation** distinguishes:
+Current experiments show:
 
 ```text
-external execution evidence -> did the old effect happen?
-current capability authority -> may a new/retry effect happen now?
+source identity
+    !=
+source quality
+    !=
+shared failure dependence
+    !=
+directional derivation
+    !=
+versioned/path provenance
+    !=
+how the evidence was selected
+    !=
+claim confidence
+    !=
+assurance authority
 ```
 
-Local intent, past approval and process phase establish neither external execution nor current permission.
+### PS-026 — learned / causally qualified evidence dependence
 
-## Typed recovery instead of opaque snapshot restoration
+Evidence sources are not independent merely because they have different names or records. Dependence can be hidden, changing, domain-specific, directional, nonlocal and partly unobserved. Common causes can also make genuinely independent sources fail together.
 
-I22/I23 extend recovery to source-backed hot state and delayed causal credit.
+The system therefore treats evidence dependence as revisable relational state and buys explicit dependency/provenance evidence only where its value justifies the cost.
 
-Approximate I23 means:
+### PS-027 — selection-aware evidence semantics
 
-| policy | utility/episode | stale hot | false credit | unauthorized old event | duplicate publication attempt |
-|---|---:|---:|---:|---:|---:|
-| **typed recovery** | **~2.67** | **0** | **0** | **0** | **0** |
-| opaque snapshot restore | ~-1.47 | ~0.716 | ~0.397 | ~0.299 | ~0.502 |
-| discard transient | ~1.27 | 0 | 0 | 0 | 0 |
+When system policy affects which outcomes become observable, the selected observations cannot automatically be generalized to unobserved cases.
 
-Typed recovery asks whether a state object's **meaning** survived the transition, not merely whether its bytes did.
+I28D shows this while learning a changing source-dependence relation: querying truth mostly on source disagreements obtains more labels yet biases the learned joint relation.
 
-## From known lineage to learned dependence
+I29 reproduces the failure in self-change auditing: auditing mostly candidates already flagged as risky makes the selected audit sample look dramatically worse than the true population evaluator error.
 
-I05C/I17 first show that multiple agreeing records can still be one failure lineage. I20/I21 then use one assurance controller across external and metacognitive claims.
+I30 carries the rule into discovery. Independently verified near-threshold hypotheses are authoritative about themselves, but their success rate cannot be generalized to all rejected hypotheses.
 
-I24 removes exact lineage IDs from the learner. Hidden upstream relationships change while visible source identities stay fixed. Learned dependence beats both assuming all sources independent and assuming all are correlated.
+> **Verification authority is not statistical generalization authority.**
 
-I25 adds the required causal falsifier: hard tasks make unrelated evaluators fail together. Raw co-failure therefore cannot prove shared ancestry.
+## JEPA / predictive representation
 
-This promotes:
+JEPA remains explicitly inside the Atlas as a candidate mechanism, not a selected component.
 
-> **PS-026 — learned / causally qualified evidence dependence:** treat independence between evidence sources as uncertain, revisable relational state. Do not infer independent failure modes from record count, source names, agreement or raw co-failure alone. Infer dependence from outcome/provenance/intervention evidence while conditioning on plausible common causes, and acquire explicit dependency evidence when uncertainty about independence can materially change assurance value.
+E24 shows that coarse predictive latent state can be efficient yet discard distinctions required by later objectives or interventions. Dense predictive state or compact latent state backed by recoverable source evidence preserves more option value.
 
-## I26A — dependence is scoped
-
-The same source pair can be dependent in one claim domain and independent in another.
-
-A global relation graph reaches only ~`0.80` pair-relation accuracy in the matched synthetic family. Domain-scoped dependence reaches ~`0.98`, reduces audits from ~`0.55` to ~`0.39` per task and raises utility from ~`4.15` to ~`4.22`.
-
-So PS-026 is a **typed/scoped relation**, not one universal graph.
-
-## I26B — dependence can be directional
-
-Derived sources may inherit upstream errors but sometimes independently correct them.
-
-Approximate error rates:
-
-| policy | total error | error when child departs upstream |
-|---|---:|---:|
-| record count | ~0.125 | ~0.179 |
-| symmetric collapse | ~0.181 | ~0.179 |
-| **directional provenance** | **~0.118** | **~0.142** |
-| **learned direction** | **~0.119** | **~0.144** |
-| Bayesian oracle | ~0.112 | ~0.103 |
-
-`EvidenceDerivationModel` therefore stays separate from common-mode `EvidenceDependenceModel` for now. Agreement may be inherited; downstream disagreement may be the genuinely new evidence.
-
-## I26C — apparent independence can be distribution-limited
-
-B/C look independent on ordinary resolved history, then use a shared hidden failure path only on rare unresolved high-consequence frontier cases.
-
-Passive co-failure learning then fails by construction. Treating the pair as dependent everywhere protects the frontier but destroys ordinary diversity. A scoped provenance/stress diagnostic preserves ordinary performance while reducing frontier error from ~`0.38` to ~`0.12`.
-
-So:
-
-```text
-no observed dependence
-!= structural independence
-!= independence under future distribution shift
-```
-
-## I26D — dependence does not imply a dense N² graph
-
-At 128 sources there are 8,128 possible pair relations, while each decision touches only six.
-
-Approximate utility/task:
-
-- assume independent: ~`0.657`;
-- dense exact graph: ~`0.825`;
-- query active pairs every time: ~`0.910`;
-- cache forever: ~`0.984`;
-- **scoped TTL relation state:** ~`0.988`.
-
-The scoped policy ends with ~495 active relation records rather than 8,128. When storage is made nearly free, permanent caching can win, so no fixed cache technology is selected.
-
-## I27 — dependence is now inside the common assurance path
-
-The evidence runtime no longer requires every source to arrive with an exact lineage ID.
-
-`EvidenceLineageRegistry` now combines:
-
-- exact lineage where genuinely known;
-- learned positive dependence;
-- learned independence only after sufficient observation support;
-- unresolved dependence where neither is justified.
-
-An untrained below-threshold covariance score is **not** confidence in independence.
-
-`aggregate_binary_evidence()` then combines one contribution per effective failure group using separately supplied source-quality estimates.
-
-Sanity boundary for 10%-error sources:
-
-```text
-4 copied agreeing records / one failure group -> ~10% error
-2 independent agreeing groups              -> <2% error
-2 unknown names / unsupported dependence   -> ~10% error
-```
-
-`OrganismRecoveryCoordinator` can now consume raw external records and derive the current execution label/error **after** effective grouping, so record-count false precision cannot sneak in through an upstream caller.
+> Passive predictive sufficiency is not necessarily causal/interventional sufficiency.
 
 ## Discovery target
 
-Human knowledge is treated as bootstrap state rather than the final epistemic ceiling:
+Human knowledge is treated as bootstrap state, not an epistemic ceiling:
 
-`inherited knowledge -> competing hypothesis -> search/experiment -> candidate discovery -> scoped verification -> independent evidence/replication -> consolidated knowledge`
+```text
+inherited knowledge
+    -> competing hypotheses
+    -> search / experiment / proof
+    -> candidate discovery
+    -> scoped independent verification
+    -> replication / consolidation
+    -> expanded knowledge frontier
+```
 
-PS-026 matters directly: ten nominally different confirmations are not ten independent experiments if they inherit the same hidden assumption, dataset, instrument, derivation path or frontier failure mode.
+Novel output is not new knowledge. Promotion requires evidence strong enough to survive the relevant verification process.
 
-## Current provisional selection count
+The recent evidence-dependence and selection results matter directly here: many agreeing outputs may share one hidden source, and a selectively verified discovery set may tell us very little about unverified regions of hypothesis space.
 
-**PS-001 through PS-026** are active reversible constraints. See `clean-sheet/DESIGN_LEDGER.md` for the complete evidence trail and falsifiers.
+## Current organizing hypothesis
 
-No PS-027 is selected by I26/I27. Those experiments refine and compose PS-026.
+Practical intelligence may be adaptive selection of **typed state transitions and typed relationships under finite resources**, with semantic boundaries strong enough that confidence, record count, source identity, evidence dependence, acquisition process, publication state, historical approval, causal identity and current authority cannot impersonate one another.
 
-## Next milestone
+## Next high-value work
 
-The highest-value open evidence problem is now **direction-aware aggregation**.
+The immediate architecture question is whether the growing evidence relations should remain separate typed layers or whether they can be compressed into a smaller unified causal-evidence representation **without losing the distinctions the experiments have earned**.
 
-I26B proves that symmetric collapse can destroy useful child-correction information, but the generic aggregator currently consumes only effective symmetric failure groups. The next step is to integrate directional derivation without turning `parent -> child` into a simplistic discard rule, then stress:
+Other active targets:
 
-- multi-hop derivation A -> B -> C;
-- cycles/mutual adaptation;
-- sparse/delayed truth;
-- changing derivation by claim domain;
-- whether one unified causal evidence model actually beats the current separated common-mode + directional representations.
-
-JEPA/E24 remains a candidate representation mechanism, not a selected component. Neural E24C remains conditional on representation geometry becoming an architecture bottleneck.
+- self-improvement regression selection under PS-027;
+- noisy/contested rather than exact delayed truth;
+- nested/overlapping ownership only if non-owning coordination proves insufficient;
+- neural E24C only if representation geometry becomes architecture-discriminating;
+- hardware co-design only after the semantic/runtime laws stabilize enough for substrate assumptions to be useful.
 
 ## End goal
 
@@ -246,4 +190,4 @@ Produce a defensible answer to:
 
 **If we had to build an intelligent computational system from scratch, using everything humanity has learned but none of the accidental constraints of existing implementations, what would we build—and why?**
 
-The eventual architecture must remain evidence-traceable and experimentally falsifiable.
+Every surviving architecture claim must remain evidence-traceable and experimentally falsifiable.
