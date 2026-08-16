@@ -1,282 +1,222 @@
 # Research Roadmap
 
-## Phases 0–7
+## Phases 0–7 — evidence and mechanism atlas
 
-Taxonomy/evidence discipline, computational substrate, learning/adaptation, inference-time intelligence, persistent intelligence, verification/control, self-improvement and first cross-domain synthesis completed first passes on 2026-08-14. Targeted gap closure remains open.
+First-pass taxonomy/evidence discipline, computational substrate, learning/adaptation, inference-time intelligence, persistent intelligence, verification/control, self-improvement and cross-domain synthesis are complete.
 
 Discovery/epistemic growth is explicit: human knowledge is bootstrap evidence/methodology rather than a permanent epistemic ceiling; F26 requires turning uncertainty into testable hypotheses and independently supported new knowledge.
 
-## Phase 8 — Forget implementations
+## Phase 8 — implementation forgetting
 
-First-pass clean-sheet functional reconstruction completed on 2026-08-14. **Exit gate: PASS.**
+First-pass clean-sheet functional reconstruction: **PASS**.
 
-## Phase 9 — Clean-sheet architecture
+## Phase 9 — competing clean-sheet architectures
 
-First-pass candidate generation completed on 2026-08-14. **Exit gate: PASS.** A/B/C/D remain reference organizations, but Phase-10 evidence increasingly treats their useful mechanisms as conditional modes/scopes rather than mutually exclusive final systems.
+First-pass candidate generation: **PASS**.
 
-## Phase 10 — Experimental reconstruction
+A/B/C/D remain useful reference organizations, but Phase-10 evidence no longer treats them as mutually exclusive universal architectures. Their useful behaviors increasingly appear as conditional modes activated at different scopes/timescales.
 
-**Active. Twenty-six reversible implementation-neutral principles survive their current promotion gates.** The validation history now contains **469 added test cases** and composition through **I27**.
+## Phase 10 — experimental reconstruction
 
-Progression:
+**Active. Twenty-seven reversible implementation-neutral principles currently survive their promotion gates. Validation history: 522 added semantic tests.**
+
+### Completed experimental progression
 
 1. isolated mechanism discrimination;
-2. integrated epistemic/resource composition;
+2. integrated epistemic/resource allocation;
 3. guarded self-improvement;
 4. learned metacognition under imperfect feedback;
-5. interaction-aware runtime allocation;
+5. adaptive predictive state, fidelity and event timing;
 6. architecture-family Pareto comparison;
 7. adaptive organizational modes/scopes/topology;
-8. typed-state migration and structural assurance;
-9. persistent reusable typed-scope runtime;
-10. overlapping coordination and directional dependencies;
-11. failure-isolated topology/resource publication;
-12. crash/restart recovery from semantic publication identity;
-13. external-effect recovery + current-authority separation;
-14. correlated/stale external evidence + unresolved metacognitive audits;
-15. publication provenance inside authoritative state;
-16. common crash-aware organism recovery;
-17. shared evidence-lineage + assurance allocation;
-18. transient cache/credit recovery across structural change;
-19. integrated crash/topology/evidence/transient recovery lifecycle;
-20. hidden/changing evidence-dependence inference;
-21. common-cause confounding of co-failure;
-22. domain-scoped evidence dependence;
-23. directional evidence derivation;
-24. adversarial selective apparent independence;
-25. large-source relation-state economics;
-26. learned dependence + effective-lineage aggregation inside the common assurance path.
+8. typed semantic state across live topology;
+9. failure-isolated structural/resource publication;
+10. crash/restart recovery from authoritative semantic provenance;
+11. external execution recovery + current authority separation;
+12. shared evidence-lineage/assurance allocation;
+13. transient cache/credit recovery;
+14. whole-lifecycle typed recovery;
+15. hidden/changing evidence-dependence inference;
+16. common-cause confounding of raw co-failure;
+17. domain-scoped/directional/adversarial/large-population dependence stress;
+18. learned dependence inside common evidence aggregation;
+19. directional, multi-hop and cyclic/versioned evidence derivation;
+20. sparse/delayed truth and relation-evidence economics;
+21. selection-aware self-change auditing;
+22. selection-aware discovery verification.
 
 ## Current architecture spine
 
 ```text
 stable typed semantic identities
-  subjects / source evidence / publication provenance
-  current authority / resource leases
+  source / subject / publication / authority / lease identities
         |
-        +--> adaptive ownership topology
-        +--> overlapping non-owning coordination scopes
-        +--> operational directional dependencies
+        +--> dynamic ownership topology
+        +--> non-owning coordination scopes
+        +--> directional operational dependencies
         ↓
 typed transition proposals
         ↓
 interaction-aware value/resource allocation
         ↓
-EVIDENCE PLANE
-  exact source identity
-  exact provenance where known
-  learned source quality
-  common-mode EvidenceDependenceModel
-      scoped + observation-supported
-  directional EvidenceDerivationModel
-      where inherited vs novel evidence matters
+evidence structure
+  source identity
+  source quality
+  common-mode dependence
+  directional derivation
+  versioned/path provenance
+  acquisition/selection provenance
         ↓
-effective failure groups
-        ↓
-claim aggregation without record-count inflation
+effective evidence + conditional claim aggregation
         ↓
 consequence-sensitive assurance allocation
         ↓
-PREPARE non-authoritative candidate state
+PREPARE non-authoritative candidate
         ↓
-version / publication-provenance / current-authority fence
+current validation + version/publication/authority fence
         ↓
-PUBLISH coherent authoritative internal state
+PUBLISH authoritative internal state
         |
-        +--> external effect
-        |       effect-specific execution evidence
-        |       current authority for every fresh/retry attempt
-        |       unresolved execution where necessary
+        +--> external effect path
+        |      external execution evidence
+        |      current authority for every new/retry attempt
         ↓
-semantic crash recovery
+semantic crash/topology recovery
         ↓
-old-epoch forwarding + typed transient recovery
+typed transient recovery + old-epoch work forwarding
         ↓
-observe → versioned causal credit → staged appropriately-scoped update
+observe outcomes
+        ↓
+selection-aware learning + versioned causal credit
+        ↓
+staged appropriately-scoped update
 ```
 
-The value allocator cannot manufacture epistemic, capability, publication, causal or external-execution authority. Source identity cannot manufacture evidence independence, and record count cannot manufacture claim confidence.
-
-## Architecture/recovery checkpoint through I23
-
-I06–I13 establish adaptive scoped organization and failure-isolated publication. I14–I19 derive crash recovery from publication provenance/base fencing and split historical external execution from current permission. I22/I23 extend recovery to hot state, delayed credit and old-epoch work.
-
-Approximate I23 means:
-
-| policy | utility/episode | stale hot | false credit | unauthorized old event | duplicate publication attempt |
-|---|---:|---:|---:|---:|---:|
-| **typed recovery** | **~2.67** | **0** | **0** | **0** | **0** |
-| opaque snapshot restore | ~-1.47 | ~0.716 | ~0.397 | ~0.299 | ~0.502 |
-| discard transient | ~1.27 | 0 | 0 | 0 | 0 |
-
-Current inference:
-
-> **Recovery restores semantically valid typed state, not process memory merely because its bytes survived and not indiscriminately discarding all useful transient work.**
-
-## PS-024 / PS-025
+## Current newest principles
 
 ### PS-024 — failure-isolated consequential transition publication
 
-Prepare multi-step consequential changes in non-authoritative/reversible state when partial visibility can violate invariants. Publish only across a coherence boundary after current validation/authority/version checks. Crash recovery uses publication provenance/base fencing rather than local process phase.
+Consequential multi-step change separates non-authoritative preparation from authoritative publication when partial visibility can violate invariants. Current version/authority/provenance is checked at the publication boundary.
 
 ### PS-025 — externally grounded effect recovery / execution-authority separation
 
-Effect-specific external evidence answers whether the old effect happened. Current capability authority independently answers whether a new/retry effect may be issued now. If exact execution cannot be established, preserve unresolved state and price retry versus abstention explicitly.
-
-## From copied evidence to PS-026
-
-I05C/I17 show that copied receipts/audits are one failure lineage, not many independent confirmations. I20/I21 create one assurance controller across external and metacognitive evidence.
-
-I24 removes exact lineage IDs and learns hidden/changing shared failures. I25 then falsifies the naive interpretation `co-failure => shared ancestry` by adding broad task-difficulty common causes.
-
-This promotes:
+Local intent does not prove the outside world acted. Historical execution evidence and permission to issue a fresh/retry effect are separately grounded.
 
 ### PS-026 — learned / causally qualified evidence dependence
 
-> **Treat independence between evidence sources as uncertain, revisable relational state. Do not infer independent failure modes from record count, source names, agreement or raw co-failure alone. Infer dependence from outcome/provenance/intervention evidence while conditioning on plausible common causes, and acquire explicit dependency evidence when uncertainty about independence can materially change assurance value.**
+Independence between evidence sources may be hidden, changing, domain-specific and partially unknown. Record count, source names, agreement and raw co-failure are insufficient. Dependence can be learned/tested from outcome, provenance and intervention evidence while conditioning on plausible common causes.
 
-## I26A — relation scope/domain
+### PS-027 — selection-aware evidence semantics
 
-The same source pair can be dependent in one claim family and independent in another.
+When system policy affects which outcomes become observable, the acquisition/selection process becomes part of the evidence semantics. A selected sample cannot automatically be generalized to an unobserved population/stratum/relation/calibration target.
 
-One global relation graph reaches ~`0.80` pair accuracy in the matched family. Domain-scoped relation reaches ~`0.98`, reduces audits from ~`0.55` to ~`0.39` per task and improves utility from ~`4.15` to ~`4.22`.
+The principle does **not** select random auditing, a fixed coverage rate, importance weighting or a particular statistical estimator.
 
-The reusable dependence model now supports global or context-scoped relation estimates/probes.
+## I28 — evidence derivation and sparse truth
 
-## I26B — directional derivation
+### I28A
 
-An upstream source A is copied by B/C, but B/C sometimes independently re-check and correct it.
+Direction changes marginal evidence: inherited agreement may add little while child-originated departure can be new evidence.
 
-Approximate errors:
+### I28B
 
-- record count: ~`0.125`;
-- symmetric lineage collapse: ~`0.181`;
-- **known directional provenance:** ~`0.118`;
-- **learned direction:** ~`0.119`;
-- Bayesian oracle: ~`0.112`.
+Nonlocal shortcuts can make immediate-parent provenance insufficient; deeper path state pays only where bypass/nonlocal dependency exists.
 
-On child-departure cases, directional interpretation lowers error from ~`0.179` to ~`0.142`.
+### I28C
 
-`EvidenceDerivationModel` therefore remains separate from symmetric/common-mode `EvidenceDependenceModel` until a unified representation earns itself.
+Static source cycles can unroll into versioned temporal DAGs. Version/generation identity preserves inherited vs independent innovation without assuming every revision is independent.
 
-## I26C — adversarial/selective apparent independence
+### I28D
 
-B/C are independent on ordinary resolved history but use one shared failure path on rare unresolved high-consequence frontier cases.
+Sparse/delayed truth exposes acquisition-selection bias. Querying task truth primarily when two sources disagree gets more labels yet corrupts lifetime dependence learning because the selected sample is not the full joint error process.
 
-Passive historical dependence learning then gives essentially the same frontier error as record counting (~`0.38`). Treating B/C as dependent everywhere protects the frontier but raises ordinary error to ~`0.12`. A bounded frontier provenance/stress probe preserves ordinary ~`0.032` error while lowering frontier error to ~`0.124`.
+Direct provenance evidence wins when cheap; representative/coverage truth wins once provenance becomes expensive enough.
 
-This makes coverage explicit:
+## I29 — self-change selection bias
 
-```text
-observed independence
-!= structural/provenance independence
-!= independence under future distribution shift
-```
+Auditing mostly changes already flagged as risky and treating those audits as population evaluator calibration drives the learned global error from the true ~15.5% toward ~64%.
 
-## I26D — relation-state scaling
+A small safe-path coverage sample plus conditional calibration learns approximately the true `P(harm|safe)` / `P(harm|flagged)` quantities and improves lifetime utility at the default audit price.
 
-At 128 sources there are 8,128 possible pair relations while each decision touches six.
+This provides the second promotion family for PS-027.
 
-Approximate utility/task:
+## I30 — discovery verification selection
 
-- assume independent: ~`0.657`;
-- dense exact graph: ~`0.825`;
-- query every active pair: ~`0.910`;
-- permanent on-demand cache: ~`0.984`;
-- **scoped TTL relation cache:** ~`0.988`.
+Visible-pass candidates are independently verified before promotion. Rejected hypotheses can also be sampled.
 
-The scoped policy ends with ~495 relation records. When storage cost is zero, permanent caching can win. No fixed graph/cache implementation is selected.
+Near-threshold rejects are much richer in true discoveries than deep rejects. Generalizing their success rate to the whole rejected domain causes excessive verification. Domain+score-stratum coverage yields a better value frontier.
 
-## I27 — remove exact-lineage and pre-aggregated-confidence privileges
+Key inference:
 
-`EvidenceLineageRegistry` now accepts unknown lineage. Unknown source names do not count as independent automatically.
+> **verification authority is not statistical generalization authority.**
 
-`EvidenceDependenceModel` confidence now requires actual resolved observation support; a prior/default below-threshold score is not established independence.
+A candidate can be independently verified and authoritative about itself while the policy-selected verified set remains a biased sample of the surrounding hypothesis space.
 
-`EffectiveEvidenceView` combines exact provenance + learned dependence + unresolved relation state.
+## Current highest-value next milestone — evidence representation compression
 
-`aggregate_binary_evidence()` combines one contribution per effective failure group with separately supplied source-quality estimates.
+The evidence plane now has several separately earned relation types:
 
-For 10%-error sources:
+- common-mode dependence;
+- directional derivation;
+- temporal/path provenance;
+- acquisition/selection provenance;
+- source quality;
+- claim aggregation.
 
-```text
-4 agreeing copies / one group           -> ~10% error
-2 independent agreeing groups           -> <2% error
-2 unknown names / unsupported relation  -> ~10% error
-```
+The next architecture question is whether these should remain typed layers or whether a **smaller unified causal-evidence representation** can reproduce their semantics with lower storage/compute/learning cost.
 
-`OrganismRecoveryCoordinator.plan_external_execution_evidence_from_sources()` now derives the current execution label/error from raw records **after** effective grouping, then calls shared assurance allocation. This closes the path where an upstream majority could create false precision before lineage-aware reasoning began.
+The comparison must not define “unified” as merely storing the same typed fields in one class. It needs to test real compression/generalization:
 
-## JEPA / E24
+1. separate typed relation models — current baseline;
+2. one generic scalar/source graph — cheap but likely semantics-losing baseline;
+3. one typed causal event graph with shared inference machinery;
+4. adaptive sparse representation that materializes relation detail only where decision value requires it.
 
-JEPA remains a candidate mechanism, not a commitment. E24 shows latent prediction can be efficient while passive predictive sufficiency fails under future objectives/interventions. Recoverable source evidence improves the compression/optionality frontier.
+Stress it simultaneously on:
 
-No JEPA-specific principle is selected.
+- copied/common-mode sources;
+- corrective directional children;
+- multi-hop bypass;
+- temporal mutual adaptation;
+- policy-selected observations;
+- sparse/delayed/noisy truth;
+- large source populations.
 
-## Current provisional selection count
+Metrics:
 
-**PS-001 through PS-026** are active reversible constraints. I26/I27 refine and compose PS-026; they do not promote PS-027.
+- claim error/calibration;
+- false-independence / false-dependence;
+- missed marginal correction evidence;
+- relation storage;
+- inference/update operations;
+- adaptation after relation shift;
+- assurance/discovery lifetime utility.
 
-## Next milestone — direction-aware generic evidence aggregation
+Do not promote a graph technology. The question is **how much relation typing/structure is irreducible**.
 
-The common binary aggregator currently consumes effective **symmetric/common-mode groups**. I26B shows that this can lose correction information in directional derivation chains.
+## Following targeted work
 
-### I28A — integrate derivation without hard-discard semantics
-
-Compare candidate generic aggregation rules:
-
-1. symmetric effective-group aggregation only;
-2. parent-child provenance discounting for inherited agreement;
-3. novelty weighting when a child departs upstream;
-4. probabilistic directional model;
-5. oracle generative relation.
-
-The goal is not to choose Bayesian networks by name. It is to determine the minimum semantic state required to preserve marginal evidence through derivation.
-
-### I28B — multi-hop derivation
-
-Stress:
-
-```text
-A -> B -> C
-```
-
-where each layer may copy, transform or independently correct upstream evidence.
-
-Test whether local edge semantics compose or whether global path/source provenance is required.
-
-### I28C — cycles / mutual adaptation
-
-Real evaluators can influence one another or share iterative feedback. Test whether DAG-style derivation assumptions fail when A and B repeatedly update from each other.
-
-### I28D — sparse/delayed truth
-
-Reduce post-hoc resolution so directional/dependence inference itself becomes costly and uncertain. Measure whether explicit provenance/intervention dominates behavioral learning.
-
-## Later targeted work
-
-- evaluate whether one unified causal evidence representation actually beats the current separate common-mode dependence + directional derivation models;
-- nested/overlapping **ownership** only if non-owning coordination overlays prove insufficient;
-- neural E24C only if predictive-objective geometry remains architecture-discriminating;
-- hardware co-design only after transition/topology/fidelity/recovery/evidence laws are stable enough for substrate assumptions to be informative.
+- compose PS-027 into self-improvement regression suites where optimizer pressure changes test exposure;
+- replace exact delayed truth with noisy/contested truth and evaluator disagreement;
+- nested/overlapping ownership only if non-owning coordination overlays prove insufficient;
+- neural E24C only if representation geometry remains architecture-discriminating;
+- hardware co-design only once semantic/runtime requirements are stable enough for substrate tradeoffs to be meaningful.
 
 ## Phase-10 substantial-completion condition
 
 Before Phase 10 is considered substantially complete, the combined organism should show that:
 
 - selected principles retain lifetime value under composition;
-- learned metacontrol overhead does not consume the gains;
-- authority/provenance remain stable under learned control, topology change, handoff and crash recovery;
+- learned metacontrol overhead does not erase the gains;
+- authority/provenance survive learned control, topology change, handoff and crash;
 - world/tool/evaluator/self uncertainty remain distinguishable;
 - self-change uses independent refreshing evidence and scoped rollback/change;
-- failures remain attributable enough to revise mechanisms;
 - unsupported transitions can remain tentative/unresolved;
-- crash/restart cannot turn prepared state, copied evidence, old approval or unversioned transient pointers into accidental authority/knowledge/credit;
-- external effect recovery separates local intent, execution history and current permission;
-- evidence independence can be learned without confusing broad common causes or unsupported priors for true independence;
-- record count cannot re-enter as confidence upstream of assurance;
-- the common executable runtime reproduces these boundaries without experiment-specific privileged semantics.
+- external effect recovery separates intent, history and current permission;
+- source dependence/derivation can be learned without record-count false precision;
+- selectively acquired evidence is not silently generalized beyond its support;
+- the reusable runtime reproduces these boundaries without experiment-specific privileged semantics.
 
-## Open targeted gap closure
+## Evidence acquisition rule for future literature work
 
-Add literature only when it materially changes an active experimental/design decision. The Atlas optimizes discriminatory evidence, not source count.
+Add literature only when it materially changes an active discriminator or falsifier. The Atlas optimizes **discriminatory evidence**, not source count.
