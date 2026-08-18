@@ -184,6 +184,26 @@ I30 exposes another important boundary:
 
 An independently verified discovery can be authoritative about itself while the policy-selected set of verified discoveries remains a biased sample of the surrounding hypothesis space.
 
+## E25 — external DiffusionBlocks/local-training branch (specified, not executed)
+
+Sakana AI's ICLR-2026 DiffusionBlocks work is now recorded as explicit primary-source evidence.
+
+Atlas extraction:
+
+> **Training dependency scope may be smaller than inference dependency scope when local learning objectives are constructed so their solutions compose into the required global behavior.**
+
+Current external evidence reports block-proportional active training-memory reduction and zero inter-block training dependency for the transformed objective, while also showing a non-monotonic block-count/quality frontier. Moderate decomposition can match or improve some task metrics; excessive decomposition degrades quality.
+
+This literature addition does **not** create a new provisional principle and does not establish billion/frontier-scale behavior.
+
+Files:
+
+- `sources/DIFFUSION_BLOCKWISE_TRAINING.md` — primary-source claims, limits and corrections to common overstatements;
+- `synthesis/LOCAL_OBJECTIVES_AND_TRAINING_DECOMPOSITION.md` — implementation-neutral extraction;
+- `experiments/E25_LOCAL_TRAINING_DECOMPOSITION.md` — staged falsifier including real VRAM accounting, checkpointing/sharding controls, block-capacity sweeps, downstream language tasks, communication topology and scale trends.
+
+E25 execution requires a neural-training environment; the current 522 semantic-test count is unchanged.
+
 ---
 
 # Current provisional selections
@@ -255,11 +275,7 @@ staged appropriately-scoped update
 ## Next high-value work
 
 1. test whether the separate evidence representations (common-mode dependence, directional derivation, temporal/path provenance, acquisition provenance) should remain typed layers or can be compressed into a smaller unified causal evidence representation without losing semantics;
-2. compose PS-027 with self-improvement regression selection, where the optimizer can influence which failures become visible;
-3. test evidence relation/acquisition learning when truth itself is noisy or contested rather than exact delayed ground truth;
-4. nested/overlapping ownership remains unearned while non-owning coordination overlays suffice;
-5. neural E24C remains conditional on representation geometry becoming an architecture bottleneck.
-
-## Guardrail
-
-No proposal score, record count, source name, raw agreement, raw co-failure, unsupported independence score, selected audit sample, stale assurance, prepared state, old permission, opaque snapshot or unversioned pointer may manufacture current authority, independent evidence, population calibration, external execution fact, knowledge promotion or causal attribution.
+2. execute E25A/B when a suitable neural-training environment is available, before extrapolating DiffusionBlocks into a large-GPU training claim;
+3. compose PS-027 with self-improvement regression selection, where the optimizer can influence which failures become visible;
+4. test evidence relation/acquisition learning when truth itself is noisy or contested rather than exact delayed ground truth;
+5. nested/overlapping ownership remains unearned while non-owning coordination overlays suffice;
