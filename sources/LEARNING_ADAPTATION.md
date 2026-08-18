@@ -40,6 +40,10 @@ Primary/original sources for the first Phase-2 evidence pass.
 - **L-S021** — Bengio, Y. et al. (2009), *Curriculum Learning*, ICML. https://icml.cc/2009/abstracts.html#119
 - **L-S022** — Xie, Q. et al. (2019/2020), *Self-training with Noisy Student improves ImageNet classification*. https://arxiv.org/abs/1911.04252
 
+## Local objectives / decomposed training
+
+- **L-S023** — Shing, M., Koyama, M. & Akiba, T. (2026), *DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation*, ICLR 2026. https://arxiv.org/abs/2506.14202 — independently trainable residual-network blocks using diffusion-derived local objectives; evidence for a memory/communication/quality trade-off rather than a selected training architecture. Focused Atlas note: `sources/DIFFUSION_BLOCKWISE_TRAINING.md`.
+
 ## Expansion targets
 
 - active learning/value-of-information data acquisition;
@@ -51,4 +55,5 @@ Primary/original sources for the first Phase-2 evidence pass.
 - multi-objective/Pareto learning and constraint satisfaction;
 - credit assignment across tools/programs/non-differentiable modules;
 - autonomous skill formation and skill retirement;
+- local/compositional objective construction and when global gradient credit is actually necessary;
 - empirical comparisons of context vs memory vs adapters vs full weights under equal lifetime compute/storage budgets.
