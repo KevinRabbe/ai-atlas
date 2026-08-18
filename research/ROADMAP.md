@@ -152,6 +152,32 @@ Key inference:
 
 A candidate can be independently verified and authoritative about itself while the policy-selected verified set remains a biased sample of the surrounding hypothesis space.
 
+## New external mechanism branch — E25 local training decomposition
+
+Sakana AI's ICLR-2026 DiffusionBlocks work has been added as explicit evidence, not a selected component.
+
+Primary-source note: `sources/DIFFUSION_BLOCKWISE_TRAINING.md`
+
+Focused synthesis: `synthesis/LOCAL_OBJECTIVES_AND_TRAINING_DECOMPOSITION.md`
+
+Experiment plan: `experiments/E25_LOCAL_TRAINING_DECOMPOSITION.md`
+
+The implementation-neutral question is:
+
+> **Does globally useful learning require a global gradient dependency, or can the required credit/objective semantics sometimes be decomposed into smaller independently trainable regions whose solutions compose?**
+
+Why it matters to Atlas:
+
+- active training memory may follow maximum simultaneous learning-dependency scope rather than total inference depth;
+- inference dependency and training dependency may be different graphs;
+- independently trainable regions can change communication topology;
+- excessive decomposition can reduce local transformation capacity and damage global quality;
+- the local objective construction may matter more than block isolation itself.
+
+E25 is deliberately staged and can falsify the method. It requires empirical peak-memory accounting, checkpointing/sharding controls, block-count/capacity crossovers, downstream language capabilities, inter-block versus intra-block communication measurements, recurrent-depth tests and scale trends before any principle promotion.
+
+No new PS is created from this literature addition.
+
 ## Current highest-value next milestone — evidence representation compression
 
 The evidence plane now has several separately earned relation types:
@@ -196,6 +222,7 @@ Do not promote a graph technology. The question is **how much relation typing/st
 
 ## Following targeted work
 
+- execute E25A/B when a neural-training environment is available, before making any large-GPU feasibility claim from DiffusionBlocks;
 - compose PS-027 into self-improvement regression suites where optimizer pressure changes test exposure;
 - replace exact delayed truth with noisy/contested truth and evaluator disagreement;
 - nested/overlapping ownership only if non-owning coordination overlays prove insufficient;
