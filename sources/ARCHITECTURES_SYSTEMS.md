@@ -60,6 +60,7 @@ Primary/original sources for the first coupled architecture/systems pass. IDs ar
 - **AS-S032** — Rajbhandari et al. (2019), *ZeRO: Memory Optimizations Toward Training Trillion Parameter Models*. https://arxiv.org/abs/1910.02054
 - **AS-S033** — Shoeybi et al. (2019), *Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism*. https://arxiv.org/abs/1909.08053
 - **AS-S034** — Narayanan et al. (2021), *Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM*. https://arxiv.org/abs/2104.04473
+- **AS-S042** — Shing, Koyama & Akiba (2026), *DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation*. https://arxiv.org/abs/2506.14202 — decomposes residual-network training into independent local denoising objectives, changing active-memory and inter-block communication topology; current large-scale/frontier extrapolation remains unverified. Focused note: `sources/DIFFUSION_BLOCKWISE_TRAINING.md`.
 
 ## Precision
 
@@ -78,4 +79,4 @@ Primary/original sources for the first coupled architecture/systems pass. IDs ar
 
 ## Gaps before saturation
 
-Expand primary evidence for: convolution/locality outside sequence language models; graph/message-passing architectures; energy-based and diffusion computation; neural cellular automata; learned program interpreters; dynamic sparse attention beyond current long-context studies; memory-capacity theory for linear/recurrent attention; associative-memory interference; near/in-memory compute; neuromorphic/event-driven hardware; chiplet/wafer-scale fabrics; optical/analog accelerators; fault tolerance; compiler/autotuning; communication lower bounds; training-time activation memory; and inference workloads beyond autoregressive language generation.
+Expand primary evidence for: convolution/locality outside sequence language models; graph/message-passing architectures; energy-based and diffusion computation; neural cellular automata; learned program interpreters; dynamic sparse attention beyond current long-context studies; memory-capacity theory for linear/recurrent attention; associative-memory interference; near/in-memory compute; neuromorphic/event-driven hardware; chiplet/wafer-scale fabrics; optical/analog accelerators; fault tolerance; compiler/autotuning; communication lower bounds; empirical training-time activation/optimizer-state decomposition; local-objective/block-wise training at larger scales; and inference workloads beyond autoregressive language generation.
