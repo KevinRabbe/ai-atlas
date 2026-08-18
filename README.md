@@ -8,7 +8,7 @@ The repository does **not** assemble today's AI stack by habit. It extracts mech
 
 > Learn from implementations. Do not inherit their assumptions automatically.
 
-Transformers, agents, RAG, databases, JEPA, world models, natural-language reasoning, biological mechanisms, verifier products, current hardware and other named implementations are evidence/candidates—not axioms.
+Transformers, agents, RAG, databases, JEPA, world models, DiffusionBlocks, natural-language reasoning, biological mechanisms, verifier products, current hardware and other named implementations are evidence/candidates—not axioms.
 
 ## Current state
 
@@ -150,6 +150,26 @@ E24 shows that coarse predictive latent state can be efficient yet discard disti
 
 > Passive predictive sufficiency is not necessarily causal/interventional sufficiency.
 
+## DiffusionBlocks / local-objective training
+
+Sakana AI's ICLR-2026 DiffusionBlocks work is also now explicit evidence, not a selected training architecture.
+
+The important clean-sheet question is broader than diffusion:
+
+> **Does globally useful learning require a global gradient dependency, or can local objectives sometimes be constructed so that independently learned regions still compose into the desired global behavior?**
+
+The reported mechanism changes the training dependency graph: only one residual-network block needs to carry active gradients/optimizer state/activations during a block update, while block-level objectives are derived from one denoising process. The paper reports a non-monotonic resource/quality frontier: moderate decomposition can match or improve some baselines, while excessive block counts degrade quality.
+
+Atlas therefore treats block granularity, local objective semantics, active memory and communication as one joint discriminator—not as a claim that `B` blocks automatically give a universally useful `B x` GPU saving.
+
+See:
+
+- `sources/DIFFUSION_BLOCKWISE_TRAINING.md`;
+- `synthesis/LOCAL_OBJECTIVES_AND_TRAINING_DECOMPOSITION.md`;
+- `experiments/E25_LOCAL_TRAINING_DECOMPOSITION.md`.
+
+E25 is specified but not yet executed. It requires real peak-memory accounting, checkpointing/sharding controls, language-capability tests, communication measurements and scale trends before any promotion.
+
 ## Discovery target
 
 Human knowledge is treated as bootstrap state, not an epistemic ceiling:
@@ -178,6 +198,7 @@ The immediate architecture question is whether the growing evidence relations sh
 
 Other active targets:
 
+- E25 neural local-objective/decomposed-training resource tests when a suitable training environment is available;
 - self-improvement regression selection under PS-027;
 - noisy/contested rather than exact delayed truth;
 - nested/overlapping ownership only if non-owning coordination proves insufficient;
